@@ -1,0 +1,227 @@
+img {
+    border: 0;
+}
+
+.product-detail-container {
+    position: relative;
+    min-height: 1px;
+}
+
+@media (min-width: 375px) {
+.product-detail-overview {
+    margin-right: auto;
+    margin-left: auto;
+    width: calc(100% - 30px);
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 1px;
+}
+}
+
+.product-detail-overview-row {
+    display: flex;
+    margin-top: 0;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.cover-image-wrap {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    box-sizing: border-box;
+    padding-left: 5px;
+    padding-right: 5px;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .cover-image-wrap {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .cover-image-wrap {
+      flex: 0 0 58.3333%;
+      max-width: 58.3333%;
+    }
+  }
+
+.cover-image-container {
+    position: relative;
+}
+
+.carousel-wrap {
+    margin: 0 -15px;
+    position: relative;
+}
+
+.carousel-list-wrap {
+    overflow: hidden;
+}
+
+.carousel-list {
+    display: flex;
+    -moz-flex-wrap: nowrap;
+    -ms-flex-wrap: none;
+    flex-wrap: nowrap;
+    -ms-flex-align: stretch;
+    -moz-align-items: stretch;
+    align-items: stretch;
+    min-height: 100%;
+}
+
+.carousel-list-entry {
+    position: relative;
+    padding-bottom: 100%;
+    background-color: #ededed;
+    flex: 0 0 auto;
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+}
+
+.carousel-list-entry-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.product-limit-timer-pc {
+    display: none;
+}
+
+.product-limit-timer {
+    display: block;
+    position: relative;
+    background-color: #f77;
+    color: #fff;
+    font-weight: 700;
+    padding: 8px 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 12px;
+    margin: 0 -15px;
+}
+
+.product-limit-timer-title {
+    margin-right: 10px;
+    color: #ffd9d9;
+}
+
+.product-limit-timer-time-icon {
+    margin-right: 4px;
+    vertical-align: -3px;
+}
+
+.product-limit-timer-time {
+    margin-right: 8px;
+    display: inline-block;
+}
+
+.product-limit-timer-arrow-icon {
+    vertical-align: -2px;
+}
+
+.product-limit-timer-mobile {
+    display: block;
+}
+
+.product-cover-image-list {
+    display: none;
+    margin: 2px 0 0;
+}
+
+.product-cover-image-item {
+    display: inline-block;
+    margin: 8px 8px 0 0;
+}
+
+.product-cover-image-list-btn {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 56px;
+    height: 56px;
+    border: none;
+    background-color: #ededed;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.image {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform .2s;
+}
+
+.carousel-paginator {
+    text-align: center;
+    white-space: nowrap;
+    font-size: 0;
+    line-height: 0;
+}
+
+.carousel-paginator-page {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 100%;
+    margin: 0 3px;
+    box-sizing: border-box;
+    background-color: hsla(0, 0%, 100%, .7);
+    transform: translateY(-50%);
+    transition: background-color .15s, width .15s, height .15s;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .3);
+}
+
+.carousel-paginator-page.tiny {
+    width: 0;
+    height: 0;
+}
+
+.carousel-paginator-page.small {
+    width: 4px;
+    height: 4px;
+}
+
+.carousel-paginator-page.selecter {
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+}
+
+
+@media (min-width: 375px) {
+    .product-detail-overview-content {
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+}
+
+.product-detail-overview-content {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    box-sizing: border-box;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 100%;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.product-selli
