@@ -1,0 +1,710 @@
+html {
+    letter-spacing: -0.3px;
+    -webkit-font-smoothing: antialiased;
+    color: #424242;
+}
+
+body {
+    line-height: 1;
+    font-family: Pretendard Variable, Noto Sans KR, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+}
+
+.page {
+    height: 100%;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* 크루 추천 목록 */
+.css-75lrwi {
+    height: 100%;
+}
+
+.layout {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.css-14td677 {
+    margin-top: 30px;
+}
+
+.layout>* {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+}
+
+@media (min-width: 768px) {
+    .css-nnyuhr {
+        margin: 40px auto;
+    }
+}
+
+@media (min-width: 1256px) {
+    .css-nnyuhr {
+        max-width: 1256px;
+        margin: 0px auto;
+        padding: 0px 60px;
+    }
+}
+
+.css-nnyuhr {
+    width: 100%;
+    padding: 0px 16px;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+}
+
+.css-14vj981 {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0px;
+    font-size: 0px;
+    line-height: 1;
+}
+
+.css-dlv2hg {
+    flex: 1 1 0%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    min-width: 0px;
+}
+
+.css-147wp72 {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.css-1d0kvw3 {
+    overflow: hidden;
+    display: inline-block;
+    font-weight: 700;
+    color: rgb(47, 52, 56);
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.css-1b0htg7 {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    max-width: 100%;
+    margin-top: 4px;
+}
+
+.css-1384ga9 {
+    overflow: hidden;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: rgb(47, 52, 56);
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.css-7z0c8w {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 0px;
+    margin-left: 10px;
+}
+
+.css-1x7qv6q {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background: none;
+    font-style: inherit;
+    font-variant: inherit;
+    font-stretch: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    color: rgb(10, 165, 255);
+    cursor: pointer;
+}
+
+button {
+    touch-action: manipulation;
+    -webkit-appearance: none;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: center;
+    box-sizing: border-box;
+    padding-block: 1px;
+    padding-inline: 6px;
+
+}
+
+.css-3q4ecs {
+    position: relative;
+    z-index: 0;
+}
+
+/* 크루 추천 목록 */
+.css-5n3mug {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+
+.css-3qi6pg {
+    margin: 0px 20px 0px 0px;
+    padding: 0px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    width: calc(16.6667% - 16.6667px);
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
+
+.css-fyyvpx {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-width: 0px;
+    flex-flow: column;
+}
+
+.css-v414oq {
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+}
+
+.css-gnpvt2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: transform 0.2s;
+}
+
+img {
+    border: 0;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+
+.css-bkonhm {
+    position: absolute;
+    padding: 8px;
+    font-size: 0px;
+    z-index: 1;
+    left: 0px;
+    bottom: 0px;
+}
+
+.css-s5xdrg {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.css-7nmw3w {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.css-1auwp8u {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.css-ihb3jd {
+    overflow: hidden;
+    display: inline-block;
+    max-width: 100px;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.css-11ab5xd {
+    position: absolute;
+    inset: 0px;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* after 추가해야 이미지 나옴 */
+.css-v414oq::after {
+    content: "";
+    display: block;
+    padding-top: 133.333%;
+}
+
+
+/* 롤크루, 숏크루 목록 */
+@media (min-width: 768px) {
+    .css-1xpc1g {
+        padding: 30px 0px;
+    }
+}
+
+.css-1xpc1g {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    max-width: 750px;
+    margin: 0px auto;
+    padding: 20px 0px;
+    background: background;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.css-18ubpkc {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+h2 {
+    margin: 0;
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.css-nhzzm2 {
+    gap: 6px;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+a, button:enabled {
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.css-ygosan {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 2px;
+}
+
+button {
+    font-family: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    appearance: auto;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: center;
+    margin: 0em 0em 0em 0em;
+    padding-block: 1px;
+    padding-inline: 6px;
+}
+
+.css-1ri19co {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: #2F3438;
+}
+
+
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+
+.css-j3isp9 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #828C94;
+}
+
+.css-1jv05la {
+    max-width: 750px;
+    margin: 0px auto;
+}
+
+.css-j7qwjs {
+    display: flex;
+    flex-direction: column;
+}
+
+.css-q5kvxs {
+    width: 750px;
+    margin-bottom: 24px;
+}
+
+.css-fcukdp{
+    display: none;
+}
+
+.css-3pjyjs {
+    gap: 4px;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.css-1ytovu8 {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    gap: 16px;
+    display: flex;
+    flex-direction: row;
+}
+
+.css-j7qwjs {
+    display: flex;
+    flex-direction: column;
+}
+
+.css-kuvu0c {
+    gap: 4px;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.css-mpgf80 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 4px;
+    height: 20px;
+    background: #EAEDEF;
+    border-radius: 4px;
+    padding: 0px 6px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+@media (min-width: 768px) {
+    .css-m72o2p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+.css-m72o2p {
+    font-weight: 600;
+    color: #828C94;
+}
+
+.css-o67oi4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-height: 48px;
+    -webkit-line-clamp: 2;
+}
+
+.css-1avgy1j {
+    font-size: 18px;
+    line-height: 24px;
+    color: #2F3438;
+    font-weight: 600;
+}
+
+.css-1avgy1j {
+    font-size: 18px;
+    line-height: 24px;
+    color: #2F3438;
+    font-weight: 600;
+}
+
+.css-t0jkao {
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+}
+
+.css-1ecsbek {
+    height: inherit;
+    display: block;
+}
+
+.css-t0jkao img {
+    border-radius: 8px;
+}
+
+.css-1xq3tbi {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: transparent;
+}
+
+.css-1qfcwgl {
+    margin-top: 4px;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 24px;
+    display: flex;
+    flex-direction: row;
+}
+
+.css-30x82r {
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 4px;
+    display: flex;
+    flex-direction: row;
+}
+
+.css-1oxvqlq {
+    display: inline-block;
+    background-color: #FF7777;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #828C94;
+    margin-right: 4px;
+    width: 2px;
+    height: 2px;
+}
+
+.css-1nz6t5q {
+    font-size: 15px;
+    line-height: 24px;
+    color: #828C94;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    max-width: 140px;
+}
+
+.css-1lyj6fk {
+    font-size: 15px;
+    line-height: 24px;
+    color: #828C94;
+    font-weight: 600;
+}
+
+.css-a4sfj5 {
+    display: block;
+}
+
+.css-dn3wkw {
+    gap: 32px;
+    margin-bottom: 24px;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+}
+
+.css-3s5q2 {
+    flex: 1;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.css-o67oi4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: pre-wrap;
+    word-break: break-all;
+    max-height: 48px;
+    -webkit-line-clamp: 2;
+}
+
+.css-1avgy1j {
+    font-size: 18px;
+    line-height: 24px;
+    color: #2F3438;
+    font-weight: 600;
+}
+
+.css-rncaf8 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    white-space: pre-wrap;
+    word-break: break-all;
+    height: 48px;
+    -webkit-line-clamp: 2;
+}
+
+.css-eonsfc {
+    font-size: 15px;
+    line-height: 24px;
+    color: #2F3438;
+    font-weight: 400;
+}
+
+.css-11b3fl0 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.css-1tg86jb {
+    margin: 0;
+    padding: 0;
+    height: 1px;
+    border: none;
+    background-color: #EAEDEF;
+}
+
+hr {
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    color: gray;
+    unicode-bidi: isolate;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}

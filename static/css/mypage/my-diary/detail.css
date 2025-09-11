@@ -1,0 +1,213 @@
+/* 공통 */
+
+footer, header, main {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+}
+
+main {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+body, html {
+    font-size: 15px;
+}
+
+blockquote, body, code, dd, div, dl, dt, fieldset,
+ form, h1, h2, h3, h4, h5, h6, input, legend, li, 
+ ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    background-color: rgb(247, 249, 250);
+}
+
+[role=button], a, button, input[type=button], 
+input[type=reset], input[type=submit] {
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@import "https://assets.ohou.se/design-system/bbf3fca1e650ee6d.css";
+@import "https://assets.ohou.se/fonts/pretendard/v1.3.8/pretendardvariable-dynamic-subset.css";
+@font-face{
+    font-family:OhouseIcon;src:url(https://assets.ohou.se/design-system/3298ed52addbc709.eot);
+    src:url(https://assets.ohou.se/design-system/3298ed52addbc709.eot#iefix) 
+    format("embedded-opentype"),
+    url(https://assets.ohou.se/design-system/d8923b386a66fd50.woff2) 
+    format("woff2"),
+    url(https://assets.ohou.se/design-system/9e79341d6a2fe0d2.woff) 
+    format("woff"),
+    url(https://assets.ohou.se/design-system/5355f736e6a7bc5b.ttf) 
+    format("truetype"),
+    url(https://assets.ohou.se/design-system/3ba7913eab100858.svg#OhouseIcon) 
+    format("svg");}
+
+html{
+    font-family:'Pretendard Variable',sans-serif;
+    letter-spacing:-0.3px;-webkit-font-smoothing:antialiased;
+}
+
+a, button:enabled {
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body, figure, input, p, h1, h2, h3, h4, h5, h6, hr, ul {
+    margin: 0;
+}
+
+/* 나의 다이어리 상세 */
+
+.content-container {
+    flex: 1;
+    width: 100%;
+}
+
+.content {
+    margin-top: 48px; 
+    padding-left: 16px;
+    padding-right: 16px;  
+    position: relative; 
+}
+
+.content-wrap {
+    max-width: 720px;
+    position: relative;
+    width: 100%;
+    margin: 0px auto;
+    box-sizing: border-box;
+    max-width: 720px;
+    margin-bottom: 16px;
+}
+
+.crew-label-wrap {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.crew-label {
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    flex-direction: row;
+    gap: 4px;
+    flex-shrink: 0;
+    font-size: 12px;
+    line-height: 16px;
+    height: 20px;
+    padding: 0px 6px;
+    background: rgb(234, 237, 239);
+    color: rgb(130, 140, 148);
+}
+
+.title {
+    margin-bottom: 16px;
+    margin-top: 12px;
+}
+
+.title > h1 {
+    font-size: 24px;
+    line-height: 32px;
+    color: rgb(47, 52, 56);
+    font-weight: 700;
+}
+
+.profile-container {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+}
+
+.profile-a {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    text-align: left;
+    background: none;
+}
+
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(234, 237, 239);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 0px;
+    border: 0.5px solid rgba(0, 0, 0, 0.08);
+}
+
+.profile-img > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#name {
+    margin-left: 8px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 700;
+    color: rgb(47, 52, 56);
+}
+
+.diary-content {
+    margin-bottom: 24px;
+}
+
+.images-container {
+    margin: 56px 0px 60px;
+    padding: 0px;
+}
+
+.images-wrap {
+    position: relative;
+    height: 2393px;
+    width: calc(100% + 16px);
+    margin: 0px -8px;
+}
+
+.images {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    margin-bottom: 16px;
+    padding: 0px 8px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.images-inner {
+    box-sizing: border-box;
+    padding-top: 0px;
+    padding-bottom: 473px;
+    margin-top: 0px;
+}
