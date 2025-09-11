@@ -741,3 +741,26 @@ hr {
 .css-eonsfc {
   text-align: left;
 }
+
+.css-nhzzm2 .css-ygosan .css-j3isp9 {
+    color: #828C94;
+    font-weight: 400;
+  }
+  
+.css-nhzzm2 .css-ygosan.is-active .css-1ri19co,
+.css-nhzzm2 .css-ygosan.is-active .css-j3isp9 {
+color: #2F3438;
+font-weight: 700;
+}
+
+.css-nhzzm2 .css-ygosan svg {
+     opacity: 0; width: 0; 
+     margin-right: 0; 
+     transition: .12s; 
+}
+
+.css-nhzzm2 .css-ygosan.is-active svg { 
+    opacity: 1; 
+    width: 16px; 
+    margin-right: 4px; 
+}

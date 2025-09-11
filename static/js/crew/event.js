@@ -3,7 +3,16 @@ moreBtn.addEventListener("click", (e) => {
     console.log(11111);
 });
 
-const categoryBtn = document.querySelector(".css-ygosan");
-categoryBtn.addEventListener("click", (e) => {
-    console.log("클릭");
+const categoryBtn = document.querySelectorAll(".css-ygosan");
+
+categoryBtn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        console.log(111111);
+
+        categoryBtn.forEach((button) => {
+            button.classList.remove("is-active");
+        });
+
+        btn.classList.add("is-active");
+    });
 });
