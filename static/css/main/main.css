@@ -282,13 +282,13 @@ button.more.btn{
     font-size: 16px;
     line-height: 20px;
     font-weight: 700;
-    color: rgb(10, 165, 255);
+    color: #647FBC;
     cursor: pointer;    
 }
 button.more.btn:hover{
     opacity: 0.5;
 }
-div.crew-sub-title:hover, div.diary-title:hover{
+div.crew-sub-title:hover, div.diary-title:hover, div.together-title:hover, div.gift-title:hover {
     opacity: 0.5;
 }
 
@@ -492,13 +492,16 @@ div.crew-img-wrap:hover > img{
     filter: brightness(0.5);
 }
 
-div.diary-item-wrap:hover div.diary-img-wrap > img{
+div.diary-item-wrap:hover div.diary-img-wrap > img,
+div.together-item-wrap:hover div.together-img-wrap > img{
     transform: scale(1.03);
 }   
+a.today-gift-item-overlay:hover+div.today-gift-item-img > div.gift-item-img > img{
+    transform: translate(-50%, -50%) scale(1.1);
+}
 
 
-
-div.diary-container,div.together-container{
+div.diary-container,div.together-container, div.gift-container{
     margin: 40px auto;
     max-width: 1256px;
     padding: 0px 60px;
@@ -507,7 +510,7 @@ div.diary-container,div.together-container{
     background: rgb(255, 255, 255);
 }
 
-div.diary-header,div.together-header{
+div.diary-header,div.together-header,div.gift-header{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -516,7 +519,7 @@ div.diary-header,div.together-header{
     font-size: 0px;
     line-height: 1;
 }
-div.diary-title-wrap,div.together-title-wrap{
+div.diary-title-wrap,div.together-title-wrap,div.gift-title-wrap{
     flex: 1 1 0%;
     display: flex;
     align-items: flex-start;
@@ -524,13 +527,13 @@ div.diary-title-wrap,div.together-title-wrap{
     min-width: 0px;
 }
 
-div.diary-title,div.together-title{
+div.diary-title,div.together-title,div.gift-title{
     display: inline-flex;
     align-items: center;
     max-width: 100%;
     cursor: pointer;
 }
-div.diary-title strong,div.together-title strong{
+div.diary-title strong,div.together-title strong,div.gift-title strong{
     overflow: hidden;
     display: inline-block;
     font-weight: 700;
@@ -573,7 +576,7 @@ div.diary-img-wrap::after,div.together-img-wrap::after{
     display: block;
     padding-top: 66.6667%;
 }
-div.diary-text-wrap,div.together-text-wrap{
+div.diary-text-wrap,div.together-text-wrap, div.gift-text-wrap{
     margin-top: 10px;
     min-width: 0px;
     font-size: 16px;
@@ -584,12 +587,17 @@ div.diary-text-wrap,div.together-text-wrap{
     overflow-wrap: break-word;
 }
 
-div.diary-text-wrap p,div.together-text-wrap p{
+div.diary-text-wrap p,div.together-text-wrap p,div.gift-text-wrap p{
     overflow: hidden;
     display: -webkit-box;
-    font-weight: 500;;
+    font-weight: 500;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
-div.diary-more-btn,div.together-more-btn{
+
+
+div.diary-more-btn,div.together-more-btn,div.gift-more-btn{
     display: flex;
     align-items: center;
     height: 0px;
@@ -601,27 +609,169 @@ div.trip-path {
     align-items: center;
     position: relative;
     width: 100%;   /* 원하는 길이 */
-    height: 20px;   /* 마커와 높이 맞추기 */
+    margin-top: 6px;
 }
+
+
 
 div.trip-path::before {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 0;
+    top: 36%;
+    left: 0;   
     right: 0;
     height: 20px;
-    background: rgb(10, 165, 255);
+    background: #8ec5ff;
     transform: translateY(-50%);
     border-radius: 10px;
     z-index: 0; /* 마커 뒤로 */
 }
 
 div.marker-circle {
-    width: 10px;
-    height: 10px;
-    background: white;
-    border: 2px solid black;
+    width: 7px;
+    height: 7px;
+    background: #FFFFFF;
+    margin-left: 10px;
+    margin-right: 10px;
     border-radius: 50%;
     z-index: 1; /* 막대기 위에 올라오도록 */
+}
+
+div.together-date{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+div.marker {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1; /* 선 위로 */
+    margin-bottom: 3px;
+}
+
+div.marker-country{
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 220%;
+    white-space: nowrap;
+}
+
+div.together-category,div.gift-limit-time{
+    top: 12px;
+    left: 12px;
+    padding: 4px 7px;
+    font-size: 13px;
+    line-height: 15px;
+    position: absolute;
+    z-index: 3;
+    background-color: #91ADC8;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 4px;
+}
+
+div.gift-list-container{
+    position: relative;
+}
+div.gift-list-wrap{
+    position: relative;
+    z-index: 0;
+}
+ul.gift-list{
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+li.gift-item-wrap{
+    margin: 0px 20px 0px 0px;
+    padding: 0px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    width: calc(25% - 15px);
+}
+article.today-gift-item{
+    display: block;
+    padding: 0 10px 15px;
+    position: relative;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+a.today-gift-item-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+div.today-gift-item-img{
+    width: auto;
+    position: relative;
+}
+div.gift-item-img{
+    position: relative;
+    background-color: #f5f5f5;
+    padding-bottom: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+}
+div.gift-item-img > img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    transition: transform .2s;
+}
+
+div.gift-item-img::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .02);
+}
+div.gift-item-image-dark-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: background-color .2s;
+}
+div.today-gift-item-content{
+    display: flex;
+    margin: 0;
+    align-items: center;
+}
+
+span.gift-price{
+    margin: 2px 0 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 17px;
+    line-height: 23px;
+    font-weight: 700;
+}
+span.gift-price > span{
+    color: #647FBC;
+    margin-right: 4px;
+}
+div.gift-price-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+div.gift-text-wrap{
+    width: 100%;
 }
