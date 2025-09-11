@@ -1,0 +1,627 @@
+@import "https://assets.ohou.se/design-system/bbf3fca1e650ee6d.css";@import "https://assets.ohou.se/fonts/pretendard/v1.3.8/pretendardvariable-dynamic-subset.css";@font-face {
+                        font-family: OhouseIcon;
+                        src: url(https://assets.ohou.se/design-system/3298ed52addbc709.eot);
+                        src: url(https://assets.ohou.se/design-system/3298ed52addbc709.eot#iefix) format("embedded-opentype"),url(https://assets.ohou.se/design-system/d8923b386a66fd50.woff2) format("woff2"),url(https://assets.ohou.se/design-system/9e79341d6a2fe0d2.woff) format("woff"),url(https://assets.ohou.se/design-system/5355f736e6a7bc5b.ttf) format("truetype"),url(https://assets.ohou.se/design-system/3ba7913eab100858.svg#OhouseIcon) format("svg");
+                    }
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a, button, input[type=button], input[type=reset], input[type=submit] {
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+ol,ul{
+    list-style: none;
+}
+body, html {
+    line-height: 1;
+    font-family: Pretendard Variable, Noto Sans KR, Apple SD Gothic Neo, 맑은 고딕, Malgun Gothic, sans-serif;
+    font-size: 13px;
+}
+
+html {
+    font-family: 'Pretendard Variable', sans-serif;
+    letter-spacing: -0.3px;
+    -webkit-font-smoothing: antialiased;
+    color: #424242;
+    background: #fff;
+}
+
+.layout, .page, body, html {
+    height: 100%;
+}
+
+* {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+div.layout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main.main-container{
+    margin-top: 30px;
+}
+
+div.banner-container{
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    max-width: 1256px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+div.banner-wrap{
+    flex:1 1;
+    width: 100%;
+}
+
+section.banner-item-list{
+    position: relative;
+    padding-top: 508px;
+}
+
+div.banner-item-wrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+div.banner-group{
+    overflow: hidden;
+    border-radius: 4px;
+    background: #EAEDEF;
+}
+div.banner-container:hover div.arrow-wrap{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+div.banner-container .banner-slide div:hover img{
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.03);
+}
+div.banner-arrow-wrap{
+    /* display: none; */
+}
+
+div.banner-group div div {
+    height: 508px;
+    width: 1136px;
+}
+
+div.banner-slide{
+    display: flex;
+    width: 5680px;
+    height: 508px;
+}
+
+div.banner-group img {
+    width: 1136px;
+    height: 100%;
+    background-size: cover;
+    transition: .2s transform;
+}
+div.arrow-wrap:hover button.arrow-btn{
+    filter: brightness(0.95);
+}
+
+div.arrow-wrap{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity .2s ease-in-out;
+    opacity: 0;
+    pointer-events: none;
+}
+div.left-arrow-wrap{
+    left: 0%;
+}
+div.right-arrow-wrap{
+    right: -4.2%;
+}
+button.arrow-btn{
+    margin: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    box-sizing: border-box;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 5px rgba(63, 71, 77, 0.15);
+}
+
+button.arrow-btn span{
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    color: #2F3438;
+}
+
+button.arrow-btn:hover{
+    background-color: #F4F6F7;
+}
+
+button.left-btn span::before{
+        font-family: OhouseIcon;
+    vertical-align: top;
+    content: "\e966";
+}
+button.right-btn span::before{
+        font-family: OhouseIcon;
+    vertical-align: top;
+    content: "\e96a";
+}
+
+span.banner-page{
+    font-size: 14px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: rgba(33, 38, 41, 0.5);
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    line-height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    padding: 4px 8px 4px 10px;
+    cursor: pointer;
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+}
+
+span.banner-count{
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+div.crew-container{
+    margin: 40px auto;
+    max-width: 1256px;
+    padding: 0px 60px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #FFFFFF;
+}
+div.crew-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0px;
+    font-size: 0px;
+    line-height: 1;
+}
+
+div.crew-title{
+    flex: 1 1 0%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    min-width: 0px;
+}
+div.crew-more-btn{
+    display: flex;
+    align-items: center;
+    height: 0px;
+    margin-left: 10px;
+}
+div.crew-sub-title{
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+div.crew-sub-title strong{
+    overflow: hidden;
+    display: inline-block;
+    font-weight: 700;
+    color: rgb(47, 52, 56);
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+div.crew-description, div.together-description{
+    overflow: hidden;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    color: rgb(47, 52, 56);
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+button.more.btn{
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background: none;
+    font-style: inherit;
+    font-variant: inherit;
+    font-stretch: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    color: rgb(10, 165, 255);
+    cursor: pointer;    
+}
+button.more.btn:hover{
+    opacity: 0.5;
+}
+div.crew-sub-title:hover, div.diary-title:hover{
+    opacity: 0.5;
+}
+
+div.crew-list-wrap{
+    /* overflow: hidden; */
+    position: relative;
+}
+div.crew-list-group{
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+ul.crew-items{
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+}
+
+li.crew-item-card{
+    margin: 0px 20px 0px 0px;
+    padding: 0px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    width: calc(16.6667% - 16.6667px);
+}
+div.crew-item-wrap{
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-width: 0px;
+    flex-flow: column;
+}
+
+div.crew-img-wrap{
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+}
+div.crew-img-wrap img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: transform 0.2s;
+}
+
+
+div.crew-img-wrap:hover div.crew-short-description{
+    opacity: 1;
+}
+div.crew-img-wrap:hover div.crew-profile-wrap{
+    opacity: 0;
+}
+div.crew-short-description{
+    position: absolute;
+    bottom: 14px;
+    left: 8px;
+    right: 8px;
+    color: white;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 900;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    opacity: 0;
+}
+div.crew-profile-wrap,div.diary-profile-wrap,div.together-profile-wrap{
+    position: absolute;
+    padding: 8px;
+    font-size: 0px;
+    z-index: 1;
+    left: 0px;
+    bottom: 0px;
+    opacity: 1;
+}
+
+div.crew-detail-text-wrap ,div.diary-detail-text-wrap{
+    display: flex;
+    align-items: center;
+}
+span.crew-name, span.diary-name, span.together-name{ 
+    overflow: hidden;
+    display: inline-block;
+    max-width: 100px;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+div.crew-profile-block , div.diary-profile-block,div.together-profile-block{
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+div.crew-profile-block img, div.diary-profile-block img,div.together-profile-block img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+div.crew-img-wrap::after{
+    content: "";
+    display: block;
+    padding-top: 133.333%;
+}
+
+a.crew-item-last{
+    color: rgb(47, 52, 56);
+    display: inline-block;
+    font-weight: 500;
+    padding: 6px 16px;
+}
+div.crew-list-mv-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(234, 237, 239);
+    margin-bottom: 6px;
+    position: relative;
+}
+div.crew-list-mv-btn span{
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+div.crew-list-mv-btn span::before{
+    font-family: OhouseIcon;
+    vertical-align: top;
+    content: "\e931";
+}
+div.crew-list-mv-btn+div{
+    font-size: 14px;
+    line-height: 20px;
+}
+
+li.crew-item-card:last-of-type{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.crew-arrow-btn-wrap-left{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 0%;
+    display: none;
+}
+div.crew-arrow-btn-wrap-right{
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 100%;
+}
+
+span.crew-left, span.crew-right{
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    color: #2F3438;
+}
+span.crew-left::before{
+    font-family: OhouseIcon;
+    vertical-align: top;
+    content: "\e966";
+}
+span.crew-right::before{
+    font-family: OhouseIcon;
+    vertical-align: top;
+    content: "\e96a";
+}
+
+a.crew-detail-a, a.diary-a, a.together-a{
+    position: absolute;
+    width: 100%;
+    display: block;
+    height: 100%;
+}
+
+div.crew-img-wrap:hover > img{
+    transform: scale(1.03);
+    filter: brightness(0.5);
+}
+
+div.diary-item-wrap:hover div.diary-img-wrap > img{
+    transform: scale(1.03);
+}   
+
+
+
+div.diary-container,div.together-container{
+    margin: 40px auto;
+    max-width: 1256px;
+    padding: 0px 60px;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+}
+
+div.diary-header,div.together-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0px;
+    font-size: 0px;
+    line-height: 1;
+}
+div.diary-title-wrap,div.together-title-wrap{
+    flex: 1 1 0%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    min-width: 0px;
+}
+
+div.diary-title,div.together-title{
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    cursor: pointer;
+}
+div.diary-title strong,div.together-title strong{
+    overflow: hidden;
+    display: inline-block;
+    font-weight: 700;
+    color: rgb(47, 52, 56);
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+div.diary-list-container, div.together-list-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+div.diary-item-wrap,div.together-item-wrap{
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-width: 0px;
+    flex-flow: column;
+}
+div.diary-img-wrap,div.together-img-wrap{
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+}
+div.diary-img-wrap > img,div.together-img-wrap > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: transform 0.2s;
+}
+div.diary-img-wrap::after,div.together-img-wrap::after{
+    content: "";
+    display: block;
+    padding-top: 66.6667%;
+}
+div.diary-text-wrap,div.together-text-wrap{
+    margin-top: 10px;
+    min-width: 0px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgb(47, 52, 56);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+div.diary-text-wrap p,div.together-text-wrap p{
+    overflow: hidden;
+    display: -webkit-box;
+    font-weight: 500;;
+}
+div.diary-more-btn,div.together-more-btn{
+    display: flex;
+    align-items: center;
+    height: 0px;
+    margin-left: 10px;
+}
+div.trip-path {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;   /* 원하는 길이 */
+    height: 20px;   /* 마커와 높이 맞추기 */
+}
+
+div.trip-path::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: rgb(10, 165, 255);
+    transform: translateY(-50%);
+    border-radius: 10px;
+    z-index: 0; /* 마커 뒤로 */
+}
+
+div.marker-circle {
+    width: 10px;
+    height: 10px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 50%;
+    z-index: 1; /* 막대기 위에 올라오도록 */
+}
