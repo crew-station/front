@@ -1,0 +1,20 @@
+name: "✨ Feature"
+description: "UI 기능 구현"
+labels: ["feature", "frontend"]
+body:
+  - type: textarea
+    attributes:
+      label: 📄 기능 개요 (Feature Description)
+      description: 구현할 화면 또는 컴포넌트의 목적과 기능을 구체적으로 작성해 주세요.
+      placeholder: |
+        예: 로그인 페이지 구현
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: 🔗 벤치마킹 사이트 URL (Reference URL)
+      description: 클론할 대상 웹사이트 또는 디자인의 URL을 입력해 주세요.
+      placeholder: https://www.example.com/login
+    validations:
+      required: true
