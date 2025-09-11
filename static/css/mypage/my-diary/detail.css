@@ -211,3 +211,31 @@ body, figure, input, p, h1, h2, h3, h4, h5, h6, hr, ul {
     padding-bottom: 473px;
     margin-top: 0px;
 }
+
+.image-items {
+    overflow-anchor: none;
+    width: 100%;
+    display: flex;
+}
+
+.image-wrap {
+    width: 33.3333%;
+    padding: 0px 8px;
+    margin-bottom: 16px;
+}
+
+.image {
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    font-size: 0px;
+    background: rgb(247, 249, 250);
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s;
+    object-fit: cover;
+}
