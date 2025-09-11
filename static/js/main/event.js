@@ -34,28 +34,28 @@ let autoSlideInterval = setInterval(autoSlide, 2000);
 let arrowCheck = true;
 
 arrows.forEach((arrow) => {
-    console.log(arrow);
-
     const img = arrow.firstElementChild;
+    // console.log("img", img);
+
     img.addEventListener("click", (e) => {
         if (!arrowCheck) {
             return;
         }
+        console.log(img);
+
         arrowCheck = false;
         clearInterval(autoSlideInterval);
 
-        const arrowType = e.target.parentElement.classList[2];
-        console.log(arrowType + "askdasdjasdj");
+        const arrowType = img.classList[2];
+        console.log("arrowType", arrowType);
 
         if (arrowType === "left") {
             console.log("왼쪽입니다.");
 
             count--;
-            console.log(banner);
 
             banner.style.transform = `translate(-${1136 * count}px)`;
             banner.style.transition = `transform 0.5s`;
-            console.log(banner);
 
             if (count === 0) {
                 setTimeout(() => {
@@ -67,7 +67,6 @@ arrows.forEach((arrow) => {
         } else {
             count++;
             console.log("오른쪽입니다.");
-            console.log(banner);
 
             banner.style.transform = `translate(-${1136 * count}px)`;
             banner.style.transition = `transform 0.5s`;

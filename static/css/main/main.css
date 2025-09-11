@@ -775,3 +775,10 @@ div.gift-price-wrap{
 div.gift-text-wrap{
     width: 100%;
 }
+
+
+div.gift-extra-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
