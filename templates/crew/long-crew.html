@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrewStation</title>
+    <link rel="stylesheet" href="/static/css/crew/crewList.css">
     <link rel="stylesheet" href="/static/css/crew/longCrew.css">
-    <link rel="stylesheet" href="/static/css/main/main.css">
 </head>
 <body>
+    <!-- 롱크루, 숏크루 목록 -->
     <div class="sticky-container" style= "position: sticky; top: 0px; transition: top 0.1s; z-index: 100;">
         <div style="position: relative;">
             <div class="css-1xpc1g">
-                <h2 class="css-18ubpkc">롱크루, 숏크루 목록</h2>
+                <h2 class="css-18ubpkc">롱크루, 숏크루 모집</h2>
                 <!-- 상단 오른쪽 카테고리 선택 -->
                 <form action="">
                 <div class="css-nhzzm2">
-                        <button type="button" class="css-ygosan e1uvz2c70 is-active">
+                        <button type="button" class="css-ygosan e1uvz2c70 active">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" fill="currentColor" viewBox="0 0 18 18" color="#828C94"><path fill-rule="evenodd" d="M15.566 4.935a.8.8 0 0 1 0 1.13l-8 8a.8.8 0 0 1-1.132 0l-4-4a.8.8 0 0 1 1.132-1.13L7 12.369l7.434-7.434a.8.8 0 0 1 1.132 0" clip-rule="evenodd"></path></svg>
                             <span class="css-1ri19co">일간</span>
                         </button>
@@ -36,6 +37,7 @@
     </div>
     <div class="css-1jv05la">
         <!-- 롱크루, 숏크루 리스트 -->
+            <!-- 무한 스크롤 -->
         <div class="css-j7qwjs">
             <a href="/community/posts/%EB%9F%AC%EA%B7%B8%EB%A5%BC-%EB%8B%A4%EB%A5%B8-%EC%83%89%EC%9C%BC%EB%A1%9C-%EB%B0%94%EA%BF%80%EC%A7%80-%EA%B3%A0%EB%AF%BC%EC%9E%85%EB%8B%88%EB%8B%A4-413303704252416">
                 <div class="eh1ttt0 css-q5kvxs">
@@ -44,12 +46,12 @@
                             <div class="css-1ytovu8">
                                 <div class="css-j7qwjs">
                                     <div class="css-kuvu0c">
-                                        <div class="css-mpgf80">
-                                            <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                        <div class="long-crew-list">
+                                            <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                         </div>
                                     </div>
                                     <div layout="list" type="title" class="e1868rkl0 css-o67oi4">
-                                        <span class="css-1avgy1j">러그를 다른 색으로 바꿀지 고민입니다</span>
+                                        <span class="css-1avgy1j">여행 갈 사람</span>
                                     </div>
                                 </div>
                                 <div layout="list" class="eld2w7q0 css-t0jkao">
@@ -65,27 +67,54 @@
                                         <span class="e1slfuo50 css-1oxvqlq e78z9x80"></span>
                                         <span class="e1slfuo51 css-1nz6t5q">조회 236</span>
                                     </div>
+                                    
                                     <!-- <div class="css-30x82r">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" class="ey1aqhe0 css-bsbdow"><path fill="#2F3438" fill-rule="evenodd" d="m11.942 10.521.26-.516a4.948 4.948 0 1 0-2.145 2.17l.523-.27 1.886.519zm-1.193 2.986a6.448 6.448 0 1 1 2.794-2.827l.767 2.789a.65.65 0 0 1-.8.798z" clip-rule="evenodd"></path></svg>
                                         <span class="css-1lyj6fk">14</span>
                                     </div> -->
                                 </div>
+                                
                             </div>
                         </div>
                         <div class="css-a4sfj5 eh1ttt2">
                             <div class="css-kuvu0c">
-                                <div class="css-mpgf80">
-                                    <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                <div class="long-crew-list">
+                                    <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                 </div>
                             </div>
                             <div class="css-dn3wkw">
                                 <div class="css-3s5q2">
                                     <div layout="list" type="title" class="e1868rkl0 css-o67oi4">
-                                        <span class="css-1avgy1j">러그를 다른 색으로 바꿀지 고민입니다</span>
+                                        <span class="css-1avgy1j">여행 갈 사람</span>
                                     </div>
                                     <div layout="list" type="description" class="e1868rkl0 css-rncaf8">
                                         <span class="css-eonsfc">그리고 테이블 색이 안 맞아서 다른 걸로 바꾸려고 하는데 추천해 주시면 너무 감사하겠습니다… 곧 쇼파 맞은편에 검정색 미드센추리 스타일 수납장 가로로 긴 게 들어와요</span>
                                     </div>
+                                <div class="trip-path-wrap">
+                                    <div class="together-date">
+                                        <span>25.08.15</span>
+                                        <span>25.08.19</span>
+                                    </div>
+                                    <div class="trip-path">
+                                        <div class="marker-circle last"></div>
+                                        <div class="marker">
+                                            <div class="marker-circle first"></div>
+                                            <div class="marker-country">프랑스</div>
+                                        </div>
+                                        <div class="marker">    
+                                            <div class="marker-circle"></div>
+                                            <div class="marker-country">캄보디아</div>
+                                        </div>    
+                                        <div class="marker">    
+                                            <div class="marker-circle"></div>
+                                            <div class="marker-country">오스트레일리아</div>
+                                        </div>    
+                                        <div class="marker">    
+                                            <div class="marker-circle"></div>
+                                            <div class="marker-country">뉴욕</div>
+                                        </div>    
+                                    </div>
+                                </div>
                                     <div class="css-1qfcwgl">
                                         <div class="css-30x82r">
                                             <span class="e1slfuo51 css-1nz6t5q">건즈ㅡ</span>
@@ -96,11 +125,9 @@
                                             <span class="e1slfuo51 css-1nz6t5q">조회 236</span>
                                             <!-- <span class="e1slfuo50 css-1oxvqlq e78z9x80"></span> -->
                                         </div>
-                                        <!-- <div class="css-30x82r">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" class="ey1aqhe0 css-bsbdow"><path fill="#2F3438" fill-rule="evenodd" d="m11.942 10.521.26-.516a4.948 4.948 0 1 0-2.145 2.17l.523-.27 1.886.519zm-1.193 2.986a6.448 6.448 0 1 1 2.794-2.827l.767 2.789a.65.65 0 0 1-.8.798z" clip-rule="evenodd"></path></svg>
-                                            <span class="css-1lyj6fk">14</span>
-                                        </div> -->
+                                        
                                     </div>
+                                    
                                 </div>
                                 <div layout="list" class="eld2w7q0 css-t0jkao">
                                     <img src="https://prs.ohousecdn.com/apne2/content/community/v1-413303701938304.jpg?w=144" srcset="https://prs.ohousecdn.com/apne2/content/community/v1-413303701938304.jpg?w=216 1.5x,https://prs.ohousecdn.com/apne2/content/community/v1-413303701938304.jpg?w=288 2x,https://prs.ohousecdn.com/apne2/content/community/v1-413303701938304.jpg?w=432 3x" alt="게시글 미리보기 이미지" class="css-11b3fl0">
@@ -117,8 +144,8 @@
                             <div class="css-1ytovu8">
                                 <div class="css-j7qwjs">
                                     <div class="css-kuvu0c">
-                                        <div class="css-mpgf80">
-                                            <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                        <div class="long-crew-list">
+                                            <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                         </div>
                                     </div>
                                     <div layout="list" type="title" class="e1868rkl0 css-o67oi4">
@@ -138,13 +165,36 @@
                                         <span class="e1slfuo50 css-1oxvqlq e78z9x80"></span>
                                         <span class="e1slfuo51 css-1nz6t5q">조회 236</span>
                                     </div>
+                                    <div class="together-text-wrap">
+                                        <p>낯선 곳에서 익숙함을 찾다</p>
+                                        <div class="together-date">
+                                        <span>25.08.15</span>
+                                        <span>25.08.19</span>
+                                        </div>
+                                    </div>
+                                    <div class="trip-path-wrap">
+                                        <div class="trip-path">
+                                            <div class="marker">    
+                                                <div class="marker-circle"></div>
+                                                <div class="marker-country">캄보디아</div>
+                                            </div>    
+                                            <div class="marker">    
+                                                <div class="marker-circle"></div>
+                                                <div class="marker-country">오스트레일리아</div>
+                                            </div>    
+                                            <div class="marker">    
+                                                <div class="marker-circle"></div>
+                                                <div class="marker-country">뉴욕</div>
+                                            </div>    
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="css-a4sfj5 eh1ttt2">
                             <div class="css-kuvu0c">
-                                <div class="css-mpgf80">
-                                    <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                <div class="long-crew-list">
+                                    <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                 </div>
                             </div>
                             <div class="css-dn3wkw">
@@ -181,8 +231,8 @@
                                 <div class="css-1ytovu8">
                                     <div class="css-j7qwjs">
                                         <div class="css-kuvu0c">
-                                            <div class="css-mpgf80">
-                                                <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                            <div class="long-crew-list">
+                                                <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                             </div>
                                         </div>
                                         <div layout="list" type="title" class="e1868rkl0 css-o67oi4">
@@ -207,8 +257,8 @@
                             </div>
                             <div class="css-a4sfj5 eh1ttt2">
                                 <div class="css-kuvu0c">
-                                    <div class="css-mpgf80">
-                                        <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                    <div class="long-crew-list">
+                                        <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                     </div>
                                 </div>
                                 <div class="css-dn3wkw">
@@ -245,8 +295,8 @@
                                     <div class="css-1ytovu8">
                                         <div class="css-j7qwjs">
                                             <div class="css-kuvu0c">
-                                                <div class="css-mpgf80">
-                                                    <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                                <div class="long-crew-list">
+                                                    <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                                 </div>
                                             </div>
                                             <div layout="list" type="title" class="e1868rkl0 css-o67oi4">
@@ -271,8 +321,8 @@
                                 </div>
                                 <div class="css-a4sfj5 eh1ttt2">
                                     <div class="css-kuvu0c">
-                                        <div class="css-mpgf80">
-                                            <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                        <div class="long-crew-list">
+                                            <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                         </div>
                                     </div>
                                     <div class="css-dn3wkw">
@@ -309,8 +359,8 @@
                                         <div class="css-1ytovu8">
                                             <div class="css-j7qwjs">
                                                 <div class="css-kuvu0c">
-                                                    <div class="css-mpgf80">
-                                                        <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                                    <div class="long-crew-list">
+                                                        <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                                     </div>
                                                 </div>
                                                 <div layout="list" type="title" class="e1868rkl0 css-o67oi4">
@@ -335,8 +385,8 @@
                                     </div>
                                     <div class="css-a4sfj5 eh1ttt2">
                                         <div class="css-kuvu0c">
-                                            <div class="css-mpgf80">
-                                                <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                            <div class="long-crew-list">
+                                                <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                             </div>
                                         </div>
                                         <div class="css-dn3wkw">
@@ -373,8 +423,8 @@
                                             <div class="css-1ytovu8">
                                                 <div class="css-j7qwjs">
                                                     <div class="css-kuvu0c">
-                                                        <div class="css-mpgf80">
-                                                            <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                                        <div class="long-crew-list">
+                                                            <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                                         </div>
                                                     </div>
                                                     <div layout="list" type="title" class="e1868rkl0 css-o67oi4">
@@ -399,8 +449,8 @@
                                         </div>
                                         <div class="css-a4sfj5 eh1ttt2">
                                             <div class="css-kuvu0c">
-                                                <div class="css-mpgf80">
-                                                    <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                                <div class="long-crew-list">
+                                                    <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                                 </div>
                                             </div>
                                             <div class="css-dn3wkw">
@@ -438,8 +488,8 @@
                                                 <div class="css-1ytovu8">
                                                     <div class="css-j7qwjs">
                                                         <div class="css-kuvu0c">
-                                                            <div class="css-mpgf80">
-                                                                <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                                            <div class="long-crew-list">
+                                                                <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                                             </div>
                                                         </div>
                                                         <div layout="list" type="title" class="e1868rkl0 css-o67oi4">
@@ -464,8 +514,8 @@
                                             </div>
                                             <div class="css-a4sfj5 eh1ttt2">
                                                 <div class="css-kuvu0c">
-                                                    <div class="css-mpgf80">
-                                                        <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                                    <div class="long-crew-list">
+                                                        <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                                     </div>
                                                 </div>
                                                 <div class="css-dn3wkw">
@@ -503,8 +553,8 @@
                                                     <div class="css-1ytovu8">
                                                         <div class="css-j7qwjs">
                                                             <div class="css-kuvu0c">
-                                                                <div class="css-mpgf80">
-                                                                    <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                                                <div class="long-crew-list">
+                                                                    <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                                                 </div>
                                                             </div>
                                                             <div layout="list" type="title" class="e1868rkl0 css-o67oi4">
@@ -530,8 +580,8 @@
                                                 </div>
                                                 <div class="css-a4sfj5 eh1ttt2">
                                                     <div class="css-kuvu0c">
-                                                        <div class="css-mpgf80">
-                                                            <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                                        <div class="long-crew-list">
+                                                            <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                                         </div>
                                                     </div>
                                                     <div class="css-dn3wkw">
@@ -569,8 +619,8 @@
                                                         <div class="css-1ytovu8">
                                                             <div class="css-j7qwjs">
                                                                 <div class="css-kuvu0c">
-                                                                    <div class="css-mpgf80">
-                                                                        <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                                                    <div class="long-crew-list">
+                                                                        <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                                                     </div>
                                                                 </div>
                                                                 <div layout="list" type="title" class="e1868rkl0 css-o67oi4">
@@ -596,8 +646,8 @@
                                                     </div>
                                                     <div class="css-a4sfj5 eh1ttt2">
                                                         <div class="css-kuvu0c">
-                                                            <div class="css-mpgf80">
-                                                                <span textcolor="#828C94" class="e80g7ye0 css-m72o2p">가구</span>
+                                                            <div class="long-crew-list">
+                                                                <span textcolor="#fff" class="long-crew-text">롱크루</span>
                                                             </div>
                                                         </div>
                                                         <div class="css-dn3wkw">
@@ -628,9 +678,16 @@
                                                     <hr height="1" class="css-1tg86jb e15zb1dk0">
                                                 </div>
                                             </a>
-        </div>
+                                        
+                                    <div class="bottom-more-button">
+                                        <div class="more-button-container">
+                                            <button type="button" class="more-button">더보기
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" class="ey1aqhe0 css-nkpg3q"><path fill="#2F3438" fill-rule="evenodd" d="M1.552 4.24a.75.75 0 0 0-.063 1.058l5.552 6.247a1.25 1.25 0 0 0 1.869 0l5.552-6.247a.75.75 0 1 0-1.12-.996l-5.366 6.036L2.61 4.302a.75.75 0 0 0-1.058-.062" clip-rule="evenodd"></path></svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
     </div>
 </body>
-<script src="/static/js/crew/event.js"></script>
-<script src="/static/js/main/event.js"></script>
+<script src="/static/js/crew/long-crew/event.js"></script>
 </html>
