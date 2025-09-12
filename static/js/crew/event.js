@@ -10,9 +10,11 @@ categoryBtn.forEach((btn) => {
         console.log(111111);
 
         categoryBtn.forEach((button) => {
-            button.classList.remove("is-active");
+            button.classList.remove("active");
         });
 
-        btn.classList.add("is-active");
+        btn.classList.add("active");
     });
 });
+
+const crewList = document.querySelectorAll(".crewList");

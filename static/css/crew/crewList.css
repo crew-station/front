@@ -198,7 +198,7 @@ button {
 }
 
 /* 크루 추천 목록 */
-.css-5n3mug {
+.crew-list {
     display: flex;
     flex-wrap: wrap;    /* 화면 줄어들면 줄바꿈 */
     margin: 0 -10px;    /* 좌우 보정 */
@@ -213,6 +213,14 @@ ul {
     margin-block-end: 1em;
     padding-inline-start: 40px;
     unicode-bidi: isolate;
+}
+
+.crew-card {
+    margin: 0px 10px 20px;
+    padding: 0px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    width: calc(25% - 20px); 
 }
 
 .css-3qi6pg {
@@ -503,13 +511,13 @@ svg:not(:root) {
     flex-direction: row;
 }
 
-.css-mpgf80 {
+.short-crew-list {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
     gap: 4px;
     height: 20px;
-    background: #EAEDEF;
+    background: #8ec5ff;
     border-radius: 4px;
     padding: 0px 6px;
     display: flex;
@@ -518,16 +526,44 @@ svg:not(:root) {
     flex-direction: row;
 }
 
+.long-crew-list {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 4px;
+    height: 20px;
+    background: #647FBC;
+    border-radius: 4px;
+    padding: 0px 6px;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+
 @media (min-width: 768px) {
-    .css-m72o2p {
+    .long-crew-text {
         font-size: 12px;
         line-height: 16px;
     }
 }
 
-.css-m72o2p {
+.long-crew-text {
     font-weight: 600;
-    color: #828C94;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    .short-crew-text {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+.short-crew-text {
+    font-weight: 600;
+    color: #fff;
 }
 
 .css-o67oi4 {
@@ -733,8 +769,12 @@ hr {
     border-width: 1px;
 }
 
-@media (max-width:1024px){ .css-3qi6pg{ width: calc(33.333% - 20px);} } /* 3열 */
-@media (max-width:768px){  .css-3qi6pg{ width: calc(50% - 20px);} }      /* 2열 */
+@media (max-width:1024px){ 
+    .crew-item-card{ width: calc(33.333% - 20px);} 
+}
+@media (max-width:768px){  
+    .crew-item-card{ width: calc(50% - 20px);} 
+} 
 
 .css-o67oi4,
 .css-rncaf8,
@@ -747,8 +787,8 @@ hr {
     font-weight: 400;
   }
   
-.css-nhzzm2 .css-ygosan.is-active .css-1ri19co,
-.css-nhzzm2 .css-ygosan.is-active .css-j3isp9 {
+.css-nhzzm2 .css-ygosan.active .css-1ri19co,
+.css-nhzzm2 .css-ygosan.active .css-j3isp9 {
 color: #2F3438;
 font-weight: 700;
 }
@@ -759,7 +799,7 @@ font-weight: 700;
      transition: .12s; 
 }
 
-.css-nhzzm2 .css-ygosan.is-active svg { 
+.css-nhzzm2 .css-ygosan.active svg { 
     opacity: 1; 
     width: 16px; 
     margin-right: 4px; 
