@@ -587,6 +587,13 @@ div.diary-text-wrap,div.together-text-wrap, div.gift-text-wrap{
     overflow-wrap: break-word;
 }
 
+
+
+
+div.together-text-wrap{
+    margin-top: 28px;
+}
+
 div.diary-text-wrap p,div.together-text-wrap p,div.gift-text-wrap p{
     overflow: hidden;
     display: -webkit-box;
@@ -603,6 +610,9 @@ div.diary-more-btn,div.together-more-btn,div.gift-more-btn{
     height: 0px;
     margin-left: 10px;
 }
+
+
+/* 여행 경로 부분 */
 div.trip-path {
     display: flex;
     justify-content: space-between;
@@ -610,6 +620,7 @@ div.trip-path {
     position: relative;
     width: 100%;   /* 원하는 길이 */
     margin-top: 6px;
+
 }
 
 
@@ -622,25 +633,71 @@ div.trip-path::before {
     right: 0;
     height: 20px;
     background: #8ec5ff;
+    opacity: 0.6;
     transform: translateY(-50%);
     border-radius: 10px;
     z-index: 0; /* 마커 뒤로 */
 }
 
+
+div.trip-path::after {
+    content: "";
+    position: absolute;
+    top: 36%;
+    left: 10px;   
+    right: 10px;
+    width: 90%;
+    border: 1px dashed #FFFFFF;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    z-index: 0; /* 마커 뒤로 */
+}
+
+
 div.marker-circle {
-    width: 7px;
-    height: 7px;
-    background: #FFFFFF;
+    width: 10px;
+    height: 10px;
+    background-color: #FFFFFF;
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 50%;
+    margin-bottom: 1px;
     z-index: 1; /* 막대기 위에 올라오도록 */
 }
+
+@keyframes motion {
+	0% {margin-top: 0px;} /* 처음 위치 */
+	100% {margin-top: 10px;} /* 마지막 위치 */
+}
+
+div.marker-circle.last{
+    position: absolute;
+    left: -2%;
+    background-image: url("../../images/air4.png");
+    background-size: cover ;
+    width: 20px;
+    height: 20px;
+    transition: left 0.5s linear;
+    border-radius: 0;
+    margin-bottom: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 3;
+    animation: motion 0.3s /* 속도 */
+               linear 0s   /* 처음부터 끝까지 일정 속도로 진행 */
+               infinite alternate; /* 무한 반복 */
+}
+
+/* 여행 경로 부분 */
+
+
+
 
 div.together-date{
     display: flex;
     justify-content: space-between;
     font-size: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 div.marker {
@@ -668,8 +725,26 @@ div.together-category,div.gift-limit-time{
     line-height: 15px;
     position: absolute;
     z-index: 3;
-    background-color: #91ADC8;
+    background-color: #f77;
     color: #fff;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 4px;
+}
+div.together-category{
+    background-color: #647FBC;
+}
+
+div.gift-limit-count{
+    top: 12px;
+    right: 12px;
+    padding: 4px 7px;
+    font-size: 13px;
+    line-height: 15px;
+    position: absolute;
+    z-index: 3;
+    background-color: #fff;
+    color: black;
     font-weight: 700;
     text-align: center;
     border-radius: 4px;
@@ -774,4 +849,30 @@ div.gift-price-wrap{
 }
 div.gift-text-wrap{
     width: 100%;
+}
+
+
+div.gift-extra-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+div.badge-list-container {
+    display: block;
+    width: fit-content;    
+    background: #647FBC;
+    color: #fff;
+    padding: 2px 6px;  
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: 'Pretendard', sans-serif;
+    line-height: 20px;
+    white-space: nowrap; 
+    margin-top: 4px;
+}
+
+div.short{
+    background-color:#8ec5ff
 }
