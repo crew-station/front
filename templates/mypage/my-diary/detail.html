@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crew Station</title>
-    <link rel="shortcut icon" href="../../../static/img/crew-station-icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../../static/images/crew-station-favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../../../static/css/font.css">
     <link rel="stylesheet" href="../../../static/css/mypage/my-diary/detail.css">
 </head>
@@ -28,6 +28,19 @@
                         </div>
                         <span id="name">CREW_STATION</span>
                     </a>
+                    <div class="lock hidden">
+                        <img src="../../../static/images/lock.png" class="lock-img">
+                        <span class="secret-title">비공개 중</span>
+                    </div>
+                    <div class="unlock">
+                        <img src="../../../static/images/unlock.png" class="lock-img">
+                        <span class="secret-title">공개 중</span>
+                    </div>
+                    <div class="secret">
+                        <div class="secret-toggle">
+                            <input type="checkbox" class="secret-checkbox">
+                        </div>
+                    </div>
                 </div>
                 <!-- 내용 -->
                 <div class="diary-content">
@@ -67,9 +80,169 @@
                                             </a>
                                         </div>
                                     </div>
+                                    
+                                    
                                 </div>
                             </div>
+                            <div class="diary-footer-container">
+                                <div class="view-container">
+                                    <span class="view">2시간</span>
+                                    <dt class="view">좋아요 30</dt>
+                                    <dt class="view">조회 78</dt>
+                                </div>
+                                <div class="report">
+                                    <button class="report-button">신고하기</button>
+                                </div>
+                            </div>
+                            <section class="reply-container">
+                                <div class="reply-container-header">
+                                    <h2 class="reply-container-title">
+                                        댓글 
+                                        <span class="total">2</span>
+                                    </h2>
+                                </div>
+                                <div class="comment-input-wrap">
+                                    <img src="https://image.ohousecdn.com/i/bucketplace-v2-development/uploads/default_images/avatar.png?w=256&h=256&c=c">
+                                    <div class="comment-input">
+                                        <div class="comment-input-inner">
+                                            <div class="input-inner">
+                                                <input class="input" placeholder="칭찬과 격려의 댓글은 작성자에게 큰 힘이 됩니다:)" type="text">
+                                                <div class="enter">
+                                                    <button class="enter-button">입력</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="reply">
+                                    <div class="reply-item">
+                                        <div class="profile-image">
+                                            <img src="../../../static/images/lock.png" class="reply-profile-img">
+                                        </div>
+                                        <div class="reply-content">
+                                            <div class="reply-name">
+                                                <div class="name-text">crew1</div>
+                                            </div>
+                                            <div class="reply-content-text">우와 너무 좋아보여요~!</div>
+                                            <div class="reply-like">
+                                                <div class="time">45분</div>
+                                                <div class="like-container">
+                                                    <div class="point">・</div>
+                                                    <button type="button" class="like-button">
+                                                        <span class="heart"></span>
+                                                        <span class="like-text">좋아요</span>
+                                                    </button>
+                                                </div>
+                                                <div class="report-container">
+                                                    <div class="point">・</div>
+                                                    <button class="reply-report-button">신고하기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pageing-contianer">
+                                    <button class="prev-next-button">
+                                        <span class="prev-next prev"></span>
+                                    </button>
+                                    <button class="active number-button">1</button>
+                                    <button class="number-button">2</button>
+                                    <button class="prev-next-button active">
+                                        <span class="prev-next next"></span>
+                                    </button>
+                                </div>
+                            </section>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sticky-menu">
+                <div class="sticky-container"></div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="report-modal">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <span class="modal-title">
+                        신고 사유를 선택해주세요
+                    </span>
+                    <button class="close-button">
+                        <span class="close-button-span"></span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="report-content-container">
+                        <li class="report-content">
+                            <label for="report" class="content-label">
+                                <div class="radio-button active">
+                                    <input type="radio" name="report" class="radio">
+                                </div>
+                                <span class="content">주제에 맞지 않아요</span>
+                            </label>
+                        </li>
+                        <li class="report-content">
+                            <label for="report" class="content-label">
+                                <div class="radio-button">
+                                    <input type="radio" name="report" class="radio">
+                                </div>
+                                <span class="content">정보가 부정확해요</span>
+                            </label>
+                        </li>
+                        <li class="report-content">
+                            <label for="report" class="content-label">
+                                <div class="radio-button">
+                                    <input type="radio" name="report" class="radio">
+                                </div>
+                                <span class="content">지나치게 광고를 해요</span>
+                            </label>
+                        </li>
+                        <li class="report-content">
+                            <label for="report" class="content-label">
+                                <div class="radio-button">
+                                    <input type="radio" name="report" class="radio">
+                                </div>
+                                <span class="content">이 글로 도배가 돼있어요</span>
+                            </label>
+                        </li>
+                        <li class="report-content">
+                            <label for="report" class="content-label">
+                                <div class="radio-button">
+                                    <input type="radio" name="report" class="radio">
+                                </div>
+                                <span class="content">저작권 침해가 우려돼요</span>
+                            </label>
+                        </li>
+                        <li class="report-content">
+                            <label for="report" class="content-label">
+                                <div class="radio-button">
+                                    <input type="radio" name="report" class="radio">
+                                </div>
+                                <span class="content">명예를 훼손하는 내용이에요</span>
+                            </label>
+                        </li>
+                        <li class="report-content">
+                            <label for="report" class="content-label">
+                                <div class="radio-button">
+                                    <input type="radio" name="report" class="radio">
+                                </div>
+                                <span class="content">욕설이나 비방이 심해요</span>
+                            </label>
+                        </li>
+                        <li class="report-content">
+                            <label for="report" class="content-label">
+                                <div class="radio-button">
+                                    <input type="radio" name="report" class="radio">
+                                </div>
+                                <span class="content">외설적인 내용이 포함돼있어요</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="modal-button">
+                    <div class="modal-button-wrap">
+                        <button class="report-button-send">신고하기</button>
                     </div>
                 </div>
             </div>

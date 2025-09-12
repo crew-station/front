@@ -1,0 +1,146 @@
+layout>* {
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+}
+
+
+
+blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+* {
+    -webkit-tap-highlight-color: rgba(255,255,255,0);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate; 
+}
+
+
+body.html{
+    font-size: 15px;
+}
+
+body.html{
+    line-height: 1;
+    font-size: 13px;
+}
+
+.html {
+    font-family: 'Pretendard Variable',sans-serif;
+    letter-spacing: -0.3px;
+    -webkit-font-smoothing: antialiased;
+}
+
+.html {
+    color: #070707;
+    background: #fff;
+}
+
+
+.myhome-nav {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.myhome-nav__owner {
+      font-size: 18px;
+}  
+
+
+.myhome-nav__owner
+ {
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+.page-navigation__item>a {
+    /* display: block; */
+    padding: 0 10px;
+    font-weight: 700;
+    /* position: relative; */
+    height: 60px;
+    line-height: 60px;
+}
+
+.page-navigation__item {
+    display: inline-block;
+}
+
+
+/* 목록  */
+
+.myhome-nav__contents {
+    overflow: visible;
+    font-size: 16px;
+}
+
+
+
+.page-navigation {
+    border-bottom: 1px solid #ededed;
+    width: 100%;
+    overflow: hidden; 
+}
+
+
+.page-navigation {
+    text-align: center;
+    white-space: nowrap;
+    }
+
+
+.notice-list__title {
+    display: block;
+    margin: 0 0 20px;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #292929;
+    }
+
+.notice-list__content
+ {
+        margin: 60px auto 20px;
+        width: 100%;
+        max-width: 750px;
+    }
+
+
+.feed-item {
+    display: block;
+    margin: 0 -15px;
+    padding: 26px 15px;
+    border-bottom: 1px solid #dbdbdb;
+    transition: opacity .1s;
+
+}
+
+
+
+
+.notice-feed-item__title {
+    margin: 0 0 8px;
+    color: #000;
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 400;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+    
+
+.notice-feed-item__date {
+    display: block;
+    color: #828c94;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 500;
+}
