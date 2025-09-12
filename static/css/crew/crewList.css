@@ -89,8 +89,9 @@ div {
     align-items: center;
     -webkit-box-pack: justify;
     justify-content: space-between;
-    width: 100%;
-    padding: 20px 0px;
+    max-width: 750px;   
+    margin: 0 auto;      
+    padding: 20px 0;
     font-size: 0px;
     line-height: 1;
 }
@@ -192,14 +193,18 @@ button {
 .css-3q4ecs {
     position: relative;
     z-index: 0;
+    max-width: 750px;   /* 아래 섹션과 동일 폭 */
+    margin: 0 auto 24px;
 }
 
 /* 크루 추천 목록 */
-.css-5n3mug {
+.crew-list {
     display: flex;
-    margin: 0px;
-    padding: 0px;
+    flex-wrap: wrap;    /* 화면 줄어들면 줄바꿈 */
+    margin: 0 -10px;    /* 좌우 보정 */
+    padding: 0;
     overflow: hidden;
+
 }
 
 ul {
@@ -210,12 +215,20 @@ ul {
     unicode-bidi: isolate;
 }
 
-.css-3qi6pg {
-    margin: 0px 20px 0px 0px;
+.crew-card {
+    margin: 0px 10px 20px;
     padding: 0px;
     flex-shrink: 0;
     scroll-snap-align: start;
-    width: calc(16.6667% - 16.6667px);
+    width: calc(25% - 20px); 
+}
+
+.css-3qi6pg {
+    margin: 0px 10px 20px;
+    padding: 0px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    width: calc(25% - 20px); 
 }
 
 li {
@@ -436,8 +449,22 @@ svg:not(:root) {
 .css-1jv05la {
     max-width: 750px;
     margin: 0px auto;
+    text-align: left;
 }
 
+.css-1jv05la .css-3s5q2 {
+    display: flex; flex-direction: column;
+    align-items: flex-start; text-align: left;
+    flex: 1;
+  }
+
+.css-1jv05la .css-o67oi4,
+.css-1jv05la .css-rncaf8,
+.css-1jv05la .css-eonsfc { text-align: left !important; }
+
+.css-1jv05la .css-dn3wkw { align-items: flex-start !important; }
+
+.css-1jv05la .css-t0jkao { margin-left: auto; flex: 0 0 120px; width:120px; height:120px; }
 .css-j7qwjs {
     display: flex;
     flex-direction: column;
@@ -455,12 +482,8 @@ svg:not(:root) {
 .css-3pjyjs {
     gap: 4px;
     margin-bottom: 16px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: column;
-    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -479,56 +502,75 @@ svg:not(:root) {
 
 .css-kuvu0c {
     gap: 4px;
-    -webkit-align-items: center;
     -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
     margin-bottom: 8px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
 }
 
-.css-mpgf80 {
-    -webkit-align-items: center;
+.short-crew-list {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
     gap: 4px;
     height: 20px;
-    background: #EAEDEF;
+    background: #8ec5ff;
     border-radius: 4px;
     padding: 0px 6px;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: row;
     -ms-flex-direction: row;
     flex-direction: row;
 }
 
+.long-crew-list {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 4px;
+    height: 20px;
+    background: #647FBC;
+    border-radius: 4px;
+    padding: 0px 6px;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+
 @media (min-width: 768px) {
-    .css-m72o2p {
+    .long-crew-text {
         font-size: 12px;
         line-height: 16px;
     }
 }
 
-.css-m72o2p {
+.long-crew-text {
     font-weight: 600;
-    color: #828C94;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+    .short-crew-text {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+.short-crew-text {
+    font-weight: 600;
+    color: #fff;
 }
 
 .css-o67oi4 {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-box-orient: vertical;
+    /* -webkit-box-orient: vertical; */
     white-space: pre-wrap;
     word-break: break-all;
     max-height: 48px;
@@ -559,11 +601,24 @@ svg:not(:root) {
     flex-shrink: 0;
     width: 100px;
     height: 100px;
+    margin-left: auto; 
 }
 
 .css-1ecsbek {
     height: inherit;
     display: block;
+}
+
+.css-t0jkao {
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
 }
 
 .css-t0jkao img {
@@ -615,7 +670,7 @@ svg:not(:root) {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-box-orient: vertical;
+    /* -webkit-box-orient: vertical; */
     -webkit-line-clamp: 1;
     max-width: 140px;
 }
@@ -637,6 +692,7 @@ svg:not(:root) {
     margin-top: 8px;
     display: flex;
     flex-direction: row;
+    align-items: flex-start;  
 }
 
 .css-3s5q2 {
@@ -644,13 +700,17 @@ svg:not(:root) {
     gap: 8px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;         
+    text-align: left;
 }
+
+
 
 .css-o67oi4 {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-box-orient: vertical;
+    /* -webkit-box-orient: vertical; */
     white-space: pre-wrap;
     word-break: break-all;
     max-height: 48px;
@@ -668,7 +728,7 @@ svg:not(:root) {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-box-orient: vertical;
+    /* -webkit-box-orient: vertical; */
     white-space: pre-wrap;
     word-break: break-all;
     height: 48px;
@@ -707,4 +767,40 @@ hr {
     overflow: hidden;
     border-style: inset;
     border-width: 1px;
+}
+
+@media (max-width:1024px){ 
+    .crew-item-card{ width: calc(33.333% - 20px);} 
+}
+@media (max-width:768px){  
+    .crew-item-card{ width: calc(50% - 20px);} 
+} 
+
+.css-o67oi4,
+.css-rncaf8,
+.css-eonsfc {
+  text-align: left;
+}
+
+.css-nhzzm2 .css-ygosan .css-j3isp9 {
+    color: #828C94;
+    font-weight: 400;
+  }
+  
+.css-nhzzm2 .css-ygosan.active .css-1ri19co,
+.css-nhzzm2 .css-ygosan.active .css-j3isp9 {
+color: #2F3438;
+font-weight: 700;
+}
+
+.css-nhzzm2 .css-ygosan svg {
+     opacity: 0; width: 0; 
+     margin-right: 0; 
+     transition: .12s; 
+}
+
+.css-nhzzm2 .css-ygosan.active svg { 
+    opacity: 1; 
+    width: 16px; 
+    margin-right: 4px; 
 }
