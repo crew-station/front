@@ -138,7 +138,7 @@ let pos = -2;
 
 setInterval(() => {
     pos += 1; // 1씩 증가
-    if (pos > 85) {
+    if (pos > 90) {
         pos = -2;
         markers.forEach((marker) => {
             marker.style.transition = `left 0s linear`;
@@ -152,12 +152,43 @@ setInterval(() => {
     }
 }, 100); // 0.1초마다 이동
 
-// animate();
-
 // 타임 어택
-// const timeAttack = document.querySelectorAll("div.gift-limit-time");
+function startCountdown() {
+    const timers = document.querySelectorAll("div.gift-limit-time");
 
-// setInterval(() => {
-//     timeAttack.forEach((time) => {
-//         time.textContent.split(" ") =
-// },1000);
+    timers.forEach((timer) => {
+        const endTime = new Date(timer.dataset.endtime);
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = endTime - now;
+
+            if (diff <= 0) {
+                timer.textContent = "마감";
+                return;
+            }
+
+            const totalSeconds = Math.floor(diff / 1000);
+
+            const days = Math.floor(totalSeconds / (3600 * 24));
+            const hours = String(
+                Math.floor((totalSeconds % (3600 * 24)) / 3600)
+            ).padStart(2, "0");
+            const minutes = String(
+                Math.floor((totalSeconds % 3600) / 60)
+            ).padStart(2, "0");
+            const seconds = String(totalSeconds % 60).padStart(2, "0");
+
+            if (days > 0) {
+                timer.textContent = `${days}일 ${hours}:${minutes}:${seconds} 남음`;
+            } else {
+                timer.textContent = `${hours}:${minutes}:${seconds} 남음`;
+            }
+        }
+
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", startCountdown);
