@@ -590,6 +590,7 @@ div.diary-text-wrap,div.together-text-wrap, div.gift-text-wrap{
 
 
 
+
 div.together-text-wrap{
     margin-top: 28px;
 }
@@ -840,7 +841,7 @@ span.gift-price{
     font-weight: 700;
 }
 span.gift-price > span{
-    color: #647FBC;
+    color: black;
     margin-right: 4px;
 }
 div.gift-price-wrap{
@@ -945,4 +946,7 @@ div.gift-limit-time{
 
 span.gift-create-date{
     font-size: 12px;
+}
+div.together-text-wrap{
+    margin-top: 0px;
 }
