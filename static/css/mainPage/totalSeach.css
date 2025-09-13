@@ -921,8 +921,8 @@ div.together-post-img{
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, 0.05);
     flex-shrink: 0;
-    width: 130px;
-    height: 130px;
+    width: 180px;
+    height: 180px;
 }
 
 div.together-post-img > img{
@@ -1076,6 +1076,7 @@ div.marker-circle.last{
 hr.horizon{
     margin: 0;
     padding: 0;
+    margin-bottom: 9px;
     height: 1px;
     border: none;
     background-color: #EAEDEF;
