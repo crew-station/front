@@ -114,10 +114,10 @@ codeInput.addEventListener("input", (e) => {
 
 // 인증번호 인증 버튼
 mailSendCheckBtn.addEventListener("click", (e) => {
-    clearInterval(timer);
     mailSendCheck = true;
     // 성공 시 리다이렉트
     if (true) {
+        clearInterval(timer);
     }
     // 실패시 에러 문구 보여주기
     else {

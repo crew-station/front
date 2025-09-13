@@ -86,6 +86,9 @@ a.home-logo{
 div.main-container{
     width: 360px;
     margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 60px 0px;
 }
 h1.join-title{
