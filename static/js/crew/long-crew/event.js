@@ -1,4 +1,4 @@
-const categoryBtn = document.querySelectorAll(".css-ygosan");
+const categoryBtn = document.querySelectorAll(".category-button");
 
 categoryBtn.forEach((btn) => {
     btn.addEventListener("click", (e) => {
