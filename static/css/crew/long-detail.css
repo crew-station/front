@@ -427,6 +427,7 @@ svg:not(:root) {
     position: relative;
 }
 
+/* 새 댓글 알림 누르기 전 */
 .alarm {
     position: relative;
     display: inline-block;
@@ -434,6 +435,15 @@ svg:not(:root) {
     height: 30px;
     border-radius: 25px;
     background-color: #C2C8CC;
+}
+/* 새 댓글 알림 누른 후 */
+.alarm-checked {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: rgb(10, 165, 255);
 }
 
 .alarm::before {
@@ -571,11 +581,11 @@ input[type="checkbox" i] {
     overflow: hidden;
 }
 
-div[Attributes Style] {
+/* div[Attributes Style] {
     -webkit-user-modify: read-write;
     overflow-wrap: break-word;
     -webkit-line-break: after-white-space;
-}
+} */
 
 .input-check:not(:empty) {
     margin-left: 8px;
@@ -636,3 +646,498 @@ div[Attributes Style] {
 .content-container {
     flex: 1 1 0%;
 }
+
+.content-nickname-wrapper {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 10px;
+    line-height: 14px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.content-nickname {
+    font-size: 16px;
+    line-height: 20px;
+    color: rgb(33, 38, 41);
+    margin-right: 5px;
+    cursor: pointer;
+    word-break: break-all;
+}
+
+.content-title {
+    margin: 8px 0px;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+    word-break: break-word;
+    white-space: pre-line;
+    color: rgb(47, 52, 56);
+}
+
+.content-info {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    color: rgb(130, 140, 148);
+}
+
+.info-likes-container {
+    display: flex;
+}
+
+.info-likes {
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+.likes-btn {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgb(130, 140, 148);
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+button {
+    font-family: inherit;
+    background: none;
+    appearance: auto;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: center;
+    margin: 0em 0em 0em 0em;
+    padding-block: 1px;
+    padding-inline: 6px;
+}
+
+.heart {
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1;
+    margin-right: 3px;
+}
+
+.heart-count {
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+[class^="_"], [class*=" _"] {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+._heart_outline_16:before {
+    content: "\eae9";
+}
+
+.heart::before {
+    font-family: OhouseIcon;
+    vertical-align: top;
+}
+
+.content-reports-container {
+    display: flex;
+}
+
+.content-report {
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+.content-report-btn {
+    color: rgb(130, 140, 148);
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+}
+
+.post-reply-page-container {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .post-reply-page-container {
+        margin: 40px 0px 72px;
+    }
+}
+
+/* 하단 페이지 */
+.left-arrow-wrap {
+    margin: 0px 10px 0px 0px;
+    background: none rgb(247, 249, 250);
+    font-style: inherit;
+    font-variant: inherit;
+    font-stretch: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 14px;
+    line-height: 20px;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 32px;
+    border-radius: 4px;
+    font-weight: 400;
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(194, 200, 204);
+    border: 1px solid rgb(234, 237, 239);
+    width: 32px;
+    padding: 0px;
+    vertical-align: middle;
+
+}
+
+.left-arrow {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.left-arrow::before {
+    font-family: OhouseIcon;
+    vertical-align: top;
+}
+
+._chevron_left_18:before {
+    content: "\e965";
+}
+
+.page-number-btn {
+    margin: 0px 10px 0px 0px;
+    border: none;
+    background: none rgb(10, 165, 255);
+    font-style: inherit;
+    font-variant: inherit;
+    font-stretch: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 14px;
+    line-height: 20px;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 32px;
+    border-radius: 4px;
+    font-weight: 400;
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    width: 32px;
+    padding: 0px;
+    vertical-align: middle;
+}
+
+.right-arrow-wrap {
+    margin: 0px;
+    background: none rgb(247, 249, 250);
+    font-style: inherit;
+    font-variant: inherit;
+    font-stretch: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 14px;
+    line-height: 20px;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 32px;
+    border-radius: 4px;
+    font-weight: 400;
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(194, 200, 204);
+    border: 1px solid rgb(234, 237, 239);
+    width: 32px;
+    padding: 0px;
+    vertical-align: middle;
+}
+
+.right-arrow {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.right-arrow::before {
+    font-family: OhouseIcon;
+    vertical-align: top;
+}
+
+._chevron_right_18:before {
+    content: "\e969";
+}
+
+.right-menu-container {
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    width: calc(50% - 360px);
+    max-width: 340px;
+    height: 100%;
+    padding: 0px 40px;
+    box-sizing: border-box;
+}
+
+.right-menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.menu {
+    position: relative;
+    display: block;
+    width: 60px;
+    margin-bottom: 38px;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+    background: none;
+}
+
+.menu-likes .likes-container {
+    border: 1px solid rgb(194, 200, 204);
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(63, 71, 77, 0.15) 0px 2px 6px;
+}
+
+.menu-likes {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+/* 게시글 하트 누르기 전 */
+.menu-heart {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    color: rgb(33, 38, 41);
+}
+
+/* 게시글 하트 누른 후 */
+.menu-heart-checked {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    color: rgb(10, 165, 255);
+}
+
+.menu-heart::before {
+    font-family: OhouseIcon;
+    vertical-align: top;
+}
+
+/* 하트 누르기 전 */
+._heart_outline_24:before {
+    content: "\e9dd";
+}
+
+/* 하트 누른 뒤 */
+._heart_24:before {
+    content: "\e9d9";
+}
+
+.menu-count {
+    position: absolute;
+    left: 50%;
+    bottom: -22px;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgb(130, 140, 148);
+    white-space: nowrap;
+    transform: translateX(-50%);
+}
+
+.menu-term {
+    width: 54px;
+    height: 1px;
+    margin: 0px 0px 16px;
+    border: 0px;
+    background: rgb(234, 237, 239);
+}
+
+hr {
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    color: gray;
+    unicode-bidi: isolate;
+    overflow: hidden;
+}
+
+/* 우측 메뉴 댓글 부분 */
+.menu-reply-container {
+    position: relative;
+    display: block;
+    width: 60px;
+    margin-bottom: 38px;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+    background: none;
+}
+
+.menu-reply-wrapper {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    border-radius: 100%;
+    box-sizing: border-box;
+    background: rgb(247, 249, 250);
+    transition: 0.2s;
+}
+
+.menu-comment {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.menu-comment::before {
+    font-family: OhouseIcon;
+    vertical-align: top;
+}
+
+._comment_outline_24:before {
+    content: "\e996";
+}
+
+.menu-share-container {
+    position: relative;
+    display: block;
+    width: 60px;
+    margin-bottom: 38px;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+    background: none;
+}
+
+._share_24:before {
+    content: "\ef04";
+}
+
+/* 우측 공유 버튼 누르기 전 */
+.share[data-popper-placement^='bottom'] {
+    margin-top: -10px;
+}
+
+.share {
+    padding: 16px;
+    white-space: nowrap;
+    border-radius: 8px;
+    background: #FFFFFF;
+    box-shadow: rgb(0 0 0 / 12%) 0 2px 16px;
+    opacity: 0;
+    transition: .2s opacity, .2s margin;
+    pointer-events: none;
+    z-index: 1400;
+}
+
+.share[data-popper-placement^='bottom'] .e5zrl1f1 {
+    bottom: 100%;
+    border-bottom-color: #FFFFFF;
+}
+
+.share-menu {
+    border: 7px solid transparent;
+}
+
+.share-menu-container {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 -6px;
+
+}
+
+.share-btn {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    width: 40px;
+    height: 40px;
+    margin: 0 6px;
+}
+
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+
+svg[Attributes Style] {
+    width: 40;
+    height: 40;
+    fill: none;
+}
+
+.alarm::before { transform: translateX(var(--knob-x, 0px)); }
+.alarm-checked { background-color: rgb(10, 165, 255); }

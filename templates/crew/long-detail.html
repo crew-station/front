@@ -91,6 +91,8 @@
                                             <div class="new-alarm-toggle">
                                                 <div class="alarm-wrapper">
                                                     <div class="alarm">
+                                                        <!-- 새 댓글 알림 클릭 시 -->
+                                                    <!-- <div class="alarm-checked"></div> -->
                                                         <input type="checkbox" class="alarm-check">
                                                     </div>
                                                 </div>
@@ -125,21 +127,101 @@
                                                     <img src="https://prs.ohousecdn.com/apne2/home/profileImageUrl/v1-361485688401984.jpg?w=256&amp;h=256&amp;c=c" srcset="https://prs.ohousecdn.com/apne2/home/profileImageUrl/v1-361485688401984.jpg?w=384&amp;h=384&amp;c=c 1.5x,https://prs.ohousecdn.com/apne2/home/profileImageUrl/v1-361485688401984.jpg?w=512&amp;h=512&amp;c=c 2x,https://prs.ohousecdn.com/apne2/home/profileImageUrl/v1-361485688401984.jpg?w=768&amp;h=768&amp;c=c 3x" class="eokevko4 css-1a8dy4d">
                                                 </div>
                                                 <div class="content-container">
-                                                    <div></div>
-                                                    <div></div>
-                                                    <div></div>
+                                                    <div class="content-nickname-wrapper">
+                                                        <div role="link" class="content-nickname">
+                                                            Viewpoint_
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-title">
+                                                        <span>안녕하세요 너무 이뻐요</span>
+                                                    </div>
+                                                    <div class="content-info">
+                                                        <div class="info-time">5시간</div>
+                                                        <div class="info-likes-container">
+                                                            <div class="info-likes">
+                                                                <button type="button" class="likes-btn">
+                                                                    <span class="_heart_outline_16 heart"></span>
+                                                                    <span class="heart-count">1</span>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="content-reports-container">
+                                                            <div class="content-report"></div>
+                                                            <button class="content-report-btn">신고</button>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="post-content-reply-container"></div>
-                                        <div></div>
+                                        <!-- 댓글 갯수 페이징 -->
+                                        <div class="post-reply-page-container">
+                                            <button class="left-arrow-wrap" disabled>
+                                                <span class="_chevron_left_18 left-arrow ">
+
+                                                </span>
+                                            </button>
+                                            <button class="page-number-btn">1</button>
+                                            <button class="right-arrow-wrap" disabled>
+                                                <span class="_chevron_right_18 right-arrow">
+
+                                                </span>
+                                            </button>
+                                        </div>
                                 </section>
                             </div>
                         </div>
+                        <!-- 우측 좋아요 링크 댓글 버튼 -->
+                         <div class="right-menu-container">
+                            <div class="sticky-container" style="position: sticky; top: 50px; transition: top 0.1s;">
+                                <div style="position: relative;">
+                                    <div class="right-menu-wrapper">
+                                        <button title="좋아요" class="menu likes">
+                                            <span class="menu-likes likes-container">
+                                                <span class="_heart_outline_24 menu-heart">
+                                                    <span class="_heart_24 menu-heart-check"></span>
+                                                </span>
+                                            </span>
+                                            <span class="menu-count">6</span>
+                                        </button>
+                                        <hr class="menu-term">
+                                        <!-- 우측 메뉴 댓글 부분 -->
+                                        <button title="댓글" class="menu-reply-container">
+                                            <span class="menu-reply-wrapper">
+                                                <span class="_comment_outline_24 menu-comment"></span>
+                                            </span>
+                                            <span class="menu-count">3</span>
+                                        </button>
+                                        <button title="공유" class="menu-share-container">
+                                            <span class="menu-reply-wrapper">
+                                                <span class="_share_24 menu-comment"></span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                         <!-- 우측 공유버튼 클릭시 모달 -->
+                          <!-- 버튼 클릭시 class="share open" -->
+                          <div style="position: absolute; inset: 0px auto auto 0px; transform: translate3d(869px, 951px, 0px);" class="share" data-popper-reference-hidden="false" data-popper-escaped="false" data-popper-placement="bottom">
+                            <span style="position: absolute; left: 0px; transform: translate3d(55px, 0px, 0px);" class="share-menu">
+
+                            </span>
+                            <div class="share-menu-container">
+                                <button role="button" type="button" class="share-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" aria-label="카카오톡 공유"><circle cx="20" cy="20" r="20" fill="#F9E000"></circle><path fill="#371C1D" d="m17.095 18.06.75 2.13h-1.5z"></path><path fill="#371C1D" fill-rule="evenodd" d="M6.842 19.253C6.842 13.591 12.664 9 19.846 9s13.003 4.59 13.003 10.253-5.821 10.253-13.003 10.253q-1.184-.001-2.31-.161c-.75.529-5.086 3.574-5.495 3.63 0 0-.168.066-.31-.018-.143-.084-.117-.304-.117-.304.043-.294 1.124-4.026 1.323-4.713-3.661-1.814-6.095-5.026-6.095-8.687m5.064 2.863c0 .395.336.716.75.716s.75-.321.75-.716v-4.457h1.17c.407 0 .737-.33.737-.735a.736.736 0 0 0-.736-.734h-3.842a.736.736 0 0 0-.736.734c0 .405.33.735.736.735h1.17zm6.704.375c.072.204.312.332.625.332.164 0 .327-.036.476-.104.207-.095.406-.358.178-1.067l-1.794-4.721c-.127-.36-.51-.73-1-.741-.49.01-.873.381-1 .74l-1.794 4.724c-.228.707-.03.97.177 1.065.15.068.313.104.477.104.313 0 .552-.127.624-.331l.372-.974h2.288zm1.767-.456c0 .38.323.688.719.688h2.407c.396 0 .719-.309.719-.688s-.323-.688-.719-.688h-1.594V16.94a.76.76 0 0 0-.766-.75.76.76 0 0 0-.766.75zm4.137.037a.751.751 0 0 0 1.5 0v-1.637l.26-.26 1.76 2.33a.75.75 0 0 0 .6.3.74.74 0 0 0 .646-.37.75.75 0 0 0 .08-.57.7.7 0 0 0-.128-.263l-1.847-2.446 1.71-1.71a.58.58 0 0 0 .165-.457.74.74 0 0 0-.22-.475.74.74 0 0 0-.517-.222c-.16 0-.308.06-.416.167l-2.093 2.093V16.94a.751.751 0 0 0-1.5 0z" clip-rule="evenodd"></path></svg>
+                                </button>
+                                <button type="button" class="share-btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" aria-label="주소 복사"><circle cx="20" cy="20" r="20" fill="#EAEDEF"></circle><path fill="#2F3438" d="M25 20.65H15v-1.3h10z"></path><path fill="#2F3438" d="M10.35 20A4.65 4.65 0 0 1 15 15.35h3v1.3h-3a3.35 3.35 0 1 0 0 6.7h3v1.3h-3A4.65 4.65 0 0 1 10.35 20M29.65 20A4.65 4.65 0 0 0 25 15.35h-3v1.3h3a3.35 3.35 0 1 1 0 6.7h-3v1.3h3A4.65 4.65 0 0 0 29.65 20"></path></svg>
+                                </button>
+                            </div>
+                          </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div id="wp_tg_cts" style="display: none;"></div>
     </div>
 </body>
+<script src="/static/js/crew/long-detail/event.js"></script>
 </html>
