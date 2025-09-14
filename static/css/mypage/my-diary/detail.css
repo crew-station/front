@@ -277,7 +277,7 @@ input, textarea, select {
 }
 
 .lock-img { 
-    width: 24px;
+    width: 21px;
     display: inline-block;
     position: relative;
 }
@@ -286,6 +286,7 @@ input, textarea, select {
     display: inline-block;
     position: relative;
     bottom: 5px;
+    font-size: 14px;
 }
 
 .secret {
