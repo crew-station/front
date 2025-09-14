@@ -1,3 +1,4 @@
+// 카테고리 버튼 클릭 시 토글 이벤트
 const categoryBtn = document.querySelectorAll(".category-button");
 
 categoryBtn.forEach((btn) => {
@@ -54,3 +55,15 @@ setInterval(() => {
         });
     }
 }, 100); // 0.1초마다 이동
+
+// 하단 더보기 버튼
+const bottomMoreBtn = document.querySelector(".more-button");
+bottomMoreBtn.addEventListener("click", (e) => {
+    console.log("하단 더보기 버튼 클릭");
+});
+
+// 상단 더보기 버튼
+const topMoreBtn = document.querySelector(".more");
+topMoreBtn.addEventListener("click", (e) => {
+    console.log("상단 더보기 버튼 클릭");
+});
