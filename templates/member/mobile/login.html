@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crew Station</title>
+    <link rel="stylesheet" href="../../../static/css/font.css">
+    <link rel="shortcut icon" href="../../../static/images/crew-station-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../static/css/member/mobile/login.css">
+</head>
+<body>
+    <div class="page">
+        <main class="main-login-container">
+            <div class="main-login-wrap">
+                <div class="login-container">
+                    <a class="home-logo">
+                        <img src="../../../static/images/crew-station-favicon.png"  width="147" height="100">
+                    </a>
+                    <div class="login-part-btn">
+                        <button class="normal active">일반</button>
+                        <button class="guest">게스트</button>
+                    </div>
+                    <form class="member-login" name="member">
+                        <div class="member-email-input-wrap input-wrap">
+                            <input type="email" class="member-email" name="memberEmail" placeholder="이메일"/>
+                        </div>
+                        <div class="member-password-input-wrap input-wrap">
+                            <input type="password" class="member-password" name="memberPassword" placeholder="비밀번호"/>
+                        </div>
+                        <button class="login-member-btn login-btn">로그인</button>
+                        <section class="login-option-action">
+                            <a class="password-find">비밀번호 찾기</a>
+                            <a class="join">회원가입</a>
+                        </section>
+                    </form>
+                    <form class="guest-login" name="guest" style="display: none;">
+                        <div class="guest-id-input-wrap input-wrap">
+                            <input type="text" class="guest-id" name="guestId" placeholder="임시 아이디"/>
+                        </div>
+                        <div class="guest-phone-input-wrap input-wrap">
+                            <input type="text" class="guest-phone" name="guestPhone" placeholder="휴대전화"/>
+                        </div>
+                        <button class="login-guest-btn login-btn">로그인</button>
+                        <section class="login-option-action">
+                            <a class="password-find">비밀번호 찾기</a>
+                            <a class="join">회원가입</a>
+                        </section>
+                    </form>
+                    <section class="social-login-wrap">
+                        <a class="google icon">
+                            <img src="../../../static/images/google.png" width="48" height="48" alt="">
+                        </a>
+                        <a class="kakao icon">
+                            <img src="../../../static/images/kakao.png" width="48" height="48" alt="">
+                        </a>
+                        <a class="naver icon">
+                            <img src="../../../static/images/naver.png" width="48" height="48" alt="">
+                        </a>
+                    </section>
+                </div>
+            </div>
+            <footer class="login-footer">
+                © &nbsp;
+                <a href="/">bucketplace, Co., Ltd.</a>  
+                . All Rights Reserved
+            </footer>
+        </main>
+        
+    </div>
+</body>
+<script src="../../../static/js/member/mobile/login/event.js"></script>
+</html>
