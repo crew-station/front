@@ -49,16 +49,13 @@ body.html{
     margin: 0 auto;
 }
 
-.myhome-nav__owner {
-      font-size: 18px;
-}  
-
 
 .myhome-nav__owner
  {
     text-align: center;
     white-space: nowrap;
 }
+
 
 
 .page-navigation__item>a {
@@ -97,6 +94,10 @@ body.html{
     }
 
 
+
+
+
+
 .notice-list__title {
     display: block;
     margin: 0 0 20px;
@@ -114,33 +115,71 @@ body.html{
     }
 
 
-.feed-item {
-    display: block;
-    margin: 0 -15px;
-    padding: 26px 15px;
-    border-bottom: 1px solid #dbdbdb;
-    transition: opacity .1s;
+
+
+.notice-detail__wrap {
+    margin: 60px auto;
+    padding: 0 15px;
+    width: 100%;
+    max-width: 780px;
+    box-sizing: border-box;
 
 }
 
 
+.notice-detail__title {
+        margin: 0 0 16px;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        color: #292929;
+    }
 
+.notice-detail__date {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    color: #828c94;
+}
 
-.notice-feed-item__title {
-    margin: 0 0 8px;
-    color: #000;
-    font-size: 15px;
-    line-height: 22px;
-    font-weight: 400;
+.notice-detail__content {
+    margin: 30px 0;
+    padding: 30px 0;
+    border-width: 1px 0;
     word-break: keep-all;
     overflow-wrap: break-word;
-}
-    
+    margin: 15px -15px 40px;
+    padding: 15px 15px 0;
+    border: solid #dbdbdb;
+    border-width: 1px 0 0;
+    font-size: 15px;
+    line-height: 28px;
+    color: #000;
+    }
 
-.notice-feed-item__date {
+.notice-detail__back  {
+        padding: 11px 0 12px;
+        font-size: 17px;
+        line-height: 22px;
+    }
+
+
+.notice-detail__back {
+    display: inline-block;
+    background: none;
+    font: inherit;
     display: block;
-    color: #828c94;
-    font-size: 14px;
-    line-height: 17px;
-    font-weight: 500;
-}
+    width: 180px;
+    margin: 0 auto;
+    padding: 10px 0;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: 700;
+    background-color: #0aa5ff;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color .1s;        
+    }
