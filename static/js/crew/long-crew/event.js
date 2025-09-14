@@ -61,3 +61,9 @@ const bottomMoreBtn = document.querySelector(".more-button");
 bottomMoreBtn.addEventListener("click", (e) => {
     console.log("하단 더보기 버튼 클릭");
 });
+
+// 상단 더보기 버튼
+const topMoreBtn = document.querySelector(".more");
+topMoreBtn.addEventListener("click", (e) => {
+    console.log("상단 더보기 버튼 클릭");
+});
