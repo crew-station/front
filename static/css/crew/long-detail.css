@@ -1414,3 +1414,15 @@ svg:not(:root) {
     font-weight: 600; 
     color: #fff; 
 }
+
+.short-crew-list {
+    align-items: center; 
+    gap: 4px; 
+    height: 20px; 
+    background: #8ec5ff; 
+    border-radius: 4px; 
+    padding: 0 6px; 
+    display: flex; 
+    flex-direction: row;
+    width: 6%;
+}
