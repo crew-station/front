@@ -20,7 +20,6 @@
                                         <div class="top-bar-btn-left">
                                             <div class="top-bar-btn-first">
                                                 <button type="button" class="new-crew-open">
-                                                    <span class="new-crew-check">임시저장</span>
                                                     <span class="new-crew">만들기</span>
                                                 </button>
                                             </div>
@@ -47,11 +46,24 @@
                                                         <div class="invite-email-input">
                                                             <div class="email-input-container">
                                                                 <div class="email-input-wrapper">
-                                                                    <!-- 여기부터 -->
-                                                                    <input type="" class=""> 
+                                                                    <!-- 크루 이메일 입력 -->
+                                                                    <input class="new-member-email" placeholder="이메일을 입력해주세요" value> 
+                                                                </div>
+                                                            </div>
+                                                            <!-- 크루원 이메일 추가 버튼 -->
+                                                            <div class="plus-minus-btn-container">
+                                                                <div class="plus-minus-btn-wrapper">
+                                                                    <button type="button" title="추가" class="plus-btn">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="-3 -5 29 29" class="icon"><path d="M10.8 3.8v5H5.7c-.4 0-.7.3-.7.7 0 .4.3.7.7.7h5.1v5c0 .4.3.7.7.7.4 0 .7-.3.7-.7v-5h5.1c.4 0 .7-.3.7-.7 0-.4-.3-.7-.7-.7h-5.1v-5c0-.4-.3-.7-.7-.7-.4 0-.7.3-.7.7z" fill="#525B61" stroke="#525B61" stroke-width="0.5"></path></svg>
+                                                                    </button>
+                                                                    <!-- 처음 삭제버튼 disable -->
+                                                                    <button type="button" title="삭제" class="minus-btn" disabled>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="-3 -11 29 29" class="icon"><path d="M10.8 2.8H5.7c-.4 0-.7.3-.7.7 0 .4.3.7.7.7h11.6c.4 0 .7-.3.7-.7 0-.4-.3-.7-.7-.7h-6.5z" fill="#525B61" stroke="#525B61" stroke-width="0.5"></path></svg>
+                                                                    </button>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <p class="email-check-message"></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -84,16 +96,15 @@
                                 80
                             </div>
                         </div>
-                        <div class="essential-value">필수 입력 항목입니다.</div>
                     </div>
                 </div>
                 <div class="post-content-container">
                     <div class="post-content-wrapper">
                         <div class="input-content-wrapper">
                             <div class="input-content-wrap">
-                                <p class="input-content" contenteditable="true" data-ph="내용을 입력해주세요.">
-
-                                </p>
+                                <div class="input-content">
+                                    내용을 입력해주세요.
+                                </div>
                             </div>
                         </div>
                     </div>

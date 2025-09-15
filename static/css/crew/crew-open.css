@@ -234,6 +234,109 @@ button {
     width: 220px;
 }
 
+.new-member-email {
+    display: inline-block;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-size: 15px;
+    line-height: 21px;
+    resize: none;
+    appearance: none;
+    margin: 0px;
+    padding: 8px 15px 9px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(219, 219, 219);
+    border-image: initial;
+    border-radius: 4px;
+    transition: border-color 0.1s, background-color 0.1s;
+}
+
+.plus-minus-btn-container {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex: 0 1 auto;
+    padding: 5px 6px 5px 0px;
+}
+.plus-minus-btn-wrapper {
+    flex: 0 0 auto;
+    margin: 0px -5px 0px 15px;
+    white-space: nowrap;
+} 
+
+.plus-btn {
+    display: inline-block;
+    background: none rgb(255, 255, 255);
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    margin: 0px 5px;
+    box-sizing: border-box;
+    padding: 1px;
+    border: 1px solid rgb(164, 172, 179);
+    border-radius: 10px;
+    box-shadow: rgba(194, 200, 204, 0.8) 0px 2px 4px 0px;
+    color: rgb(82, 91, 97);
+    line-height: 0;
+    vertical-align: bottom;
+    transition: opacity 0.1s;
+}
+
+svg:not(:root) {
+    overflow-clip-margin: content-box;
+    overflow: hidden;
+}
+
+.minus-btn:disabled {
+    opacity: 0.5;
+}
+
+.minus-btn {
+    display: inline-block;
+    background: none rgb(255, 255, 255);
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    margin: 0px 5px;
+    box-sizing: border-box;
+    padding: 1px;
+    border: 1px solid rgb(164, 172, 179);
+    border-radius: 10px;
+    box-shadow: rgba(194, 200, 204, 0.8) 0px 2px 4px 0px;
+    color: rgb(82, 91, 97);
+    line-height: 0;
+    vertical-align: bottom;
+    transition: opacity 0.1s;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+
+
+/*  */
+
 /* 업로드 사진 첨부 */
 .post-upload-img-container {
     flex: 0 0 auto;
@@ -439,12 +542,10 @@ input {
 }
 
 .input-content {
-    overflow-wrap: break-word;
-    transition: background-color 0.1s;
-    margin: 2px -3px;
+    margin: 3px -3px;
     padding: 0px 3px;
-    color: rgb(41, 41, 41);
-    font-size: 16px;
+    color: rgb(204, 204, 204);
+    font-size: 15px;
     font-weight: normal;
     line-height: 28px;
     min-height: 28px;
