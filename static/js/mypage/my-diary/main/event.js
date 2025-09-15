@@ -1,0 +1,81 @@
+// 공유하기 버튼 클릭 이벤트
+
+const shareButton = document.querySelector(".share-button");
+const toast = document.querySelector(".toast");
+
+shareButton.addEventListener("click", (e) => {
+    toast.style.display = "block";
+    toast.classList.remove("hide");
+    toast.classList.add("show");
+    setTimeout(() => {
+        toast.classList.remove("show");
+        toast.classList.add("hide");
+        setTimeout(() => {
+            toast.style.display = "none";
+        }, 500);
+    }, 3000);
+    clip();
+});
+
+function clip() {
+    var url = "";
+    var textarea = document.createElement("textarea");
+    document.body.appendChild(textarea);
+    url = window.location.href; // 현재 URL을 가져옵니다.
+    textarea.value = url;
+    textarea.select(); // 텍스트 영역의 내용을 선택합니다.
+    document.execCommand("copy"); // 선택된 내용을 클립보드에 복사합니다.
+    document.body.removeChild(textarea); // 텍스트 영역을 제거합니다.
+}
+
+// 여행 경로에서 경계선 주기
+const color = [
+    "#FF1744", // neon red (형광 빨강)
+    "#FF9100", // neon orange (형광 주황)
+    "#FFEA00", // neon yellow (형광 노랑)
+    "#00E676", // neon green (형광 초록)
+    "#2979FF", // neon blue (형광 파랑)
+    "#304FFE", // neon navy (형광 남색 느낌)
+    "#D500F9", // neon purple (형광 보라)
+];
+const tripPath = document.querySelectorAll(".trip-path");
+
+tripPath.forEach((path) => {
+    const markers = path.querySelectorAll(".marker");
+    markers.forEach((marker, index) => {
+        marker.firstElementChild.style.border = `1px solid ${
+            color[index % color.length]
+        }`;
+    });
+});
+
+// 비행기 이동 애니메이션
+const markers = document.querySelectorAll(".marker-circle.last");
+let pos = -2;
+
+setInterval(() => {
+    pos += 1; // 1씩 증가
+    if (pos > 95) {
+        pos = -2;
+        markers.forEach((marker) => {
+            marker.style.transition = `left 0s linear`;
+            marker.style.left = "-2%";
+        });
+    } else {
+        markers.forEach((marker) => {
+            marker.style.transition = `left 0.5s linear`;
+            marker.style.left = pos + "%";
+        });
+    }
+}, 100); // 0.1초마다 이동
+
+// 여행 총 개수
+
+const travels = document.querySelectorAll(".travel");
+const count = document.querySelector(".count");
+
+function totalCount() {
+    count.innerText = travels.length;
+}
+
+totalCount();

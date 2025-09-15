@@ -16,6 +16,34 @@ secretToggle.addEventListener("click", (e) => {
     }
 });
 
+// 이미지 팝업
+
+const targets = document.querySelectorAll(".target");
+const images = document.querySelectorAll(".diary-img");
+const modal = document.querySelector(".img-modal");
+const modalImg = document.querySelector(".img-modal img");
+const closeBtn = document.querySelector(".img-close-button");
+
+targets.forEach((target, index) => {
+    target.addEventListener("click", () => {
+        const imgSrc = images[index].getAttribute("src");
+        modalImg.setAttribute("src", imgSrc);
+        modal.style.display = "flex";
+    });
+});
+
+// 닫기 버튼
+closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// 모달 바깥 클릭하면 닫기 (선택)
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+    }
+});
+
 // 신고하기 버튼
 
 const reportBtn = document.querySelector(".report-button");
@@ -148,4 +176,16 @@ shareButton.addEventListener("click", (e) => {
             toast.style.display = "none";
         }, 500);
     }, 3000);
+    clip();
 });
+
+function clip() {
+    var url = "";
+    var textarea = document.createElement("textarea");
+    document.body.appendChild(textarea);
+    url = window.location.href; // 현재 URL을 가져옵니다.
+    textarea.value = url;
+    textarea.select(); // 텍스트 영역의 내용을 선택합니다.
+    document.execCommand("copy"); // 선택된 내용을 클립보드에 복사합니다.
+    document.body.removeChild(textarea); // 텍스트 영역을 제거합니다.
+}
