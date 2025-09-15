@@ -1133,11 +1133,6 @@ svg:not(:root) {
     overflow: hidden;
 }
 
-svg[Attributes Style] {
-    width: 40;
-    height: 40;
-    fill: none;
-}
 
 .alarm::before { transform: translateX(var(--knob-x, 0px)); }
 .alarm-checked { background-color: rgb(10, 165, 255); }
