@@ -143,8 +143,8 @@ p {
 .scroll-top-button-container {
     overflow: visible;
     position: fixed;
-    right: 6px;
-    bottom: 20px;
+    right: 10px;
+    bottom: 50px;
     margin-top: 0px;
     margin-right: 0px;
     margin-left: 0px;
