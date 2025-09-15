@@ -1,31 +1,3 @@
-// 하트 버튼 토글 이벤트
-
-const likeBtn = document.querySelector(".right-menu-container .menu.likes");
-const iconOutline = document.querySelector("._heart_outline_24");
-const iconFilled = document.querySelector("._heart_24");
-const likeCount = document.querySelector(".menu-count");
-
-if (iconFilled) iconFilled.style.display = "none";
-
-likeBtn.addEventListener("click", () => {
-    const isLiked = likeBtn.classList.contains("liked");
-    if (isLiked) {
-        likeBtn.classList.remove("liked");
-        iconOutline.style.display = "inline";
-        iconFilled.style.display = "none";
-        likeCount.textContent = String(
-            parseInt(likeCount.textContent || "0", 10) - 1
-        );
-    } else {
-        likeBtn.classList.add("liked");
-        iconOutline.style.display = "none";
-        iconFilled.style.display = "inline";
-        likeCount.textContent = String(
-            parseInt(likeCount.textContent || "0", 10) + 1
-        );
-    }
-});
-
 // 신고하기 버튼
 
 const reportBtn = document.querySelector(".report-button");
@@ -90,31 +62,33 @@ function selectFirstReportRadio() {
     });
 }
 
-// 댓글로 가기 버튼
-
-const goReplyBtn = document.querySelector(".menu-reply-container");
-const replySection = document.querySelector(".reply-section-container");
-
-if (goReplyBtn && replySection) {
-    goReplyBtn.addEventListener("click", () => {
-        replySection.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
-}
-
-// 공유하기 버튼
+// 링크 주소 복사 및 토스트 메시지
 
 const shareButton = document.querySelector(".menu-share-container");
 const toast = document.querySelector(".toast");
 
 shareButton.addEventListener("click", (e) => {
-    toast.style.display = "block";
-    toast.classList.remove("hide");
-    toast.classList.add("show");
-    setTimeout(() => {
-        toast.classList.remove("show");
-        toast.classList.add("hide");
+    function clip() {
+        console.log("클립보드 복사");
+        var url = "";
+        var textarea = document.createElement("textarea");
+        document.body.appendChild(textarea);
+        url = window.location.href; // 현재 URL을 가져옵니다.
+        textarea.value = url;
+        textarea.select(); // 텍스트 영역의 내용을 선택합니다.
+        document.execCommand("copy"); // 선택된 내용을 클립보드에 복사합니다.
+        document.body.removeChild(textarea); // 텍스트 영역을 제거합니다.
+
+        toast.style.display = "block";
+        toast.classList.remove("hide");
+        toast.classList.add("show");
         setTimeout(() => {
-            toast.style.display = "none";
-        }, 500);
-    }, 3000);
+            toast.classList.remove("show");
+            toast.classList.add("hide");
+            setTimeout(() => {
+                toast.style.display = "none";
+            }, 500);
+        }, 3000);
+    }
+    clip();
 });

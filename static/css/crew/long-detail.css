@@ -208,10 +208,10 @@ img {
 .post-content {
     font-size: 16px;
     line-height: 24px;
-    text-wrap: pretty;
-    white-space: pre-wrap;
     word-break: break-word;
-    color: #2F3438;
+    color: rgb(47, 52, 56);
+    text-wrap: pretty;
+    /* white-space: pre-wrap; */
 }
 
 .post-content a {
@@ -291,7 +291,6 @@ dl {
 }
 
 .post-time::after {
-    content: "·";
     color: #C2C8CC;
     font-weight: bold;
     margin: 0 4px;
@@ -1390,4 +1389,28 @@ svg:not(:root) {
 .toast.hide {
     opacity: 0;
     transition: opacity 0.5s;
+}
+
+
+.long-crew-list {
+    align-items: center;
+    gap: 4px; 
+    height: 20px; 
+    background: #647FBC; 
+    border-radius: 4px; 
+    padding: 0 6px; 
+    display: flex; 
+    flex-direction: row;
+    width: 6%;
+}
+
+@media (min-width: 768px) {
+    .long-crew-text, .short-crew-text { 
+        font-size: 12px; line-height: 16px; 
+    } 
+}
+
+.long-crew-text, .short-crew-text { 
+    font-weight: 600; 
+    color: #fff; 
 }
