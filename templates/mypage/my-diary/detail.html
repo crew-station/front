@@ -14,7 +14,12 @@
             <div class="content-wrap">
                 <div class="crew-label-wrap">
                     <!-- 크루 이름 -->
-                    <span class="crew-label">나는 짱</span>
+                    <span class="crew-label">프랑스</span>
+                    <div class="update">
+                        <button class="update-button">수정</button>
+                        <span class="bar">|</span>
+                        <button class="remove-button">삭제</button>
+                    </div>
                 </div>
                 <!-- 제목 -->
                 <div class="title">
@@ -64,6 +69,24 @@
                                             <a href="">
                                                 <img src="../../../static/images/diary-list-ex.jpeg">
                                             </a>
+                                            <div class="mention">
+                                                <div class="mention-container">
+                                                    <button class="mention-button">
+                                                        <span class="mention-span"></span>
+                                                    </button>
+                                                </div>
+                                                <div class="mention-window">
+                                                    <div class="triangle"></div>
+                                                    <div class="mention-profile">
+                                                        <a class="profile-a">
+                                                            <div class="mention-profile-img">
+                                                                <img src="../../../static/images/crew-station-icon-profile.png">
+                                                            </div>
+                                                            <span id="mention-name">CREW2</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="image-wrap">
@@ -89,9 +112,6 @@
                                     <span class="view">2시간</span>
                                     <dt class="view">좋아요 30</dt>
                                     <dt class="view">조회 78</dt>
-                                </div>
-                                <div class="report">
-                                    <button class="report-button">신고하기</button>
                                 </div>
                             </div>
                             <section class="reply-container">
@@ -126,13 +146,6 @@
                                             <div class="reply-content-text">우와 너무 좋아보여요~!</div>
                                             <div class="reply-like">
                                                 <div class="time">45분</div>
-                                                <div class="like-container">
-                                                    <div class="point">・</div>
-                                                    <button type="button" class="like-button">
-                                                        <span class="heart"></span>
-                                                        <span class="like-text">좋아요</span>
-                                                    </button>
-                                                </div>
                                                 <div class="report-container">
                                                     <div class="point">・</div>
                                                     <button class="reply-report-button">신고하기</button>
@@ -157,7 +170,31 @@
                 </div>
             </div>
             <div class="sticky-menu">
-                <div class="sticky-container"></div>
+                <div class="sticky-container">
+                    <div style="position: relative;">
+                        <div class="sticky-wrap">
+                            <button class="sticky-like-button">
+                                <span class="like-icon">
+                                    <span class="like-before"></span>
+                                </span>
+                                <span class="like-total">1</span>
+                            </button>
+                            <hr class="hr">
+                            <button class="go-reply">
+                                <span class="go-reply-icon">
+                                    <span class="go-reply-icon-span"></span>
+                                </span>
+                                <span class="like-total">11</span>
+                            </button>
+                            <button class="sticky-share-button">
+                                <span class="go-share-icon">
+                                    <span class="go-share-icon-span"></span>
+                                </span>
+                                <span class="like-total">11</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -177,7 +214,7 @@
                         <li class="report-content">
                             <label for="report" class="content-label">
                                 <div class="radio-button active">
-                                    <input type="radio" name="report" class="radio">
+                                    <input type="radio" name="주제" class="radio">
                                 </div>
                                 <span class="content">주제에 맞지 않아요</span>
                             </label>
@@ -185,7 +222,7 @@
                         <li class="report-content">
                             <label for="report" class="content-label">
                                 <div class="radio-button">
-                                    <input type="radio" name="report" class="radio">
+                                    <input type="radio" name="정보" class="radio">
                                 </div>
                                 <span class="content">정보가 부정확해요</span>
                             </label>
@@ -193,7 +230,7 @@
                         <li class="report-content">
                             <label for="report" class="content-label">
                                 <div class="radio-button">
-                                    <input type="radio" name="report" class="radio">
+                                    <input type="radio" name="광고" class="radio">
                                 </div>
                                 <span class="content">지나치게 광고를 해요</span>
                             </label>
@@ -201,7 +238,7 @@
                         <li class="report-content">
                             <label for="report" class="content-label">
                                 <div class="radio-button">
-                                    <input type="radio" name="report" class="radio">
+                                    <input type="radio" name="도배" class="radio">
                                 </div>
                                 <span class="content">이 글로 도배가 돼있어요</span>
                             </label>
@@ -209,7 +246,7 @@
                         <li class="report-content">
                             <label for="report" class="content-label">
                                 <div class="radio-button">
-                                    <input type="radio" name="report" class="radio">
+                                    <input type="radio" name="저작권" class="radio">
                                 </div>
                                 <span class="content">저작권 침해가 우려돼요</span>
                             </label>
@@ -217,7 +254,7 @@
                         <li class="report-content">
                             <label for="report" class="content-label">
                                 <div class="radio-button">
-                                    <input type="radio" name="report" class="radio">
+                                    <input type="radio" name="명예" class="radio">
                                 </div>
                                 <span class="content">명예를 훼손하는 내용이에요</span>
                             </label>
@@ -225,7 +262,7 @@
                         <li class="report-content">
                             <label for="report" class="content-label">
                                 <div class="radio-button">
-                                    <input type="radio" name="report" class="radio">
+                                    <input type="radio" name="욕설" class="radio">
                                 </div>
                                 <span class="content">욕설이나 비방이 심해요</span>
                             </label>
@@ -233,7 +270,7 @@
                         <li class="report-content">
                             <label for="report" class="content-label">
                                 <div class="radio-button">
-                                    <input type="radio" name="report" class="radio">
+                                    <input type="radio" name="외설" class="radio">
                                 </div>
                                 <span class="content">외설적인 내용이 포함돼있어요</span>
                             </label>
@@ -246,6 +283,11 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="toast">
+        <div class="toast-wrap">
+            <p class="toast-text">클립보드에 복사되었습니다.</p>
         </div>
     </div>
 </body>
