@@ -62,3 +62,34 @@ setInterval(() => {
         });
     }
 }, 100);
+
+// 좋아요 클릭 이벤트
+const likeBtns = document.querySelectorAll("button.card-item-action-btn.like");
+const toast = document.querySelector("div.toast");
+const toastText = document.querySelector("p.toast-text");
+let likeDoubleClick = true; // 광클 방지
+likeBtns.forEach((likeBtn) => {
+    likeBtn.addEventListener("click", (e) => {
+        if (!likeDoubleClick) return;
+        likeDoubleClick = false;
+        toast.style.display = "block";
+        toast.classList.remove("hide");
+        toast.classList.add("show");
+        const svg = likeBtn.firstElementChild;
+        if (svg.classList.contains("active")) {
+            svg.classList.remove("active");
+            toastText.textContent = "좋아요가 취소되었습니다.";
+        } else {
+            svg.classList.add("active");
+            toastText.textContent = "좋아요가 추가되었습니다.";
+        }
+        setTimeout(() => {
+            toast.classList.remove("show");
+            toast.classList.add("hide");
+            setTimeout(() => {
+                likeDoubleClick = true;
+                toast.style.display = "none";
+            }, 1000);
+        }, 2000);
+    });
+});
