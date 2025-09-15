@@ -4,17 +4,25 @@ const postRegBtn = document.querySelector("button.post-reg-btn");
 // popup.classList.add("active");
 const popup = document.querySelector("div.btn-click-slide-container");
 console.log(popup);
-postRegBtn.addEventListener("click", (e) => {});
+
+// 프로필 팝업 부분
+const profilePopup = document.querySelector("div.profile-popup-btn");
 
 document.querySelector("body").addEventListener("click", (e) => {
     console.log(e.target);
+    console.log(e.target.closest("button.mebmer-profile-btn"));
 
     if (popup.classList.contains("active")) {
         popup.classList.remove("active");
     }
+    if (profilePopup.classList.contains("active")) {
+        profilePopup.classList.remove("active");
+    }
     if (e.target.closest("button.post-reg-btn") === postRegBtn) {
         console.log("일치");
         popup.classList.add("active");
+    } else if (e.target.closest("button.mebmer-profile-btn")) {
+        profilePopup.classList.add("active");
     }
 });
 
