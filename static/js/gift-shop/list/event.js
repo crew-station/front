@@ -1,4 +1,3 @@
-
 // 스크롤 탑 버튼 (클릭시 목록 최상단)
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
