@@ -76,20 +76,6 @@ div {
 
 
 
-.page-navigation__item>a {
-    /* display: block; */
-    padding: 0 10px;
-    font-weight: 700;
-    /* position: relative; */
-    height: 60px;
-    line-height: 60px;
-}
-
-.page-navigation__item {
-    display: inline-block;
-}
-
-
 /* 목록  */
 
 .myhome-nav__contents {
@@ -186,10 +172,6 @@ div {
 
 
 
-.indicator {
-    font-size: 14px;
-    line-height: 20px;
-}
 
 .indicator {
 
@@ -282,4 +264,8 @@ a, button:enabled {
     font-weight: bold;
     color: rgb(255, 255, 255);
     transition: opacity 0.1s;
+    }
+
+    textarea.css-1iifh8u{
+        resize: none;
     }
