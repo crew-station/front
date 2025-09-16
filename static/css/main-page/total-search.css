@@ -1444,3 +1444,13 @@ span.badge-list-container {
     line-height: 1.4;
     white-space: nowrap;
 }
+
+span.gift-price+div{
+    display: flex;
+    gap: 12px;
+}
+div.delivery-method{
+    background-color: white;
+    border: 1px solid #d3dadf;
+    color: #a6a6a6;
+}
