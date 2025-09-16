@@ -495,7 +495,7 @@ p.header-name:hover{
     color: #647FBC;
 }
 div.sticky-container.sticky-sub-container.active{
-    display: block;
+    display: contents;
 }
 
 /* 서브 */
