@@ -938,7 +938,7 @@ button {
   position: absolute;
   bottom: 36px;               
   left: 0;                    
-  min-width: 250px;           
+  min-width: 240px;           
   max-width: 360px;           
   background: #fff;
   border: 1px solid #ddd;
@@ -979,7 +979,6 @@ button {
 .tooltip-box p {
   margin: 4px 0 0;
   line-height: 1.5;
-  text-indent: 16px;
 }
 
 
