@@ -49,7 +49,7 @@ let pos = -2;
 
 setInterval(() => {
     pos += 1; // 1씩 증가
-    if (pos > 90) {
+    if (pos > 97) {
         pos = -2;
         markers.forEach((marker) => {
             marker.style.transition = `left 0s linear`;
