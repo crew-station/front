@@ -573,7 +573,7 @@ ol, ul {
     height: 100%;
     z-index: 1300;
     background-color: rgba(33, 38, 41, 0.5);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     text-align: left;

@@ -79,16 +79,37 @@ cancelButtons.forEach((btn) => {
 
 const stars = document.querySelectorAll("label.star");
 const hiddenInput = document.querySelector("input[type='hidden']#star");
+
+let data = 0;
+
 stars.forEach((star) => {
     star.addEventListener("click", (e) => {
-        console.log(star.dataset.point);
-
+        data = star.dataset.point;
         stars.forEach((star, i) => {
-            star.dataset.point;
+            if (data >= i + 1) {
+                star.closest(".star").classList.add("full");
+            } else if (data < i + 1) {
+                star.closest(".star").classList.remove("full");
+            }
         });
-
-        console.log(star);
-        console.log(star.closest(".star"));
-        star.closest(".star").classList.add("full");
     });
+});
+
+// 모달 켜기
+
+const modal = document.querySelector(".modal-wrapper");
+const starButtons = document.querySelectorAll(".star-button");
+
+starButtons.forEach((starButton) => {
+    starButton.addEventListener("click", (e) => {
+        modal.style.display = "flex";
+    });
+});
+
+// 모달 끄기
+
+const closeButton = document.querySelector(".close-button");
+
+closeButton.addEventListener("click", (e) => {
+    modal.style.display = "none";
 });
