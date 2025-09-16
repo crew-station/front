@@ -39,7 +39,7 @@ html {
 }
 
 main.index-page{
-    padding-top: 180px;
+    padding-top: 26px;
 }
 div.index-page-container{
     box-sizing: border-box;
@@ -63,12 +63,12 @@ h1.index-page-title{
     white-space: pre-wrap;
 }
 p.index-page-sub-title{
-    font-size: 20px;
+    font-size: 24px;
     margin-bottom: 88px;
     margin-top: 36px;
     white-space: pre-wrap;
     color: #212529;
-    line-height: 1.6;
+    line-height: 24px;
 }
 
 br.pc-line-break{
@@ -227,4 +227,9 @@ div.index-page-img-wrap{
     display: flex;
     gap: 24px;
     flex-direction: column;
+}
+
+
+div.index-page-info-diary{
+
 }
