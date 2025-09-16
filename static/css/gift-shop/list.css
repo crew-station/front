@@ -187,9 +187,15 @@ p {
     color: rgb(47, 52, 56); 
   }
 
+  .writer-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
   .badge-list-container {
     display: block;
-    width: fit-content;    
+    width: fit-content;  
     background: #647FBC;
     color: #fff;
     padding: 2px 6px;  
@@ -200,6 +206,45 @@ p {
     white-space: nowrap; 
     margin-top: 4px;
   }
+
+  .delivery-method {
+    border: 1px solid #c0c0c0;
+    background-color: #ffffff;
+    color: #858484;
+  }
+
+  .product-content-header {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+  }
+  
+  .manner-wrap {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #555;
+  }
+  
+  .product-detail-header-manner-img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .product-detail-header-manner {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    background: none;
+    border: none;
+    transition: opacity .1s;
+    margin-left: 0px;
+    color: #6139ff;
+    font-size: 13px;
+    font-weight: 600;
+    vertical-align: middle;
+}
 
 
 
