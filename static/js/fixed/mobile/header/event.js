@@ -31,12 +31,12 @@ window.addEventListener("wheel", (e) => {
             console.log(secondaryHeader);
 
             secondaryHeader.classList.add("scroll-down");
-            secondaryHeader.style.top = "-41px";
+            // secondaryHeader.style.top = "-41px";
         });
     } else {
         secondaryHeaders.forEach((secondaryHeader) => {
             secondaryHeader.classList.remove("scroll-down");
-            secondaryHeader.style.top = "51px";
+            // secondaryHeader.style.top = "51px";
         });
     }
 });
@@ -98,13 +98,63 @@ let clickDetailBtn = null;
 detailBtns.forEach((detailBtn) => {
     detailBtn.addEventListener("click", (e) => {
         e.stopPropagation();
+        console.log(detailBtn);
+
         console.log(clickDetailBtn);
         if (clickDetailBtn) {
             console.log(clickDetailBtn);
             clickDetailBtn.removeAttribute("style");
+            console.log(detailBtn);
         }
+        menuBtns.forEach((menuBtn) => {
+            if (menuBtn.hasAttribute("style")) {
+                menuBtn.removeAttribute("style");
+            }
+        });
+
+        modalDown.classList.remove("open");
         clickDetailBtn = detailBtn;
+        const target = e.target.closest("li.menu-item-wrap");
+        console.log(target.firstElementChild);
+
+        target.firstElementChild.style.backgroundColor = "rgb(247, 249, 250)";
+
+        console.log(target.firstElementChild.nextElementSibling);
+
+        target.firstElementChild.lastElementChild.classList.remove("active");
+        if (target.firstElementChild.nextElementSibling.hasAttribute("style")) {
+            target.firstElementChild.nextElementSibling.style.height = "0px";
+        }
         detailBtn.style.backgroundColor = "rgb(247, 249, 250)";
+        const category = target.firstElementChild.classList[1];
+        console.log(category);
+
+        let subHeader = null;
+        const subCategories = document.querySelectorAll("div.sub");
+        if (category === "crew") {
+            subHeader = subCategories[0];
+            subCategories[0].style.top = "51px";
+            subCategories[1].style.top = "-41px";
+        } else if (category === "diary") {
+            subHeader = subCategories[1];
+            subCategories[0].style.top = "-41px";
+            subCategories[1].style.top = "51px";
+        }
+
+        subHeader.querySelectorAll("a.navigation-item-link").forEach((a) => {
+            if (a.classList.contains("active")) {
+                a.classList.remove("active");
+                console.log(a.textContent.trim());
+            } else {
+                console.log(123);
+                console.log(
+                    a.textContent.trim() === detailBtn.textContent.trim()
+                );
+
+                a.textContent.trim() === detailBtn.textContent.trim() &&
+                    a.classList.add("active");
+            }
+        });
     });
 });
 
