@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>기프트 샵</title>
+    <title>Crew Station</title>
     <link rel="icon" type="image/png" href="/static/images/crew-station-favicon.png">
     <link rel="stylesheet" href="/static/css/gift-shop/list.css">
     <link rel="stylesheet" href="/static/css/gift-shop/detail.css">
+    <link rel="stylesheet" href="/static/css/font.css">
 </head>
 <body>
     <div class="product-detail-container">
@@ -218,7 +219,7 @@
                                     <div class="product-shipping-container">
                                       <span class="product-shipping-label">전달방식</span>
                                       <div class="product-shipping-info-wrapper">
-                                        <span class="product-shipping-info-title">직거래</span>
+                                        <span class="product-shipping-info-title">직접 전달</span>
                                         <span class="product-shipping-info-content">서울시 용산구</span>
                                       </div>
                                     </div>
@@ -404,6 +405,11 @@
             </div>
         </div>
     </div>
-<script src="/static/js/gift-shop/detail/event.js"></script>  
+    <div class="toast hide" style="display: none;">
+        <div class="toast-wrap">
+            <p class="toast-text">클립보드에 복사되었습니다.</p>
+        </div>
+    </div>
 </body>
+<script src="/static/js/gift-shop/detail/event.js"></script> 
 </html>
