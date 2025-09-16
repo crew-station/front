@@ -34,7 +34,7 @@
                             <form class="input-tag-container" action="">
                                 <div class="input-tag-wrapper">
                                     <input placeholder="여행 경로 태그입력" class="input-tag-wrap">
-                                    <button type="submit" class="input-tag-btn tag tag1 tag-btn">입력</button>
+                                    <button type="submit" class="input-tag-btn tag0 tag1 tag-btn">입력</button>
                                 </div>
                             </form>
                         </div>
@@ -113,13 +113,31 @@
                                                     <img src="blob:https://ohou.se/9e871e4c-a8da-4cc8-8c86-07488711bd98" alt="" class="css-n9shyu e1w4vsrt7">
                                                     <img class="css-n9shyu e1w4vsrt7" alt="" src="https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=480&amp;webp=1" srcset="https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=720&amp;webp=1 1.5x,https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=960&amp;webp=1 2x,https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=1360&amp;webp=1 3x">
                                                     <div class="post-img-bottom">
-                                                        <!-- 편집 버튼 -->
+                                                        <!-- 태그 편집 버튼 -->
+                                                        <button class="return-img" type="button" title="사진 다시 올리기">
+                                                            <svg class="icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M17.9 10a6.4 6.4 0 0 0-6-4.5c-3.6 0-6.4 2.9-6.4 6.5s2.8 6.5 6.3 6.5c2.2 0 4.1-1 5.3-2.9a.7.7 0 1 1 1.2.8 7.8 7.8 0 0 1-6.5 3.6C7.5 20 4 16.4 4 12s3.5-8 7.8-8c3.4 0 6.3 2.2 7.4 5.3l.7-1.4a.7.7 0 1 1 1.3.7l-1.8 3.1a.7.7 0 0 1-1 .3l-3-1.8a.7.7 0 1 1 .7-1.3l1.8 1z"></path></svg>
+                                                        </button>
+                                                        <button class="delete-img" type="button" title="삭제" >
+                                                            <svg class="icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M6 19V7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM19 4v2H5V4h3.5l1-1h5l1 1H19z"></path></svg>
+                                                        </button>
+                                                        <!-- 편집 버튼 확인 -->
                                                         <button class="edit-button">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" fill="currentColor" viewBox="0 0 12 12" class="css-it6kh9 e3fo7fe0"><path fill-rule="evenodd" d="M10.424 3.243a.6.6 0 0 1 0 .848L5.091 9.424a.6.6 0 0 1-.849 0L1.576 6.758a.6.6 0 1 1 .848-.849l2.243 2.243 4.909-4.91a.6.6 0 0 1 .848 0" clip-rule="evenodd"></path></svg>
+                                                            <!-- 체크 아이콘 -->
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" fill="currentColor" viewBox="0 0 12 12" class="tag-check"><path fill-rule="evenodd" d="M10.424 3.243a.6.6 0 0 1 0 .848L5.091 9.424a.6.6 0 0 1-.849 0L1.576 6.758a.6.6 0 1 1 .848-.849l2.243 2.243 4.909-4.91a.6.6 0 0 1 .848 0" clip-rule="evenodd"></path></svg>
+                                                            <!-- 플러스 아이콘 -->
+                                                            <!-- <svg fill="none" viewBox="0 0 8 8" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" class="tag-plus"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.77.14H3.23v3.09H.14v1.54h3.09v3.09h1.54V4.77h3.09V3.23H4.77V.14z" fill="currentColor"></path></svg> -->
                                                             태그 편집 완료
+                                                            
                                                         </button>
                                                     </div>
                                                     <div class="post-img-floor">
+                                                        <!-- 태그 모달 + -->
+                                                        <div class="img-tag-container tag" style="top: 47.5923%; left: 41.1767%;">
+                                                            <button class="tag-add-btn" type="button">
+                                                                <span class="plus-img-btn"></span>
+                                                                <svg width="1em" height="1em" viewBox="0 0 24 24" class="plus-img"><circle cx="12" cy="12" r="12" fill="currentColor"></circle><path stroke="#FFF" stroke-linecap="square" stroke-width="2" d="M12 16V8m-4 4h8"></path></svg>
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -127,7 +145,7 @@
                                         <div class="img-post-term">
                                             <div class="post-write-container">
                                                 <div class="post-write-wrapper">
-                                                    <div contenteditable="true" placeholder="모집글을 작성해주세요." row="6" data-testid="description-input" class="post-input"></div>
+                                                    <input placeholder="모집글을 작성해주세요." row="6" class="post-input"></input>
                                                     <div rows="6" class="rows-check"></div>
                                                 </div>
                                             </div>
@@ -145,5 +163,63 @@
             </form>
         </div>
     </div>
+    <div>
+        <!-- 모달 화면 -->
+        <div class="modal-popout" data-popout="true" style="position: absolute; z-index: 100000; left: 642.5px; top: 320px; transform: translateX(-50%);">
+            <!-- modal-open active -->
+            <div class="modal open open-active">
+                <div class="modal-view">
+                    <div class="modal-view-container">
+                        <div class="modal-view-wrapper">
+                            <div class="modal-tag-input-container">
+                                <span class="modal-tag-input-wrapper">
+                                    <input class="tag-input" placeholder="이메일 입력" value>
+                                </span>
+                                <button class="close-btn" type="button">취소</button>
+                            </div>
+                        </div>
+                        <!-- 검색 기록있을 때 no-content 붙히면 나옴-->
+                        <div class="modal-content " >
+                            <!-- 검색 기록 없을 때 -->
+                             <!-- <div class="no-content-text">
+                                최근 구매한 상품이 없어요.
+                             </div> -->
+                            <div style="padding-top: 0px; padding-bottom: 2960px; transform: translateX(0px);">
+                                <!-- 태그 인원 프로필 리스트 시작 -->
+                                <div>
+                                    <button class="tag-profile-container" type="button">
+                                        <!-- 프로필 이미지 -->
+                                        <div class="member-profile">
+                                            <picture>
+                                                <img class="ymDK1" src="https://prs.ohousecdn.com/apne2/any/uploads/productions/v1-356976242864128.jpg?c=c&amp;w=320&amp;h=320" srcset="https://prs.ohousecdn.com/apne2/any/uploads/productions/v1-356976242864128.jpg?c=c&amp;w=320&amp;h=320 1.5x,https://prs.ohousecdn.com/apne2/any/uploads/productions/v1-356976242864128.jpg?c=c&amp;w=320&amp;h=320 2x,https://prs.ohousecdn.com/apne2/any/uploads/productions/v1-356976242864128.jpg?c=c&amp;w=320&amp;h=320 3x">
+                                            </picture>
+                                            <!-- after -->
+                                        </div>
+                                        <!-- 검색한 크루원 정보 -->
+                                        <div class="member-info-container">
+                                            <div class="member-name">
+                                                크루원 이름
+                                            </div>
+                                            <div class="member-email">
+                                                크루원 이메일
+                                            </div>
+                                        </div>
+                                        <div class="tag-select-btn">
+                                            <div class="tag-select-btn-text">
+                                                선택
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                                <!-- 플러스 버튼 클릭하면 태그한 사람 정보 나옴 모달 -->
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+<script src="/static/js/crew/crew-write/event.js"></script>
 </html>
