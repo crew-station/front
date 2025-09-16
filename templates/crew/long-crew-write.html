@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrewStation</title>
+    <link rel="stylesheet" href="/static/css/crew/long-crew-write.css">
+    <link rel="stylesheet" href="/static/css/font.css">
+</head>
+<body>
+    <div class="page">
+        <div class="crew-write-page">
+            <form action="">
+                <div class="crew-write-page-wrapper">
+                    <div class="sticky-container" style="height: 80px;">
+                        <div class="sticky-child" style="position: fixed; transition: top 0.1s; top: 0px; width: 1920px;">
+                            <div class="top-bar-container">
+                                <!-- svg 빼고 로고 넣고 클릭하면 홈으로 가기 -->
+                                <a class="crew-station" href="/">
+                                    <svg class="icon" width="74" height="30" viewBox="0 0 74 30" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><path fill="#000" d="M14.2 25.17H9.28V20.7a1.45 1.45 0 0 0-2.9 0v4.47H1.44a1.45 1.45 0 1 0 0 2.9H14.2a1.45 1.45 0 0 0 0-2.9M4.5 9.15c0-4.6 2.08-5.28 3.33-5.28 1.24 0 3.33.69 3.33 5.28v.36c0 4.6-2.09 5.28-3.33 5.28-1.25 0-3.34-.69-3.34-5.28v-.36zm3.33 8.54c3.84 0 6.23-3.13 6.23-8.18v-.36c0-5.05-2.39-8.18-6.23-8.18-3.85 0-6.24 3.13-6.24 8.18v.36c0 5.05 2.39 8.19 6.24 8.19zm25.54-7.34H17.81a1.45 1.45 0 0 0 0 2.9h15.56a1.45 1.45 0 1 0 0-2.9m-1.55 15.5c-7.08 1.83-9.45.79-10.14.25-.45-.35-.65-.8-.65-1.48v-.87h10.25c.8 0 1.46-.65 1.46-1.45v-5.08c0-.8-.66-1.45-1.46-1.45h-11.7a1.45 1.45 0 1 0 0 2.9h10.25v2.18H19.57c-.8 0-1.45.65-1.45 1.45v2.32a4.6 4.6 0 0 0 1.78 3.78c1.2.93 2.94 1.39 5.21 1.39 2.05 0 4.54-.38 7.44-1.13a1.45 1.45 0 1 0-.73-2.82M20.3 7.83h10.8a1.45 1.45 0 1 0 0-2.9h-9.35V1.45a1.45 1.45 0 1 0-2.9 0v4.93c0 .8.65 1.45 1.45 1.45"></path><rect width="3" height="15" x="70" fill="#000" rx="1.5"></rect><path fill="#000" d="M64.5 13.28a1.45 1.45 0 0 0 2.73-1c-.05-.13-1-2.68-3.38-4.5l3.7-4.1a1.45 1.45 0 0 0-1.09-2.42h-9.05a1.45 1.45 0 1 0 0 2.9h5.8l-6.88 7.64a1.45 1.45 0 1 0 2.16 1.95l3.41-3.8a8 8 0 0 1 2.6 3.33M69.56 26.52h-7.01a.82.82 0 0 1-.82-.82v-1.95h8.65v1.95c0 .45-.37.82-.82.82m2.27-9.37c-.8 0-1.45.65-1.45 1.45v2.25h-8.65V18.6a1.45 1.45 0 1 0-2.9 0v7.1a3.73 3.73 0 0 0 3.72 3.72h7.01a3.73 3.73 0 0 0 3.72-3.72v-7.1c0-.8-.65-1.45-1.45-1.45M42.46 3.87c2.22 0 2.33 4.24 2.33 5.08 0 .85-.11 5.09-2.33 5.09-2.21 0-2.32-4.24-2.32-5.08 0-.86.11-5.09 2.32-5.09m0 13.07c1.76 0 3.23-.93 4.14-2.62.71-1.34 1.1-3.2 1.1-5.36s-.39-4.02-1.1-5.37A4.6 4.6 0 0 0 42.46.97c-1.76 0-3.22.93-4.13 2.62-.72 1.35-1.1 3.2-1.1 5.37s.38 4.01 1.1 5.36a4.59 4.59 0 0 0 4.13 2.62"></path><path fill="#000" d="M51.4.49c-.8 0-1.45.65-1.45 1.45v17.78c-1.93.6-5.75 1.13-10.38 1.13h-2.2a1.45 1.45 0 0 0 0 2.9h2.2c2.64 0 7.21-.23 10.38-1.02v4.84a1.45 1.45 0 0 0 2.9 0V1.94c0-.8-.65-1.45-1.45-1.45"></path></g></svg>
+                                </a>
+                                <div class="complete-btn-container">
+                                    <button type="button" class="complete-btn">
+                                        올리기
+                                    </button>
+                                    <button class="upload-post">올리기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 경로 입력 -->
+                    <div class="tag-container">
+                        <div class="input-tag">
+                            <form class="input-tag-container" action="">
+                                <div class="input-tag-wrapper">
+                                    <input placeholder="여행 경로 태그입력" class="input-tag-wrap">
+                                    <button type="submit" class="input-tag-btn tag tag1 tag-btn">입력</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="post-container">
+                        <div class="post-wrapper">
+                            <div class="post-wrap">
+                                <!-- 좌측 이미지 추가 -->
+                                 <ol class="left-img-add-container">
+                                    <!-- 서브 이미지 리스트 -->
+                                    <li class="post-sub-img">
+                                        <div class="post-sub-img-container">
+                                            <button type="button" class="sub-img-btn-wrapper">
+                                                <div class="sub-img-btn-wrap">
+                                                </div>
+                                            </button>
+                                            <div class="sub-img-wrapper">
+                                                <div class="sub-img-wrap">
+                                                    <div class="sub-img" draggable="true">
+                                                        <img class="img-view" alt="" src="https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=72&amp;h=72&amp;c=c&amp;webp=1" srcset="https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=144&amp;h=144&amp;c=c&amp;webp=1 1.5x,https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=240&amp;h=240&amp;c=c&amp;webp=1 3x">
+                                                        <div class="sub-img-view">
+                                                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M18 10H6l6-6 6 6zM6 14h12l-6 6-6-6z"></path></svg>
+                                                        </div>
+                                                    </div>
+                                                    <!-- 서브 이미지 옆에 삭제 버튼 -->
+                                                    <button type="button" title="삭제" class="delete-sub-img">
+                                                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M6 19V7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM19 4v2H5V4h3.5l1-1h5l1 1H19z"></path></svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="sub-img-bottom-wrapper">
+                                                <div class="sub-img-bottom"></div>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <li class="post-sub-img">
+                                        <div class="post-sub-img-container">
+                                            <button type="button" class="sub-img-btn-wrapper">
+                                                <div class="sub-img-btn-wrap">
+                                                </div>
+                                            </button>
+                                            <div class="sub-img-wrapper">
+                                                <div class="sub-img-wrap">
+                                                    <div class="sub-img" draggable="true">
+                                                        <img class="img-view" alt="" src="https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=72&amp;h=72&amp;c=c&amp;webp=1" srcset="https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=144&amp;h=144&amp;c=c&amp;webp=1 1.5x,https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=144&amp;h=144&amp;c=c&amp;webp=1 2x,https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=240&amp;h=240&amp;c=c&amp;webp=1 3x">
+                                                        <div class="sub-img-view">
+                                                            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M18 10H6l6-6 6 6zM6 14h12l-6 6-6-6z"></path></svg>
+                                                        </div>
+                                                    </div>
+                                                    <!-- 서브 이미지 옆에 삭제 버튼 -->
+                                                    <button type="button" title="삭제" class="delete-sub-img">
+                                                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M6 19V7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM19 4v2H5V4h3.5l1-1h5l1 1H19z"></path></svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <button type="button" class="sub-img-bottom-wrapper">
+                                                <div class="sub-img-bottom"></div>
+                                            </button>
+                                        </div>
+                                    </li>
+                                    <!-- 서브 이미지 추가 버튼 -->
+                                     <button type="button" class="sub-img-plus-btn-container">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="currentColor" viewBox="0 0 18 18"><path d="M9.8 2.25a.8.8 0 1 0-1.6 0V8.2H2.25a.8.8 0 0 0 0 1.6H8.2v5.95a.8.8 0 0 0 1.6 0V9.8h5.95a.8.8 0 0 0 0-1.6H9.8z"></path></svg>
+                                     </button>
+                                 </ol>
+                            </div>
+                            <!-- 이미지, 게시글 내용 부분 -->
+                            <ol class="post-img-content-container">
+                                <!-- 이미지, 게시글 리스트 -->
+                                <li class="post-img-content-wrapper">
+                                    <div class="post-img-content-wrap">
+                                        <div class="post-img-content">
+                                            <!-- 이미지 첨부 부분 -->
+                                            <div class="post-img">
+                                                <div id="image-action-container" class="img-add-container" draggable="true" style="padding-bottom: 100%;">
+                                                    <img src="blob:https://ohou.se/9e871e4c-a8da-4cc8-8c86-07488711bd98" alt="" class="css-n9shyu e1w4vsrt7">
+                                                    <img class="css-n9shyu e1w4vsrt7" alt="" src="https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=480&amp;webp=1" srcset="https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=720&amp;webp=1 1.5x,https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=960&amp;webp=1 2x,https://prs.ohousecdn.com/apne2/content/uploads/cards/v1-415257454911552.png?w=1360&amp;webp=1 3x">
+                                                    <div class="post-img-bottom">
+                                                        <!-- 편집 버튼 -->
+                                                        <button class="edit-button">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="12" fill="currentColor" viewBox="0 0 12 12" class="css-it6kh9 e3fo7fe0"><path fill-rule="evenodd" d="M10.424 3.243a.6.6 0 0 1 0 .848L5.091 9.424a.6.6 0 0 1-.849 0L1.576 6.758a.6.6 0 1 1 .848-.849l2.243 2.243 4.909-4.91a.6.6 0 0 1 .848 0" clip-rule="evenodd"></path></svg>
+                                                            태그 편집 완료
+                                                        </button>
+                                                    </div>
+                                                    <div class="post-img-floor">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 게시글 내용 부분 -->
+                                        <div class="img-post-term">
+                                            <div class="post-write-container">
+                                                <div class="post-write-wrapper">
+                                                    <div contenteditable="true" placeholder="모집글을 작성해주세요." row="6" data-testid="description-input" class="post-input"></div>
+                                                    <div rows="6" class="rows-check"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </li>
+                                <!-- 게시글 작성 리스트 끝 -->
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
