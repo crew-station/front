@@ -1003,3 +1003,13 @@ svg.product-detail-information-icon{
 svg.product-detail-information-icon:hover+div.prduct-info-wrap{
     display: block;
 }
+
+span.gift-price+div{
+    display: flex;
+    gap: 12px;
+}
+div.delivery-method{
+    background-color: white;
+    border: 1px solid #d3dadf;
+    color: #a6a6a6;
+}
