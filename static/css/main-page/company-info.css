@@ -143,3 +143,88 @@ div.slide-up.active{
 div.image-slide-up{
     margin-bottom: 80px;
 }
+div.index-page-info{
+    margin-bottom: 100px;
+    margin-top: 80px;
+    padding: 112px 0;
+    background-color: #f4f7f8;
+}
+
+div.index-page-info-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1175px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+div.index-page-info-wrap{
+    flex: 1 0;
+    position: relative;
+}
+p.index-page-info-title {
+    color: #212529;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -.72px;
+    line-height: 1.5;
+    margin-bottom: 90px;
+    white-space: pre-wrap;
+}
+
+div.crew.index-page-info-count.index-page-info-count-crew{
+
+}
+
+div.index-page-info-count-item{
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+div.slide-up.crew{
+    opacity: 1;
+}
+div.index-page-info-count-item-title{
+    font-size: 30px;
+    color: #647FBC;
+    font-weight: 700;
+    letter-spacing: -.32px;
+    margin-bottom: 10px;
+}
+
+span.index-page-info-count-item-text{
+    font-size: 29px;
+    color: #212529;
+    margin-right: 12px;
+    line-height: 37px;
+    letter-spacing: -2px;
+}
+
+div.index-page-info-crew-img{
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .2);
+    box-sizing: border-box;
+    margin-left: 75px;
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.index-page-info-crew-img img{
+    text-align: center;
+    width: 70%;
+    height: 60%;
+}
+
+div.index-page-img-wrap{
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+}

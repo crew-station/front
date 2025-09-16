@@ -960,27 +960,40 @@ div.chemistry-div{
 div.prduct-info-wrap{
     display: none;
     position: absolute;
-	background: black;
-    color: white;
-    top: -90px;
+	background: #fff;
+    border: 1px solid #ddd;;    
+    color: #333;
+    top: -132px;
     left: -96px;
     width: 230px;
     padding: 10px;
     white-space : normal;
 	border-radius: .4em;
 }
+
+div.prduct-info-wrap p {
+    line-clamp: 4;
+    -webkit-line-clamp:none;
+}
 div.prduct-info-wrap::after{
-    content: '';
+    margin-top: -1px;
+    border-color: #fff transparent transparent transparent;
+    content: "";
     position: absolute;
-    bottom: 0;
-    left: 74%;
-    width: 0;
-    height: 0;
-    border: 20px solid transparent;
-    border-top-color: black;
-    border-width: 10px 10px 0px 10px;
-    margin-left: -6px;
-    margin-bottom: -8px;
+    top: 100%;
+    left: 71.6%;
+    border-style: solid;
+    border-width: 10px 9px 0 9px;
+}
+
+.prduct-info-wrap::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 71.6%;
+    border-style: solid;
+    border-color: #ddd transparent transparent transparent;
+    border-width: 10px 9px 0 9px;
 }
 
 svg.product-detail-information-icon{
@@ -989,4 +1002,14 @@ svg.product-detail-information-icon{
 
 svg.product-detail-information-icon:hover+div.prduct-info-wrap{
     display: block;
+}
+
+span.gift-price+div{
+    display: flex;
+    gap: 12px;
+}
+div.delivery-method{
+    background-color: white;
+    border: 1px solid #d3dadf;
+    color: #a6a6a6;
 }
