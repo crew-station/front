@@ -146,11 +146,13 @@ ol,ul {
 }
 
 .product-cover-image-list {
-    display: flex;              /* 가로로 나열 */
-    flex-wrap: wrap;            /* 줄바꿈 가능 */
-    gap: 8px;                   /* 썸네일 간격 */
-    margin: 8px 0 0;
-    justify-content: center;    /* 가운데 정렬 */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;                
+    justify-content: center; 
+    margin: 0; 
+    padding: 0; 
+    list-style: none; 
 }
 
 .product-cover-image-item {
@@ -621,8 +623,8 @@ ol,ul {
 .product-selling-description-notice-image {
     display: block;
     max-width: 600px; 
-    width: 80%;       
-    height: 80%;    
+    width: 95%;       
+    height: 95%;    
     margin: 0 auto;   
 }
 
@@ -644,7 +646,7 @@ ol,ul {
 }
 
 .product-another-suggestion {
-  margin: 10px 0 12px;     
+  margin: 30px 0 12px;     
   padding: 5px 0px;
 }
 
@@ -664,7 +666,7 @@ ol,ul {
 }
 
 .product-selling-section {
-  margin-bottom: 60px;  
+  margin-bottom: 0px;  
 }
 
 .product-selling-description {
@@ -851,7 +853,7 @@ button {
     }
 
  .form-group {
-  position: relative;      /* 버튼 위치 기준 */
+  position: relative;      
   margin-bottom: 16px;
 }
 
@@ -862,13 +864,13 @@ button {
   font-weight: 600;
   color: #333;
   margin-bottom: 0px;
-  text-align: left;        /* 왼쪽 정렬 강제 */
+  text-align: left;       
 }
 
 /* 인풋 */
 .form-group input {
   width: 100%;
-  padding: 10px 40px 10px 12px; /* 오른쪽 여백 확보 (버튼 자리) */
+  padding: 10px 40px 10px 12px; 
   border: 1px solid #ddd;
   border-radius: 6px;
   font-size: 14px;
@@ -906,7 +908,7 @@ button {
 
 .product-detail-container,
 .product-detail-container * {
-  caret-color: transparent; /* 커서 숨기기 */
+  caret-color: transparent; 
 }
 
   /* 검색 버튼 */
@@ -936,9 +938,8 @@ button {
   position: absolute;
   bottom: 36px;               
   left: 0;                    
-  min-width: 260px;           
+  min-width: 250px;           
   max-width: 360px;           
-
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -978,6 +979,7 @@ button {
 .tooltip-box p {
   margin: 4px 0 0;
   line-height: 1.5;
+  text-indent: 16px;
 }
 
 

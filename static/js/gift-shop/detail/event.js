@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const addressInput = document.getElementById("addressInput");
       const detailAddress = document.getElementById("detailAddress");
       const phone = document.getElementById("phone");
+      const zipCode = document.getElementById("zipCode");
 
       // 배송지 입력 체크
       if (!addressInput.value || addressInput.value.trim() === "") {
@@ -53,6 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!detailAddress.value || detailAddress.value.trim() === "") {
         alert("상세주소를 입력해주세요.");
         detailAddress.focus();
+        return;
+      }
+
+      // 우편번호 입력 체크
+      if (!zipCode.value || zipCode.value.trim() === "") {
+        alert("우편번호를 입력해주세요.");
+        zipCode.focus();
         return;
       }
 

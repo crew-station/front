@@ -339,7 +339,7 @@
                         <div id="myModal" class="modal">
                             <div class="modal-content">
                                 <span class="close">&times;</span>
-                                <h2>추가정보 입력</h2>
+                                <h2>필수정보 입력</h2>
 
                         <!-- form 시작 -->
                         <form id="requestForm">
@@ -365,6 +365,12 @@
                             <input type="text" id="detailAddress">
                         </div>
 
+                        <div class="form-group"> 
+                            <label for="zipCode">우편번호 <span class="required-dot">*</span>
+                            </label> 
+                            <input type="text" id="zipCode">
+                        </div>
+
                         <div class="form-group">
                             <label for="phone">
                             핸드폰 번호 (숫자만 입력하세요.) <span class="required-dot">*</span>
@@ -372,10 +378,7 @@
                             <input type="tel" id="phone">
                         </div>
 
-                        <div class="form-group">
-                            <label for="requestNote">기타 요청사항</label>
-                            <input type="text" id="requestNote">
-                        </div>
+                        
 
                         <button type="submit" class="product-buying-btn">요청하기</button>
                         </form>
