@@ -232,6 +232,36 @@ function startCountdown() {
     updateTimer();
     setInterval(updateTimer, 1000);
   });
+
+  // 공유하기 버튼 클릭 이벤트
+
+const shareButton = document.querySelector(".product-detail-header-share-btn-wrapper");
+const toast = document.querySelector(".toast");
+
+shareButton.addEventListener("click", (e) => {
+    toast.style.display = "block";
+    toast.classList.remove("hide");
+    toast.classList.add("show");
+    setTimeout(() => {
+        toast.classList.remove("show");
+        toast.classList.add("hide");
+        setTimeout(() => {
+            toast.style.display = "none";
+        }, 500);
+    }, 3000);
+    clip();
+});
+
+function clip() {
+    var url = "";
+    var textarea = document.createElement("textarea");
+    document.body.appendChild(textarea);
+    url = window.location.href; // 현재 URL을 가져옵니다.
+    textarea.value = url;
+    textarea.select(); // 텍스트 영역의 내용을 선택합니다.
+    document.execCommand("copy"); // 선택된 내용을 클립보드에 복사합니다.
+    document.body.removeChild(textarea); // 텍스트 영역을 제거합니다.
+}
 }
 
 document.addEventListener("DOMContentLoaded", startCountdown);

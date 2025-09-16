@@ -42,6 +42,7 @@ p {
     position: relative;
     padding: 16px 0px;
     border-bottom: 1px solid rgb(234, 237, 239);
+    cursor: pointer;
 }
 
 .product-image-container {
