@@ -219,7 +219,7 @@ button {
     width: 120px;
 }
 
-.tag {
+.tag0 {
     background-color: #35c5f0;
     border-color: #35c5f0;
     color: #fff;
@@ -466,7 +466,66 @@ li {
     transition: opacity 0.4s 0.3s;
 }
 
-/* 편집 버튼 */
+/* 이미지 호버 편집 버튼 */
+
+.return-img{
+    padding: 0px;
+    border: none;
+    background: none;
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    position: relative;
+    display: inline-block;
+    margin: 0px 24px 0px 0px;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    transition: opacity 0.1s;
+    z-index: 1;
+}
+
+.delete-img {
+    padding: 0px;
+    border: none;
+    background: none;
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    position: relative;
+    display: inline-block;
+    margin: 0px 24px 0px 0px;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    transition: opacity 0.1s;
+    z-index: 1;
+}
+
+
+.tag-plus {
+    font-size: 8px;
+    margin: 0px 5px 0px 3px;
+    vertical-align: 1px;
+}
+
+
+
+/* 편집 완료 버튼 */
 .edit-button {
     display: inline-block;
     margin: 0px;
@@ -497,7 +556,7 @@ li {
     cursor: pointer;
 }
 
-.css-it6kh9 {
+.tag-check {
     margin: 0px 5px 0px 3px;
     vertical-align: 1px;
 }
@@ -539,8 +598,9 @@ li {
     font-size: 14px;
     line-height: 20px;
     z-index: 1;
-    caret-color: rgb(47, 52, 56);
-    color: transparent;
+    /* caret-color: rgb(47, 52, 56); */
+    color: #424242;
+    /* color: transparent; */
     border: 1px solid transparent;
 }
 
@@ -562,4 +622,294 @@ li {
     pointer-events: none;
     border: 1px solid rgb(230, 230, 230);
     border-radius: 4px;
+}
+
+/* 이미지  클릭 + 버튼 */
+
+.img-tag-container {
+    position: absolute;
+    margin: -12px 0 0 -12px;
+    font-size: 0;
+    line-height: 0;
+    display: inline-block;
+}
+
+.post-img-floor .tag {
+    z-index: 2;
+}
+
+.tag-add-btn {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 0;
+    cursor: pointer;
+}
+
+.plus-img-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    margin: -3px;
+    padding: 3px;
+    z-index: 1;
+}
+
+.plus-img {
+    color: #35c5f0;
+    font-size: 18px;
+    transition: color .1s;
+    position: relative;
+    z-index: 2;
+}
+
+/* 이미지 태그 모달 */
+
+.modal.open.open {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    transition: opacity .2s, transform .2s;
+}
+
+
+.modal.open-active {
+    pointer-events: auto;
+}
+
+.modal {
+    transform-origin: 50% 0;
+    box-sizing: border-box;
+}
+
+.modal-view {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    height: 450px;
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px 0 rgba(63, 71, 77, .2);
+}
+
+.modal-popout .modal-view {
+    background-color: #fff;
+    border: 1px solid #dbdbdb;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px 0 rgba(63, 71, 77, .2);
+}
+
+/* 모달 열기 전 */
+.modal-popout .modal-view::before {
+    left: 50%;
+    margin-left: 0;
+    transform: translateX(-50%);
+    top: -10px;
+    border-color: transparent transparent #dbdbdb;
+    border-style: solid;
+    border-width: 0 7px 10px;
+    content: "";
+    position: absolute;
+    display: block;
+    transition: border-color .2s;
+}
+
+/* 모달 닫기 */
+.modal-popout .modal-view::after {
+    left: 50%;
+    margin-left: 0;
+    transform: translateX(-50%);
+    bottom: -9px;
+    border-color: #fff transparent transparent;
+    border-style: solid;
+    border-width: 9.5px 6.5px 0;
+    content: "";
+    position: absolute;
+    display: block;
+    transition: border-color .2s;
+}
+
+
+
+.modal-view-container {
+    flex: 1 0 0px;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-view-wrapper {
+    flex: 0 0 auto;
+    padding: 20px 15px 10px;
+}
+
+.modal-tag-input-container {
+    display: flex;
+}
+
+.modal-tag-input-wrapper {
+    flex: 1 0 0px;
+}
+
+.tag-input {
+    display: inline-block;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-size: 15px;
+    line-height: 21px;
+    resize: none;
+    appearance: none;
+    margin: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(219, 219, 219);
+    border-image: initial;
+    border-radius: 4px;
+    transition: border-color 0.1s, background-color 0.1s;
+    padding: 8px 15px 9px;
+}
+
+.close-btn {
+    flex: 0 0 auto;
+    margin: 0 0 0 10px;
+    padding: 3px 5px;
+    display: inline-block;
+    width: auto;
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    font-family: "Noto Sans KR", "Noto Sans CJK KR", "맑은 고딕", "Malgun Gothic", sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    text-align: center;
+    transition: color 0.1s, opacity 0.1s;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    color: rgb(66, 66, 66);
+    font-size: 15px;
+    line-height: 19px;
+}
+/* 검색 */
+.modal-content {
+    flex: 1 1 auto;
+    padding: 10px 0;
+    overflow: auto;
+}
+
+/* 검색 기록이 없을 때 */
+.no-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.no-content-text {
+    padding: 30px 0;
+    text-align: center;
+    font-size: 15px;
+    line-height: 23px;
+    color: #9e9e9e;
+}
+
+.tag-profile-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: left;
+    margin: 0px;
+    padding: 5px 15px;
+    background: transparent;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    font: inherit inherit inherit inherit inherit inherit inherit inherit inherit inherit inherit inherit inherit inherit inherit inherit inherit;
+    transition: background-color 0.1s;
+}
+
+/* 태그 검색 프로필 */
+.member-profile {
+    flex: 0 0 auto;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+    border-radius: 22px;
+    overflow: hidden;
+}
+
+.member-profile::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 22px;
+    border: 1px solid rgba(130, 140, 148, .33);
+}
+
+.member-info-container {
+    flex: 1 0 0px;
+    align-self: stretch;
+}
+
+.member-name {
+    font-weight: 500;
+    letter-spacing: -.3px;
+    color: #828c94;
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 2px;
+}
+
+.member-email {
+    color: #2f3438;
+    font-size: 14px;
+    line-height: 18px;
+    height: 38px;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: 500;
+    letter-spacing: -.3px;
+    margin-top: 5%;
+}
+
+.tag-select-btn {
+    flex: 0 0 auto;
+    margin-left: 18px;
+}
+
+.tag-select-btn-text {
+    padding: 6px 15px;
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -.3px;
+    text-align: center;
+    color: #2f3438;
+    background-color: #fff;
+    border: 1px solid #dadde0;
+    border-radius: 4px;
+    transition: background-color .1s;
 }
