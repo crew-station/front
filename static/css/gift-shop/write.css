@@ -27,24 +27,24 @@
 
 .gift-shop-write-header-icon {
     flex: 0 0 auto;
-    height: 120px; 
+    height: 80px; 
     width: auto; 
 }
 
 .gift-shop-write-header-btn {
     border: none;
-    background: #0AA5FF;
+    background: #647FBC;
     font-size: 14px;
     line-height: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 44px;
+    height: 40px;
     border-radius: 4px;
     padding: 0 16px;
     font-weight: 400;
     color: #fff;
-    width: 132px;
+    width: 100px;
     cursor: pointer;
 }
 
@@ -187,3 +187,386 @@ p {
 .header-category.active::after {
     transform: scaleX(1);
 }
+
+/* 글쓰기 메인 부분 */
+
+.write-content-container {
+    margin: 20px auto 0px;
+    padding: 0px 15px;
+    max-width: 1003px;
+    box-sizing: border-box;
+}
+
+.write-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+
+@media (min-width: 1256px) {
+    .write-content-thumbnail-container {
+        margin-right: 10px;
+        margin-left: -125px;
+    }
+}
+
+.write-content-thumbnail-wrap {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.write-content-thumbnail-wrapper {
+    padding: 0px 0px 10px;
+}
+
+.write-content-thumbnail-container {
+    display: flex;
+    flex-wrap: wrap;        
+    gap: 8px;
+    width: 100%;
+    max-width: 600px;       
+    margin: 12px auto 0;
+    box-sizing: border-box;
+  }
+
+  .write-content-img-add-btn {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    background: none rgb(247, 249, 250);
+    font: inherit;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px dashed rgb(230, 230, 230);
+    color: rgb(130, 140, 148);
+}
+
+/* 대표 이미지 영역 전용 버튼 (확대 버전) */
+.write-content-img-add-btn.large {
+    width: 100%;
+    height: 100%;
+    font-size: 48px;
+    border-radius: 0;
+    border: none;
+    background: #f7f8fa;
+  }
+
+.write-content-thumbnail,
+.write-content-img-add-btn {
+  flex: 0 0 calc(25% - 8px);  
+  max-width: calc(25% - 8px);
+  aspect-ratio: 1 / 1;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #f7f8fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.write-content-thumbnail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+.write-content-img-btn-wrapper {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 40px 16px 16px;
+    border-radius: inherit;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.54));
+    color: rgb(255, 255, 255);
+    font-size: 0px;
+    line-height: 0;
+    transition: opacity 0.4s 0.3s;
+}
+
+.write-content-img-update-btn {
+    padding: 0px;
+    border: none;
+    background: none;
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    position: relative;
+    display: inline-block;
+    margin: 0px 24px 0px 0px;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    transition: opacity 0.1s;
+    z-index: 1;
+}
+
+.write-content-img-delete-btn {
+    padding: 0px;
+    border: none;
+    background: none;
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    position: relative;
+    display: inline-block;
+    margin: 0px 24px 0px 0px;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    transition: opacity 0.1s;
+    z-index: 1;
+}
+
+
+.write-content-img-delete {
+    display: inline-block;
+    border: none;
+    background: none;
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    margin: 5px;
+    padding: 5px;
+    color: rgb(117, 117, 117);
+    transition: opacity 0.1s;
+    border-radius: 4px;
+    font-size: 24px;
+    opacity: 0;
+}
+
+.write-content-cover-img-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 1/1;
+    margin: 0 auto 12px;
+    background: #f7f8fa;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.write-content-cover-add {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+.write-content-add-desc {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #828c94;
+  }
+
+.write-content-cover-img img {
+width: 100%;
+height: 100%;
+object-fit: cover;  
+}
+
+.write-content-field-wrap {
+    margin: 10px 0px 0px;
+}
+
+.write-content-field-container {
+    margin: 0px 0px -10px;
+
+}
+
+.write-content-field-text-wrapper {
+    position: relative;
+    height: 150px;
+    margin-bottom: 100px;
+}
+
+.write-content-title {
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2F3438;
+    min-height: 48px;
+    box-sizing: border-box;
+  }
+  
+  .write-content-title:focus {
+    outline: none;
+    border: 1px solid #647FBC;
+  }
+
+.write-content-title:empty::before {
+    content: attr(data-placeholder);
+    color: #aaa;
+    pointer-events: none;
+  }
+
+.write-content-field-text {
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  padding: 16px;
+  min-height: 152px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2F3438;
+  white-space: pre-wrap;  
+  box-sizing: border-box;
+}
+
+.write-content-field-text:focus {
+    outline: none; 
+    border: 1px solid #647FBC;   
+  }
+
+  .write-content-field-text:empty::before {
+    content: attr(data-placeholder);
+    color: #aaa;
+    pointer-events: none;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+.write-content-field-text {
+    color: #2F3438; 
+  }
+
+/* 일반 입력창 */
+.write-content-input {
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    padding: 8px 12px;         
+    font-size: 13px;           
+    line-height: 18px;         
+    color: #2F3438;
+    min-height: 36px;         
+    box-sizing: border-box;
+  }
+
+.write-content-input:focus {
+outline: none;
+border: 1px solid #647FBC;
+}
+
+
+.write-content-input:empty::before {
+content: attr(data-placeholder);
+color: #aaa;
+pointer-events: none;
+}
+
+.write-content-input-dropdown-icon {
+    position: absolute;
+    top: 7px;
+    right: 4px;
+}
+
+.write-content-select-wrap {
+    position: relative;
+    width: 100%;
+  }
+  
+  .write-content-select {
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    padding: 8px 32px 8px 12px;
+    font-size: 13px;
+    line-height: 18px;
+    color: #2F3438;
+    min-height: 36px;
+    box-sizing: border-box;
+  }
+  
+  .write-content-select:focus {
+    outline: none;
+    border: 1px solid #647FBC;
+  }
+  
+  .write-content-select:empty::before {
+    content: attr(data-placeholder);
+    color: #aaa;
+    pointer-events: none;
+  }
+  
+  .write-content-select-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #828c94;
+  }
+  
+  .write-content-select-dropdown {
+    display: none; 
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    list-style: none;
+    margin: 0;
+    padding: 4px 0;
+    z-index: 1000;
+  }
+  
+  .write-content-select-dropdown li {
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .write-content-select-dropdown li:hover {
+    background: #f5f5f5;
+  }
+
+.unit-input { position: relative; display: inline-block; width: 100%; }
+.unit-input > input { width: 100%; padding-right: 3.5rem; } /* 단위 자리 확보 */
+.unit-input::after {
+  content: attr(data-unit);
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+  font-size: 13px;
+}
+
+
+
