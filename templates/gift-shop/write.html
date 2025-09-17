@@ -29,19 +29,15 @@
                   <!-- 서브 헤더 -->
                   <div class="layout-navigation-secondary">
                     <div class="header-container">
-                      <div class="header-wrapper">
-                        <nav class="header-wrap">
-                          <span class="header-list-wrapper">
-                            <div class="header-list-wrap">
-                              <a class="header-category active" href="/">
-                                <div class="category">
-                                  <p class="header-name-check">글 작성하기</p>
-                                </div>
-                              </a>
+                      <nav class="header-wrap">
+                        <div class="header-list-wrap">
+                          <div class="header-category active" href="/">
+                            <div class="category">
+                              <p class="header-name">글 작성하기</p>
                             </div>
-                          </span>
-                        </nav>
-                      </div>
+                          </div>
+                        </div>
+                      </nav>
                     </div>
                   </div>
                   <div class="write-content-container">
@@ -60,13 +56,12 @@
 
                       <!-- 대표 이미지 있을 때 (이미지 표시) -->
                       <div class="write-content-cover-img-wrapper">
+                        <!-- 왼쪽 상단 태그 -->
+                        <div class="cover-img-label">대표 이미지</div>
                         <div class="write-content-cover-img">
                           <img src="/static/images/gift-shop-post-img1.png" alt="대표 이미지">
                         </div>
                         <div class="write-content-img-btn-wrapper">
-                          <button class="write-content-img-update-btn">
-                            <svg class="icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M17.9 10a6.4 6.4 0 0 0-6-4.5c-3.6 0-6.4 2.9-6.4 6.5s2.8 6.5 6.3 6.5c2.2 0 4.1-1 5.3-2.9a.7.7 0 1 1 1.2.8 7.8 7.8 0 0 1-6.5 3.6C7.5 20 4 16.4 4 12s3.5-8 7.8-8c3.4 0 6.3 2.2 7.4 5.3l.7-1.4a.7.7 0 1 1 1.3.7l-1.8 3.1a.7.7 0 0 1-1 .3l-3-1.8a.7.7 0 1 1 .7-1.3l1.8 1z"></path></svg>
-                          </button>
                           <button class="write-content-img-delete-btn">
                             <svg class="icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M6 19V7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM19 4v2H5V4h3.5l1-1h5l1 1H19z"></path></svg>
                           </button>
@@ -118,7 +113,7 @@
 
                         <!-- 드롭다운 (최대 개수) -->
                         <div class="write-content-select-wrap">
-                          <input type="text" class="write-content-select" id="quantityInput" placeholder="제한 개수를 입력해주세요." readonly>
+                          <input type="text" class="write-content-select" id="quantityInput" placeholder="판매 가능 수량을 선택해주세요. (최대 10개까지)" readonly>
                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                               fill="currentColor" viewBox="0 0 24 24"
                               class="write-content-select-icon">
@@ -144,7 +139,16 @@
                           <input type="number" class="write-content-input" id="timeInput" max="120"
                                  placeholder="요청 마감까지 남은 시간을 입력해주세요.">
                         </div>
-                        <input type="text" class="write-content-input" placeholder="나라명을 입력해주세요.">
+                        <!-- 나라명 입력창 -->
+                        <div class="write-content-select-wrap autocomplete">
+                          <input 
+                            type="text" 
+                            id="countryInput" 
+                            class="write-content-select" 
+                            placeholder="나라 이름을 입력해주세요.">
+                          <ul id="countryDropdown" class="write-content-select-dropdown"></ul>
+                        </div>
+         
                         <input type="text" class="write-content-input" placeholder="제목을 입력해주세요.">
 
                         <!-- 본문 입력창 -->
