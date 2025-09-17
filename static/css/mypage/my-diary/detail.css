@@ -666,6 +666,26 @@ input, textarea, select {
     font-weight: 700;
 }
 
+.reply-edit-input {
+    border: 1px solid #eee;
+    width: 600px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+
+.save-reply-button {
+    position: relative;
+    margin-left: auto;
+    width: 50px;
+    height: 30px;
+    border: none;
+    background-color: #647FBC;
+    border-radius: 4px;
+    color: #fff;
+}
+
 .total {
     margin-left: 6px;
     color: #647FBC;
@@ -868,7 +888,7 @@ input, textarea, select {
     display: flex;
 }
 
-.reply-report-button {
+.reply-button {
     color: rgb(130, 140, 148);
     padding: 0px;
     background-color: transparent;
@@ -1434,24 +1454,25 @@ input, textarea, select {
 }
 
 .img-modal-container {
-    align-items: center;
-    max-height: 78%;
-    margin: 0px;
-    vertical-align: middle;
-    border-radius: 8px;
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
-    color: rgb(47, 52, 56);
-    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    position: relative;
     width: 980px;
     height: 680px;
-    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    color: rgb(47, 52, 56);
+    max-height: 78%;
+    margin: 0px;
 }
 
 .img-modal-container > img {
-    top: 6%;
-    position: absolute;
-    width: 900px;
+    width: 90%;
+    height: auto;
+    position: static;
+    margin-top: 40px;
 }
 
 .img-close-button {
@@ -1478,4 +1499,111 @@ input, textarea, select {
     font-family: OhouseIcon;
     vertical-align: top;
     content: "\e9ba";
+}
+
+/* 댓글 삭제 모달 */
+
+.remove-modal {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 1300;
+    background-color: rgba(33, 38, 41, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.remove-modal::before {
+    content: "";
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.remove-modal-win {
+    max-height: 48%;
+    margin: 0px;
+    vertical-align: middle;
+    border-radius: 8px;
+    display: inline-flex;
+    flex-direction: column;
+    color: rgb(47, 52, 56);
+    background-color: rgb(255, 255, 255);
+    max-width: 300px;
+    width: 100%;
+}
+
+.remove-head {
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    word-break: break-all;
+    overflow-y: auto;
+}
+
+.head-text {
+    padding: 16px 16px 10px;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(47, 52, 56);
+    text-align: center;
+    word-break: keep-all;
+    white-space: pre-line;
+}
+
+.remove-buttons-wrap {
+    padding: 9px 16px;
+    line-height: 0;
+}
+
+.remove-buttons {
+    padding-top: 1px;
+    padding-bottom: 7px;
+    display: flex;
+}
+
+.remove-no {
+    margin: 0px 10px 0px 0px;
+    background: none;
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 4px;
+    padding: 0px 16px;
+    font-weight: 700;
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(47, 52, 56);
+    border: 1px solid rgb(230, 230, 230);
+    width: calc(50% - 5px);
+}
+
+.remove-ok {
+    margin: 0px;
+    border: none;
+    background: none #647FBC;
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 4px;
+    padding: 0px 16px;
+    font-weight: 700;
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    width: calc(50% - 5px);
 }

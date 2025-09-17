@@ -22,7 +22,7 @@ purchases.forEach((purchase) => {
         paymentOk++;
     } else if (text === "결제대기") {
         watting++;
-    } else if (text === "수령완료") {
+    } else if (text === "전달완료") {
         receive++;
     } else {
         return;
@@ -70,67 +70,28 @@ listContents.forEach((content) => {
     });
 });
 
-// 주문 취소 버튼
+// 승락하기 버튼
+
+const acceptButtons = document.querySelectorAll(".accept");
+
+acceptButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        const confirmed = confirm("주문을 승락 하시겠습니까?");
+        if (confirmed) {
+            // 상태 변경
+        }
+    });
+});
+
+// 거절하기 버튼
 
 const cancelButtons = document.querySelectorAll(".purchase-cancel");
 
 cancelButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-        const confirmed = confirm("정말 주문 취소 하시겠습니까?");
+        const confirmed = confirm("정말 주문을 거절 하시겠습니까?");
         if (confirmed) {
             // 상태 변경
         }
     });
-});
-
-// 수령 완료 버튼
-
-const receiveButtons = document.querySelectorAll(".receive-button");
-
-receiveButtons.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        const confirmed = confirm("제품을 수령하셨나요?");
-        if (confirmed) {
-            // 상태 변경
-        }
-    });
-});
-
-// 별점 남기기
-
-const stars = document.querySelectorAll("label.star");
-const hiddenInput = document.querySelector("input[type='hidden']#star");
-
-let data = 0;
-
-stars.forEach((star) => {
-    star.addEventListener("click", (e) => {
-        data = star.dataset.point;
-        stars.forEach((star, i) => {
-            if (data >= i + 1) {
-                star.closest(".star").classList.add("full");
-            } else if (data < i + 1) {
-                star.closest(".star").classList.remove("full");
-            }
-        });
-    });
-});
-
-// 모달 켜기
-
-const modal = document.querySelector(".modal-wrapper");
-const starButtons = document.querySelectorAll(".star-button");
-
-starButtons.forEach((starButton) => {
-    starButton.addEventListener("click", (e) => {
-        modal.style.display = "flex";
-    });
-});
-
-// 모달 끄기
-
-const closeButton = document.querySelector(".close-button");
-
-closeButton.addEventListener("click", (e) => {
-    modal.style.display = "none";
 });

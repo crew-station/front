@@ -6,7 +6,7 @@
     <title>Crew Station</title>
     <link rel="shortcut icon" href="/static/images/crew-station-favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="/static/css/font.css">
-    <link rel="stylesheet" href="/static/css/mypage/purchase.css">
+    <link rel="stylesheet" href="/static/css/mypage/sale.css">
 </head>
 <body>
      <div class="all">
@@ -34,12 +34,12 @@
                         </a>
                     </li>
                     <li class="page-navigation__item">
-                        <a href="" class="active">
+                        <a href="">
                             나의 구매 내역
                         </a>
                     </li>
                     <li class="page-navigation__item">
-                        <a href="">
+                        <a href="" class="active">
                             나의 판매 내역
                         </a>
                     </li>
@@ -53,13 +53,13 @@
         </div>
         <main class="main">
             <div class="order-list__menu">
-                 <div class="order-list__menu__title">진행중인 주문  
+                 <div class="order-list__menu__title">내가 받은 주문  
                     <span class="order-list__menu__title__desc">(최근 6개월)</span>
                  </div>
                  <div class="order-list__menu__list__wrapper">
                     <a class="order-list__menu__list" href="">
                         <div class="order-list__menu__list__wrap">
-                            <div class="order-list__menu__list__title">주문신청</div>
+                            <div class="order-list__menu__list__title">승락대기</div>
                             <div class="order-list__menu__list__value request-number">0</div>
                         </div>
                     </a>
@@ -77,7 +77,7 @@
                     </a>
                     <a class="order-list__menu__list" href="">
                         <div class="order-list__menu__list__wrap">
-                            <div class="order-list__menu__list__title">수령완료</div>
+                            <div class="order-list__menu__list__title">전달완료</div>
                             <div class="order-list__menu__list__value receive-number">0</div>
                         </div>
                     </a>
@@ -131,7 +131,7 @@
                                     <div class="list-content">주문취소</div>
                                     <div class="list-content">결제대기</div>
                                     <div class="list-content">결제완료</div>
-                                    <div class="list-content">수령완료</div>
+                                    <div class="list-content">전달완료</div>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +140,7 @@
             </div>
             <div class="list">
                 <div class="purchase-list">
-                    <!-- 수령완료 -->
+                    <!-- 전달완료 -->
                     <div class="purchase-list-wrapper">
                         <div class="purchase-list-title">
                             <div class="title-text">
@@ -162,7 +162,7 @@
                                         <div class="order-title">
                                             <div class="order-title-inner">
                                                 <p>
-                                                    <b class="title-status">수령완료</b>
+                                                    <b class="title-status">전달완료</b>
                                                 </p>
                                             </div>
                                         </div>
@@ -181,20 +181,6 @@
                                                             <span>10,000원</span>
                                                             <span> · 1개</span>
                                                         </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="button-wrap">
-                                                <div class="button-inner">
-                                                    <div class="button-2">
-                                                        <div class="button-wrapper">
-                                                            <button class="button2 star-button">
-                                                                 <span style="width: 18px; margin: 0px 4px; margin-top: 3px;">
-                                                                    <img style="width: 100%;" src="/static/images/manner.png" alt="">
-                                                                 </span>
-                                                                <span class="button-span">별점 주기</span>
-                                                            </button>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -248,17 +234,24 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="button-wrap">
+                                            <!-- <div class="button-wrap">
                                                 <div class="button-inner">
+                                                    <div class="button-1">
+                                                        <div class="button-wrapper">
+                                                            <button class="button1">
+                                                                <span class="button-span">주문 취소</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
                                                     <div class="button-2">
                                                         <div class="button-wrapper">
-                                                            <button class="button2 receive-button">
-                                                                <span class="button-span">수령 완료</span>
+                                                            <button class="button2">
+                                                                <span class="button-span">별점 주기</span>
                                                             </button>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </li>
@@ -273,12 +266,6 @@
                                 <hr class="bar">
                                 <span class="title--span">주문 1건</span>
                             </div>
-                            <span class="detail">
-                                주문상세
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" fill="currentColor" viewBox="0 0 12 12">
-                                    <path fill-rule="evenodd" d="M3.551 1.151a.6.6 0 0 0 .05.847l4.496 3.996L3.6 9.99a.6.6 0 0 0 .798.897l4.58-4.07a1.1 1.1 0 0 0 0-1.645l-4.58-4.07a.6.6 0 0 0-.848.05" clip-rule="evenodd"></path>
-                                </svg>
-                            </span>
                         </div>
                         <div>
                             <ul class="order">
@@ -314,7 +301,14 @@
                                                     <div class="button-1">
                                                         <div class="button-wrapper">
                                                             <button class="button1 purchase-cancel">
-                                                                <span class="button-span">주문 취소</span>
+                                                                <span class="button-span">거절하기</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="button-1">
+                                                        <div class="button-wrapper">
+                                                            <button class="button2 accept">
+                                                                <span class="button-span">승락하기</span>
                                                             </button>
                                                         </div>
                                                     </div>
@@ -334,15 +328,11 @@
                                 <hr class="bar">
                                 <span class="title--span">주문 1건</span>
                             </div>
-                            <span class="detail">
-                                주문상세
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" fill="currentColor" viewBox="0 0 12 12">
-                                    <path fill-rule="evenodd" d="M3.551 1.151a.6.6 0 0 0 .05.847l4.496 3.996L3.6 9.99a.6.6 0 0 0 .798.897l4.58-4.07a1.1 1.1 0 0 0 0-1.645l-4.58-4.07a.6.6 0 0 0-.848.05" clip-rule="evenodd"></path>
-                                </svg>
-                            </span>
                         </div>
                         <div>
-                            <ul class="order">
+                            <!-- 취소한 ul만 cancel 붙이기, cancel-overlay div 추가하기 -->
+                            <ul class="order cancel">
+                                <div class="cancel-overlay"></div>
                                 <li>
                                     <div class="order-card">
                                         <div class="order-title">
@@ -384,12 +374,6 @@
                                 <hr class="bar">
                                 <span class="title--span">주문 1건</span>
                             </div>
-                            <span class="detail">
-                                주문상세
-                                <svg xmlns="http://www.w3.org/2000/svg" width="12" fill="currentColor" viewBox="0 0 12 12">
-                                    <path fill-rule="evenodd" d="M3.551 1.151a.6.6 0 0 0 .05.847l4.496 3.996L3.6 9.99a.6.6 0 0 0 .798.897l4.58-4.07a1.1 1.1 0 0 0 0-1.645l-4.58-4.07a.6.6 0 0 0-.848.05" clip-rule="evenodd"></path>
-                                </svg>
-                            </span>
                         </div>
                         <div>
                             <ul class="order">
@@ -417,17 +401,6 @@
                                                             <span>10,000원</span>
                                                             <span> · 1개</span>
                                                         </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="button-wrap">
-                                                <div class="button-inner">
-                                                    <div class="button-2">
-                                                        <div class="button-wrapper">
-                                                            <button class="button2 star-button">
-                                                                <span class="button-span">결제하기</span>
-                                                            </button>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -545,5 +518,5 @@
         </main>
     </div>
 </body>
-<script src="/static/js/mypage/purchase/event.js"></script>
+<script src="/static/js/mypage/sale/event.js"></script>
 </html>

@@ -24,9 +24,9 @@ const modal = document.querySelector(".img-modal");
 const modalImg = document.querySelector(".img-modal img");
 const closeBtn = document.querySelector(".img-close-button");
 
-targets.forEach((target, index) => {
+targets.forEach((target, i) => {
     target.addEventListener("click", () => {
-        const imgSrc = images[index].getAttribute("src");
+        const imgSrc = images[i].getAttribute("src");
         modalImg.setAttribute("src", imgSrc);
         modal.style.display = "flex";
     });
@@ -37,7 +37,7 @@ closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
 });
 
-// 모달 바깥 클릭하면 닫기 (선택)
+// 모달 바깥 클릭하면 닫기
 modal.addEventListener("click", (e) => {
     if (e.target === modal) {
         modal.style.display = "none";
@@ -123,12 +123,90 @@ input.addEventListener("input", (e) => {
     }
 });
 
-// 댓글 입력 버튼 클릭 시 댓글 추가
+// 댓글 입력 버튼 클릭 시 입력 비활성화
 
 enterButton.addEventListener("click", (e) => {
     input.value = "";
     enterButton.classList.remove("active");
     enterButton.disabled = true;
+});
+
+// 댓글 수정
+
+document
+    .querySelectorAll(".modify-reply-button")
+    .forEach((modifyReplyButton) => {
+        modifyReplyButton.addEventListener("click", () => {
+            const replyContent = modifyReplyButton.closest(".reply-content");
+            const replyFlexBox = replyContent.querySelector(
+                "div[style='display: flex;']"
+            );
+            const replyTextDiv = replyFlexBox.querySelector(
+                ".reply-content-text"
+            );
+            const originalText = replyTextDiv.textContent;
+
+            const input = document.createElement("input");
+
+            input.type = "text";
+            input.className = "reply-edit-input";
+            input.value = originalText;
+
+            // 저장 버튼 만들기
+            const saveButton = document.createElement("button");
+            saveButton.textContent = "저장";
+            saveButton.className = "save-reply-button";
+
+            // 기존 텍스트 제거하고 input, 버튼 만들기
+            replyFlexBox.innerHTML = "";
+            replyFlexBox.appendChild(input);
+            replyFlexBox.appendChild(saveButton);
+
+            // 다시 텍스트로
+            saveButton.addEventListener("click", () => {
+                const newText = input.value;
+
+                // 새로운 텍스트 div 생성
+                const newTextDiv = document.createElement("div");
+                newTextDiv.className = "reply-content-text";
+                newTextDiv.textContent = newText;
+
+                // input과 버튼 제거하고 텍스트 복원
+                replyFlexBox.innerHTML = "";
+                replyFlexBox.appendChild(newTextDiv);
+            });
+        });
+    });
+
+// 댓글 삭제
+
+const replyRemoveButtons = document.querySelectorAll(".remove-reply-button");
+const removeModal = document.querySelector(".remove-modal");
+const removeNoButton = removeModal.querySelector(".remove-no");
+const removeOkButton = removeModal.querySelector(".remove-ok");
+
+let targetReply = null; // 삭제 대상 reply-item 저장용
+
+replyRemoveButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        removeModal.style.display = "block";
+        targetReply = btn.closest(".reply-item"); // 삭제할 대상 저장
+    });
+});
+
+// 취소 버튼 클릭 시 모달 닫기
+removeNoButton.addEventListener("click", () => {
+    removeModal.style.display = "none";
+    targetReply = null;
+});
+
+// 확인 버튼 클릭 시 reply-item 삭제 후 모달 닫기
+removeOkButton.addEventListener("click", () => {
+    if (targetReply) {
+        targetReply.remove();
+        targetReply = null;
+    }
+    removeModal.style.display = "none";
 });
 
 // 페이지 클릭
