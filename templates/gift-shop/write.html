@@ -10,45 +10,158 @@
 </head>
 <body>
     <div class="page">
+      <!-- 폼태그 -->
         <form>
             <div class="page-container">
                 <main class="main-container">
-                <!-- 서브 헤더 -->
-                <header>
-                    <div class="gift-shop-write-header-container">
-                      <div class="gift-shop-write-header-wrapper">
-                        <img class="gift-shop-write-header-icon" src="/static/images/CREW-STATION.png">
-                        <div class="gift-shop-write-header-btn-wrapper">
-                          <button class="gift-shop-write-header-btn">올리기</button>
+                <!-- 올리기 메뉴 -->
+                  <header>
+                      <div class="gift-shop-write-header-container">
+                        <div class="gift-shop-write-header-wrapper">
+                          <img class="gift-shop-write-header-icon" src="/static/images/CREW-STATION.png">
+                          <div class="gift-shop-write-header-btn-wrapper">
+                            <button class="gift-shop-write-header-btn">올리기</button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </header>
+                    </header>
                   
-                  <!-- 글 작성하기 메뉴 -->
+                  <!-- 서브 헤더 -->
                   <div class="layout-navigation-secondary">
                     <div class="header-container">
-                      <div class="header-wrapper">
-                        <nav class="header-wrap">
-                          <span class="header-list-wrapper">
-                            <div class="header-list-wrap">
-                              <a class="header-category active" href="/">
-                                <div class="category">
-                                  <p class="header-name-check">글 작성하기</p>
-                                </div>
-                              </a>
+                      <nav class="header-wrap">
+                        <div class="header-list-wrap">
+                          <div class="header-category active" href="/">
+                            <div class="category">
+                              <p class="header-name">글 작성하기</p>
                             </div>
-                          </span>
-                        </nav>
-                      </div>
+                          </div>
+                        </div>
+                      </nav>
                     </div>
                   </div>
+                  <div class="write-content-container">
+                    <div class="write-content-wrapper">
+
+                      <!-- 대표 이미지 없을 때 -->
+                      <div class="write-content-cover-img-wrapper">
+                        <div class="write-content-cover-add">
+                          <button class="write-content-img-add-btn large">+</button>
+                          <p class="write-content-add-desc">사진을 등록해주세요.<br>
+                            (최대 8장까지 가능합니다.)
+
+                          </p>
                         </div>
-                    </header>
-                </main>
-            </div>
-        </form>
-    </div>
-    
+                      </div>
+
+                      <!-- 대표 이미지 있을 때 (이미지 표시) -->
+                      <div class="write-content-cover-img-wrapper">
+                        <!-- 왼쪽 상단 태그 -->
+                        <div class="cover-img-label">대표 이미지</div>
+                        <div class="write-content-cover-img">
+                          <img src="/static/images/gift-shop-post-img1.png" alt="대표 이미지">
+                        </div>
+                        <div class="write-content-img-btn-wrapper">
+                          <button class="write-content-img-delete-btn">
+                            <svg class="icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet"><path d="M6 19V7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM19 4v2H5V4h3.5l1-1h5l1 1H19z"></path></svg>
+                          </button>
+                        </div>
+                      </div>
+                  
+                      <!-- 썸네일 + 업로드 버튼 -->
+                      <div class="write-content-thumbnail-container">
+                          <div class="write-content-thumbnail">
+                            <img class="write-content-thumbnail-img" src="/static/images/gift-shop-post-img1.png">
+                          </div>
+                          <div class="write-content-thumbnail">
+                            <img class="write-content-thumbnail-img" src="/static/images/gift-shop-post-img2.png">
+                          </div>
+                          <div class="write-content-thumbnail">
+                            <img class="write-content-thumbnail-img" src="/static/images/gift-shop-post-img3.png">
+                          </div>
+                          <div class="write-content-thumbnail">
+                            <img class="write-content-thumbnail-img" src="/static/images/crew-station-icon-profile.png">
+                          </div>
+                          <div class="write-content-thumbnail">
+                            <img class="write-content-thumbnail-img" src="/static/images/sakura-profile.jpg">
+                          </div>
+                          <div class="write-content-thumbnail">
+                            <img class="write-content-thumbnail-img" src="/static/images/paper.png">
+                          </div>
+                          <div class="write-content-thumbnail">
+                            <img class="write-content-thumbnail-img" src="/static/images/air1.png">
+                          </div>
+
+
+                          <!-- 업로드 버튼 -->
+                          <button class="write-content-img-add-btn">+</button>
+                      </div>
+
+                        <!-- 드롭다운 (배송방법) -->
+                        <div class="write-content-select-wrap">
+                          <input type="text" class="write-content-select" placeholder="전달 방법을 선택해주세요." readonly>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                              fill="currentColor" viewBox="0 0 24 24"
+                              class="write-content-select-icon">
+                            <path d="M17 10H7l5 5z"></path>
+                          </svg>
+                          <ul class="write-content-select-dropdown">
+                            <li>직접전달</li>
+                            <li>택배거래</li>
+                          </ul>
+                        </div>
+
+                        <!-- 드롭다운 (최대 개수) -->
+                        <div class="write-content-select-wrap">
+                          <input type="text" class="write-content-select" id="quantityInput" placeholder="판매 가능 수량을 선택해주세요. (최대 10개까지)" readonly>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                              fill="currentColor" viewBox="0 0 24 24"
+                              class="write-content-select-icon">
+                            <path d="M17 10H7l5 5z"></path>
+                          </svg>
+                          <ul class="write-content-select-dropdown">
+                            <li>1개</li><li>2개</li><li>3개</li><li>4개</li><li>5개</li>
+                            <li>6개</li><li>7개</li><li>8개</li><li>9개</li><li>10개</li>
+                          </ul>
+                        </div>
+
+                        <!-- 일반 입력창 -->
+                        <div class="unit-input" data-unit="원">
+                          <input
+                            type="text"
+                            id="priceInput"
+                            class="write-content-input"
+                            inputmode="numeric"
+                            pattern="[0-9,]*"
+                            placeholder="판매 가격을 입력해주세요.">
+                        </div>
+                        <div class="unit-input" data-unit="시간">
+                          <input type="number" class="write-content-input" id="timeInput" max="120"
+                                 placeholder="요청 마감까지 남은 시간을 입력해주세요.">
+                        </div>
+                        <!-- 나라명 입력창 -->
+                        <div class="write-content-select-wrap autocomplete">
+                          <input 
+                            type="text" 
+                            id="countryInput" 
+                            class="write-content-select" 
+                            placeholder="나라 이름을 입력해주세요.">
+                          <ul id="countryDropdown" class="write-content-select-dropdown"></ul>
+                        </div>
+         
+                        <input type="text" class="write-content-input" placeholder="제목을 입력해주세요.">
+
+                        <!-- 본문 입력창 -->
+                        <div class="write-content-field-text" contenteditable="true" data-placeholder="내용을 입력해주세요."></div>
+
+                        <!-- 본문 서버 전송용 (DB에 저장될 부분) -->
+                        <textarea id="hiddenContent" name="content" style="display:none;"></textarea>
+                    </div>
+                  </div>
+              </main>
+          </div>
+      </form>
+  </div>
+<script src="/static/js/gift-shop/write/event.js"></script>
 </body>
 </html>

@@ -49,7 +49,7 @@ div.index-page-container{
 
 div.slide-up{
     animation-fill-mode: forwards;
-    opacity: 1;
+    opacity: 0;
 }
 h1.index-page-title{
     font-size: 50px;
@@ -142,7 +142,9 @@ div.index-page-info{
     background-color: #f4f7f8;
     height: 100vh;
 }
-
+div.index-page-info.diary{
+    background-color: #fff;
+}
 div.index-page-info-container{
     display: flex;
     flex-direction: row;
@@ -168,7 +170,9 @@ p.index-page-info-title {
     margin-bottom: 90px;
     white-space: pre-wrap;
 }
-
+p.index-page-info-title.diary{
+    margin-bottom: 50px;
+}
 
 div.index-page-info-count-item{
     margin-bottom: 40px;
@@ -198,6 +202,20 @@ div.index-page-info-crew-img,div.index-page-info-gift-img{
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .2);
     box-sizing: border-box;
     margin-left: 75px;
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.index-page-info-diary-img{
+    background-color: #f4f7f8;
+    border-radius: 4px;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .2);
+    box-sizing: border-box;
+    margin-right: 75px;
     width: 500px;
     height: 400px;
     display: flex;
@@ -382,4 +400,69 @@ div.scroll{
 
 div.index-page-info-first div.slide-up{
     opacity: 0;
+}
+
+div.index-page-info-count-item.diary{
+    margin-bottom: 60px;
+}
+a.home-btn{
+    align-items: center;
+    background-color: #3f474d;
+    border-radius: 30px;
+    bottom: 40px;
+    box-shadow: 0 4px 14px 0 rgba(33, 37, 41, .4);
+    color: #fff;
+    display: -moz-flex;
+    display: flex;
+    font-size: 17px;
+    font-weight: 700;
+    height: 64px;
+    justify-content: center;
+    letter-spacing: -.28px;
+    position: fixed;
+    right: 40px;
+    transition: box-shadow .25s, transform .25s, background-color .25s;
+    width: 190px;
+    z-index: 10;
+}
+nav.pagination-wrap{
+    position: relative;
+}
+div.nav-modal{
+    display: none;
+    position: absolute;
+    width: 100px;
+    background: #3f474d;
+    height: 159px;
+    padding: 12px;
+    opacity: 1;
+    border-radius: 5px;
+    top: -75%;
+    right: -107%;
+}
+
+nav.pagination-wrap:hover div.nav-modal{
+    display: block;
+}
+
+div.nav-detail-pagination-btn{
+    min-width: 80px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 1em;
+    text-align: center;
+    color: #b7b5b5;
+    cursor: pointer;
+}
+
+
+div.nav-detail-pagination-btn.active{
+    color: #bad3ec;
+}
+div.nav-detail-pagination-btn:hover{
+    color: white;
 }
