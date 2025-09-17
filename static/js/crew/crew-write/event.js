@@ -3,7 +3,7 @@ const pickFile = () => {
     input.type = "file";
     input.accept = "image/*";
     input.hidden = true;
-    document.body.appendChild(i);
+    document.body.appendChild(input);
     return input;
 };
 const show = (el) => el && (el.hidden = false);
