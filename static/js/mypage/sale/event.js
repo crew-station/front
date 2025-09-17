@@ -40,9 +40,17 @@ const dropDownButtons = document.querySelectorAll(".drop-down-button");
 
 dropDownButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
+        e.stopPropagation();
         const list = btn.nextElementSibling;
         list.classList.toggle("active");
-        console.log(list);
+    });
+});
+
+// 문서 전체 클릭 시 active 제거
+document.addEventListener("click", () => {
+    const activeLists = document.querySelectorAll(".drop-down-list.active");
+    activeLists.forEach((list) => {
+        list.classList.remove("active");
     });
 });
 

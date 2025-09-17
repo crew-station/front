@@ -404,48 +404,122 @@ nav {
     background-color: rgb(247, 249, 250);
 }
 
+/* 댓글 */
 
-/* 토스트 */
 
-.toast {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    width: 470px;
-    overflow: visible;
-    opacity: 0;
-    padding-bottom: 10px;
-    flex-direction: column;
-    transition: opacity 0.7s;
+.main-section {
+    max-width: 850px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-inline: auto;
+    flex: 0 0 auto;
 }
 
-.toast-wrap {
+.inquiry-container {
+    margin-top: 50px;
+}
+
+.inquiry-wrap {
+    padding-top: 0px;
+    padding-bottom: 417px;
+    transform: translateY(0px);
+}
+
+.inquiry {
+    padding: 16px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.inquiry-header {
     display: flex;
     align-items: center;
-    padding: 12px 16px;
-    border-radius: 4px;
-    background-color: rgb(47, 52, 56);
-    color: rgb(206, 206, 206);
-    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.status {
+    font-size: 12px;
+    padding: 0px 6px;
+    color: rgb(255, 255, 255);
+    background-color: #505050;
+    display: inline-block;
+    font-weight: 700;
+    height: 24px;
     line-height: 24px;
+    border-radius: 4px;
+    margin-right: 10px;
 }
 
-.toast-text {
-    flex: 1 0 0px;
-    min-width: 0px;
-    margin: 0px;
+.status.active {
+    background-color: #647FBC;
+}
+
+.date {
+    font-size: 14px;
+    line-height: 18px;
+    color: rgb(130, 140, 148);
+    margin-left: auto;
+}
+
+.inquiry-content {
+    display: flex;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 700;
+    color: rgb(47, 52, 56);
+    white-space: pre-wrap;
+    margin-bottom: 17px;
+    word-break: break-all;
+}
+
+.q-icon {
+    font-size: 16px;
+    color: #647FBC;
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    border-radius: 100%;
     text-align: center;
-    white-space: pre-line;
+    line-height: 30px;
+    border: 1px solid rgb(234, 237, 239);
+    box-shadow: rgba(63, 71, 77, 0.25) 0px 2px 5px;
 }
 
-.toast.show {
-    opacity: 1;
-    transition: opacity 0.7s;
+.inquiry-title-text {
+    flex: 1 0 0px;
 }
 
-.toast.hide {
-    opacity: 0;
-    transition: opacity 0.5s;
+.inquiry-content-text {
+    font-size: 14px;
+    position: relative;
+    left: 39px;
+    width: 785px;
+}
+
+.remove {
+    margin: 12px 0px 0px;
+    background: none;
+    font-size: 14px;
+    line-height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 32px;
+    border-radius: 4px;
+    padding: 0px 8px;
+    font-weight: 400;
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(47, 52, 56);
+    border: 1px solid rgb(230, 230, 230);
+    cursor: pointer;
+}
+
+.bar {
+    margin: 0px;
+    padding: 0px;
+    height: 10px;
+    border: none;
+    background-color: rgb(247, 249, 250);
 }

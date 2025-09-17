@@ -40,9 +40,17 @@ const dropDownButtons = document.querySelectorAll(".drop-down-button");
 
 dropDownButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
+        e.stopPropagation();
         const list = btn.nextElementSibling;
         list.classList.toggle("active");
-        console.log(list);
+    });
+});
+
+// 문서 전체 클릭 시 active 제거
+document.addEventListener("click", () => {
+    const activeLists = document.querySelectorAll(".drop-down-list.active");
+    activeLists.forEach((list) => {
+        list.classList.remove("active");
     });
 });
 
@@ -69,6 +77,19 @@ const cancelButtons = document.querySelectorAll(".purchase-cancel");
 cancelButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
         const confirmed = confirm("정말 주문 취소 하시겠습니까?");
+        if (confirmed) {
+            // 상태 변경
+        }
+    });
+});
+
+// 수령 완료 버튼
+
+const receiveButtons = document.querySelectorAll(".receive-button");
+
+receiveButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        const confirmed = confirm("제품을 수령하셨나요?");
         if (confirmed) {
             // 상태 변경
         }

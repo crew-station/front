@@ -24,9 +24,9 @@ const modal = document.querySelector(".img-modal");
 const modalImg = document.querySelector(".img-modal img");
 const closeBtn = document.querySelector(".img-close-button");
 
-targets.forEach((target, index) => {
+targets.forEach((target, i) => {
     target.addEventListener("click", () => {
-        const imgSrc = images[index].getAttribute("src");
+        const imgSrc = images[i].getAttribute("src");
         modalImg.setAttribute("src", imgSrc);
         modal.style.display = "flex";
     });
@@ -37,7 +37,7 @@ closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
 });
 
-// 모달 바깥 클릭하면 닫기 (선택)
+// 모달 바깥 클릭하면 닫기
 modal.addEventListener("click", (e) => {
     if (e.target === modal) {
         modal.style.display = "none";

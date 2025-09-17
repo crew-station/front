@@ -868,7 +868,7 @@ input, textarea, select {
     display: flex;
 }
 
-.reply-report-button {
+.reply-button {
     color: rgb(130, 140, 148);
     padding: 0px;
     background-color: transparent;
