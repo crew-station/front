@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const addressInput = document.getElementById("addressInput");
       const detailAddress = document.getElementById("detailAddress");
       const phone = document.getElementById("phone");
+      const zipCode = document.getElementById("zipCode");
 
       // 배송지 입력 체크
       if (!addressInput.value || addressInput.value.trim() === "") {
@@ -53,6 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!detailAddress.value || detailAddress.value.trim() === "") {
         alert("상세주소를 입력해주세요.");
         detailAddress.focus();
+        return;
+      }
+
+      // 우편번호 입력 체크
+      if (!zipCode.value || zipCode.value.trim() === "") {
+        alert("우편번호를 입력해주세요.");
+        zipCode.focus();
         return;
       }
 
@@ -224,6 +232,36 @@ function startCountdown() {
     updateTimer();
     setInterval(updateTimer, 1000);
   });
+
+  // 공유하기 버튼 클릭 이벤트
+
+const shareButton = document.querySelector(".product-detail-header-share-btn-wrapper");
+const toast = document.querySelector(".toast");
+
+shareButton.addEventListener("click", (e) => {
+    toast.style.display = "block";
+    toast.classList.remove("hide");
+    toast.classList.add("show");
+    setTimeout(() => {
+        toast.classList.remove("show");
+        toast.classList.add("hide");
+        setTimeout(() => {
+            toast.style.display = "none";
+        }, 500);
+    }, 3000);
+    clip();
+});
+
+function clip() {
+    var url = "";
+    var textarea = document.createElement("textarea");
+    document.body.appendChild(textarea);
+    url = window.location.href; // 현재 URL을 가져옵니다.
+    textarea.value = url;
+    textarea.select(); // 텍스트 영역의 내용을 선택합니다.
+    document.execCommand("copy"); // 선택된 내용을 클립보드에 복사합니다.
+    document.body.removeChild(textarea); // 텍스트 영역을 제거합니다.
+}
 }
 
 document.addEventListener("DOMContentLoaded", startCountdown);
