@@ -1141,4 +1141,6 @@ div.together-category{
     text-align: left !important;
   }
   
-  
+.tag-list { display:flex; gap:8px; margin-top:8px; flex-wrap:wrap; }
+.tag-chip { padding:4px 8px; border:1px solid #dbdbdb; border-radius:999px; background:#fff; }
+.left-img-add-container .post-sub-img.add { margin-top: 8px; }
