@@ -500,12 +500,14 @@ nav {
 }
 
 .writer {
+    position: absolute;
+    right: 20px;
     font-size: 14px;
     line-height: 20px;
     color: rgb(130, 140, 148);
     display: block;
     flex-shrink: 0;
-    min-width: 100px;
+    max-width: 150px;
 }
 
 .bar {
