@@ -6,7 +6,6 @@
     const subLists = side.querySelectorAll(".menu-item > .menu-sub-list");
     const subLinks = side.querySelectorAll(".menu-sub-list .boot-link");
 
-    // 페이지가 명시적으로 상태를 지정했는지 검사
     const hasExplicit =
         side.querySelector(
             ".menu-btn.active, .menu-btn.current, .menu-sub-list.show, .menu-sub-list .boot-link.active"
