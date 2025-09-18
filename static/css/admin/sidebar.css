@@ -394,3 +394,12 @@
 .user-menu .user-menu-content ul.menu-body li:hover a {
     color: #507cf3 !important;
 }
+
+
+#bootpay-side .menu-sub-list > li > a.active {
+    color: var(--primary);
+    font-weight: 700;
+    background: var(--hover-bg);
+    border-radius: 6px;
+  }
+  
