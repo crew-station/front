@@ -42,10 +42,8 @@
     };
 
     if (hasExplicit) {
-        // HTML에 명시된 상태(예: 현재 페이지 링크 .active)가 있으면 그대로 렌더
         syncDisplay();
     } else {
-        // 아무 지정 없을 때만 완전 접고 기본 열기 옵션 처리
         closeAll();
         const defaultBtn = side.querySelector(".menu-btn[data-open-default]");
         if (defaultBtn) {
@@ -85,7 +83,7 @@
             return;
         }
 
-        // 2) 상단 버튼(최상위 메뉴) 클릭
+        // 상단 버튼(최상위 메뉴) 클릭
         const btn = e.target.closest(".menu-item > .menu-btn");
         if (!btn) return;
         e.preventDefault();
@@ -94,19 +92,19 @@
         const hasPane = panel && panel.classList.contains("menu-sub-list");
         const wasOpen = hasPane && panel.classList.contains("show");
 
-        closeAll(); // 다른 패널 닫기
+        closeAll();
         btn.classList.add("active");
 
         if (hasPane && !wasOpen) {
             panel.classList.add("show");
             panel.style.display = "block";
             btn.classList.add("current");
-            btn.closest("li")?.classList.add("open"); // ★ 화살표 회전
+            btn.closest("li")?.classList.add("open");
         }
     });
 })();
 
-//  우측 상단 유저 메뉴 (토글/외부클릭/ESC)
+//  우측 상단 유저 메뉴
 (() => {
     const userMenuBtn = document.getElementById("usermenubtn");
     const userMenu = document.getElementById("usermenu");
@@ -126,11 +124,11 @@
         e.preventDefault();
         toggle();
     });
-    document.addEventListener("click", (e) => {
+    userMenuBtn.document.addEventListener("click", (e) => {
         if (!userMenuBtn.contains(e.target) && !userMenu.contains(e.target))
             hide();
     });
-    document.addEventListener("keydown", (e) => {
+    userMenuBtn.document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") hide();
     });
 })();

@@ -397,9 +397,11 @@
 
 
 #bootpay-side .menu-sub-list > li > a.active {
-    color: var(--primary);
+    color: var(--primary) !important;
     font-weight: 700;
     background: var(--hover-bg);
     border-radius: 6px;
   }
+
+  
   
