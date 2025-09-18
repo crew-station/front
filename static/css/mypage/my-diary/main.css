@@ -1,5 +1,13 @@
 /* 공통 */
 
+input:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
 footer, header, main {
     box-sizing: border-box;
     position: relative;
@@ -149,6 +157,181 @@ html{
     transition: top 0.1s;
     z-index: 1;
 }
+
+
+.nav-wrap {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    align-items: stretch;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin: 0px -5px;
+    padding: 0px 16px;
+    background: rgb(255, 255, 255);
+    justify-content: center
+}
+
+.nav-a {
+    margin: 0px 5px;
+}
+
+.nav-button {
+    margin: 0px;
+    border: none;
+    background: none;
+    font: inherit;
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: top;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 12px 6px;
+}
+
+.p-wrap {
+    font-weight: 700;
+    padding: 4px;
+    margin: -4px;
+}
+
+.nav-button.active .p-wrap::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 2px;
+    background-color: #647FBC;
+    transition: transform 0.2s;
+    transform: scale(1);
+}
+
+.tag-name {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    position: relative;
+}
+
+.active.nav-button .tag-name{
+    color: #647FBC;
+}
+
+.nav-hr {
+    margin: 0px;
+    padding: 0px;
+    height: 1px;
+    border: none;
+    background-color: rgb(234, 237, 239);
+}
+
+.nav-footer {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 2px 0px 0px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(255, 255, 255);
+    height: 30px;
+    margin: 2px 0px 0px;
+    padding: 10px 16px;
+}
+
+.update {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.total {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+    display: none;
+}
+
+.check-number {
+    color: #647FBC;
+}
+
+.button-wrap {
+    margin-left: auto;
+    position: absolute;
+    right: 0px;
+}
+
+.update-button {
+    display: inline-block;
+    margin-top: 0px;
+    border: none;
+    background: none;
+    height: 32px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0px 6px;
+    color: #647FBC;
+    font-weight: 700;
+}
+
+.update-button:hover {
+    background-color: rgb(247, 249, 250);
+}
+
+.update-div {
+    display: none;
+}
+
+.remove {
+    display: inline-block;
+    margin: 0px 0px 0px 6px;
+    background: none transparent;
+    border: none;
+    height: 32px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0px 6px;
+    color: rgb(194, 200, 204);
+    font-weight: 700;
+
+}
+
+.cancle {
+    display: inline-block;
+    margin: 0px 0px 0px 6px;
+    border: none;
+    background: none;
+    height: 32px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0px 6px;
+    font-weight: 700;
+    color: rgb(130, 140, 148);
+}
+
+.cancle:hover {
+    background-color: rgb(247, 249, 250);
+}
+
+.remove.active {
+    color: rgb(130, 140, 148);
+}
+
+.remove.active:hover {
+    background-color: rgb(247, 249, 250);
+}
+
 
 .sticky-child {
     position: relative;
@@ -350,11 +533,43 @@ html{
     color: #fff;
 }
 
+.add-button-wrap {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.add-button {
+    font-size: 17px;
+    line-height: 26px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(234, 237, 239);
+    padding-left: 16px;
+    padding-right: 16px;
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: row;
+    padding: 11px 10px;
+    background-color: #fff;
+    color: #757575;
+}
+
+.add-button:hover {
+    background-color: #fafafa;
+}
+
+.add-button-text {
+    color: rgb(47, 52, 56);
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
 .blank {
-    width: 8.333333333333332%;
+    width: 6%;
     padding-left: 10px;
     padding-right: 10px;
-    display: none;
     margin: 0 -10px 20px;
     border-bottom: 1px solid #ededed;
 }
@@ -437,6 +652,83 @@ html{
     flex-flow: column;
     top: 8px;
 }
+
+.check {
+    position: absolute;
+    background-color: black;
+    border-radius: 4px;
+    opacity: 0.3;
+    display: none;
+    width: inherit;
+    height: inherit;
+    padding: inherit;
+}
+
+.checkbox {
+    position: absolute;
+    inset: 0px;
+    z-index: 10;
+    cursor: pointer;
+    display: none;
+}
+
+.checkbox-inner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(230, 230, 230);
+    background-color: rgb(255, 255, 255);
+    transition: border-color 0.1s, background-color 0.1s;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.checkbox.active .checkbox-inner {
+    border: #647FBC;
+    background-color: #647FBC;
+}
+
+
+.checkbox-in {
+    position: absolute;
+    top: 3.6px;
+    left: 3px;
+    width: 0px;
+    height: 12px;
+    transition: width 0.2s 0.1s;
+}
+
+.checkbox-span {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    vertical-align: top;
+    color: rgb(255, 255, 255);
+}
+
+.checkbox-span::before {
+    font-family: OhouseIcon;
+    vertical-align: top;
+    content: "\e958";
+    font-size: 12px;
+    line-height: 1;
+    color: rgb(255, 255, 255);
+}
+
+.checkbox-input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    cursor: pointer;
+}
+
 
 /* 여행 경로 부분 */
 div.trip-path {
@@ -540,6 +832,299 @@ div.marker-country{
     white-space: nowrap;
 }
 
+/* 여정 추가 모달 */
+
+.add-modal {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 1300;
+    background-color: rgba(33, 38, 41, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-modal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 980px;
+    height: 680px;
+    background-color: #fff;
+    border-radius: 8px;
+    color: rgb(47, 52, 56);
+    max-height: 78%;
+    margin: 0px;
+}
+
+.add-close-button {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background: none;
+    font: inherit;
+    vertical-align: middle;
+    position: absolute;
+    top: 16px;
+    right: 15px;
+}
+
+.close-button-span {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    color: rgb(47, 52, 56);
+}
+
+.close-button-span::before {
+    font-family: OhouseIcon;
+    vertical-align: top;
+    content: "\e9ba";
+}
+
+
+/* 제목 */
+.title-container {
+    width: 100%;
+    margin: 20px auto 0;
+}  
+
+.input-title {
+    margin: 30px 0 0;
+}
+
+.input-title-container {
+    margin-top: 15px;
+    padding: 45px;
+}
+
+.input-title-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.input-title-wrap {
+flex: 1 0 0;
+height: 50px;
+line-height: 40px;
+padding: 0 15px;
+font-size: 15px;
+border: 1px solid #dbdbdb;
+border-radius: 4px;
+background: #fff;
+color: #424242;
+transition: border-color .2s, box-shadow .2s, background-color .2s;
+}
+
+/* 경로 */
+
+.path-container {
+    height: 441px;
+    margin-top: 30px;
+    overflow-y: scroll;
+}
+
+.line {
+    padding-left: 44px;
+    position: relative;
+    min-height: 60px;
+    padding-bottom: 16px;
+}
+
+.line.fill::before {
+    background-color: #647FBC;
+}
+
+.line:first-of-type::before {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.line:last-of-type::before {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 20px;
+}
+
+.line::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    left: 4px;
+    background-color: #EAEDEF;
+}
+
+.line::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    left: 10px;
+    top: 6px;
+    z-index: 3;
+    border-radius: 50%;
+}
+
+/*  상단 경로(태그) 입력 */
+.tag-container {
+    width: 100%;
+    margin: 20px auto 0;
+}
+
+.input-tag {
+margin: 30px 0 0;
+}
+
+.input-tag-container {
+margin-top: 15px;
+}
+
+.input-tag-wrapper {
+position: relative;
+display: flex;
+gap: 8px;
+margin: 0 6%;
+}
+
+.input-tag-wrap {
+flex: 1 0 0;
+height: 28px;
+min-width: 164px;
+line-height: 40px;
+padding: 0 15px;
+font-size: 15px;
+border: 1px solid #dbdbdb;
+border-radius: 4px;
+background: #fff;
+color: #424242;
+transition: border-color .2s, box-shadow .2s, background-color .2s;
+position: absolute;
+left: 60px;
+}
+
+.delete-sub-img {
+    border: none;
+    background: #f1f3f5;
+    color: #757575;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    opacity: 1;
+    cursor: pointer;
+    padding: 4px;
+    position: relative;
+    right: 148px;
+}
+
+.date-input {
+    height: 28px;
+    width: 103px;
+    line-height: 40px;
+    padding: 0 15px;
+    font-size: 15px;
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    background: #fff;
+    color: #424242;
+    transition: border-color .2s, box-shadow .2s, background-color .2s;
+    margin-left: 10px;
+}
+
+.path-add-button {
+    width: 85px;
+    font-size: 23px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #c3c3c3;
+    color: #575656;
+}
+
+.path-add-button:hover {
+    background-color: rgb(247, 249, 250);
+}
+
+/* 나라 검색 */
+#countryDropdown:empty {
+    display: none !important;
+}
+
+.write-content-select-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 4px 0;
+    z-index: 999;
+}
+
+#countryDropdown {
+    display: none;
+    position: absolute;
+    top: 27px;
+    left: 0;
+    width: 22%;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin-left: 59px;
+    padding: 0;
+    z-index: 999;
+}
+
+.write-content-select-dropdown li {
+    padding: 6px 12px;
+    font-size: 13px;
+    line-height: 18px;
+    cursor: pointer;
+}
+
+#countryDropdown li {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+  /* 입력된 태그 칩 */
+  .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 6%;
+    margin-top: 8px;
+  }
+  .tag-chip {
+    padding: 4px 8px;
+    border: 1px solid #dbdbdb;
+    border-radius: 999px;
+    background: #fff;
+  }
+  
+
 
 
 /* 토스트 */
@@ -586,3 +1171,4 @@ div.marker-country{
     opacity: 0;
     transition: opacity 0.5s;
 }
+
