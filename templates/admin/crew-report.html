@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CrewStation</title>
-    <link rel="stylesheet" href="/static/css/admin/sidebar.css">
+    <link rel="stylesheet" href="/static/css/admin/crew-report.css">
     <link rel="stylesheet" href="/static/css/admin/font.css">
-    <link rel="stylesheet" href="/static/css/admin/diary-report.css">
     <link rel="shortcut icon" href="../../../static/images/crew-station-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/admin/sidebar.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css">
 </head>
 <body>
@@ -56,7 +56,7 @@
                             </a>
                             <ul class="menu-sub-list collapse" >
                                 <li class="submenu menu-item ">
-                                    <a class="boot-link active" data-param="0">
+                                    <a class="boot-link " data-param="0">
                                         
                                         다이어리
                                     </a>
@@ -68,7 +68,7 @@
                                     </a>
                                 </li>
                                 <li class="submenu menu-item ">
-                                    <a class="boot-link" data-param="0">
+                                    <a class="boot-link active" data-param="0">
                                         
                                         크루
                                     </a>
@@ -146,15 +146,18 @@
             </div>
         <div class="project-setting-index page">
             <div class="page-header">
-                <div class="page-title">다이어리 신고목록</div>
-                <div class="page-subtitle">다이어리/댓글 신고 관리</div>
+                <div class="page-title">크루 동행 신고목록</div>
+                <div class="page-subtitle">크루 동행 신고 관리</div>
             </div>
             <div class="page-body">
                 <div class="tab-view">
                     <div class="tab-view-header">
-                        <ul class="tab-switch-row list-unstyled">
-                            <li class="tab-switch tab-project active">신고목록</li>
-                        </ul>
+                        <ul class="tab-switch-row list-unstyled report-tabs">
+                            <li><button type="button" class="tab-switch active" data-type="crew">크루</button></li>
+                            <li><button type="button" class="tab-switch" data-type="long">롱크루</button></li>
+                            <li><button type="button" class="tab-switch" data-type="short">숏크루</button></li>
+                          </ul>
+                        
                     </div>
                     <div class="tab-view-body">
                         <div class="tab-wrapper tab-project-setting-member">
@@ -176,10 +179,10 @@
                                     </thead>
                                   
                                     <tbody>
-                                      <!-- 예시1: 대기중 -->
-                                      <tr data-status="PENDING">
+                                      <!-- : 대기중 -->
+                                      <tr data-type="crew" data-status="PENDING">
                                         <td class="td-post">
-                                          <div class="post-title">프랑스 다이어리</div>
+                                          <div class="post-title">크루모집</div>
                                           <div class="post-meta">
                                             <span class="meta">by <b>minji</b></span>
                                             <span class="dot">·</span>
@@ -205,10 +208,33 @@
                                           
                                       </tr>
                                   
-                                      <!-- 예시2: 처리완료 -->
-                                      <tr data-status="RESOLVED">
+                                      <tr data-type="long" data-status="RESOLVED">
                                         <td class="td-post">
-                                          <div class="post-title">태국 야경 스냅</div>
+                                          <div class="post-title">롱크루 모집</div>
+                                          <div class="post-meta">
+                                            <span class="meta">by <b>taemin</b></span>
+                                            <span class="dot">·</span>
+                                            <span class="meta">postId: 48377</span>
+                                          </div>
+                                        </td>
+                                        <td class="text-center">
+                                          <span class="badge badge-label reason-badge text-warning">광고/도배</span>
+                                        </td>
+                                        <td>
+                                          <div>reporter: <b>eunji</b></div>
+                                          <div class="text-muted">ej@naver.com</div>
+                                        </td>
+                                        <td class="text-center text-muted">2025-08-03 21:10:22</td>
+                                        <td class="td-actions text-right">
+                                            <span class="approval-status status-badge status-pending">대기중</span>
+                                            <button class="btn btn-light-danger btn-sm action-btn view" title="상세보기">
+                                              <i class="mdi mdi-chevron-right"></i>
+                                            </button>
+                                          </td>
+                                      </tr>
+                                      <tr data-type="short" data-status="PENDING">
+                                        <td class="td-post">
+                                          <div class="post-title">숏크루 모집</div>
                                           <div class="post-meta">
                                             <span class="meta">by <b>taemin</b></span>
                                             <span class="dot">·</span>
@@ -296,4 +322,5 @@
 </div>
 </body>
 <script src="/static/js/admin/diary-report/event.js"></script>
+<script src="/static/js/admin/crew-report/event.js"></script>
 </html>
