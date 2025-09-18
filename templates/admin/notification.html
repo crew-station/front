@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrewStation</title>
+    <link rel="stylesheet" href="/static/css/admin/notification.css">
+    <link rel="stylesheet" href="/static/css/admin/font.css">
+    <link rel="shortcut icon" href="../../../static/images/crew-station-favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div id= "bootpay">
+        <div class="boot-notify-container"></div>
+        <div class="popup-manager" style="width: 0px;"></div>
+        <aside id="bootpay-side">
+            <div class="d-flex flex-column" id="side-wrapper">
+                <div class="side-header">
+                    <div class="app-wrapper">
+                        <div class="provider-name hover-spin">
+                            <span class="comp-provider-name ">
+                                <span class="pn-name">골든타임</span>
+                            </span>
+
+                        </div>
+                        <a class="app-name d-flex justify-content-between align-items-center " href="">
+                            <span>골든타임</span>
+                            <i class="mdi mdi-apps"></i>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="menu-wrapper flex-grow-1">
+                    <ul class="menu-list">
+                        <li class="menu menu-item d-flex flex-column">
+                            <a class="boot-link menu-btn active "href="">
+                                <span class="menu-name">Home</span>
+                            </a>
+                            <ul class="menu-sub-list collapse "id="menu-60934308367997007c4c3d2c">
+
+                            </ul>
+
+                        </li>
+                        <li class="menu menu-item d-flex flex-column">
+                            <!-- 클릭 이벤트 -->
+                            <!-- 회원 목록 클릭 시 collipse 열고 닫기 이벤트 -->
+                            <a class="menu-btn d-flex w-100 " data-toggle="collapse" aria-expanded="false" aria-controls="menu-6109064136799700f1ebced6">
+                                <span class="menu-name">회원 관리</span>
+                                <div class="icon-wrapper flex-grow-1 text-right">
+                                    <i class="mdi mdi-chevron-right"></i>
+                                </div>
+                            </a>
+                            <ul class="menu-sub-list collapse show" id="menu-6109064136799700f1ebced6" style="display: none;">
+                                <li class="submenu menu-item ">
+                                    <a class="boot-link" data-param="0">
+                                        - 
+                                        의사 회원목록
+                                    </a>
+                                </li>
+                                <li class="submenu menu-item">
+                                    <a class="boot-link" data-param="0">
+                                        - 
+                                        일반 회원목록
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu menu-item d-flex flex-column">
+                            <a class="boot-link menu-btn "href="">
+                                <span class="menu-name">가입승인</span>
+                            </a>
+                            <ul class="menu-sub-list collapse "id="menu-60934308367997007c4c3d2c">
+                            </ul>
+                        </li>
+                        <li class="menu menu-item d-flex flex-column">
+                            <a class="boot-link menu-btn "href="">
+                                <span class="menu-name">결제내역조회</span>
+                            </a>
+                            <ul class="menu-sub-list collapse "id="menu-60934308367997007c4c3d2c">
+                            </ul>
+                        </li>
+                        <li class="menu menu-item d-flex flex-column">
+                            <!--  -->
+                            <a class="boot-link menu-btn "href="">
+                                <span class="menu-name">문의</span>
+
+                            </a>
+                            <ul class="menu-sub-list collapse "id="menu-60934308367997007c4c3d2c">
+
+                            </ul>
+
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </aside>
+        <!-- 상단 시작 부분 -->
+        <div id="bootpay-main" class="has-menu">
+            <div id="header-wrapper">
+                <div id="bootpay-header" class="d-flex false">
+                    <div class="flex-grow-1"></div>
+                    <div>
+                        <div class="header-menu-group d-flex">
+                            <!-- 상단 -->
+                            <!-- 상단 공지사항 -->
+                            <a href="" class="bootpay-link mr-3">
+                                <div class="header-menu-btn " data-for="" data-toggle="tooltip" data-custom-class="" title="" data-original-title="공지사항">
+                                    <!-- hover시 aria-describedby="tooltip"이 뒤에 표기 -->
+                                    <i class="mdi mdi-bullhorn-variant-outline"></i>
+                                </div>
+                            </a>
+                            <!-- 상단 관리자 이메일 -->
+                            <div class="user-menu">
+                                <div class="user-menu-wrapper d-flex align-items-center cursor-pointer" id="user-menu-handler" data-toggle="dropdown" aria-expanded="false">
+                                    <div class="user-avatar">T</div>
+                                    <div class="user-menu-email">test@gmail.com</div>
+                                </div>
+                                <!-- 리스트가 보여질 때 -->
+                                <!-- <div class="user-menu-content dropdown-menu dropdown-menu-right show" style="position: absolute; transform: translate3d(1698px, 62px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-end"> -->
+                                <div class="user-menu-content dropdown-menu dropdown-menu-right">
+                                    <ul class="menu-body list-unstyled">
+                                        <li>
+                                            <a href="" class="bootpay-link d-block text-dark">
+                                                <i class="mdi mdi-bell-outline mr-2 mdi-18px"></i>
+                                                알림
+                                            </a>
+                                        </li>          
+                                        <li>
+                                            <a href="" class="d-block text-dark">
+                                                <i class="mdi mdi-logout-variant mr-2 mdi-18px"></i>
+                                                로그아웃
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 공지사항 메인 -->
+            <div class="page notice-index narrow-center">
+                <div class="page-header">
+                    <div class="page-title">공지사항</div>
+                </div>
+                <div class="page-body">
+                    <div class="page-content white-panel p-5">
+                        <div class="table-wrapper border-top">
+                            <table class="table table-notice">
+                                <tbody>
+                                    <!-- 목록 페이지 당 16개 -->
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">골든타임</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <nav class="bootpay-pagination-wrapper undefined">
+                            <ul class="pagination bootpay-pagination">
+                                <!-- 현재 페이지는 active 클래스 추가된다. -->
+                                <li class="page-item page-num active">
+                                    <!-- class명 앞에 bootpay-link를 사이드바 이벤트로 인해 배제했습니다. -->
+                                    <a href="" class="page-item-link page-item-num">1</a>
+                                </li>
+                                <li class="page-item page-num">
+                                    <a href="" class="page-item-link page-item-num">2</a>
+                                </li>
+                                <li class="page-item page-num">
+                                    <a href="" class="page-item-link page-item-num">3</a>
+                                </li>
+                                <li class="page-item page-num">
+                                    <a href="" class="page-item-link page-item-num">4</a>
+                                </li>
+                                <li class="page-item page-num">
+                                    <a href="" class="page-item-link page-item-num">5</a>
+                                </li>
+                            </ul>
+                            <div class="pagination-desc"></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
