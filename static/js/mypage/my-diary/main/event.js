@@ -483,3 +483,5 @@ pathAddButton.addEventListener("click", () => {
     });
     searchCountry();
 });
+
+const modalClose = document.querySelector(".path-add-button");
