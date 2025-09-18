@@ -272,12 +272,15 @@
   .page {
     margin-left: auto;
     margin-right: auto;
-    padding: 0 30px 50px;
+    /* padding: 0 30px 50px; */
   }
   
   .page.wide-page { max-width: 1800px; }
   
-  .page .page-header { padding-bottom: 20px; }
+  .page .page-header {
+     padding-bottom: 20px; 
+     margin-bottom: -2%;
+    }
   
   .page .page-header .page-title {
     font-size: 1.2rem;

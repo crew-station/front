@@ -264,7 +264,11 @@
     color: var(--primary);
   }
   
-  #bootpay-header .header-menu-btn {
+  #bootpay-header .header-menu-group {
+    padding: 20px 30px 0 0;
+}
+
+#bootpay-header .header-menu-btn {
     background-color: #fff;
     border-radius: 50%;
     color: #56626a;
@@ -273,4 +277,120 @@
     position: relative;
     text-align: center;
     width: 42px;
+}
+
+#bootpay-header .header-menu-btn:hover {
+    box-shadow: 0 0 8px rgb(89, 102, 122, .15);
+    color: #507cf3;
+    cursor: pointer;
+}
+
+#bootpay-header .header-menu-btn i {
+    font-size: 22px;
+}
+
+.user-menu .user-menu-wrapper {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px;
+    position: relative;
+    transition: box-shadow .2s;
+}
+
+.cursor-pointer:hover {
+    cursor: pointer;
+}
+
+.user-menu .user-menu-wrapper:hover {
+    box-shadow: 0 0 8px rgb(89, 102, 122, .15);
+}
+
+.user-menu .user-menu-wrapper .user-avatar {
+    background-color: #507cf3;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 18px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    width: 32px;
+}
+
+.user-menu .user-menu-wrapper .user-menu-email {
+    font-size: .9rem;
+    letter-spacing: .2px;
+    padding: 0 12px;
+}
+
+/* 관리자 상단 이메일 클릭 시 */
+/* 기준 잡기 위해 넣어둠 */
+.user-menu {
+  position: relative; 
+}
+
+.user-menu .user-menu-content {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 20px rgba(89, 102, 122, .15);
+    color: #4e5d6c;
+    font-size: .9rem;
+    min-width: 180px;
+    overflow: hidden;
+    padding: 0 5px;
+}
+
+.dropdown-menu {
+    background-clip: padding-box;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: .25rem;
+    color: #212529;
+    display: none;
+    float: left;
+    font-size: 1rem;
+    left: 0;
+    list-style: none;
+    margin: .125rem 0 0;
+    min-width: 10rem;
+    padding: .5rem 0;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    z-index: 1000;
+}
+
+.dropdown-menu-right {
+    left: auto;
+    right: 0;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu[x-placement^=bottom] {
+    bottom: auto;
+    right: auto;
+}
+
+.user-menu .user-menu-content ul.menu-body {
+    margin-bottom: 0;
+}
+
+.user-menu .user-menu-content ul.menu-body li {
+    align-items: center;
+    border-bottom: 1px solid #f9f9f9;
+    display: flex;
+    font-weight: 500;
+    padding: 0;
+    position: relative;
+}
+
+.user-menu .user-menu-content ul.menu-body li a {
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.user-menu .user-menu-content ul.menu-body li:hover a {
+    color: #507cf3 !important;
 }
