@@ -172,13 +172,13 @@
     gap: 8px;
     width: 100%;
     max-width: 600px;
-    margin: 12px auto 0;
+    margin: 4px auto 0;
   }
   
   .write-content-thumbnail,
   .write-content-img-add-btn {
-    flex: 0 0 calc(25% - 8px);
-    max-width: calc(25% - 8px);
+    flex: 0 0 calc(12.5% - 8px);
+    max-width: calc(12.5% - 8px);
     aspect-ratio: 1 / 1;
     border-radius: 4px;
     overflow: hidden;
@@ -425,7 +425,7 @@
   }
 
   #countryDropdown {
-    display: none;   /* !important 제거 */
+    display: none;   
     position: absolute;
     top: calc(100% + 4px);
     left: 0;
@@ -438,7 +438,7 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     list-style: none;
     margin: 0;
-    padding: 0;       /* 기본 패딩 제거 */
+    padding: 0;       /
     z-index: 999;
   }
   
