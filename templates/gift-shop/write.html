@@ -43,6 +43,52 @@
                   <div class="write-content-container">
                     <div class="write-content-wrapper">
 
+                    <input type="text" class="write-content-input" placeholder="제목을 입력해주세요.">
+
+                    <!-- 드롭다운 (배송방법) -->
+                        <div class="write-content-select-wrap">
+                          <input type="text" class="write-content-select" placeholder="전달 방법을 선택해주세요." readonly>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                              fill="currentColor" viewBox="0 0 24 24"
+                              class="write-content-select-icon">
+                            <path d="M17 10H7l5 5z"></path>
+                          </svg>
+                          <ul class="write-content-select-dropdown">
+                            <li>직접전달</li>
+                            <li>택배거래</li>
+                          </ul>
+                        </div>
+
+                        <!-- 드롭다운 (최대 개수) -->
+                        <div class="write-content-select-wrap">
+                          <input type="text" class="write-content-select" id="quantityInput" placeholder="판매 가능 수량을 선택해주세요. (최대 10개까지)" readonly>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                              fill="currentColor" viewBox="0 0 24 24"
+                              class="write-content-select-icon">
+                            <path d="M17 10H7l5 5z"></path>
+                          </svg>
+                          <ul class="write-content-select-dropdown">
+                            <li>1개</li><li>2개</li><li>3개</li><li>4개</li><li>5개</li>
+                            <li>6개</li><li>7개</li><li>8개</li><li>9개</li><li>10개</li>
+                          </ul>
+                        </div>
+
+                        <!-- 일반 입력창 -->
+                        <div class="unit-input" data-unit="원">
+                          <input
+                            type="text"
+                            id="priceInput"
+                            class="write-content-input"
+                            inputmode="numeric"
+                            pattern="[0-9,]*"
+                            placeholder="판매 가격을 입력해주세요.">
+                        </div>
+                        <div class="unit-input" data-unit="시간">
+                          <input type="number" class="write-content-input" id="timeInput" max="120"
+                                 placeholder="요청 마감까지 남은 시간을 입력해주세요.">
+                        </div>
+                        
+
                       <!-- 대표 이미지 없을 때 -->
                       <div class="write-content-cover-img-wrapper">
                         <div class="write-content-cover-add">
@@ -92,54 +138,11 @@
                             <img class="write-content-thumbnail-img" src="/static/images/air1.png">
                           </div>
 
-
                           <!-- 업로드 버튼 -->
                           <button class="write-content-img-add-btn">+</button>
                       </div>
 
-                        <!-- 드롭다운 (배송방법) -->
-                        <div class="write-content-select-wrap">
-                          <input type="text" class="write-content-select" placeholder="전달 방법을 선택해주세요." readonly>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                              fill="currentColor" viewBox="0 0 24 24"
-                              class="write-content-select-icon">
-                            <path d="M17 10H7l5 5z"></path>
-                          </svg>
-                          <ul class="write-content-select-dropdown">
-                            <li>직접전달</li>
-                            <li>택배거래</li>
-                          </ul>
-                        </div>
-
-                        <!-- 드롭다운 (최대 개수) -->
-                        <div class="write-content-select-wrap">
-                          <input type="text" class="write-content-select" id="quantityInput" placeholder="판매 가능 수량을 선택해주세요. (최대 10개까지)" readonly>
-                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                              fill="currentColor" viewBox="0 0 24 24"
-                              class="write-content-select-icon">
-                            <path d="M17 10H7l5 5z"></path>
-                          </svg>
-                          <ul class="write-content-select-dropdown">
-                            <li>1개</li><li>2개</li><li>3개</li><li>4개</li><li>5개</li>
-                            <li>6개</li><li>7개</li><li>8개</li><li>9개</li><li>10개</li>
-                          </ul>
-                        </div>
-
-                        <!-- 일반 입력창 -->
-                        <div class="unit-input" data-unit="원">
-                          <input
-                            type="text"
-                            id="priceInput"
-                            class="write-content-input"
-                            inputmode="numeric"
-                            pattern="[0-9,]*"
-                            placeholder="판매 가격을 입력해주세요.">
-                        </div>
-                        <div class="unit-input" data-unit="시간">
-                          <input type="number" class="write-content-input" id="timeInput" max="120"
-                                 placeholder="요청 마감까지 남은 시간을 입력해주세요.">
-                        </div>
-                        <!-- 나라명 입력창 -->
+                      <!-- 나라명 입력창 -->
                         <div class="write-content-select-wrap autocomplete">
                           <input 
                             type="text" 
@@ -148,9 +151,6 @@
                             placeholder="나라 이름을 입력해주세요.">
                           <ul id="countryDropdown" class="write-content-select-dropdown"></ul>
                         </div>
-         
-                        <input type="text" class="write-content-input" placeholder="제목을 입력해주세요.">
-
                         <!-- 본문 입력창 -->
                         <div class="write-content-field-text" contenteditable="true" data-placeholder="내용을 입력해주세요."></div>
 

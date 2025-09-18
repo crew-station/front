@@ -108,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const qty = getNumericValue(quantityInput.value) || 1;
   
       const maxPrice = Math.floor(100000 / qty);
-      const minPrice = 1000;
   
       if (price > maxPrice) {
         alert(`가격은 최대 100,000원까지만 입력할 수 있습니다.`);
