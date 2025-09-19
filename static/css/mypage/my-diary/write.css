@@ -666,3 +666,105 @@ line-height: 20px;
 .more-button {
     width: inherit;
 }
+
+
+/* 멘션하고 호버 */
+
+.img-tag-container:hover .mention-window {
+  display: block;
+}
+
+.mention-window {
+  position: absolute;
+  inset: 0px auto auto 0px;
+  transform: translate(-50px, 33.75px);
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 1;
+  display: none;
+}
+
+.mention-window::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: -14px;
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.triangle {
+    position: absolute;
+    left: 0px;
+    transform: translate(51.25px, 0px);
+    top: -8px;
+    width: 14px;
+    height: 10px;
+}
+
+.triangle::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    left: 0px;
+    border-bottom: 10px solid rgb(255, 255, 255);
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+}
+
+.mention-profile {
+    width: 140px;
+    height: 35px;
+    box-sizing: border-box;
+    padding: 10px 0px 10px 10px;
+    border-radius: 4px;
+    display: flex;
+    background: rgb(255, 255, 255);
+    color: rgb(47, 52, 56);
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-a {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    text-align: left;
+    background: none;
+}
+
+.mention-profile-img {
+    width: 25px;
+    height: 25px;
+    background-color: rgb(234, 237, 239);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 0px;
+    border: 0.5px solid rgba(0, 0, 0, 0.08);
+}
+
+.mention-profile-img img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s;
+    object-fit: cover;
+}
+
+#mention-name {
+    margin-left: 8px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    line-height: 18px;
+    font-weight: 600;
+    color: rgb(47, 52, 56);
+}

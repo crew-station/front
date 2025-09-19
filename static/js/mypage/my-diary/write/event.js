@@ -270,7 +270,6 @@ const resetBlock = (block) => {
 
     show(block.querySelector(".dropzone"));
     hide(block.querySelector(".post-img-bottom"));
-    hide(block.querySelector(".img-tag-container"));
 
     const btn = block.querySelector(".edit-button");
     if (btn) btn.textContent = "+ 상품 태그 추가";
@@ -399,15 +398,32 @@ imgPlusBtn.addEventListener("click", (e) => {
                           
                             <button class="edit-button" type="button">+ 상품 태그 추가</button>
                           </div>
-                          
-                        <div class="img-tag-container tag" hidden="">
-                          <button class="tag-add-btn" type="button">
-                            <svg width="18" height="18" viewBox="0 0 24 24" class="plus-img">
-                              <circle cx="12" cy="12" r="12" fill="#647FBC"></circle>
-                              <path stroke="#FFF" stroke-width="2" d="M12 16V8m-4 4h8"></path>
-                            </svg>
-                          </button>
-                        </div>
+                        <div class="tags-container">
+                            <div class="img-tag-container tag" hidden>
+                              <button class="tag-add-btn" type="button">
+                                <svg width="18" height="18" viewBox="0 0 24 24" class="plus-img">
+                                  <circle cx="12" cy="12" r="12" fill="#647FBC"></circle>
+                                  <path stroke="#FFF" stroke-width="2" d="M12 16V8m-4 4h8"></path>
+                                </svg>
+                              </button>
+                            </div>
+                            <div class="img-tag-container tag" hidden>
+                              <button class="tag-add-btn" type="button">
+                                <svg width="18" height="18" viewBox="0 0 24 24" class="plus-img">
+                                  <circle cx="12" cy="12" r="12" fill="#647FBC"></circle>
+                                  <path stroke="#FFF" stroke-width="2" d="M12 16V8m-4 4h8"></path>
+                                </svg>
+                              </button>
+                            </div>
+                            <div class="img-tag-container tag" hidden>
+                              <button class="tag-add-btn" type="button">
+                                <svg width="18" height="18" viewBox="0 0 24 24" class="plus-img">
+                                  <circle cx="12" cy="12" r="12" fill="#647FBC"></circle>
+                                  <path stroke="#FFF" stroke-width="2" d="M12 16V8m-4 4h8"></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
                       </div>
                     </div>
                     <div class="img-post-term">
@@ -570,6 +586,8 @@ closeModalBtn?.addEventListener(
     (e) => (tagModal.style.display = "none")
 );
 
+const tagsContainer = document.querySelector(".tags-container");
+
 tagModal?.addEventListener("click", (e) => {
     // 바깥 클릭 → 닫기
     if (!e.target.closest(".modal-view")) {
@@ -577,18 +595,33 @@ tagModal?.addEventListener("click", (e) => {
         return;
     }
 
-    // "선택" → 현재 블록에 파란 + 고정
+    // "선택" 버튼 눌렀을 때
     if (e.target.closest(".tag-select-btn")) {
         if (currentBlock) {
             const { tx, ty } = currentBlock.dataset;
             if (tx && ty) {
-                const pin = currentBlock.querySelector(".img-tag-container");
-                pin.style.left = `${tx}%`;
-                pin.style.top = `${ty}%`;
-                show(pin);
+                // 아직 숨겨져 있는 태그 찾기
+                const hiddenPin = currentBlock.querySelector(
+                    ".img-tag-container[hidden]"
+                );
+                if (hiddenPin) {
+                    hiddenPin.style.left = `${tx}%`;
+                    hiddenPin.style.top = `${ty}%`;
+                    hiddenPin.hidden = false; // 보여주기
+                } else {
+                    alert("태그는 최대 3개까지만 추가할 수 있어요!");
+                }
             }
         }
         tagModal.style.display = "none";
+    }
+});
+
+// 태그 클릭하면 다시 숨기기
+tagsContainer.addEventListener("click", (e) => {
+    const pin = e.target.closest(".img-tag-container");
+    if (pin && !pin.hidden) {
+        pin.hidden = true;
     }
 });
 
