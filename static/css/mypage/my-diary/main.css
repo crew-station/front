@@ -862,6 +862,21 @@ div.marker-country{
     margin: 0px;
 }
 
+.modal-add-button {
+    display: inline-block;
+    margin: 0px;
+    padding: 9px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #647FBC;
+    color: #fff;
+    font: inherit;
+    vertical-align: middle;
+    position: relative;
+    top: -3px;
+    left: 338px;
+}
+
 .add-close-button {
     display: inline-block;
     margin: 0px;
@@ -925,16 +940,21 @@ transition: border-color .2s, box-shadow .2s, background-color .2s;
 /* 경로 */
 
 .path-container {
-    height: 441px;
+    height: 435px;
     margin-top: 30px;
     overflow-y: scroll;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .line {
     padding-left: 44px;
     position: relative;
-    min-height: 60px;
+    min-height: 80px;
+    height: fit-content;
     padding-bottom: 16px;
+    flex: 1 1 auto;
 }
 
 .line.fill::before {
@@ -1033,7 +1053,7 @@ left: 60px;
 
 .date-input {
     height: 28px;
-    width: 103px;
+    width: 210px;
     line-height: 40px;
     padding: 0 15px;
     font-size: 15px;
@@ -1052,6 +1072,7 @@ left: 60px;
     background-color: #fff;
     border: 1px solid #c3c3c3;
     color: #575656;
+    position: absolute;
 }
 
 .path-add-button:hover {
