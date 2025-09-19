@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // ============================
     // 공통 드롭다운 (배송방법, 개수 선택 등)
-    // ============================
     document.querySelectorAll(".write-content-select-wrap").forEach(selectWrap => {
       const input = selectWrap.querySelector(".write-content-select");
       const dropdown = selectWrap.querySelector(".write-content-select-dropdown");
@@ -37,9 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   
-    // ============================
     // 가격, 개수, 시간 관련 처리
-    // ============================
     const priceInput = document.getElementById("priceInput");
     const quantityInput = document.getElementById("quantityInput");
     const timeInput = document.getElementById("timeInput");
@@ -52,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const getNumericValue = (str) =>
       Number(str.replace(/\D/g, "")) || 0;
   
-    // 가격 입력 처리 (콤마 포맷팅 유지)
+    // 가격 입력 처리 (콤마 유지)
     const reformatAndRestoreCaret = () => {
       const prev = priceInput.value;
       const sel = priceInput.selectionStart;
@@ -91,13 +87,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
   
-    // 시간 입력 검사 (최대 120시간 제한)
+    // 시간 입력 검사 (최대 72시간 제한)
     if (timeInput) {
       timeInput.addEventListener("input", () => {
         const time = getNumericValue(timeInput.value);
-        if (time > 120) {
-          alert("남은 시간은 최대 120시간까지 가능합니다.");
-          timeInput.value = 120;
+        if (time > 72) {
+          alert("남은 시간은 최대 72시간까지 가능합니다.");
+          timeInput.value = 72;
         }
       });
     }
