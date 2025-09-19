@@ -6,27 +6,88 @@ document.addEventListener("DOMContentLoaded", () => {
   const thumbnails = document.querySelectorAll(".product-cover-image-list .image");
 
   // 모달 관련 (공통)
-  function setupModal(modalId, openSelector, closeSelector) {
+  function setupModal(modalId, openSelector, closeSelector, onClose) {
     const modal = document.getElementById(modalId);
     const openBtn = document.querySelector(openSelector);
     const closeBtn = modal ? modal.querySelector(closeSelector) : null;
 
     if (!modal || !openBtn || !closeBtn) return;
 
+    // 열기
     openBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       modal.style.display = "block";
     });
 
-    closeBtn.addEventListener("click", () => (modal.style.display = "none"));
+    // 닫기 버튼
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+      if (onClose) onClose();
+    });
 
+    // 바깥 클릭 시 닫기
     modal.addEventListener("click", (e) => {
-      if (e.target === modal) modal.style.display = "none";
+      if (e.target === modal) {
+        modal.style.display = "none";
+        if (onClose) onClose();
+      }
     });
   }
 
   // 구매 요청 모달
   setupModal("myModal", ".product-buying-btn", ".close");
+
+  // 신고하기 모달
+  setupModal("reportModal", ".gift-shop-post-report-btn-wrapper", ".close-button", selectFirstReportRadio);
+
+  // 신고하기 라디오 선택
+  const reportOptions = document.querySelectorAll(".report-content");
+  const radioBtns = document.querySelectorAll(".radio-button");
+
+  if (reportOptions.length > 0 && radioBtns.length > 0) {
+    reportOptions.forEach((reportOption) => {
+      reportOption.addEventListener("click", () => {
+        // 기존 선택 해제
+        radioBtns.forEach((radioBtn) => {
+          radioBtn.classList.remove("active");
+          const btn = radioBtn.querySelector(".radio");
+          if (btn) btn.checked = false;
+        });
+
+        // 새 선택 적용
+        const btn = reportOption.querySelector(".radio");
+        if (btn) btn.checked = true;
+        const radioButton = reportOption.querySelector(".radio-button");
+        if (radioButton) radioButton.classList.add("active");
+      });
+    });
+  }
+
+  // 신고하기 제출
+  const submitReportBtn = document.querySelector(".report-button-send");
+  const reportModal = document.getElementById("reportModal");
+  if (submitReportBtn && reportModal) {
+    submitReportBtn.addEventListener("click", () => {
+      reportModal.style.display = "none";
+      selectFirstReportRadio();
+      alert("신고가 접수되었습니다.");
+    });
+  }
+
+  // 신고하기 첫번째 라디오 버튼 기본 선택
+  function selectFirstReportRadio() {
+    radioBtns.forEach((radioBtn, idx) => {
+      const btn = radioBtn.querySelector(".radio");
+      if (!btn) return;
+      if (idx === 0) {
+        radioBtn.classList.add("active");
+        btn.checked = true;
+      } else {
+        radioBtn.classList.remove("active");
+        btn.checked = false;
+      }
+    });
+  }
 
   // 확인 모달 제어
   const form = document.getElementById("requestForm");
@@ -120,11 +181,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 주소 검색 버튼 클릭 이벤트
-  document
-    .getElementById("searchAddressBtn")
-    .addEventListener("click", function () {
-      alert("주소 검색 API 연동 예정");
-    });
+  document.getElementById("searchAddressBtn").addEventListener("click", function () {
+    alert("주소 검색 API 연동 예정");
+  });
 
   // 슬라이드 로직
   let count = 0;
@@ -213,13 +272,8 @@ function startCountdown() {
       const totalSeconds = Math.floor(diff / 1000);
 
       const days = Math.floor(totalSeconds / (3600 * 24));
-      const hours = String(
-        Math.floor((totalSeconds % (3600 * 24)) / 3600)
-      ).padStart(2, "0");
-      const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(
-        2,
-        "0"
-      );
+      const hours = String(Math.floor((totalSeconds % (3600 * 24)) / 3600)).padStart(2, "0");
+      const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
       const seconds = String(totalSeconds % 60).padStart(2, "0");
 
       if (days > 0) {
@@ -234,34 +288,33 @@ function startCountdown() {
   });
 
   // 공유하기 버튼 클릭 이벤트
+  const shareButton = document.querySelector(".product-detail-header-share-btn-wrapper");
+  const toast = document.querySelector(".toast");
 
-const shareButton = document.querySelector(".product-detail-header-share-btn-wrapper");
-const toast = document.querySelector(".toast");
-
-shareButton.addEventListener("click", (e) => {
+  shareButton.addEventListener("click", (e) => {
     toast.style.display = "block";
     toast.classList.remove("hide");
     toast.classList.add("show");
     setTimeout(() => {
-        toast.classList.remove("show");
-        toast.classList.add("hide");
-        setTimeout(() => {
-            toast.style.display = "none";
-        }, 500);
+      toast.classList.remove("show");
+      toast.classList.add("hide");
+      setTimeout(() => {
+        toast.style.display = "none";
+      }, 500);
     }, 3000);
     clip();
-});
+  });
 
-function clip() {
+  function clip() {
     var url = "";
     var textarea = document.createElement("textarea");
     document.body.appendChild(textarea);
-    url = window.location.href; // 현재 URL을 가져옵니다.
+    url = window.location.href; // 현재 URL
     textarea.value = url;
-    textarea.select(); // 텍스트 영역의 내용을 선택합니다.
-    document.execCommand("copy"); // 선택된 내용을 클립보드에 복사합니다.
-    document.body.removeChild(textarea); // 텍스트 영역을 제거합니다.
-}
+    textarea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textarea);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", startCountdown);

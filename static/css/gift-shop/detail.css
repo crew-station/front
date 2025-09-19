@@ -412,7 +412,6 @@ ol,ul {
     display: flex;
     font-size: 14px;
     line-height: 21px;
-    align-items: flex-start;
 }
 
 .product-shipping-container.span {
@@ -456,6 +455,7 @@ ol,ul {
 
 .product-seller-info-wrapper {
     display: flex;
+    margin-right: auto;
     -webkit-box-align: center;
     align-items: center;
     transition: opacity 0.1s;
@@ -1026,7 +1026,239 @@ button {
     transition: opacity 0.5s;
 }
 
+/* 신고하기 */
 
+.gift-shop-post-report-btn-wrapper {
+  margin-left: auto;  
+  display: flex;      
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.gift-shop-post-report-btn {
+  font-size: 13px;          
+  font-weight: 500;         
+  color: #666;              
+  background: none;         
+  padding: 4px 10px;        
+  cursor: pointer;          
+  transition: all 0.2s ease;
+}
+
+.gift-shop-post-report-btn:hover {
+  color: #333;              
+  border-color: #aaa;       
+  background-color: #f9f9f9;
+}
+
+/* 신고하기 모달 */
+
+.report-modal {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 1300;
+    background-color: rgba(33, 38, 41, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.report-modal.active {
+    display: flex;
+}
+
+.modal-container {
+    max-height: 78%;
+    margin: 0px;
+    vertical-align: middle;
+    border-radius: 8px;
+    display: inline-flex;
+    flex-direction: column;
+    color: rgb(47, 52, 56);
+    background-color: rgb(255, 255, 255);
+    max-width: 400px;
+    width: 100%;
+}
+
+.modal-header {
+    padding: 16px 16px 10px;
+    line-height: 0;
+}
+
+.modal-title {
+    font-size: 20px;
+    line-height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+    text-align: center;
+    width: calc(100% - 68px);
+    margin-left: 24px;
+    margin-right: 10px;
+    white-space: pre-line;
+}
+
+.close-button {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background: none;
+    font: inherit;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+}
+
+.close-button-span {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    color: rgb(47, 52, 56);
+}
+
+.close-button-span::before {
+    font-family: OhouseIcon;
+    vertical-align: top;
+    content: "\e9ba";
+}
+
+.modal-body {
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    word-break: break-all;
+    overflow-y: auto;
+}
+
+.report-content-container {
+    display: block;
+}
+
+.report-content {
+    padding: 17px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.report-content:hover {
+    background-color: #F7F9FA;
+}
+
+.content-label {
+    display: inline-block;
+}
+
+.radio-button.active {
+    display: inline-block;
+    position: relative;
+    width: 21px;
+    height: 21px;
+    border: 1px solid #647FBC;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #647FBC;
+    transition: border-color 0.1s, background-color 0.1s;
+    vertical-align: middle;
+}
+
+.radio-button {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(194, 200, 204);
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    transition: border-color 0.1s, background-color 0.1s;
+    vertical-align: middle;
+}
+
+.radio-button.active::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    transform: scale(1);
+    transition: transform 0.4s cubic-bezier(0.5, 2, 0.5, 0.5);
+    background-color: rgb(255, 255, 255);
+}
+
+.radio-button::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.5, 2, 0.5, 0.5);
+    background-color: rgb(255, 255, 255);
+}
+
+.radio {
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.content {
+    font-size: 16px;
+    line-height: 20px;
+    vertical-align: middle;
+    margin-left: 6px;
+    color: rgb(47, 52, 56);
+}
+
+.modal-button {
+    padding: 9px 16px;
+    line-height: 0;
+}
+
+.modal-button-wrap {
+    padding-top: 1px;
+    padding-bottom: 7px;
+}
+
+.report-button-send {
+    margin: 0px;
+    border: none;
+    background: none #647FBC;
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 4px;
+    padding: 0px 16px;
+    font-weight: 700;
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+.report-button-send:hover {
+    background-color: #566da5;
+}
 
 
 
