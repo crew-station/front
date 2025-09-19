@@ -46,12 +46,13 @@ modal.addEventListener("click", (e) => {
 
 // 신고하기 버튼
 
-const reportBtn = document.querySelector(".report-button");
 const reportModal = document.querySelector(".report-modal");
-const replyReporyBtn = document.querySelector(".reply-report-button");
+const replyReporyBtns = document.querySelectorAll(".detail-report-button");
 
-replyReporyBtn.addEventListener("click", (e) => {
-    reportModal.classList.add("active");
+replyReporyBtns.forEach((replyReporyBtn) => {
+    replyReporyBtn.addEventListener("click", (e) => {
+        reportModal.classList.add("active");
+    });
 });
 
 // 신고하기 창 끄기
