@@ -18,7 +18,7 @@
     };
 
     const syncFromDOM = () => {
-        // 1) 서브링크 .active 가 있는 패널들은 펼친다
+        // 서브링크 .active 가 있는 패널들은 펼친다
         subLists.forEach((ul) => {
             const hasActiveChild = !!ul.querySelector(".boot-link.active");
             const markedShow = ul.classList.contains("show");
@@ -32,7 +32,7 @@
             }
         });
 
-        // 2) 최상위 버튼이 .active 라면 그 다음 패널도 열어준다
+        //  최상위 버튼이 .active 라면 그 다음 패널도 열어준다
         side.querySelectorAll(".menu-item > .menu-btn.active").forEach(
             (btn) => {
                 const panel = btn.nextElementSibling;

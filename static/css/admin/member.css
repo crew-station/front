@@ -167,7 +167,6 @@
   .mt-5 { margin-top: 3rem !important; }
   .mb-4 { margin-bottom: 1.5rem !important; }
   .pr-4 { padding-right: 1.5rem !important; }
-  .mr-3 { margin-right: 1rem !important; }
   .ml-1 { margin-left: .25rem !important; }
   .ml-2 { margin-left: .5rem !important; }
   
@@ -769,7 +768,7 @@
   
   .info-layout .info-title .title {
     padding-top: 1px;
-    font-size: 1rem;
+    font-size: 14px;
     font-weight: 700;
   }
   
@@ -848,3 +847,27 @@
     background-color: rgba(78, 93, 108, 0.1);
   }
   
+  .modal-body {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+  }
+
+  .status-pending {
+    background: rgba(255, 153, 51, .12);
+    color: #ff9900;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 9px 15px;
+    border-radius: 10px;
+    font: 700 13px / 1.1 sans-serif;
+}
+
+.approval-status {
+    text-align: center;
+}
+
+.td-actions .status-badge {
+    margin-right: 8px;
+}
