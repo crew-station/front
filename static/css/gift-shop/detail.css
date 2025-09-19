@@ -498,7 +498,7 @@ ol,ul {
 }
 
 .product-selling-navigation-content {
-    max-width: 1136px;
+    max-width: 1256px;
     margin: 0 auto;
 }
 
@@ -896,7 +896,7 @@ button {
 }
 
 .product-detail-container {
-  max-width: 1136px;  
+  max-width: 1256px;  
   margin: 0 auto;     
   padding: 0 20px;    
   box-sizing: border-box;
@@ -911,7 +911,7 @@ button {
 
 @media (min-width: 768px) {
   .product-detail-container {
-    max-width: 1136px;
+    max-width: 1256px;
     padding: 0 20px;  
   }
 }
