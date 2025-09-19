@@ -484,4 +484,13 @@ pathAddButton.addEventListener("click", () => {
     searchCountry();
 });
 
-const modalClose = document.querySelector(".path-add-button");
+const modalClose = document.querySelector(".add-close-button");
+const modalAddClose = document.querySelector(".modal-add-button");
+
+modalClose.addEventListener("click", (e) => {
+    addModal.style.display = "none";
+});
+
+modalAddClose.addEventListener("click", (e) => {
+    addModal.style.display = "none";
+});
