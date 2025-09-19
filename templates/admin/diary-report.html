@@ -187,7 +187,7 @@
                                           </div>
                                         </td>
                                         <td class="text-center">
-                                          <span class="badge badge-label reason-badge text-danger">욕설/비방</span>
+                                          <span class="badge badge-label reason-badge text-danger">욕설이나 비방이 심해요</span>
                                         </td>
                                         <td>
                                           <div>reporter: <b>taeho</b></div>
@@ -216,7 +216,7 @@
                                           </div>
                                         </td>
                                         <td class="text-center">
-                                          <span class="badge badge-label reason-badge text-warning">광고/도배</span>
+                                          <span class="badge badge-label reason-badge text-warning">이 글로 도배가 돼있어요</span>
                                         </td>
                                         <td>
                                           <div>reporter: <b>eunji</b></div>
@@ -260,15 +260,39 @@
                                       <!-- 신고 정보 -->
                                       <table class="info-table">
                                         <tbody>
-                                          <tr><th>신고사유</th><td><span data-bind="reason"></span></td></tr>
-                                          <tr><th>신고메모</th><td><span data-bind="memo">-</span></td></tr>
-                                          <tr><th>신고자</th><td><span data-bind="reporterName"></span> (<span data-bind="reporterEmail"></span>)</td></tr>
-                                          <tr><th>신고일시</th><td><span data-bind="reportedAt"></span></td></tr>
-                                          <tr><th>현재상태</th><td><span class="status-badge" data-bind="statusBadge">대기중</span></td></tr>
+                                          <tr>
+                                            <th>신고사유</th>
+                                            <td>
+                                                <span data-bind="reason">
+                                                    욕설이나 비방이 심해요
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <!-- 신고 메모는 신고 할때 라디오 버튼에 있는 내용 입력 -->
+                                        
+                                        <tr>
+                                          <tr>
+                                            <th>신고자</th>
+                                            <td>
+                                                <span data-bind="reporterName"></span> (<span data-bind="reporterEmail"></span>)
+                                            </td>
+                                        </tr>
+                                          <tr>
+                                            <th>신고일시</th>
+                                            <td>
+                                                <span data-bind="reportedAt"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>현재상태</th>
+                                            <td>
+                                                <span class="status-badge" data-bind="statusBadge">대기중</span>
+                                            </td>
+                                        </tr>
                                         </tbody>
                                       </table>
                               
-                                      <!-- 관리자 액션 -->
+                                      <!-- 관리 -->
                                       <div class="admin-actions">
                                         <label><input type="checkbox" class="cb-hide-post"> 게시글 숨김</label>
                                         <label><input type="checkbox" class="cb-block-author"> 작성자 제한(일시)</label>

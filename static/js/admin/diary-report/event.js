@@ -17,7 +17,6 @@
         );
     };
 
-    // ✅ HTML에 미리 넣어둔 active/show 상태를 반영해서 펼치기
     const syncFromDOM = () => {
         // 1) 서브링크 .active 가 있는 패널들은 펼친다
         subLists.forEach((ul) => {
@@ -47,7 +46,7 @@
         );
     };
 
-    // 🔁 초기 처리: active/show 가 하나라도 있으면 그 상태를 살리고,
+    // 초기 처리: active/show 가 하나라도 있으면 그 상태를 살리고,
     // 없으면(아무 지정도 없으면) 전체 닫기
     const hasExplicit = !!side.querySelector(
         ".menu-btn.active, .menu-btn.current, .menu-sub-list.show, .menu-sub-list .boot-link.active"
@@ -176,7 +175,6 @@
         bindText("author", author);
         bindText("postId", postId);
         bindText("reason", reason);
-        bindText("memo", ""); // 메모 초기화
         bindText("reporterName", reporterName);
         bindText("reporterEmail", reporterEmail);
         bindText("reportedAt", reportedAt);
@@ -252,7 +250,6 @@
             badge.textContent = "처리완료";
             badge.classList.remove("status-pending", "status-rejected");
             badge.classList.add("status-resolved");
-            // TODO: 여기서 서버 API 호출(payload: 숨김/차단/경고/메모 등)
             closeModal();
         });
 
@@ -264,7 +261,6 @@
             badge.textContent = "반려";
             badge.classList.remove("status-pending", "status-resolved");
             badge.classList.add("status-rejected");
-            // TODO: 여기서 서버 API 호출
             closeModal();
         });
 })();
