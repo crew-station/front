@@ -32,6 +32,12 @@ p {
     unicode-bidi: isolate;
 }
 
+#canvas {
+  max-width: 1256px;  
+  margin: 0 auto;    
+  box-sizing: border-box;
+}
+
 .product-list-wrapper {
     padding: 0px 16px;
 }
