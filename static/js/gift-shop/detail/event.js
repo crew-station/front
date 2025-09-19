@@ -6,39 +6,41 @@ document.addEventListener("DOMContentLoaded", () => {
   const thumbnails = document.querySelectorAll(".product-cover-image-list .image");
 
   // 모달 관련 (공통)
-  function setupModal(modalId, openSelector, closeSelector, onClose) {
-    const modal = document.getElementById(modalId);
-    const openBtn = document.querySelector(openSelector);
-    const closeBtn = modal ? modal.querySelector(closeSelector) : null;
+function setupModal(modalId, openSelector, closeSelector, onClose) {
+  const modal = document.getElementById(modalId);
+  const openBtns = document.querySelectorAll(openSelector);
+  const closeBtn = modal ? modal.querySelector(closeSelector) : null;
 
-    if (!modal || !openBtn || !closeBtn) return;
-
-    // 열기
-    openBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      modal.style.display = "block";
-    });
-
-    // 닫기 버튼
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-      if (onClose) onClose();
-    });
-
-    // 바깥 클릭 시 닫기
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-        if (onClose) onClose();
-      }
-    });
+  if (!modal || openBtns.length === 0 || !closeBtn) {
+    console.warn("모달 요소를 찾을 수 없음:", modalId, openSelector, closeSelector);
+    return;
   }
 
-  // 구매 요청 모달
-  setupModal("myModal", ".product-buying-btn", ".close");
+  // 열기 버튼들
+  openBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      modal.classList.add("active"); 
+    });
+  });
 
-  // 신고하기 모달
-  setupModal("reportModal", ".gift-shop-post-report-btn-wrapper", ".close-button", selectFirstReportRadio);
+  // 닫기 버튼
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("active");
+    if (onClose) onClose();
+  });
+
+  // 바깥 클릭 시 닫기
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+      if (onClose) onClose();
+    }
+  });
+}
+
+setupModal("myModal", "#openBuyingModalBtn", ".close");
+setupModal("reportModal", ".gift-shop-post-report-btn", ".close-button", () => selectFirstReportRadio());
 
   // 신고하기 라디오 선택
   const reportOptions = document.querySelectorAll(".report-content");
@@ -66,13 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // 신고하기 제출
   const submitReportBtn = document.querySelector(".report-button-send");
   const reportModal = document.getElementById("reportModal");
-  if (submitReportBtn && reportModal) {
-    submitReportBtn.addEventListener("click", () => {
-      reportModal.style.display = "none";
-      selectFirstReportRadio();
-      alert("신고가 접수되었습니다.");
-    });
-  }
+if (submitReportBtn && reportModal) {
+  submitReportBtn.addEventListener("click", () => {
+    reportModal.classList.remove("active");
+    selectFirstReportRadio();
+    alert("신고가 접수되었습니다.");
+  });
+}
 
   // 신고하기 첫번째 라디오 버튼 기본 선택
   function selectFirstReportRadio() {
@@ -142,6 +144,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
       confirmModal.style.display = "block";
     });
+
+    // 숫자만 입력되게 제약 추가
+    const phoneInput = document.getElementById("phone");
+    const zipCodeInput = document.getElementById("zipCode");
+
+    if (phoneInput) {
+      phoneInput.addEventListener("input", function () {
+        this.value = this.value.replace(/[^0-9]/g, "");
+      });
+    }
+
+    if (zipCodeInput) {
+      zipCodeInput.addEventListener("input", function () {
+        this.value = this.value.replace(/[^0-9]/g, "");
+      });
+    }
 
     if (confirmYes) {
       confirmYes.addEventListener("click", () => {

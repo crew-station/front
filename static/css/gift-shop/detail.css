@@ -16,24 +16,15 @@ ol,ul {
     min-height: 1px;
 }
 
-@media (min-width: 375px) {
-.product-detail-overview {
-    margin-right: auto;
-    margin-left: auto;
-    width: calc(100% - 30px);
-    max-width: 100%;
-    box-sizing: border-box;
-    min-height: 1px;
-}
-}
-
-.product-detail-overview.row {
+.product-detail-overview-row {
     display: flex;
     margin-top: 0;
     flex-wrap: wrap;
     box-sizing: border-box;
-    margin-right: -5px;
-    margin-left: -5px;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;  
+    align-items: flex-start;
 }
 
 .cover-image-wrap {
@@ -41,66 +32,60 @@ ol,ul {
     width: 100%;
     min-height: 1px;
     box-sizing: border-box;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
     flex: 0 0 100%;
     max-width: 100%;
+    justify-content: center; 
+    align-items: center;    
   }
 
-  @media (min-width: 768px) {
-    .cover-image-wrap {
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .cover-image-wrap {
-      flex: 0 0 58.3333%;
-      max-width: 58.3333%;
-    }
-  }
-
-  .cover-image-container {
-    position: relative;
+.cover-image-container {
+    width: 100%;
+    max-width: 800px;   
+    margin: 0 auto;     
+    text-align: center; 
 }
 
 .carousel-wrap {
-    margin: 0 -15px;
-    position: relative;
-    overflow: hidden;   
-
+  position: relative;
+  overflow: hidden;   
+  display: flex;
+  justify-content: center;
+  width: 100%; 
 }
 
 .carousel-list-wrap {
-    width: 480px;   
-    position: relative;
+  width: 100%;            
+  max-width: 100%;        
+  margin: 0;              
 }
 
 .carousel-list {
     display: flex;
-    flex-wrap: nowrap;     
+    flex-wrap: nowrap;    
     align-items: stretch;
     min-height: 100%;
     transition: transform 0.5s ease;
 }
 
 .carousel-list-entry {
-    position: relative;
-    flex: 0 0 100%;          
-    width: 100%;
-    padding-bottom: 100%;   
-    background-color: #ededed;
-    box-sizing: border-box;
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  background-color: #fff;  
+  padding-bottom: 0;       
+  display: flex;           
+  justify-content: center; 
+  align-items: center;
 }
 
 .carousel-list-entry-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  display: block;
+  max-width: 100%;   
+  height: auto;      
+  object-fit: contain;
+  margin: 0 auto;    
 }
 
 .product-limit-timer-pc {
@@ -823,6 +808,10 @@ button {
       background: rgba(0,0,0,0.5);
     }
 
+    .modal.active {
+    display: flex;
+    }
+
     .modal-content {
       background: #fff;
       width: 400px;
@@ -906,9 +895,25 @@ button {
   color: #333;
 }
 
-.product-detail-container,
-.product-detail-container * {
-  caret-color: transparent; 
+.product-detail-container {
+  max-width: 1136px;  
+  margin: 0 auto;     
+  padding: 0 20px;    
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .product-detail-container {
+    max-width: 100%;
+    padding: 0 12px;   
+  }
+}
+
+@media (min-width: 768px) {
+  .product-detail-container {
+    max-width: 1136px;
+    padding: 0 20px;  
+  }
 }
 
   /* 검색 버튼 */
@@ -1071,17 +1076,46 @@ button {
     display: flex;
 }
 
+/* 모달 기본 */
 .modal-container {
-    max-height: 78%;
-    margin: 0px;
-    vertical-align: middle;
-    border-radius: 8px;
-    display: inline-flex;
-    flex-direction: column;
-    color: rgb(47, 52, 56);
-    background-color: rgb(255, 255, 255);
-    max-width: 400px;
+  max-height: 78%;
+  margin: 0;
+  vertical-align: middle;
+  border-radius: 8px;
+  display: inline-flex;
+  flex-direction: column;
+  color: rgb(47, 52, 56);
+  background-color: #fff;
+  max-width: 400px;
+  width: 90%;      
+  box-sizing: border-box;
+}
+
+/* 모바일 대응 */
+@media (max-width: 480px) {
+  .modal-container {
+    width: 95%;      
+    max-width: none;  
+    border-radius: 6px;
+  }
+
+  .modal-title {
+    font-size: 18px;
+    margin-left: 0;
+    margin-right: 0;
     width: 100%;
+  }
+
+  .modal-body {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 12px;
+  }
+
+  .report-button-send {
+    font-size: 14px;
+    height: 45px;
+  }
 }
 
 .modal-header {
