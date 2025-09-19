@@ -524,8 +524,8 @@ address, dl, ol, ul {
 .pg-list-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* �먮뒗 contain, fill �� 紐⑹쟻�� �곕씪 �좏깮 */
-    display: block; /* �щ갚 �쒓굅�� */
+    object-fit: cover; 
+    display: block; 
   }
 
 
