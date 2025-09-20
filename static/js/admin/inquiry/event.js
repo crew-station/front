@@ -23,6 +23,7 @@ const modal = document.getElementById("modal");
 const modalopen = document.getElementById("modal-open");
 const usermenubtn = document.getElementById("usermenubtn");
 const usermenu = document.getElementById("usermenu");
+const checkBtn = document.querySelector(".btn-outline-primary");
 
 // 체크박스 토글
 if (checkboxactive1) {
@@ -54,6 +55,14 @@ if (allflasechecked1) {
 if (btnfilterstatus && popmenubt2) {
     btnfilterstatus.addEventListener("click", () => {
         popmenubt2.classList.toggle("show");
+    });
+}
+
+// 확인 버튼
+if (checkBtn) {
+    checkBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        popmenubt2.classList.remove("show");
     });
 }
 
