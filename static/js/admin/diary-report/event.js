@@ -58,7 +58,7 @@
         closeAllMenus();
     }
 
-    // 이하 클릭 위임 로직은 그대로 유지 …
+    // 이하 클릭 위임 로직은 그대로 유지
     side.addEventListener("click", (e) => {
         const subLink = e.target.closest(".menu-sub-list .boot-link");
         if (subLink && side.contains(subLink)) {
