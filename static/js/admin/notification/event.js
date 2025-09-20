@@ -1,4 +1,4 @@
-// 사이드 바
+// =============== 사이드바 ===============
 (() => {
     const side = document.querySelector("#bootpay-side");
     if (!side) return;
@@ -6,91 +6,127 @@
     const topButtons = side.querySelectorAll(".menu-item > .menu-btn");
     const subLists = side.querySelectorAll(".menu-item > .menu-sub-list");
 
-    // 초기화: 인라인 display 정리 + 버튼 상태 동기화
-    subLists.forEach((ul) => {
-        const opened =
-            ul.classList.contains("show") || ul.style.display === "block";
-        ul.classList.toggle("show", opened);
-        ul.style.display = opened ? "block" : "none";
-        if (opened)
-            ul.previousElementSibling?.classList.add("active", "current");
-    });
-
-    const clearAll = () => {
-        // 서브 패널 닫기
+    const closeAllMenus = () => {
         subLists.forEach((ul) => {
             ul.classList.remove("show");
             ul.style.display = "none";
         });
-        // 상단 버튼 강조 해제 (active + current 둘 다)
         topButtons.forEach((btn) => btn.classList.remove("active", "current"));
+        side.querySelectorAll(".menu-list > li").forEach((li) =>
+            li.classList.remove("open")
+        );
     };
 
-    side.addEventListener("click", (e) => {
-        // 서브 링크 클릭
-        const subLink = e.target.closest(".menu-sub-list .boot-link");
-        if (subLink) {
-            e.preventDefault();
+    const syncFromDOM = () => {
+        // 서브링크 .active 가 있는 패널들은 펼친다
+        subLists.forEach((ul) => {
+            const hasActiveChild = !!ul.querySelector(".boot-link.active");
+            const markedShow = ul.classList.contains("show");
+            if (hasActiveChild || markedShow) {
+                ul.classList.add("show");
+                ul.style.display = "block";
+                const btn = ul.previousElementSibling; // 상위 메뉴 버튼
+                const li = ul.closest("li");
+                btn && btn.classList.add("active", "current");
+                li && li.classList.add("open");
+            }
+        });
 
-            // 서브 링크 active 표시
-            side.querySelectorAll(".menu-sub-list .boot-link").forEach((a) =>
+        //  최상위 버튼이 .active 라면 그 다음 패널도 열어준다
+        side.querySelectorAll(".menu-item > .menu-btn.active").forEach(
+            (btn) => {
+                const panel = btn.nextElementSibling;
+                if (panel && panel.classList.contains("menu-sub-list")) {
+                    panel.classList.add("show");
+                    panel.style.display = "block";
+                    btn.classList.add("current");
+                    btn.closest("li")?.classList.add("open");
+                }
+            }
+        );
+    };
+
+    // 초기 처리: active/show 가 하나라도 있으면 그 상태를 살리고,
+    // 없으면(아무 지정도 없으면) 전체 닫기
+    const hasExplicit = !!side.querySelector(
+        ".menu-btn.active, .menu-btn.current, .menu-sub-list.show, .menu-sub-list .boot-link.active"
+    );
+
+    if (hasExplicit) {
+        syncFromDOM();
+    } else {
+        closeAllMenus();
+    }
+
+    // 이하 클릭 위임 로직은 그대로 유지
+    side.addEventListener("click", (e) => {
+        const subLink = e.target.closest(".menu-sub-list .boot-link");
+        if (subLink && side.contains(subLink)) {
+            e.preventDefault();
+            const ul = subLink.closest(".menu-sub-list");
+            ul.querySelectorAll(".boot-link.active").forEach((a) =>
                 a.classList.remove("active")
             );
             subLink.classList.add("active");
 
-            clearAll();
-            const ul = subLink.closest(".menu-sub-list");
-            if (ul) {
-                ul.classList.add("show");
-                ul.style.display = "block";
-                ul.previousElementSibling?.classList.add("active", "current");
-            }
+            closeAllMenus();
+            ul.classList.add("show");
+            ul.style.display = "block";
+            const btn = ul.previousElementSibling;
+            const li = ul.closest("li");
+            btn && btn.classList.add("active", "current");
+            li && li.classList.add("open");
             return;
         }
 
-        // 2) 상단 버튼 클릭
-        const btn = e.target.closest(".menu-item > .menu-btn");
-        if (!btn) return;
+        const btnTop = e.target.closest(".menu-item > .menu-btn");
+        if (!btnTop || !side.contains(btnTop)) return;
         e.preventDefault();
 
-        const panel = btn.nextElementSibling;
+        const panel = btnTop.nextElementSibling;
         const hasPane = panel && panel.classList.contains("menu-sub-list");
         const wasOpen = hasPane && panel.classList.contains("show");
 
-        clearAll();
+        closeAllMenus();
+        btnTop.classList.add("active");
 
-        // 클릭한 버튼을 active로 표시
-        btn.classList.add("active");
-
-        // 서브가 있으면 열기 (아코디언)
         if (hasPane && !wasOpen) {
             panel.classList.add("show");
             panel.style.display = "block";
-            btn.classList.add("current");
+            btnTop.classList.add("current");
+            btnTop.closest("li")?.classList.add("open");
         }
     });
 })();
 
-// ===== 우측 상단 유저 메뉴 =====
+// =============== 우측 상단 유저 메뉴 ===============
 (() => {
-    const userMenuBtn = document.querySelector(".user-menu-wrapper");
-    const userMenu = document.querySelector(".user-menu-content");
+    const btn = document.getElementById("usermenubtn");
+    const menu = document.getElementById("usermenu");
+    if (!btn || !menu) return;
 
-    if (!userMenuBtn || !userMenu) return;
+    const hide = () => {
+        menu.classList.remove("show");
+        menu.style.display = "none";
+    };
 
-    userMenuBtn.addEventListener("click", (e) => {
+    const toggle = () => {
+        const willShow = !menu.classList.contains("show");
+        menu.classList.toggle("show", willShow);
+        menu.style.display = willShow ? "block" : "none";
+    };
+
+    btn.addEventListener("click", (e) => {
         e.preventDefault();
-        userMenu.classList.toggle("show");
+        toggle();
     });
 
     document.addEventListener("click", (e) => {
-        if (!userMenuBtn.contains(e.target) && !userMenu.contains(e.target)) {
-            userMenu.classList.remove("show");
-        }
+        if (!btn.contains(e.target) && !menu.contains(e.target)) hide();
     });
 
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") userMenu.classList.remove("show");
+        if (e.key === "Escape") hide();
     });
 })();
 
@@ -110,13 +146,65 @@ pageItemNums.forEach((pageItemNum) => {
     });
 });
 
-// 공지사항 클릭이벤트
+// 모달 열기/닫기
+(() => {
+    const modal = document.getElementById("modal");
+    if (!modal) return;
 
-const pageMoves = document.querySelectorAll(".notice-title");
+    const body = document.body;
 
-pageMoves.forEach((title) => {
-    console.log(title);
-    title.addEventListener("click", (e) => {
-        const tr = title.closest("tr");
+    // 열기 트리거: #modal-open 이 있으면 사용, 없으면 .action-btn 도 허용(선택)
+    const openers = document.querySelectorAll("#save-order-btn");
+
+    // 닫기 트리거
+    const closer = document.getElementById("close");
+    const footerClose = modal.querySelector(".btn-close"); // "답변하기" 버튼이 닫기가 아니면 삭제해도 됨
+
+    const openModal = () => {
+        modal.style.display = "block";
+        // 다음 프레임에서 show 붙여 트랜지션 자연스럽게
+        requestAnimationFrame(() => {
+            modal.classList.add("show");
+            modal.style.background = "rgba(0,0,0,0.5)";
+            body.classList.add("modal-open");
+        });
+    };
+
+    const closeModal = () => {
+        modal.classList.remove("show");
+        body.classList.remove("modal-open");
+        setTimeout(() => {
+            modal.style.display = "none";
+            modal.style.background = "";
+        }, 150);
+    };
+
+    // 열기
+    openers.forEach((el) =>
+        el?.addEventListener("click", (e) => {
+            e.preventDefault();
+            openModal();
+        })
+    );
+
+    // 닫기 (X 버튼 / 푸터 버튼)
+    closer?.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeModal();
     });
-});
+    footerClose?.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeModal();
+    });
+
+    // 오버레이 클릭으로 닫기
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) closeModal();
+    });
+
+    // ESC 로 닫기
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("show"))
+            closeModal();
+    });
+})();
