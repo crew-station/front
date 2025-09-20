@@ -10,7 +10,7 @@ const displayBtn = (displayTag, noneTag) => {
 };
 crewRightBtn.addEventListener("click", (e) => {
     crewList.style.transition = `transform 0.5s`;
-    crewList.style.transform = "translate(-1156px)";
+    crewList.style.transform = "translate(-750px)";
     displayBtn(crewLeftBtn, crewRightBtn);
     // crewList.style.transition = `transform 0s`;
 });

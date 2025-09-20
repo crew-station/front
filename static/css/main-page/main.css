@@ -865,13 +865,14 @@ div.badge-list-container {
     width: fit-content;    
     background: #647FBC;
     color: #fff;
-    padding: 2px 6px;  
+    padding: 4px 7px;  
     border-radius: 4px;
-    font-size: 12px;
+    font-weight: 700;
+    font-size: 13px;
     font-family: 'Pretendard', sans-serif;
     line-height: 20px;
-    white-space: nowrap; 
-    margin-top: 4px;
+    white-space: nowrap;
+    height: 20px;
 }
 
 div.short{
@@ -1018,7 +1019,7 @@ svg.product-detail-information-icon:hover+div.prduct-info-wrap{
 
 span.gift-price+div{
     display: flex;
-    gap: 12px;
+    gap: 3px;
 }
 div.delivery-method{
     background-color: white;
