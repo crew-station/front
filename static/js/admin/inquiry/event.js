@@ -57,6 +57,7 @@ if (btnfilterstatus && popmenubt2) {
     });
 }
 
+// 모달 열기/닫기
 (() => {
     const modal = document.getElementById("modal");
     if (!modal) return;

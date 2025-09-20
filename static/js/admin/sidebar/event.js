@@ -58,7 +58,7 @@
         closeAllMenus();
     }
 
-    // 이하 클릭 위임 로직은 그대로 유지
+    // 이하 클릭 위임 로직은 그대로 유지 …
     side.addEventListener("click", (e) => {
         const subLink = e.target.closest(".menu-sub-list .boot-link");
         if (subLink && side.contains(subLink)) {
@@ -129,82 +129,4 @@
         if (e.key === "Escape") hide();
     });
 })();
-
-// 페이지 번호 클릭 이벤트(데이터를 받아와야 하는 곳이라 주석 처리)
-const pageNums = document.querySelectorAll(".page-num");
-const pageItemNums = document.querySelectorAll(".page-item-num");
-
-pageItemNums.forEach((pageItemNum) => {
-    pageItemNum.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        pageNums.forEach((pageNum) => {
-            pageNum.classList.remove("active");
-        });
-
-        pageItemNum.parentElement.classList.add("active");
-    });
-});
-
-// 모달 열기/닫기
-(() => {
-    const modal = document.getElementById("modal");
-    if (!modal) return;
-
-    const body = document.body;
-
-    // 열기 트리거: #modal-open 이 있으면 사용, 없으면 .action-btn 도 허용(선택)
-    const openers = document.querySelectorAll("#save-order-btn");
-
-    // 닫기 트리거
-    const closer = document.getElementById("close");
-    const footerClose = modal.querySelector(".btn-close"); // "답변하기" 버튼이 닫기가 아니면 삭제해도 됨
-
-    const openModal = () => {
-        modal.style.display = "block";
-        // 다음 프레임에서 show 붙여 트랜지션 자연스럽게
-        requestAnimationFrame(() => {
-            modal.classList.add("show");
-            modal.style.background = "rgba(0,0,0,0.5)";
-            body.classList.add("modal-open");
-        });
-    };
-
-    const closeModal = () => {
-        modal.classList.remove("show");
-        body.classList.remove("modal-open");
-        setTimeout(() => {
-            modal.style.display = "none";
-            modal.style.background = "";
-        }, 150);
-    };
-
-    // 열기
-    openers.forEach((el) =>
-        el?.addEventListener("click", (e) => {
-            e.preventDefault();
-            openModal();
-        })
-    );
-
-    // 닫기 (X 버튼 / 푸터 버튼)
-    closer?.addEventListener("click", (e) => {
-        e.preventDefault();
-        closeModal();
-    });
-    footerClose?.addEventListener("click", (e) => {
-        e.preventDefault();
-        closeModal();
-    });
-
-    // 오버레이 클릭으로 닫기
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal) closeModal();
-    });
-
-    // ESC 로 닫기
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modal.classList.contains("show"))
-            closeModal();
-    });
-})();
+s;

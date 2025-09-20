@@ -254,7 +254,7 @@ let currentBlock = null;
 // 편집 버튼 초기 라벨 통일
 const editButtons = document.querySelectorAll(".edit-button");
 editButtons.forEach((btn) => {
-    btn.textContent = "+ 상품 태그 추가";
+    btn.textContent = "+ 맨션 태그 추가";
 });
 
 // 왼쪽 + 는 하나만 남기기
@@ -270,7 +270,6 @@ const resetBlock = (block) => {
 
     show(block.querySelector(".dropzone"));
     hide(block.querySelector(".post-img-bottom"));
-    hide(block.querySelector(".img-tag-container"));
 
     const btn = block.querySelector(".edit-button");
     if (btn) btn.textContent = "+ 상품 태그 추가";
@@ -284,7 +283,7 @@ const resetBlock = (block) => {
 };
 
 const previewIn = (block, url) => {
-    const box = block.querySelector(".img-add-container");
+    const box = block.querySelector(".img-container");
     let img = box.querySelector("img");
     if (!img) {
         img = document.createElement("img");
@@ -374,51 +373,102 @@ const postContainer = document.querySelector(".post-img-content-container");
 imgPlusBtn.addEventListener("click", (e) => {
     postContainer.innerHTML += `
         <li class="post-img-content-wrapper">
-                  <div class="post-img-content">
-                    <div class="post-img">
-                      <div class="img-add-container" style="position:relative; padding-bottom:100%;">
-                        <!-- 초기 드롭존 -->
-                        <div class="dropzone">
-                          <!-- <div class="dz-title">사진을 드래그해서 놓으세요</div>
-                          <div class="dz-sub">10장까지 올릴 수 있어요.</div> -->
-                          <button type="button" class="pc-upload-btn">사진 불러오기</button>
-                        </div>
-                        <!-- 하단 오버레이/파란+ 는 처음엔 hidden -->
-                        <div class="post-img-bottom" hidden="">
-                            <button class="return-img" type="button" title="다시 올리기" aria-label="다시 올리기">
-                              <svg class="icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
-                                <path d="M17.9 10a6.4 6.4 0 0 0-6-4.5c-3.6 0-6.4 2.9-6.4 6.5s2.8 6.5 6.3 6.5c2.2 0 4.1-1 5.3-2.9a.7.7 0 1 1 1.2.8 7.8 7.8 0 0 1-6.5 3.6C7.5 20 4 16.4 4 12s3.5-8 7.8-8c3.4 0 6.3 2.2 7.4 5.3l.7-1.4a.7.7 0 1 1 1.3.7l-1.8 3.1a.7.7 0 0 1-1 .3l-3-1.8a.7.7 0 1 1 .7-1.3l1.8 1z"></path>
-                              </svg>
-                            </button>
-                          
-                            <button class="delete-img" type="button" title="삭제" aria-label="삭제">
-                              <svg class="icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
-                                <path d="M6 19V7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM19 4v2H5V4h3.5l1-1h5l1 1H19z"></path>
-                              </svg>
-                            </button>
-                          
-                            <button class="edit-button" type="button">+ 상품 태그 추가</button>
-                          </div>
-                          
-                        <div class="img-tag-container tag" hidden="">
-                          <button class="tag-add-btn" type="button">
-                            <svg width="18" height="18" viewBox="0 0 24 24" class="plus-img">
-                              <circle cx="12" cy="12" r="12" fill="#647FBC"></circle>
-                              <path stroke="#FFF" stroke-width="2" d="M12 16V8m-4 4h8"></path>
-                            </svg>
-                          </button>
-                        </div>
-                      </div>
+            <div class="post-img-content">
+            <div class="post-img">
+                <div class="img-add-container" style="position:relative; padding-bottom:100%;">
+                <!-- 초기 드롭존 -->
+                <div class="dropzone">
+                    <!-- <div class="dz-title">사진을 드래그해서 놓으세요</div>
+                    <div class="dz-sub">10장까지 올릴 수 있어요.</div> -->
+                    <button type="button" class="pc-upload-btn">사진 불러오기</button>
+                </div>
+                <!-- 하단 오버레이/파란+ 는 처음엔 hidden -->
+                <div class="post-img-bottom" hidden>
+                    <button class="return-img" type="button" title="다시 올리기" aria-label="다시 올리기">
+                        <svg class="icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
+                        <path d="M17.9 10a6.4 6.4 0 0 0-6-4.5c-3.6 0-6.4 2.9-6.4 6.5s2.8 6.5 6.3 6.5c2.2 0 4.1-1 5.3-2.9a.7.7 0 1 1 1.2.8 7.8 7.8 0 0 1-6.5 3.6C7.5 20 4 16.4 4 12s3.5-8 7.8-8c3.4 0 6.3 2.2 7.4 5.3l.7-1.4a.7.7 0 1 1 1.3.7l-1.8 3.1a.7.7 0 0 1-1 .3l-3-1.8a.7.7 0 1 1 .7-1.3l1.8 1z"></path>
+                        </svg>
+                    </button>
+                    
+                    <button class="delete-img" type="button" title="삭제" aria-label="삭제">
+                        <svg class="icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet">
+                        <path d="M6 19V7h12v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM19 4v2H5V4h3.5l1-1h5l1 1H19z"></path>
+                        </svg>
+                    </button>
+                    
+                    <button class="edit-button" type="button">맨션 편집 완료</button>
                     </div>
-                    <div class="img-post-term">
-                      <div class="post-write-container">
-                        <div class="post-write-wrapper">
-                          <textarea placeholder="일기를 작성해 주세요." rows="6" class="post-input"></textarea>
+                    <div class="tags-container">
+                    <div class="img-tag-container tag" hidden>
+                        <button class="tag-add-btn" type="button">
+                        <svg width="18" height="18" viewBox="0 0 24 24" class="plus-img">
+                            <circle cx="12" cy="12" r="12" fill="#647FBC"></circle>
+                            <path stroke="#FFF" stroke-width="2" d="M12 16V8m-4 4h8"></path>
+                        </svg>
+                        </button>
+                        <div class="mention-window">
+                        <div class="triangle"></div>
+                        <div class="mention-profile">
+                            <a class="profile-a">
+                                <div class="mention-profile-img">
+                                    <img src="/static/images/crew-station-icon-profile.png">
+                                </div>
+                                <span id="mention-name">CREW2</span>
+                            </a>
                         </div>
-                      </div>
                     </div>
-                  </div>
-                </li>
+                    </div>
+                    <div class="img-tag-container tag" hidden>
+                        <button class="tag-add-btn" type="button">
+                        <svg width="18" height="18" viewBox="0 0 24 24" class="plus-img">
+                            <circle cx="12" cy="12" r="12" fill="#647FBC"></circle>
+                            <path stroke="#FFF" stroke-width="2" d="M12 16V8m-4 4h8"></path>
+                        </svg>
+                        </button>
+                        <div class="mention-window">
+                        <div class="triangle"></div>
+                        <div class="mention-profile">
+                            <a class="profile-a">
+                                <div class="mention-profile-img">
+                                    <img src="/static/images/crew-station-icon-profile.png">
+                                </div>
+                                <span id="mention-name">CREW2</span>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="img-tag-container tag" hidden>
+                        <button class="tag-add-btn" type="button">
+                        <svg width="18" height="18" viewBox="0 0 24 24" class="plus-img">
+                            <circle cx="12" cy="12" r="12" fill="#647FBC"></circle>
+                            <path stroke="#FFF" stroke-width="2" d="M12 16V8m-4 4h8"></path>
+                        </svg>
+                        </button>
+                        <div class="mention-window">
+                        <div class="triangle"></div>
+                        <div class="mention-profile">
+                            <a class="profile-a">
+                                <div class="mention-profile-img">
+                                    <img src="/static/images/crew-station-icon-profile.png">
+                                </div>
+                                <span id="mention-name">CREW2</span>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="img-container"></div>
+                </div>
+            </div>
+            <div class="img-post-term">
+                <div class="post-write-container">
+                <div class="post-write-wrapper">
+                    <textarea placeholder="일기를 작성해 주세요." rows="6" class="post-input"></textarea>
+                </div>
+                </div>
+            </div>
+            </div>
+        </li>
     `;
 });
 
@@ -520,7 +570,7 @@ contentList?.addEventListener("click", (e) => {
         const btn = e.target.closest(".edit-button");
         const armed = block.dataset.armed === "1";
         block.dataset.armed = armed ? "0" : "1";
-        btn.textContent = armed ? "+ 상품 태그 추가" : "태그 편집 완료";
+        btn.textContent = armed ? "+ 맨션 태그 추가" : "맨션 편집 완료";
         return;
     }
 
@@ -570,6 +620,8 @@ closeModalBtn?.addEventListener(
     (e) => (tagModal.style.display = "none")
 );
 
+const tagsContainer = document.querySelector(".tags-container");
+
 tagModal?.addEventListener("click", (e) => {
     // 바깥 클릭 → 닫기
     if (!e.target.closest(".modal-view")) {
@@ -577,18 +629,49 @@ tagModal?.addEventListener("click", (e) => {
         return;
     }
 
-    // "선택" → 현재 블록에 파란 + 고정
+    // "선택" 버튼 눌렀을 때
     if (e.target.closest(".tag-select-btn")) {
         if (currentBlock) {
             const { tx, ty } = currentBlock.dataset;
             if (tx && ty) {
-                const pin = currentBlock.querySelector(".img-tag-container");
-                pin.style.left = `${tx}%`;
-                pin.style.top = `${ty}%`;
-                show(pin);
+                // 아직 숨겨져 있는 태그 찾기
+                const hiddenPin = currentBlock.querySelector(
+                    ".img-tag-container[hidden]"
+                );
+                if (hiddenPin) {
+                    hiddenPin.style.left = `${tx}%`;
+                    hiddenPin.style.top = `${ty}%`;
+                    hiddenPin.hidden = false; // 보여주기
+
+                    // 버튼 호버 했을 때 멘션한 사람 보이게
+
+                    const mentionProfile = e.target.closest(
+                        ".tag-profile-container"
+                    );
+
+                    const profileImg =
+                        mentionProfile.querySelector(".ymDK1").src;
+                    const profileName =
+                        mentionProfile.querySelector(".member-name").innerText;
+
+                    hiddenPin.querySelector(".mention-profile-img img").src =
+                        profileImg;
+                    hiddenPin.querySelector("#mention-name").innerText =
+                        profileName;
+                } else {
+                    alert("태그는 최대 3개까지만 추가할 수 있어요!");
+                }
             }
         }
         tagModal.style.display = "none";
+    }
+});
+
+// 태그 클릭하면 다시 숨기기
+tagsContainer.addEventListener("click", (e) => {
+    const pin = e.target.closest(".img-tag-container");
+    if (pin && !pin.hidden) {
+        pin.hidden = true;
     }
 });
 

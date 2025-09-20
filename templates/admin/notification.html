@@ -32,14 +32,15 @@
                 <div class="menu-wrapper flex-grow-1">
                     <ul class="menu-list">
                         <li class="menu menu-item d-flex flex-column">
-                            <a class="menu-btn d-flex w-100 " data-toggle="collapse" >
+                            <!-- active 적용 -->
+                            <a class="menu-btn d-flex w-100 active" data-toggle="collapse" >
                                 <span class="menu-name">HOME</span>
                                 <div class="icon-wrapper flex-grow-1 text-right">
                                 </div>
                             </a>
                         </li>
-                        <li class="menu menu-item d-flex flex-column">
-                            <a class="menu-btn d-flex w-100 " data-toggle="collapse" >
+                        <li class="menu menu-item d-flex flex-column open">
+                            <a class="menu-btn d-flex w-100" data-toggle="collapse" >
                                 <span class="menu-name">회원관리</span>
                                 <div class="icon-wrapper flex-grow-1 text-right">
                                 </div>
@@ -48,14 +49,15 @@
                         <li class="menu menu-item d-flex flex-column">
                             <!-- 클릭 이벤트 -->
                             <!-- 회원 목록 클릭 시 collipse 열고 닫기 이벤트 -->
-                            <a class="menu-btn d-flex w-100 active" data-toggle="collapse" >
+                            <a class="menu-btn d-flex w-100 " data-toggle="collapse" >
                                 <span class="menu-name">신고</span>
                                 <div class="icon-wrapper flex-grow-1 text-right">
                                 </div>
                             </a>
-                            <ul class="menu-sub-list collapse show" id="menu-6109064136799700f1ebced6" style="display: block;">
+                            <ul class="menu-sub-list collapse" >
                                 <li class="submenu menu-item ">
-                                    <a class="boot-link" data-param="0">
+                                    <!-- boot-link 뒤에 active로 적용 -->
+                                    <a class="boot-link " data-param="0">
                                         
                                         다이어리
                                     </a>
@@ -82,13 +84,13 @@
                         </li>
                         
                         <li class="menu menu-item d-flex flex-column">
-                            <a class="menu-btn d-flex w-100 collapsed"data-toggle="collapse">
+                            <a class="menu-btn d-flex w-100"data-toggle="collapse">
                                 <span class="menu-name">문의</span>
                                 <div class="icon-wrapper flex-grow-1 text-right"></div>
                             </a>  
                         </li>
                         <li class="menu menu-item d-flex flex-column">
-                            <a class="menu-btn d-flex w-100 collapsed"data-toggle="collapse">
+                            <a class="menu-btn d-flex w-100 "data-toggle="collapse">
                                 <span class="menu-name">배너관리</span>
                                 <div class="icon-wrapper flex-grow-1 text-right"></div>
                             </a>  
@@ -100,36 +102,35 @@
         <!-- 상단 시작 부분 -->
         <div id="bootpay-main" class="has-menu">
             <div id="header-wrapper">
-                <div id="bootpay-header" class="d-flex false">
+                <div id="bootpay-header" class="d-flex trial-mode">
                     <div class="flex-grow-1"></div>
                     <div>
                         <div class="header-menu-group d-flex">
-                            <!-- 상단 -->
-                            <!-- 상단 공지사항 -->
-                            <a href="" class="bootpay-link mr-3">
-                                <div class="header-menu-btn " data-for="" data-toggle="tooltip" data-custom-class="" title="" data-original-title="공지사항">
-                                    <!-- hover시 aria-describedby="tooltip"이 뒤에 표기 -->
-                                    <i class="mdi mdi-bullhorn-variant-outline"></i>
+                            <a class="boot-link mr-3" href="">
+                                <div class="header-menu-btn " data-for="8598bfd3-1b35-4de3-a48f-9d6654dc0268" data-toggle="tooltip" data-custom-class title="공지사항">
+                                    <i class="mdi mdi-bullhorn-variant-outline">
+    
+                                    </i>
+    
                                 </div>
                             </a>
-                            <!-- 상단 관리자 이메일 -->
                             <div class="user-menu">
-                                <div class="user-menu-wrapper d-flex align-items-center cursor-pointer" id="user-menu-handler" data-toggle="dropdown" aria-expanded="false">
+                                <!-- 주석 아래에 show 유무로 메뉴가보임 -->
+                                <div id="usermenubtn"class="user-menu-wrapper d-flex align-items-center cursor-pointer" data-toggle="dropdown">
                                     <div class="user-avatar">T</div>
-                                    <div class="user-menu-email">test@gmail.com</div>
+                                    <div class="user-menu-email">test@gamil.com</div>
                                 </div>
-                                <!-- 리스트가 보여질 때 -->
-                                <!-- <div class="user-menu-content dropdown-menu dropdown-menu-right show" style="position: absolute; transform: translate3d(1698px, 62px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-end"> -->
-                                <div class="user-menu-content dropdown-menu dropdown-menu-right">
+                                <div id="usermenu" class="user-menu-content dropdown-menu dropdown-menu-right">
                                     <ul class="menu-body list-unstyled">
                                         <li>
-                                            <a href="" class="bootpay-link d-block text-dark">
+                                            <a class="boot-link d-block text-dark"href="">
                                                 <i class="mdi mdi-bell-outline mr-2 mdi-18px"></i>
                                                 알림
+                                                
                                             </a>
-                                        </li>          
+                                        </li>
                                         <li>
-                                            <a href="" class="d-block text-dark">
+                                            <a class="d-block text-dark"href="">
                                                 <i class="mdi mdi-logout-variant mr-2 mdi-18px"></i>
                                                 로그아웃
                                             </a>
@@ -137,14 +138,21 @@
                                     </ul>
                                 </div>
                             </div>
+    
                         </div>
+    
                     </div>
+    
                 </div>
+    
             </div>
             <!-- 공지사항 메인 -->
             <div class="page notice-index narrow-center">
                 <div class="page-header">
-                    <div class="page-title">공지사항</div>
+                    <div class="page-title">공지사항
+                        <button type="button" id="save-order-btn" class="btn-order-save">작성</button>
+                    </div>
+                    
                 </div>
                 <div class="page-body">
                     <div class="page-content white-panel p-5">
@@ -292,6 +300,87 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div id ="modal"class="modal fade receipt-modal show"aria-modal="true" role="dialog ">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="modal-title">
+                            공지사항 작성
+                        </div>
+                        <button id="close"class="close">
+                            <i class="mdi mdi-close">
+
+                        </i> 
+                        </button>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="divider"></div>
+                        <div class="tab-view">
+                            <div class="tab-view-header">
+                                <div class="tab-switch-row">
+                                    <div class="tab-switch active">공지사항 작성</div>
+                                </div>
+                            </div>
+                            <div class="tab-view-body">
+                                <div style="display: block;">
+                                    <div class="tab-inner tab-detail">
+                                        
+                                        <div class="info-layout payment-info">
+                                            <div class="info-title justify-content-between">
+                                                
+                                            </div>
+                                            <div class="info-body">
+                                                <div class="table-info row">
+                                                    <div class="col-12">
+                                                      <!-- 제목 -->
+                                                      <div class="row inner-table" style="margin-bottom:12px;">
+                                                        <div class="col-auto w-120px"
+                                                             style="height: 48px; display:flex; justify-content:center; align-items:center;">
+                                                          제목
+                                                        </div>
+                                                        <input type="text" id="notice-title" class="col"
+                                                               placeholder="공지 제목을 입력하세요"
+                                                               style="height: 48px; border:1px solid #e5e7eb; border-radius:6px; outline:none; padding:0 12px;">
+                                                      </div>
+                                                  
+                                                      <!-- 내용 -->
+                                                      <div class="row inner-table">
+                                                        <div class="col-auto w-120px"
+                                                             style="height: 100%; min-height: 48px; display:flex; justify-content:center; align-items:center;">
+                                                          내용
+                                                        </div>
+                                                        <textarea id="notice-content" class="col"
+                                                                  placeholder="공지 내용을 입력하세요"
+                                                                  rows="8"
+                                                                  style="height: 200px; border:1px solid #e5e7eb; border-radius:6px; outline:none; padding:12px; resize:vertical;"></textarea>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-close btn btn-outline-filter">완료</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
     </div>
 </body>

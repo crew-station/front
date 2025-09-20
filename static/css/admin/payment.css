@@ -1284,6 +1284,7 @@ svg:not(:root){
 
 .receipt-index .page-content .table-layout table.receipt-table{
     font-size: .9rem;
+    text-align: center;
 }
 
 .table{
@@ -2038,3 +2039,308 @@ element.style {
     text-align: center;
 }
 
+/*  */
+ /* 모달 */
+ .member-modal {
+    display: none;            
+    align-items: center;      
+    justify-content: center;    
+  }
+
+  .member-modal.show {
+    display: flex !important;    
+  }
+
+  .member-modal .modal-dialog {
+    margin: 0;                  
+    max-width: 880px;           
+    width: 100%;                
+  }
+
+  .fade { transition: opacity .15s linear; }
+  
+  .modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+    transition: background .3s ease;
+  }
+  
+  .modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  .modal-dialog {
+    position: relative;
+    width: auto;
+    margin: .5rem;
+    pointer-events: none;
+  }
+  
+  .modal.member-modal > .modal-dialog { max-width: 880px; }
+  
+  .modal.fade .modal-dialog {
+    transform: translateY(-50px);
+    transition: transform .3s ease-out;
+  }
+  
+  .modal.show .modal-dialog { transform: none; }
+  
+  .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    outline: 0;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+  }
+  
+  .modal > .modal-dialog > .modal-content { border: 0; }
+  
+  .modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    border-top-left-radius: calc(.3rem - 1px);
+    border-top-right-radius: calc(.3rem - 1px);
+  }
+  
+  .modal > .modal-dialog > .modal-content > .modal-header {
+    align-items: center;
+    border-bottom: 0;
+    padding: 24px 30px 20px;
+  }
+  
+  .modal-title { margin-bottom: 0; line-height: 1.5; }
+  
+  .modal.member-modal > .modal-dialog > .modal-content > .modal-header .modal-title {
+    font-size: 19px;
+    font-weight: 700;
+  }
+  
+  .modal-body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1rem;
+  }
+  
+  .modal.member-modal .modal-body { padding: 0; }
+  
+  .modal > .modal-dialog > .modal-content > .modal-body {
+    padding-left: 30px;
+    padding-right: 30px;
+    border-bottom: 0;
+  }
+  
+  .close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    background: transparent;
+    border: 0;
+    padding: 0;
+  }
+  
+  .modal-header .close {
+    margin: -1rem -1rem -1rem auto;
+    padding: 1rem;
+  }
+  
+  .modal.member-modal > .modal-dialog > .modal-content > .modal-header button.close {
+    font-size: 22px;
+    color: #292929;
+    opacity: .8;
+    font-weight: 400;
+  }
+  
+  .modal-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    padding: .75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-left-radius: calc(.3rem - 1px);
+    border-bottom-right-radius: calc(.3rem - 1px);
+  }
+  
+  .modal.member-modal .modal-footer {
+    background-color: #fff;
+    padding-top: 10px !important;
+  }
+  
+  .modal > .modal-dialog > .modal-content > .modal-footer {
+    padding: 30px;
+    border-top: 0;
+  }
+  
+  .modal > .modal-dialog > .modal-content > .modal-footer > * { margin: 0; }
+  
+  button.btn.btn-outline-filter {
+    color: #292929;
+    border-color: #ededed;
+  }
+
+
+    /* 탭-뷰 & 정보 테이블 */
+    .tab-view .tab-view-header { border-bottom: 2px solid #ededed; }
+  
+    .tab-view .tab-view-body {
+      background-color: #fff;
+      border-radius: 0 0 10px 10px;
+      padding: 0 20px;
+    }
+    
+    .modal.member-modal .modal-body .tab-view .tab-view-body {
+      min-height: 500px;
+      border-radius: 0;
+    }
+    
+    .modal.member-modal .tab-inner {
+      min-height: 300px;
+      padding: 18px 28px 0;
+      font-size: .9rem;
+    }
+    
+    .info-layout { margin-bottom: 20px; }
+    
+    .info-layout .info-title {
+      display: flex;
+      align-items: center;
+      padding: 8px 0;
+    }
+    
+    .info-layout .info-title .title {
+      padding-top: 1px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    
+    .modal.member-modal .tab-inner.tab-detail .d-table-cell {
+      width: 50%;
+      min-width: 50%;
+      max-width: 50%;
+    }
+    .d-table-cell {
+        display: table-cell !important;
+    }
+    .d-table {
+        display: table !important;
+    }
+    
+    table.info-table {
+      width: calc(100% + 2px);
+      margin: -1px;
+      font-size: 13px;
+      border-collapse: collapse;
+    }
+    
+    .modal.member-modal .tab-inner.tab-detail table.info-table { border-top: 1px solid #ededed; }
+    
+    table.info-table th,
+    table.info-table td {
+      height: 46px;
+      padding: 0 16px;
+      vertical-align: middle;
+      border-bottom: 1px solid hsla(0, 0%, 50%, .102);
+    }
+    
+    table.info-table th { background: #f3f3f7; }
+    
+    .modal.member-modal .tab-inner.tab-detail table.info-table th {
+      width: 120px;
+      min-width: 120px;
+      max-width: 120px;
+      text-align: left;
+    }
+    
+    .modal.member-modal .tab-inner.tab-detail table.info-table td {
+      word-break: break-all;
+      white-space: pre-line;
+    }
+    
+    /* 보조 */
+    .info-detail:hover { color: #007bff; }
+    
+    /* (선택) collapse 기본 보조 */
+    .collapse:not(.show) { display: none; }
+    
+    /* ===== 회원 배지 ===== */
+  .badge {
+      display: inline-block;
+      padding: 0.25em 0.6em;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: baseline;
+      border-radius: .25rem;
+    }
+    
+    .badge-label {
+      display: inline-block;
+      padding: 4px 8px;
+      font-size: 11px;
+      border-radius: 4px;
+      text-align: center;
+    }
+    
+    .badge-label.text-danger {
+      color: #fe657e;
+      background-color: rgba(254, 101, 126, 0.1);
+    }
+    
+    .badge-label.text-dark {
+      color: #4e5d6c;
+      background-color: rgba(78, 93, 108, 0.1);
+    }
+    
+    .modal-body {
+      max-height: calc(100vh - 200px);
+      overflow-y: auto;
+    }
+  
+    .status-pending {
+      background: rgba(255, 153, 51, .12);
+      color: #ff9900;
+  }
+  
+  .status-badge {
+      display: inline-block;
+      padding: 9px 15px;
+      border-radius: 10px;
+      font: 700 13px / 1.1 sans-serif;
+  }
+  
+  .approval-status {
+      text-align: center;
+  }
+  
+  .td-actions .status-badge {
+      margin-right: 8px;
+  }
+  
+  table.info-table th, table.info-table td {
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+    text-align: left;
+  }
