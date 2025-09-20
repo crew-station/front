@@ -489,14 +489,15 @@ a.crew-detail-a, a.diary-a, a.together-a{
 
 div.crew-img-wrap:hover > img{
     transform: scale(1.03);
-    filter: brightness(0.5);
+    filter: brightness(0.8);
 }
 
 div.diary-item-wrap:hover div.diary-img-wrap > img,
 div.together-item-wrap:hover div.together-img-wrap > img{
     transform: scale(1.03);
 }   
-a.today-gift-item-overlay:hover+div.today-gift-item-img > div.gift-item-img > img{
+div.today-gift-item-img:hover > div.gift-item-img > img{
+    
     transform: translate(-50%, -50%) scale(1.1);
 }
 
@@ -718,7 +719,7 @@ div.marker-country{
     white-space: nowrap;
 }
 
-div.together-category,div.gift-limit-time{
+div.together-category{
     top: 12px;
     left: 12px;
     padding: 4px 7px;
@@ -790,6 +791,7 @@ a.today-gift-item-overlay{
 
 div.today-gift-item-img{
     width: auto;
+    z-index: 3;
     position: relative;
 }
 div.gift-item-img{
@@ -841,10 +843,7 @@ span.gift-price{
     line-height: 100%;
     font-weight: 700;
 }
-span.gift-price > span{
-    color: black;
-    margin-right: 4px;
-}
+
 div.gift-price-wrap{
     display: flex;
     justify-content: space-between;
@@ -942,6 +941,17 @@ span.chemistry-pt{
 
 div.gift-limit-time{
     min-width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    border: 1px solid rgb(234, 237, 239);
+    color: rgb(47, 52, 56);
+    background-color: rgb(255, 255, 255);
 }
 
 
@@ -965,7 +975,7 @@ div.prduct-info-wrap{
 	background: #fff;
     border: 1px solid #ddd;;    
     color: #333;
-    top: -132px;
+    top: -92px;
     left: -96px;
     width: 230px;
     padding: 10px;
@@ -1014,4 +1024,451 @@ div.delivery-method{
     background-color: white;
     border: 1px solid #d3dadf;
     color: #a6a6a6;
+}
+div.crew-short-description.crew-info-wrap{
+    top: 0;
+    display: flex;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 400;
+    justify-content: flex-end;
+}
+
+div.crew-short-description.crew-info-cnt-wrap{
+    top: 10px;
+    display: flex;
+    gap: 10px;
+    font-size: 10px;
+    justify-content: flex-end;
+}
+div.crew-count,div.crew-diary{
+    display: flex;
+    gap: -10px;
+    /* flex-direction: column; */
+}
+
+div.crew-count > div, div.crew-diary > div{
+    position: absolute;
+    top: 14px;
+}
+
+div.diary-search-count{
+    margin-left: 11px;
+    overflow: hidden;
+    display: inline-block;
+    line-height: 18px;
+    font-size: 17px;
+    font-weight: 600;
+    color: rgb(47, 52, 56);
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+div.diary-profile-wrap{
+    position: absolute;
+    padding: 8px;
+    font-size: 0px;
+    z-index: 1;
+    left: 0px;
+    bottom: 0px;
+    opacity: 1;
+}
+
+
+div.crew-profile-block , div.diary-profile-block,div.together-profile-block{
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+div.crew-profile-block img, div.diary-profile-block img,div.together-profile-block img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.crew-profile-block , div.diary-profile-block,div.together-profile-block{
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    overflow: hidden;
+    display: inline-block;
+    margin-right: 4px;
+}
+
+div.crew-profile-block img, div.diary-profile-block img,div.together-profile-block img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+a.crew-detail-a, a.diary-a, a.together-a{
+    position: absolute;
+    width: 100%;
+    display: block;
+    height: 100%;
+}
+
+div.gift-search-count, div.crew-search-count,div.diary-search-count,div.together-search-count{
+    color:#91ADC8
+}
+
+
+div.diary-header,div.together-header,div.gift-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0px;
+    font-size: 0px;
+    line-height: 1;
+}
+div.diary-title-wrap,div.together-title-wrap,div.gift-title-wrap{
+    flex: 1 1 0%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    min-width: 0px;
+}
+
+div.diary-title,div.together-title,div.gift-title{
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    cursor: pointer;
+}
+div.diary-title strong,div.together-title strong,div.gift-title strong{
+    overflow: hidden;
+    display: inline-block;
+    font-weight: 700;
+    color: rgb(47, 52, 56);
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 17px;
+    line-height: 28px;
+}
+div.diary-text-wrap,div.together-text-wrap, div.gift-text-wrap{
+    margin-top: 10px;
+    min-width: 0px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgb(47, 52, 56);
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+div.diary-text-wrap p,div.together-text-wrap p,div.gift-text-wrap p{
+    overflow: hidden;
+    display: -webkit-box;
+    font-weight: 500;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+
+div.diary-more-btn,div.together-more-btn,div.gift-more-btn{
+    display: flex;
+    align-items: center;
+    height: 0px;
+    margin-left: 10px;
+}
+
+
+div.diary-card-feed{
+    padding-top: 0px;
+    transform: translateY(0px);
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+
+
+div.card-feed-item-wrap{
+    padding-right: 10px;
+    padding-left: 10px;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    box-sizing: border-box;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+article.card-collection-item{
+    padding-bottom: 40px;
+}
+
+div.card-writer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    min-height: 36px;
+    margin: 0 0 16px;
+    padding: 0 0 0 48px;
+}
+div.card-item-writer-content{
+    font-style: normal;
+    font-weight: 400;
+    flex: 0 0 auto;
+    margin-top: -5px;
+    font-size: 15px;
+    line-height: 19px;
+}
+
+
+div.card-item-writer-header{
+    display: flex;
+}
+a.card-writer-link{
+    flex: 0 1 auto;
+    transition: opacity .1s;
+    display: inline-block;
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+img.card-writer-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    background-color: #ededed;
+}
+
+span.writer-name{
+    color: #424242;
+    font-weight: 500;
+    display: block;
+    width: 53px;
+}
+
+div.card-collection-item-content{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+a.card-content-link{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+div.card-item-description{
+    order: 1;
+    margin: 12px 0 0;
+    font-size: 15px;
+    line-height: 22px;
+    transition: opacity .1s;
+}
+div.card-item-description-content{
+    max-height: 66px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    -webkit-line-clamp : 3;
+    line-clamp: 3;
+}
+
+
+div.card-collection-item-img{
+    flex: 0 0 auto;
+}
+div.card-item-img{
+    padding-bottom: 100%;
+    border-radius: 6px;
+    position: relative;
+    width: 100%;
+    background-color: #ededed;
+    overflow: hidden;
+}
+
+div.card-item-img img.image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    transition: transform .2s;
+    border: 0;
+}
+
+span.card-item-img-icon{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+div.card-item-img-icon .icon{
+    width: 18px;
+    height: 18px;
+}
+div.card-item-action-list{
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: -12px;
+}
+
+button.card-item-action-btn{
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 13px 0 16px;
+    background: none;
+    border: none;
+    text-align: center;
+    transition: opacity .1s;
+    z-index: 2;
+}
+
+button.card-item-action-btn svg.icon--stroke{
+    fill: transparent;
+    stroke: #424242;
+    stroke-width: 1.1px;
+    transition: fill .1s, stroke .1s;
+    vertical-align : -7px;
+}
+button.card-item-action-btn span.count{
+    margin-left: 6px;
+    font-size: 12px;
+    color: #424242;
+}
+
+button.card-item-action-btn svg.icon-stroke{
+    fill: #424242;
+    vertical-align: -7px;
+}
+
+button.card-item-action-btn:hover svg{
+    opacity: 0.5;
+}
+
+
+
+span.badge-list-container {
+        display: block;
+    width: fit-content;
+    background: #647FBC;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.4;
+    height: 17px;
+    white-space: nowrap;
+}
+p.card-item-writer-introduction{
+
+    margin-top: 2px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #757575;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.writer-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+div.card-collection-item-img{
+    z-index: 2;
+}
+
+
+div.card-collection-item-img:hover img {
+    transform: translate(-50%, -50%) scale(1.03);
+    filter: brightness(0.8);
+}
+div.card-collection-item-img:hover div.diary-img-count{
+    display: block;
+}
+
+
+div.diary-img-count{
+    position: absolute;
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.crew-count+div{
+    margin-right: 10px;
+}
+
+/* div.crew-img-wrap:hover > img{
+    transform: scale(1.03);
+    filter: brightness(0.8);
+} */
+
+div.diary-card-title{
+    background-color: white;
+    padding: 5px;
+    position: absolute;
+    bottom: 2%;
+    font-size: 16px;
+    transform: translate(50%, 0);
+    right: 50%;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+div.card-collection-item-img:hover div.diary-card-title {
+    display: none;
+}
+
+
+div.together-text-wrap{
+    position: absolute;
+    margin-top: 0px;
+    z-index: 10;
+    right: 0px;
+    background-color: white;
+    padding: 4px 7px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    top: 12px;
+    right: 12px;
+    line-height: 15px;
+}
+span.gift-count{
+    margin-left: 10px;
+    color: rgb(240, 86, 86);
 }
