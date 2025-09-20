@@ -1473,3 +1473,6 @@ span.gift-count{
     margin-left: 10px;
     color: rgb(240, 86, 86);
 }
+div.gift-container{
+    margin-top: 80px;
+}
