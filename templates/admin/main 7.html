@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrewStation</title>
+    <link rel="stylesheet" href="/static/css/admin/font.css">
+    <link rel="stylesheet" href="/static/css/admin/sidebar.css">
+    <link rel="stylesheet" href="/static/css/admin/main.css">
+    <link rel="shortcut icon" href="../../../static/images/crew-station-favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div id= "bootpay">
+        <div class="boot-notify-container"></div>
+        <div class="popup-manager" style="width: 0px;"></div>
+        <aside id="bootpay-side">
+            <div class="d-flex flex-column" id="side-wrapper">
+                <div class="side-header">
+                    <div class="app-wrapper">
+                        <div class="provider-name hover-spin">
+                            <span class="comp-provider-name">
+                                <span class="pn-name">CrewStation</span>
+                            </span>
+                        </div>
+                        <a class="app-name d-flex justify-content-between align-items-center">
+                            <span>CrewStation</span>
+                            <i class="mdi mdi-apps">
+                            </i>
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-wrapper flex-grow-1">
+                    <ul class="menu-list">
+                        <li class="menu menu-item d-flex flex-column">
+                            <a class="menu-btn d-flex w-100 " data-toggle="collapse" >
+                                <span class="menu-name">HOME</span>
+                                <div class="icon-wrapper flex-grow-1 text-right">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="menu menu-item d-flex flex-column">
+                            <a class="menu-btn d-flex w-100 " data-toggle="collapse" >
+                                <span class="menu-name">회원관리</span>
+                                <div class="icon-wrapper flex-grow-1 text-right">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="menu menu-item d-flex flex-column">
+                            <!-- 클릭 이벤트 -->
+                            <!-- 회원 목록 클릭 시 collipse 열고 닫기 이벤트 -->
+                            <a class="menu-btn d-flex w-100 active" data-toggle="collapse" >
+                                <span class="menu-name">신고</span>
+                                <div class="icon-wrapper flex-grow-1 text-right">
+                                </div>
+                            </a>
+                            <ul class="menu-sub-list collapse show" id="menu-6109064136799700f1ebced6" style="display: block;">
+                                <li class="submenu menu-item ">
+                                    <a class="boot-link" data-param="0">
+                                        
+                                        다이어리
+                                    </a>
+                                </li>
+                                <li class="submenu menu-item ">
+                                    <a class="boot-link" data-param="0">
+                                        
+                                        기프트
+                                    </a>
+                                </li>
+                                <li class="submenu menu-item ">
+                                    <a class="boot-link" data-param="0">
+                                        
+                                        크루
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu menu-item d-flex flex-column">
+                            <a class="boot-link menu-btn">
+                                <span class="menu-name">결제관리</span>
+                            </a>
+                            <ul class="menu-sub-list collapse " id="menu-60934308367997007c4c3d2c"></ul>
+                        </li>
+                        
+                        <li class="menu menu-item d-flex flex-column">
+                            <a class="menu-btn d-flex w-100 collapsed"data-toggle="collapse">
+                                <span class="menu-name">문의</span>
+                                <div class="icon-wrapper flex-grow-1 text-right"></div>
+                            </a>  
+                        </li>
+                        <li class="menu menu-item d-flex flex-column">
+                            <a class="menu-btn d-flex w-100 collapsed"data-toggle="collapse">
+                                <span class="menu-name">배너관리</span>
+                                <div class="icon-wrapper flex-grow-1 text-right"></div>
+                            </a>  
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <div id="bootpay-main" class="has-menu">
+            <div id="header-wrapper">
+                <div id="bootpay-header" class="d-flex false">
+                    <div class="flex-grow-1"></div>
+                    <div>
+                        <div class="header-menu-group d-flex">
+                            <!-- 상단 -->
+                            <!-- 상단 공지사항 -->
+                            <a href="" class="bootpay mr-3">
+                                <div class="header-menu-btn " data-for="" data-toggle="" data-custom-class="" title="" data-original-title="공지사항">
+                                    <!-- hover시 aria-describedby="tooltip"이 뒤에 표기 -->
+                                    <i class="mdi mdi-bullhorn-variant-outline"></i>
+                                </div>
+                            </a>
+                            <!-- 상단 관리자(이메일) 정보 -->
+                            <div class="user-menu">
+                                <div class="user-menu-wrapper d-flex align-items-center cursor-pointer" id="user-menu-handler" data-toggle="dropdown">
+                                    <div class="user-avatar">T</div>
+                                    <div class="user-menu-email">Test@gmail.com</div>
+                                </div>
+                                <div class="user-menu-content dropdown-menu dropdown-menu-right">
+                                    <ul class="menu-body list-unstyled">
+                                        <li>
+                                            <a class="boot-link d-block text-dark" href="">
+                                                <i class="mdi mdi-bell-outline mr-2 mdi-18px"></i>
+                                                알림
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href class="d-block text-dark">
+                                                <i class="mdi mdi-account-box-outline mr-2 mdi-18px"></i>
+                                                회원정보
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="d-block text-dark" href="">
+                                                <i class="mdi mdi-logout-variant mr-2 mdi-18px"></i>
+                                                로그아웃
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page ana-user-index wide-page">
+                <div class="page-header">
+                    <div class="page-title">HOME</div>
+                    <div class="page-subtitle"></div>
+                </div>
+                <div class="page-body">
+                    <div class="tab-box">
+                        <div class="tab-row white-panel">
+                            <div class="row">
+                                <div class="col col-auto">
+                                    <ul class="tab-name-list list-unstyled list-inline">
+                                        <!-- 클릭 한 부분은 active -->
+                                        <li class="tab-name active">회원 분석</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-body">
+                            <div class="tab-wrapper user-tab">
+                                <div class="chart-row row">
+                                    <div class="col-12 col-xl-8">
+                                        <div class="chart-row row">
+                                            <!-- 일반회원 방문자, 게시글 수 -->
+                                            <div class="col-12 col-lg-6">
+                                                <div class="chart-box">
+                                                    <div class="chart-wrapper">
+                                                        <div class="echarts-for-react boot-chart height-300" _echarts_instance_="ec_1754465654340" size-sensor-id="97" style="height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;">
+                                                            <div style="position: relative; width: 790px; height: 300px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
+                                                                <!-- 막대 그래프 신규 가입자 수 , 다른 그래프는 신규 크루 생성 수 -->
+                                                                <canvas data-zr-dom-id="zr_0" width="790" height="300" style="position: absolute; left: 0px; top: 0px; width: 790px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+                                                            </div>
+                                                            <div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1), visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 4px; color: rgb(102, 102, 102); font: 14px / 21px sans-serif; padding: 10px; top: 0px; left: 0px; transform: translate3d(364px, 100px, 0px); border-color: rgb(255, 255, 255); pointer-events: none; visibility: hidden; opacity: 0;">
+                                                                <div style="font-size: 11px">2025-08-06 
+                                                                    <span style="color: #839099">수</span>
+                                                                </div>
+                                                                <span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#6387f9;"></span> 방문: 
+                                                                <span style="font-weight: bold">0명</span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 희사회원 방문자, 답글 횟수 -->
+                                            <div class="col-12 col-lg-6">
+                                                <div class="chart-box">
+                                                    <div class="chart-wrapper">
+                                                        <div class="echarts-for-react boot-chart height-300" _echarts_instance_="ec_1754465654340" size-sensor-id="97" style="height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); position: relative;">
+                                                            <div style="position: relative; width: 790px; height: 300px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
+                                                                <!-- canvas: 그래프 내용 -->
+                                                                <!-- 막대 그래프로 의사회원 신규 회원가입 수, 다른 그래프는 의사회원 방문횟수 -->
+                                                                <canvas data-zr-dom-id="zr_0" width="790" height="300" style="position: absolute; left: 0px; top: 0px; width: 790px; height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+                                                            </div>
+                                                            <div class="" style="position: absolute; display: block; border-style: solid; white-space: nowrap; z-index: 9999999; box-shadow: rgba(0, 0, 0, 0.2) 1px 2px 10px; transition: opacity 0.2s cubic-bezier(0.23, 1, 0.32, 1), visibility 0.2s cubic-bezier(0.23, 1, 0.32, 1); background-color: rgb(255, 255, 255); border-width: 1px; border-radius: 4px; color: rgb(102, 102, 102); font: 14px / 21px sans-serif; padding: 10px; top: 0px; left: 0px; transform: translate3d(364px, 100px, 0px); border-color: rgb(255, 255, 255); pointer-events: none; visibility: hidden; opacity: 0;">
+                                                                <div style="font-size: 11px">2025-08-06 
+                                                                    <span style="color: #839099">수</span>
+                                                                </div>
+                                                                <span style="display:inline-block;margin-right:4px;border-radius:10px;width:10px;height:10px;background-color:#6387f9;"></span> 방문: 
+                                                                <span style="font-weight: bold">0개</span>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="chart-box access-data-list">
+                                            <!-- 그래프 내용 -->
+                                             <!-- 최근 가입자 수, 신규 크루 생성 수,  -->
+                                            <div class="row">
+                                                <div class="col-12 col-md-6 col-lg-3">
+                                                    <div class="access-data data-member-page">
+                                                        <div class="title">최근 가입자 수</div>
+                                                        <div class="value">
+                                                            <span class="icon">
+                                                                <i class="mdi mdi-file-send-outline"></i>
+                                                            </span>
+                                                            -
+                                                            <span class="unit">명</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-3">
+                                                    <div class="access-data data-member-page">
+                                                        <div class="title">신규 크루 생성 수</div>
+                                                        <div class="value">
+                                                            <span class="icon">
+                                                                <i class="mdi mdi-file-send-outline"></i>
+                                                            </span>
+                                                            -
+                                                            <span class="unit">회</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-3">
+                                                    <div class="access-data data-member-page">
+                                                        <div class="title">총 신고 수</div>
+                                                        <div class="value">
+                                                            <span class="icon">
+                                                                <i class="mdi mdi-file-send-outline"></i>
+                                                            </span>
+                                                            -
+                                                            <span class="unit">회</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-md-6 col-lg-3">
+                                                    <div class="access-data data-member-page">
+                                                        <div class="title">총 문의 수</div>
+                                                        <div class="value">
+                                                            <span class="icon">
+                                                                <i class="mdi mdi-file-send-outline"></i>
+                                                            </span>
+                                                            -
+                                                            <span class="unit">회</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 선호 여행지 -->
+                                 <!-- 대륙별로 퍼센트 -->
+                                <div class="col-12 col-lg-12 col-xl-5">
+                                    <div class="chart-box platform-box">
+                                        <div class="box-header">
+                                            <div class="box-title">선호 여행지</div>
+                                        </div>
+                                        <div class="box-body">
+                                            <table class="platform-table">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="td-install" rowspan="6">
+                                                            <div class="chart-wrapper">
+                                                                <div class="echarts-for-react boot-chart" style="height: 300px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                                                    <div style="position: relative; width: 280px; height: 280px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
+                                                                        <canvas data-zr-dom-id="zr_0" width="280" height="280" style="position: absolute; left: 0px; top: 0px; width: 280px; height: 280px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="td-platform-name" style="color: rgb(126, 188, 250);">
+                                                            유럽
+                                                        </td>
+                                                        <td class="td-bounce-rate">
+                                                            0
+                                                            %
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        
+                                                        <td class="td-platform-name" style="color: rgb(126, 188, 250);">
+                                                            아시아
+                                                        </td>
+                                                        <td class="td-bounce-rate">
+                                                            0
+                                                            %
+                                                        </td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        
+                                                        <td class="td-platform-name" style="color: rgb(126, 188, 250);">
+                                                            동남아시아
+                                                        </td>
+                                                        <td class="td-bounce-rate">
+                                                            0
+                                                            %
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        
+                                                        <td class="td-platform-name" style="color: rgb(126, 188, 250);">
+                                                            아프리카
+                                                        </td>
+                                                        <td class="td-bounce-rate">
+                                                            0
+                                                            %
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        
+                                                        <td class="td-platform-name" style="color: rgb(126, 188, 250);">
+                                                            북미
+                                                        </td>
+                                                        <td class="td-bounce-rate">
+                                                            0
+                                                            %
+                                                        </td>
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        
+                                                        <td class="td-platform-name" style="color: rgb(126, 188, 250);">
+                                                            남미
+                                                        </td>
+                                                        <td class="td-bounce-rate">
+                                                            0
+                                                            %
+                                                        </td>
+                                                        
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+<script src="/static/js/admin/notification/"></script>
+</html>
