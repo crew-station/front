@@ -469,6 +469,7 @@ div.crew-item-wrap {
     flex-flow: column;
 }
 
+/* 호버 상단 텍스트 */
 .crew-top-text{
     position: absolute; top: 12px; left: 12px;   
     z-index: 3;                                
