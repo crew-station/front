@@ -748,3 +748,45 @@ line-height: 20px;
     width: 74px;
     height: 30px;
   }
+
+
+/* 호버 상단 텍스트 */
+.hover-top-text{
+    position: absolute;
+    top: 12px; 
+    right: 12px;
+    z-index: 2; 
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(0,0,0,.6);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity .2s ease, transform .2s ease;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .hover-thumb::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    opacity: 0;
+    transition: opacity .3s ease;
+    z-index: 1;
+  }
+
+  .hover-thumb:hover::before {
+    opacity: 1;               /* 어둡게 */
+  }
+  .hover-thumb { position: relative; display: block; overflow: hidden; }
+
+  .hover-thumb:hover .hover-top-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .crew-item-card:hover .crew-short-description{ opacity:1; }
+    
