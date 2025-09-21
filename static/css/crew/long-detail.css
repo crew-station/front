@@ -1586,6 +1586,18 @@ svg:not(:root) {
     width: 6%;
 }
 
+.long-crew-list {
+    align-items: center;
+    gap: 4px;
+    height: 20px;
+    background: #647FBC;
+    border-radius: 4px;
+    padding: 0 6px;
+    display: flex;
+    flex-direction: row;
+    width: 6%;
+}
+
 .long-crew-text, .short-crew-text {
     font-weight: 600;
     color: #fff;

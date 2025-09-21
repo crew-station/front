@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crew Station</title>
+    <link rel="shortcut icon" href="/static/images/crew-station-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/font.css">
+    <link rel="stylesheet" href="/static/css/mypage/purchase-detail.css">
+</head>
+<body>
+     <div class="all">
+        <div class="myhome-nav">
+            <nav class="page-navigation">
+                <ul>
+                    <li class="page-navigation__item">
+                        <a href="">
+                            나의 다이어리
+                        </a>
+                    </li>
+                    <li class="page-navigation__item">
+                        <a href="">
+                            나의 크루 구하기
+                        </a>
+                    </li>z
+                    <li class="page-navigation__item">
+                        <a href="">
+                            나의 크루 목록
+                        </a>
+                    </li>
+                    <li class="page-navigation__item">
+                        <a href="">
+                            나의 활동
+                        </a>
+                    </li>
+                    <li class="page-navigation__item">
+                        <a href="" class="active">
+                            나의 구매 내역
+                        </a>
+                    </li>
+                    <li class="page-navigation__item">
+                        <a href="">
+                            나의 판매 내역
+                        </a>
+                    </li>
+                    <li class="page-navigation__item">
+                        <a href="">
+                            나의 문의
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="main">
+            <div class="main-wrapper">
+                <div class="main-wrap">
+                    <h1 class="main-title">구매상세</h1>
+                    <section class="header">
+                        <section class="header-wrapper">
+                            <h1 class="header-title">
+                                <span class="date">2/22 (수)</span>
+                                <!-- 상태쓰기 -->
+                                <span>결제완료</span>
+                            </h1>
+                        </section>
+                        <div class="line fill">
+                            <h3 class="status">승락 대기</h3>
+                        </div>
+                        <div class="line fill">
+                            <h3 class="status">결제 대기</h3>
+                        </div>
+                        <div class="line">
+                            <!-- 현재 있는곳 까지 -->
+                            <span class="now">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" data-testid="arrow-down-icon">
+                                    <path fill="#2F3438" fill-rule="evenodd" d="M1.201 3.182a.6.6 0 0 1 .847.05l3.996 4.495 3.997-4.496a.6.6 0 1 1 .896.798l-4.07 4.58a1.1 1.1 0 0 1-1.645 0l-4.07-4.58a.6.6 0 0 1 .05-.847" clip-rule="evenodd"></path>
+                                </svg>
+                            </span>
+                            <h3 class="status">결제 완료</h3>
+                        </div>
+                        <div class="line">
+                            <h3 class="status">수령 완료</h3>
+                        </div>
+                    </section>
+                    <hr class="bar">
+                    <div class="product">
+                        <!-- 택배일 경우 -->
+                        <h2 class="address-wrap">배송지정보</h2>
+                        <div class="address">
+                            <span class="address-span">주소</span>
+                            서울시 강남구 무슨무슨로 101동 102호
+                        </div>
+                        <div class="address">
+                            <span class="address-span">받은 사람</span>
+                            김크루
+                        </div>
+                        <div class="address">
+                            <span class="address-span">전화번호</span>
+                            010-1234-1234
+                        </div>
+                        <!-- 직거래 일 때 -->
+                         <h2 class="address-wrap">구매자정보</h2>
+                         <div class="address">
+                            <span class="address-span">받은 사람</span>
+                            김크루
+                        </div>
+                        <div class="address">
+                            <span class="address-span">전화번호</span>
+                            010-1234-1234
+                        </div>
+                        <div class="product-wrapper">
+                            <img src="/static/images/gift-shop-post-img2.png" alt="">
+                            <div class="purchase-info">
+                                <p class="info-title">파리에서 사온 키링~</p>
+                                <p class="info-detail">10000원 | 1개</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/static/js/mypage/purchase-detail/event.js"></script>
+</html>
