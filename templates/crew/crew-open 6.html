@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrewStation</title>
+    <link rel="stylesheet" href="/static/css/font.css">
+    <link rel="stylesheet" href="/static/css/crew/crew-open.css">
+</head>
+<body>
+    <div class="page">
+        <div class="page-container">
+            <div class="page-wrapper">
+                <div class="sticky-container" style="position: sticky; top: 0px; transition: top 0.1s; z-index: 500;">
+                    <div class="top-container" style="position: relative;">
+                        <div class="top-bar-container">
+                            <div class="top-bar">
+                                <div class="top-bar-btn-container">
+                                    <div class="top-bar-btn-wrapper">
+                                        <div class="top-bar-btn-left">
+                                            <div class="top-bar-btn-first">
+                                                <button type="button" class="new-crew-open">
+                                                    <span class="new-crew">만들기</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-upload-img-container">
+                    <div class="post-upload-img-wrapper">
+                        <div class="top-term"></div>
+                        <!-- 크루 팀원 초대 이메일 링크 -->
+                         <div class="crew-member-invite">
+                            <div class="open expanded" style="overflow: hidden;">
+                                <div class="invite-link-container">
+                                    <div class="invite-link-wrapper">
+                                        <div class="invite-link-wrap">
+                                            <div class="invite-text">크루 이메일</div>
+                                            <div class="invite-email-input-container">
+                                                <div class="invite-email-input-wrapper">
+                                                    <div class="invite-email-input-wrap">
+                                                        <div class="invite-email-input">
+                                                            <div class="email-input-container">
+                                                                <div class="email-input-wrapper">
+                                                                    <!-- 크루 이메일 입력 -->
+                                                                    <input class="new-member-email" placeholder="이메일을 입력해주세요" value> 
+                                                                </div>
+                                                            </div>
+                                                            <!-- 크루원 이메일 추가 버튼 -->
+                                                            <div class="plus-minus-btn-container">
+                                                                <div class="plus-minus-btn-wrapper">
+                                                                    <button type="button" title="추가" class="plus-btn">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="-3 -5 29 29" class="icon"><path d="M10.8 3.8v5H5.7c-.4 0-.7.3-.7.7 0 .4.3.7.7.7h5.1v5c0 .4.3.7.7.7.4 0 .7-.3.7-.7v-5h5.1c.4 0 .7-.3.7-.7 0-.4-.3-.7-.7-.7h-5.1v-5c0-.4-.3-.7-.7-.7-.4 0-.7.3-.7.7z" fill="#525B61" stroke="#525B61" stroke-width="0.5"></path></svg>
+                                                                    </button>
+                                                                    <!-- 처음 삭제버튼 disable -->
+                                                                    <button type="button" title="삭제" class="minus-btn" disabled>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="-3 -11 29 29" class="icon"><path d="M10.8 2.8H5.7c-.4 0-.7.3-.7.7 0 .4.3.7.7.7h11.6c.4 0 .7-.3.7-.7 0-.4-.3-.7-.7-.7h-6.5z" fill="#525B61" stroke="#525B61" stroke-width="0.5"></path></svg>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <p class="email-check-message"></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                        <!-- 이미지 업로드 -->
+                        <div class="post-cover-img-container">
+                            <div class="post-cover-img-wrapper">
+                                <button type="button" class="cover-img-border">
+                                    <p class="cover-img-message">
+                                        <span class="cover-img-top-text">
+                                            드래그 앤 드롭이나 추가하기 버튼으로
+                                            <br>
+                                        </span>
+                                        커버 사진을 업로드해주세요.
+                                    </p>
+                                    <div class="img-btn-wrapper">커버 사진 추가하기</div>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- 제목 입력 -->
+                        <div class="post-title-container">
+                            <input type="text" class="input-title" placeholder="제목을 입력해주세요." maxlength="80" value>
+                            <div class="text-max-count">
+                                0
+                                /
+                                80
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="post-content-container">
+                    <div class="post-content-wrapper">
+                        <div class="input-content-wrapper">
+                            <div class="input-content-wrap">
+                                <div class="input-content">
+                                    내용을 입력해주세요.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=""></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/static/js/crew/crew-open/event.js"></script>
+</html>
