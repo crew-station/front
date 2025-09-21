@@ -128,3 +128,10 @@ nextBtn.addEventListener("click", () => showSlide(index + 1));
 
 // 시작 시 첫 번째 이미지 보이기
 showSlide(0);
+
+// 신청 버튼 클릭 이벤트
+const topBtn = document.querySelector(".new-crew-open");
+
+topBtn.addEventListener("click", (e) => {
+    console.log(1111);
+});

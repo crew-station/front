@@ -1672,4 +1672,139 @@ svg:not(:root) {
     padding:4px 8px; border-radius:12px;
     background:rgba(0,0,0,.6); color:#fff; font-size:14px;
   }
-  
+
+  /* 신청 버튼 */
+
+.top-container {
+    flex: 0 0 auto;
+}
+
+@media (min-width: 768px) {
+    .top-bar-container {
+        display: block;
+    }
+}
+
+.top-bar-container {
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(219, 219, 219);
+    box-sizing: border-box;
+}
+
+.top-bar {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    position: relative;
+    height: 79px;
+    margin: 0px auto;
+    max-height: 1256px;
+}
+
+@media (min-width: 1024px) {
+    .top-bar-btn-container {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        padding-right: 25px;
+    }
+}
+
+.top-bar-btn-container {
+    flex: 0 0 auto;
+    display: block;
+    height: 79px;
+}
+
+.top-bar-btn-wrapper {
+    padding: 17px 0px 18px;
+}
+
+/* 상단 버튼  */
+.top-bar-btn-left {
+    display: inline-block;
+}
+
+@media (min-width: 1256px) {
+    .top-bar-btn-first {
+        width: 132px;
+    }
+}
+ 
+.top-bar-btn-first {
+    display: inline-flex;
+    height: 45px;
+    box-sizing: border-box;
+    margin: 0px 5px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #fff;
+    border-radius: 4px;
+    margin-left: 22%;
+}
+
+.new-crew-open {
+    width: auto;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 11px 5px 12px;
+    border: none;
+    background-color: #647FBC;
+    text-align: center;
+    white-space: nowrap;
+    font-style: inherit;
+    font-variant: inherit;
+    font-stretch: inherit;
+    font-family: inherit;
+    font-optical-sizing: inherit;
+    font-size-adjust: inherit;
+    font-kerning: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: bold;
+    color: #fff;
+    transition: opacity 0.1s;
+    flex: 1 0 0px;
+    border-radius: 8px;
+}
+
+button {
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-appearance: none;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    padding-block: 1px;
+    padding-inline: 6px;
+}
+
+
+/* 버튼 두 가지 */
+@media (min-width: 1256px) {
+    .new-crew-check  {
+        display: inline;
+    }
+}
+
+.new-crew-check {
+    display: none;
+}
+
+@media (min-width: 1256px) {
+    .new-crew {
+        display: none;
+    }
+}
+
+.new-crew {
+    display: inline;
+}
