@@ -73,11 +73,11 @@ shareButton.addEventListener("click", (e) => {
         var url = "";
         var textarea = document.createElement("textarea");
         document.body.appendChild(textarea);
-        url = window.location.href; // 현재 URL을 가져옵니다.
+        url = window.location.href;
         textarea.value = url;
-        textarea.select(); // 텍스트 영역의 내용을 선택합니다.
-        document.execCommand("copy"); // 선택된 내용을 클립보드에 복사합니다.
-        document.body.removeChild(textarea); // 텍스트 영역을 제거합니다.
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
 
         toast.style.display = "block";
         toast.classList.remove("hide");
@@ -92,3 +92,39 @@ shareButton.addEventListener("click", (e) => {
     }
     clip();
 });
+
+// 이미지 슬라이드
+const container = document.querySelector(".post-img-container");
+const track = container.querySelector(".post-imgs");
+const slides = container.querySelectorAll(".post-img");
+const prevBtn = container.querySelector(".arrow-btn.left");
+const nextBtn = container.querySelector(".arrow-btn.right");
+const current = container.querySelector("#current");
+const total = container.querySelector("#total");
+
+// 처음 이미지 인덱스 번호
+let index = 0;
+// 마지막 이미지 인덱스 번호
+const lastIndex = slides.length - 1;
+
+// 총 이미지 개수 표시
+total.textContent = slides.length;
+
+// 보여줄 이미지 바꾸기
+function showSlide(i) {
+    // 범위 제한
+    index = Math.max(0, Math.min(i, lastIndex));
+
+    // 이미지 묶음을 왼쪽으로 이동
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    // 현재 번호 갱신
+    current.textContent = index + 1;
+}
+
+// 버튼에 이벤트 달기
+prevBtn.addEventListener("click", () => showSlide(index - 1));
+nextBtn.addEventListener("click", () => showSlide(index + 1));
+
+// 시작 시 첫 번째 이미지 보이기
+showSlide(0);
