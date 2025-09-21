@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrewStation</title>
+    <link rel="stylesheet" href="/static/css/admin/notification.css">
+    <link rel="stylesheet" href="/static/css/admin/sidebar.css">
+    <link rel="stylesheet" href="/static/css/admin/font.css">
+    <link rel="shortcut icon" href="../../../static/images/crew-station-favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div id= "bootpay">
+        <div class="boot-notify-container"></div>
+        <div class="popup-manager" style="width: 0px;"></div>
+        <aside id="bootpay-side">
+            <div class="d-flex flex-column" id="side-wrapper">
+                <div class="side-header">
+                    <div class="app-wrapper">
+                        <div class="provider-name hover-spin">
+                            <span class="comp-provider-name">
+                                <span class="pn-name">CrewStation</span>
+                            </span>
+                        </div>
+                        <a class="app-name d-flex justify-content-between align-items-center">
+                            <span>CrewStation</span>
+                            <i class="mdi mdi-apps">
+                            </i>
+                        </a>
+                    </div>
+                </div>
+                <div class="menu-wrapper flex-grow-1">
+                    <ul class="menu-list">
+                        <li class="menu menu-item d-flex flex-column">
+                            <!-- active 적용 -->
+                            <a class="menu-btn d-flex w-100 active" data-toggle="collapse" >
+                                <span class="menu-name">HOME</span>
+                                <div class="icon-wrapper flex-grow-1 text-right">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="menu menu-item d-flex flex-column open">
+                            <a class="menu-btn d-flex w-100" data-toggle="collapse" >
+                                <span class="menu-name">회원관리</span>
+                                <div class="icon-wrapper flex-grow-1 text-right">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="menu menu-item d-flex flex-column open">
+                            <a class="menu-btn d-flex w-100" data-toggle="collapse" >
+                                <span class="menu-name">크루관리</span>
+                                <div class="icon-wrapper flex-grow-1 text-right">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="menu menu-item d-flex flex-column">
+                            <!-- 클릭 이벤트 -->
+                            <!-- 회원 목록 클릭 시 collipse 열고 닫기 이벤트 -->
+                            <a class="menu-btn d-flex w-100 " data-toggle="collapse" >
+                                <span class="menu-name">신고</span>
+                                <div class="icon-wrapper flex-grow-1 text-right">
+                                </div>
+                            </a>
+                            <ul class="menu-sub-list collapse" >
+                                <li class="submenu menu-item ">
+                                    <!-- boot-link 뒤에 active로 적용 -->
+                                    <a class="boot-link " data-param="0">
+                                        
+                                        다이어리
+                                    </a>
+                                </li>
+                                <li class="submenu menu-item ">
+                                    <a class="boot-link" data-param="0">
+                                        
+                                        기프트
+                                    </a>
+                                </li>
+                                <li class="submenu menu-item ">
+                                    <a class="boot-link" data-param="0">
+                                        
+                                        크루
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu menu-item d-flex flex-column">
+                            <a class="boot-link menu-btn">
+                                <span class="menu-name">결제관리</span>
+                            </a>
+                            <ul class="menu-sub-list collapse " id="menu-60934308367997007c4c3d2c"></ul>
+                        </li>
+                        
+                        <li class="menu menu-item d-flex flex-column">
+                            <a class="menu-btn d-flex w-100"data-toggle="collapse">
+                                <span class="menu-name">문의</span>
+                                <div class="icon-wrapper flex-grow-1 text-right"></div>
+                            </a>  
+                        </li>
+                        <li class="menu menu-item d-flex flex-column">
+                            <a class="menu-btn d-flex w-100 "data-toggle="collapse">
+                                <span class="menu-name">배너관리</span>
+                                <div class="icon-wrapper flex-grow-1 text-right"></div>
+                            </a>  
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <!-- 상단 시작 부분 -->
+        <div id="bootpay-main" class="has-menu">
+            <div id="header-wrapper">
+                <div id="bootpay-header" class="d-flex trial-mode">
+                    <div class="flex-grow-1"></div>
+                    <div>
+                        <div class="header-menu-group d-flex">
+                            <a class="boot-link mr-3" href="">
+                                <div class="header-menu-btn " data-for="8598bfd3-1b35-4de3-a48f-9d6654dc0268" data-toggle="tooltip" data-custom-class title="공지사항">
+                                    <i class="mdi mdi-bullhorn-variant-outline">
+    
+                                    </i>
+    
+                                </div>
+                            </a>
+                            <div class="user-menu">
+                                <!-- 주석 아래에 show 유무로 메뉴가보임 -->
+                                <div id="usermenubtn"class="user-menu-wrapper d-flex align-items-center cursor-pointer" data-toggle="dropdown">
+                                    <div class="user-avatar">T</div>
+                                    <div class="user-menu-email">test@gamil.com</div>
+                                </div>
+                                <div id="usermenu" class="user-menu-content dropdown-menu dropdown-menu-right">
+                                    <ul class="menu-body list-unstyled">
+                                        <li>
+                                            <a class="boot-link d-block text-dark"href="">
+                                                <i class="mdi mdi-bell-outline mr-2 mdi-18px"></i>
+                                                알림
+                                                
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="d-block text-dark"href="">
+                                                <i class="mdi mdi-logout-variant mr-2 mdi-18px"></i>
+                                                로그아웃
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+            <!-- 공지사항 메인 -->
+            <div class="page notice-index narrow-center">
+                <div class="page-header">
+                    <div class="page-title">공지사항
+                        <button type="button" id="save-order-btn" class="btn-order-save">작성</button>
+                    </div>
+                    
+                </div>
+                <div class="page-body">
+                    <div class="page-content white-panel p-5">
+                        <div class="table-wrapper border-top">
+                            <table class="table table-notice">
+                                <tbody>
+                                    <!-- 목록 페이지 당 16개 -->
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                    <tr class="">
+                                        <td class="td-date text-grey">06-26</td>
+                                        <td class="td-title">
+                                            <span class="notice-title">2025년 7월 1일 bootpay.co.kr 도메인 SSL 인증서 갱신 안내</span>
+                                        </td>
+                                        <td class="td-writer">CrewStation</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <nav class="bootpay-pagination-wrapper undefined">
+                            <ul class="pagination bootpay-pagination">
+                                <!-- 현재 페이지는 active 클래스 추가된다. -->
+                                <li class="page-item page-num active">
+                                    <!-- class명 앞에 bootpay-link를 사이드바 이벤트로 인해 배제했습니다. -->
+                                    <a href="" class="page-item-link page-item-num">1</a>
+                                </li>
+                                <li class="page-item page-num">
+                                    <a href="" class="page-item-link page-item-num">2</a>
+                                </li>
+                                <li class="page-item page-num">
+                                    <a href="" class="page-item-link page-item-num">3</a>
+                                </li>
+                                <li class="page-item page-num">
+                                    <a href="" class="page-item-link page-item-num">4</a>
+                                </li>
+                                <li class="page-item page-num">
+                                    <a href="" class="page-item-link page-item-num">5</a>
+                                </li>
+                            </ul>
+                            <div class="pagination-desc"></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id ="modal"class="modal fade receipt-modal show"aria-modal="true" role="dialog ">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="modal-title">
+                            공지사항 작성
+                        </div>
+                        <button id="close"class="close">
+                            <i class="mdi mdi-close">
+
+                        </i> 
+                        </button>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="divider"></div>
+                        <div class="tab-view">
+                            <div class="tab-view-header">
+                                <div class="tab-switch-row">
+                                    <div class="tab-switch active">공지사항 작성</div>
+                                </div>
+                            </div>
+                            <div class="tab-view-body">
+                                <div style="display: block;">
+                                    <div class="tab-inner tab-detail">
+                                        
+                                        <div class="info-layout payment-info">
+                                            <div class="info-title justify-content-between">
+                                                
+                                            </div>
+                                            <div class="info-body">
+                                                <div class="table-info row">
+                                                    <div class="col-12">
+                                                      <!-- 제목 -->
+                                                      <div class="row inner-table" style="margin-bottom:12px;">
+                                                        <div class="col-auto w-120px"
+                                                             style="height: 48px; display:flex; justify-content:center; align-items:center;">
+                                                          제목
+                                                        </div>
+                                                        <input type="text" id="notice-title" class="col"
+                                                               placeholder="공지 제목을 입력하세요"
+                                                               style="height: 48px; border:1px solid #e5e7eb; border-radius:6px; outline:none; padding:0 12px;">
+                                                      </div>
+                                                  
+                                                      <!-- 내용 -->
+                                                      <div class="row inner-table">
+                                                        <div class="col-auto w-120px"
+                                                             style="height: 100%; min-height: 48px; display:flex; justify-content:center; align-items:center;">
+                                                          내용
+                                                        </div>
+                                                        <textarea id="notice-content" class="col"
+                                                                  placeholder="공지 내용을 입력하세요"
+                                                                  rows="8"
+                                                                  style="height: 200px; border:1px solid #e5e7eb; border-radius:6px; outline:none; padding:12px; resize:vertical;"></textarea>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                  
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-close btn btn-outline-filter">완료</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="/static/js/admin/notification/event.js"></script>
+</html>
