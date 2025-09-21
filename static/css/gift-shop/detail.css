@@ -655,15 +655,7 @@ ol,ul {
 }
 
 .product-selling-description {
-  padding-bottom: 500px; 
-}
-
-.product-selling-section::after {
-    content: "";
-    display: block;
-    height: 10px;
-    margin: 15px -15px 0;
-    background-color: #ededed;
+  padding-bottom: 100px; 
 }
 
 .product-selling-section-header {
