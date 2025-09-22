@@ -1309,8 +1309,8 @@ div.gift-detail-text-wrap {
 
 
 button.card-item-action-btn.like > svg.icon.active{ 
-    fill: red;
-    stroke: red;
+    fill: #FF6E6E;
+    stroke: #FF6E6E;
 }
 
 
