@@ -1,3 +1,4 @@
+
 @import "https://assets.ohou.se/design-system/bbf3fca1e650ee6d.css";@import "https://assets.ohou.se/fonts/pretendard/v1.3.8/pretendardvariable-dynamic-subset.css";@font-face {
                         font-family: OhouseIcon;
                         src: url(https://assets.ohou.se/design-system/3298ed52addbc709.eot);
@@ -55,7 +56,7 @@ main.main-container{
 
 div.crew-container{
     margin: 40px auto;
-    max-width: 1256px;
+    max-width: 870px;
     padding: 0px 60px;
     width: 100%;
     box-sizing: border-box;
@@ -165,7 +166,7 @@ li.crew-item-card{
     padding: 0px;
     flex-shrink: 0;
     scroll-snap-align: start;
-    width: calc(16.6667% - 16.6667px);
+    width: calc(25% - 15px);
 }
 div.crew-item-wrap{
     position: relative;
@@ -388,12 +389,12 @@ button.arrow-btn{
 button.arrow-btn:hover{
     filter: brightness(0.95);
 }
-a.today-gift-item-overlay:hover+div.today-gift-item-img > div.gift-item-img > img{
+div.today-gift-item-img:hover > div.gift-item-img > img{
     transform: translate(-50%, -50%) scale(1.1);
 }
 div.diary-container,div.together-container, div.gift-container{
     margin: 40px auto;
-    max-width: 1256px;
+    max-width: 870px;
     padding: 0px 60px;
     width: 100%;
     box-sizing: border-box;
@@ -460,7 +461,7 @@ div.diary-more-btn,div.together-more-btn,div.gift-more-btn{
     margin-left: 10px;
 }
 
-div.together-category,div.gift-limit-time{
+div.together-category{
     top: 12px;
     left: 12px;
     padding: 4px 7px;
@@ -504,11 +505,11 @@ ul.gift-list{
     overflow: hidden;
 }
 li.gift-item-wrap{
-    margin: 0px 20px 0px 0px;
+    margin: 0px 11px 0px 0px;
     padding: 0px;
+    width: 242px;
     flex-shrink: 0;
     scroll-snap-align: start;
-    width: calc(25% - 15px);
 }
 article.today-gift-item{
     display: block;
@@ -580,10 +581,6 @@ span.gift-price{
     line-height: 23px;
     font-weight: 700;
 }
-span.gift-price > span{
-    color: #647FBC;
-    margin-right: 4px;
-}
 div.gift-price-wrap{
     display: flex;
     justify-content: space-between;
@@ -609,17 +606,14 @@ div.diary-card-feed{
     flex-wrap: wrap;
     box-sizing: border-box;
     margin-right: -10px;
-    margin-left: -10px;
 }
 div.card-feed-item-wrap{
     padding-right: 10px;
     padding-left: 10px;
     position: relative;
-    width: 100%;
+    width: 250px;
     min-height: 1px;
     box-sizing: border-box;
-    flex: 0 0 25%;
-    max-width: 25%;
 }
 
 article.card-collection-item{
@@ -776,17 +770,6 @@ button.card-item-action-btn svg.icon-stroke{
 }
 
 button.card-item-action-btn:hover svg{
-    opacity: 0.5;
-}
-
-
-
-div.card-collection-item-content:hover div.card-item-img > img{
-    transform: translate(-50%, -50%) scale(1.03);
-
-}
-
-div.card-collection-item-content:hover div.card-item-description  div.card-item-description-content span{
     opacity: 0.5;
 }
 
@@ -1027,7 +1010,7 @@ div.trip-path::after {
     top: 36%;
     left: 10px;   
     right: 10px;
-    width: 95%;
+    width: 91%;
     border: 1px dashed #FFFFFF;
     transform: translateY(-50%);
     border-radius: 10px;
@@ -1111,13 +1094,7 @@ ul.gift-list{
     padding: 0px;
     overflow: hidden;
 }
-li.gift-item-wrap{
-    margin: 0px 20px 0px 0px;
-    padding: 0px;
-    flex-shrink: 0;
-    scroll-snap-align: start;
-    width: calc(25% - 15px);
-}
+
 article.today-gift-item{
     display: block;
     padding: 0 10px 15px;
@@ -1187,10 +1164,7 @@ span.gift-price{
     line-height: 100%;
     font-weight: 700;
 }
-span.gift-price > span{
-    color: black;
-    margin-right: 4px;
-}
+
 div.gift-price-wrap{
     display: flex;
     justify-content: space-between;
@@ -1212,13 +1186,14 @@ div.badge-list-container {
     width: fit-content;    
     background: #647FBC;
     color: #fff;
-    padding: 2px 6px;  
+    padding: 4px 7px;  
     border-radius: 4px;
-    font-size: 12px;
+    font-weight: 700;
+    font-size: 13px;
     font-family: 'Pretendard', sans-serif;
     line-height: 20px;
-    white-space: nowrap; 
-    margin-top: 4px;
+    white-space: nowrap;
+    height: 20px;
 }
 
 div.short{
@@ -1275,7 +1250,6 @@ span.gift-name{
     text-overflow: ellipsis;
 }
 div.gift-date{
-    margin-top: 5px;
     text-align: end;
 }
 
@@ -1335,8 +1309,8 @@ div.gift-detail-text-wrap {
 
 
 button.card-item-action-btn.like > svg.icon.active{ 
-    fill: red;
-    stroke: red;
+    fill: #FF6E6E;
+    stroke: #FF6E6E;
 }
 
 
@@ -1435,7 +1409,7 @@ span.writer-name {
     color: #333;
 }
 
-span.badge-list-container {
+/* span.badge-list-container {
     margin-left: auto; 
     background: #647FBC;
     color: #fff;
@@ -1444,14 +1418,251 @@ span.badge-list-container {
     font-size: 12px;
     line-height: 1.4;
     white-space: nowrap;
-}
+} */
+
+
+
 
 span.gift-price+div{
     display: flex;
-    gap: 12px;
+    gap: 3px;
 }
 div.delivery-method{
     background-color: white;
     border: 1px solid #d3dadf;
     color: #a6a6a6;
+}
+
+span.badge-list-container {
+    display: block;
+    width: fit-content;
+    background: #647FBC;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.4;
+    height: 17px;
+    white-space: nowrap;
+}
+p.card-item-writer-introduction{
+
+    margin-top: 2px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #757575;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.writer-info{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+div.card-collection-item-img{
+    z-index: 2;
+}
+
+
+div.card-collection-item-img:hover img {
+    transform: translate(-50%, -50%) scale(1.03);
+    filter: brightness(0.8);
+}
+div.card-collection-item-img:hover div.diary-img-count{
+    display: block;
+}
+
+
+div.diary-img-count{
+    position: absolute;
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.crew-count+div{
+    margin-right: 10px;
+}
+
+/* div.crew-img-wrap:hover > img{
+    transform: scale(1.03);
+    filter: brightness(0.8);
+} */
+
+div.diary-card-title{
+    background-color: white;
+    padding: 5px;
+    position: absolute;
+    bottom: 2%;
+    font-size: 16px;
+    transform: translate(50%, 0);
+    right: 50%;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+div.card-collection-item-img:hover div.diary-card-title {
+    display: none;
+}
+
+
+div.together-text-wrap{
+    position: absolute;
+    margin-top: 0px;
+    z-index: 10;
+    right: 0px;
+    background-color: white;
+    padding: 4px 7px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    top: 12px;
+    right: 12px;
+    line-height: 15px;
+}
+span.gift-count{
+    margin-left: 6px;
+    color: rgb(240, 86, 86);
+}
+
+
+p.card-item-writer-introduction{
+
+    margin-top: 2px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #757575;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.writer-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+div.card-collection-item-img{
+    z-index: 2;
+}
+
+
+div.card-collection-item-img:hover img {
+    transform: translate(-50%, -50%) scale(1.03);
+    filter: brightness(0.8);
+}
+div.card-collection-item-img:hover div.diary-img-count{
+    display: block;
+}
+
+
+div.diary-img-count{
+    position: absolute;
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.crew-count+div{
+    margin-right: 10px;
+}
+
+/* div.crew-img-wrap:hover > img{
+    transform: scale(1.03);
+    filter: brightness(0.8);
+} */
+
+div.diary-card-title{
+    background-color: white;
+    padding: 5px;
+    position: absolute;
+    bottom: 2%;
+    font-size: 16px;
+    transform: translate(50%, 0);
+    right: 50%;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+div.card-collection-item-img:hover div.diary-card-title {
+    display: none;
+}
+
+
+div.together-text-wrap{
+    position: absolute;
+    margin-top: 0px;
+    z-index: 10;
+    right: 0px;
+    background-color: white;
+    padding: 4px 7px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    top: 12px;
+    right: 12px;
+    line-height: 15px;
+}
+span.gift-count{
+    margin-left: 10px;
+    color: rgb(240, 86, 86);
+}
+
+div.gift-limit-time{
+    min-width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0px;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 600;
+    border: 1px solid rgb(234, 237, 239);
+    color: rgb(47, 52, 56);
+    background-color: rgb(255, 255, 255);
+}
+
+
+div.together-date{
+    display: flex;
+    justify-content: space-between;
+    width: 58%;
+}
+
+div.crew-short-description.crew-info-wrap{
+    top: 0;
+    display: flex;
+    gap: 5px;
+    font-size: 10px;
+    font-weight: 400;
+    justify-content: flex-end;
+}
+
+div.crew-short-description.crew-info-cnt-wrap{
+    top: 10px;
+    display: flex;
+    gap: 10px;
+    font-size: 10px;
+    justify-content: flex-end;
+}
+div.crew-count,div.crew-diary{
+    display: flex;
+    gap: -10px;
+    /* flex-direction: column; */
+}
+div.together-date{
+    margin-top: 12px;
+    margin-bottom: -12px;
 }

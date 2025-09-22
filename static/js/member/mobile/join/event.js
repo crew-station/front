@@ -59,7 +59,8 @@ inputPhone.addEventListener("input", (e) => {
 codeSendBtn.addEventListener("click", (e) => {
     if (!codeSendCheck) return;
     console.log("안막혀");
-
+    clearInterval(timer);
+    time = 5 * 60;
     codeSendCheck = false;
     codeInputWrap.style.display = "block";
     timer = setInterval(updateTimer, 1000);
