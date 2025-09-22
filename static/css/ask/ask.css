@@ -58,7 +58,7 @@ div {
     position: relative;
     width: 100%;
     margin: 0 auto;
-        text-align: center;
+    text-align: left;
     white-space: nowrap;
 }
 
@@ -161,16 +161,22 @@ div {
     box-sizing: border-box;
     margin: 0;
     padding: 15px 50px 15px 0;
-    border: none;
-    border-bottom: 1px solid #eaebef;
+    border: none;           /* ✅ 테두리 제거 */
+    outline: none;          /* ✅ 클릭 시 파란 라인 제거 */
     color: #292929;
     font: inherit;
     font-size: 18px;
     font-weight: bold;
     line-height: 22px;
-    }
+}
 
 
+.gift-shop-write-header-icon {
+    flex: 0 0 auto;
+    height: 80px;
+    width: auto;
+    margin-left: 20px; 
+}
 
 
 .indicator {
@@ -216,8 +222,8 @@ div {
     color: rgb(41, 41, 41);
     font-size: 16px;
     font-weight: normal;
-    line-height: 28px;
-    min-height: 28px;
+    line-height: 30px;
+    min-height: 500px;
     border: none;       /* 기본 테두리 제거 */
     outline: none;      /* 클릭했을 때 파란선 제거 */
     background: none;   /* 배경도 투명하게 */
@@ -241,6 +247,32 @@ a, button:enabled {
 
 /* 올리기 버튼 서식 */
 .css-postup {
+    border: none;
+    background: #647FBC;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-weight: 500;
+    color: #fff;
+    width: 100px;
+    cursor: pointer;
+    }
+
+    textarea.css-1iifh8u{
+        resize: none;
+    }
+
+
+
+
+
+
+    /*   .css-postup {  
     display: inline-block;
     width: 90px;
     height: 45px;
@@ -249,7 +281,7 @@ a, button:enabled {
     padding: 11px 5px 12px;
     background: rgb(53, 197, 240);
     border: 1px solid rgb(53, 197, 240);
-    border-radius: 4px;
+    border-radius: 5px;
     font-style: inherit;
     font-variant: inherit;
     font-stretch: inherit;
@@ -264,8 +296,4 @@ a, button:enabled {
     font-weight: bold;
     color: rgb(255, 255, 255);
     transition: opacity 0.1s;
-    }
-
-    textarea.css-1iifh8u{
-        resize: none;
-    }
+    margin-right: 25px;}  */

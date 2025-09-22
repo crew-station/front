@@ -1248,6 +1248,7 @@ a:-webkit-any-link {
 
 #bootpay-header .header-menu-group {
     padding: 20px 30px 0 0;
+    margin-left: 476% !important;
 }
 
 #bootpay-header .header-menu-btn {
@@ -1323,11 +1324,6 @@ a:-webkit-any-link {
   display: block;
 }
 
-#bootpay-header .header-menu-group
- {
-    padding: 20px 30px 0 0;
-    margin-left: 523% !important;
-}
 
 .table-roles.table-reports { table-layout: fixed; width:100%; }
 .table-roles.table-reports thead th,

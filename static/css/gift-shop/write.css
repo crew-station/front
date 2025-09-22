@@ -41,7 +41,7 @@
     height: 40px;
     border-radius: 4px;
     padding: 0 16px;
-    font-weight: 400;
+    font-weight: 500;
     color: #fff;
     width: 100px;
     cursor: pointer;
@@ -203,26 +203,27 @@
     background: #f7f8fa;
   }
   
-  .write-content-thumbnail-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+ .write-content-thumbnail-img {
+  width: 100%;       
+  height: 100%;
+  object-fit: cover;  
+  border-radius: 4px;
+}
   
   /* 커버 이미지 */
-  .write-content-cover-img-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
-    aspect-ratio: 1/1;
-    margin: 0 auto 12px;
-    background: #f7f8fa;
-    border-radius: 4px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+ .write-content-cover-img-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1/1;   
+  margin: 0 auto 12px;
+  background: #f7f8fa;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
   .cover-img-label {
     position: absolute;
@@ -231,7 +232,7 @@
     background: #647FBC; 
     color: #fff;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
     padding: 2px 6px;
     border-radius: 4px;
     z-index: 10;
@@ -253,11 +254,17 @@
     color: #828c94;
   }
   
-  .write-content-cover-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.write-content-cover-img {
+  width: 100%;
+  height: 100%;
+}
+
+.write-content-cover-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   
+  border-radius: 4px;  
+}
 
   /* 버튼 감싸는 래퍼 */
   .write-content-img-btn-wrapper {
@@ -454,5 +461,16 @@
   #countryDropdown:empty {
     display: none !important;
   }
+
+  /* 썸네일 추가 버튼 기본 숨김 */
+.write-content-thumbnail-container .write-content-img-add-btn {
+  display: none;
+}
+
+/* JS에서 대표 이미지 등록 후 보여줄 때 */
+.write-content-thumbnail-container.show-add-btn .write-content-img-add-btn {
+  display: flex; /* flex로 해서 썸네일 그리드랑 맞추기 */
+}
+  
 
   

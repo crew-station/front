@@ -32,15 +32,23 @@
                 <div class="menu-wrapper flex-grow-1">
                     <ul class="menu-list">
                         <li class="menu menu-item d-flex flex-column">
+                            <!-- active 적용 -->
                             <a class="menu-btn d-flex w-100 " data-toggle="collapse" >
                                 <span class="menu-name">HOME</span>
                                 <div class="icon-wrapper flex-grow-1 text-right">
                                 </div>
                             </a>
                         </li>
-                        <li class="menu menu-item d-flex flex-column">
-                            <a class="menu-btn d-flex w-100 " data-toggle="collapse" >
+                        <li class="menu menu-item d-flex flex-column open">
+                            <a class="menu-btn d-flex w-100" data-toggle="collapse" >
                                 <span class="menu-name">회원관리</span>
+                                <div class="icon-wrapper flex-grow-1 text-right">
+                                </div>
+                            </a>
+                        </li>
+                        <li class="menu menu-item d-flex flex-column open">
+                            <a class="menu-btn d-flex w-100" data-toggle="collapse" >
+                                <span class="menu-name">크루관리</span>
                                 <div class="icon-wrapper flex-grow-1 text-right">
                                 </div>
                             </a>
@@ -48,14 +56,15 @@
                         <li class="menu menu-item d-flex flex-column">
                             <!-- 클릭 이벤트 -->
                             <!-- 회원 목록 클릭 시 collipse 열고 닫기 이벤트 -->
-                            <a class="menu-btn d-flex w-100" data-toggle="collapse" >
+                            <a class="menu-btn d-flex w-100 " data-toggle="collapse" >
                                 <span class="menu-name">신고</span>
                                 <div class="icon-wrapper flex-grow-1 text-right">
                                 </div>
                             </a>
-                            <ul class="menu-sub-list collapse show" id="menu-6109064136799700f1ebced6" style="display: block;">
+                            <ul class="menu-sub-list collapse" >
                                 <li class="submenu menu-item ">
-                                    <a class="boot-link" data-param="0">
+                                    <!-- boot-link 뒤에 active로 적용 -->
+                                    <a class="boot-link " data-param="0">
                                         
                                         다이어리
                                     </a>
@@ -88,7 +97,7 @@
                             </a>  
                         </li>
                         <li class="menu menu-item d-flex flex-column">
-                            <a class="menu-btn d-flex w-100 collapsed"data-toggle="collapse">
+                            <a class="menu-btn d-flex w-100 "data-toggle="collapse">
                                 <span class="menu-name">배너관리</span>
                                 <div class="icon-wrapper flex-grow-1 text-right"></div>
                             </a>  
@@ -97,6 +106,7 @@
                 </div>
             </div>
         </aside>
+
         <div id="bootpay-main"class="has-menu">
             <div id="header-wrapper">
                 <div id="bootpay-header" class="d-flex trial-mode">
@@ -106,14 +116,14 @@
                             <a class="boot-link mr-3" href="">
                                 <div class="header-menu-btn " data-for="8598bfd3-1b35-4de3-a48f-9d6654dc0268" data-toggle="tooltip" data-custom-class title="공지사항">
                                     <i class="mdi mdi-bullhorn-variant-outline">
-
+    
                                     </i>
-
+    
                                 </div>
                             </a>
                             <div class="user-menu">
                                 <!-- 주석 아래에 show 유무로 메뉴가보임 -->
-                                <div id="usermenubtn"class="user-menu-wrapper d-flex align-items-center cursor-pointer" id="user-menu-handler" data-toggle="dropdown">
+                                <div id="usermenubtn"class="user-menu-wrapper d-flex align-items-center cursor-pointer" data-toggle="dropdown">
                                     <div class="user-avatar">T</div>
                                     <div class="user-menu-email">test@gamil.com</div>
                                 </div>
@@ -135,13 +145,13 @@
                                     </ul>
                                 </div>
                             </div>
-
+    
                         </div>
-
+    
                     </div>
-
+    
                 </div>
-
+    
             </div>
             <div class="page wide-page receipt-index">
             <div class="page-header"> 
