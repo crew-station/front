@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CrewStation</title>
-  <link rel="stylesheet" href="/static/css/crew/long-crew-write.css" />
+  <link rel="stylesheet" href="/static/css/mypage/my-diary/write.css" />
   <link rel="stylesheet" href="/static/css/font.css" />
-  <link rel="shortcut icon" href="../../../static/images/crew-station-favicon.png" type="image/x-icon">
+  <link rel="shortcut icon" href="/static/images/crew-station-favicon.png" type="image/x-icon">
 </head>
 <body>
   <div class="page">
@@ -26,46 +26,27 @@
             </div>
           </div>
         </div>
-
-        
+        <!-- 제목 입력 -->
+        <div class="title-container">
+          <div class="input-title">
+            <form class="input-title-container" action="">
+              <div class="input-title-wrapper">
+                <input placeholder="제목" class="input-title-wrap">
+              </div>
+            </form>
+          </div>
+        </div>
         <!-- 경로 입력 -->
         <div class="tag-container">
           <div class="input-tag">
             <form class="input-tag-container" action="">
               <div class="input-tag-wrapper">
-                <input placeholder="여행 경로 태그입력" class="input-tag-wrap" />
-                <button type="submit" class="input-tag-btn tag0 tag1 tag-btn">입력</button>
+                <input type="text" placeholder="나라 이름을 입력해주세요." class="input-tag-wrap">
+                <ul id="countryDropdown" class="write-content-select-dropdown" style="display: block;"></ul>
+                <button type="button" class="input-tag-btn tag0 tag1 tag-btn">입력</button>
               </div>
             </form>
           </div>
-        </div>
-        
-        <!-- 제목 작성 -->
-        <div class="title-row">
-          <div class="input-tag">
-            <div class="input-tag-container">
-              <div class="input-tag-wrapper">
-                <input type="text" class="input-tag-wrap" placeholder="제목을 입력해주세요" />
-                <!-- 여행 태그의 '입력' 버튼 폭과 동일한 스페이서 -->
-                <button type="button" class="input-tag-btn title-spacer" tabindex="-1" aria-hidden="true">입력</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 드롭다운 (나이대 선택) -->
-        <div class="write-content-select-wrap">
-          <input type="text" class="write-content-select" placeholder="크루 나이대를 입력해주세요." readonly>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-              fill="currentColor" viewBox="0 0 24 24"
-              class="write-content-select-icon">
-            <path d="M17 10H7l5 5z"></path>
-          </svg>
-          <ul class="write-content-select-dropdown">
-            <li>20</li>
-            <li>30</li>
-            <li>40</li>
-            <li>50</li>
-          </ul>
         </div>
 
         <div class="post-container">
@@ -172,7 +153,7 @@
                     <div class="img-post-term">
                       <div class="post-write-container">
                         <div class="post-write-wrapper">
-                          <textarea placeholder="크루 소개글를 작성해 주세요." rows="6" class="post-input"></textarea>
+                          <textarea placeholder="일기를 작성해 주세요." rows="6" class="post-input"></textarea>
                         </div>
                       </div>
                     </div>
@@ -256,7 +237,6 @@
         </div>
         </li>
     </template>
-
+  <script src="/static/js/mypage/my-diary/write/event.js"></script>
 </body>
-<script src="/static/js/crew/crew-write/event.js"></script>
 </html>

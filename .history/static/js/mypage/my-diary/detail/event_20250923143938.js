@@ -210,85 +210,16 @@ removeOkButton.addEventListener("click", () => {
     removeModal.style.display = "none";
 });
 
-// 일기 삭제
-
-const diaryRemoveButton = document.querySelector(".remove-button");
-const diaryRemoveModal = document.querySelector(".diary-remove-modal");
-const NoButton = diaryRemoveModal.querySelector(".remove-no");
-const OkButton = diaryRemoveModal.querySelector(".remove-ok");
-
-let targetPost = null; // 삭제 대상 reply-item 저장용
-
-diaryRemoveButton.addEventListener("click", (e) => {
-    diaryRemoveModal.style.display = "block";
-    targetReply = btn.closest(".reply-item"); // 삭제할 대상 저장
-});
-
-// 취소 버튼 클릭 시 모달 닫기
-NoButton.addEventListener("click", () => {
-    diaryRemoveModal.style.display = "none";
-    targetReply = null;
-});
-
 // 페이지 클릭
+
 const numberButtons = document.querySelectorAll(".number-button");
-const prevButton = document.querySelector(".prev-button");
-const nextButton = document.querySelector(".next-button");
 
-let currentPage = 1;
-const totalPages = numberButtons.length;
-
-// 페이지 표시 갱신 함수
-function updatePagination() {
-    numberButtons.forEach((btn, index) => {
-        btn.classList.toggle("active", index + 1 === currentPage);
-    });
-
-    // prev 버튼 처리
-    if (currentPage === 1) {
-        prevButton.classList.remove("active");
-        prevButton.disabled = true;
-    } else {
-        prevButton.classList.add("active");
-        prevButton.disabled = false;
-    }
-
-    // next 버튼 처리
-    if (currentPage === totalPages) {
-        nextButton.disabled = true;
-        nextButton.classList.remove("active");
-    } else {
-        nextButton.disabled = false;
-        nextButton.classList.add("active");
-    }
-}
-
-// 숫자 버튼 클릭 이벤트
-numberButtons.forEach((numberButton, index) => {
-    numberButton.addEventListener("click", () => {
-        currentPage = index + 1;
-        updatePagination();
+numberButtons.forEach((numberButton) => {
+    numberButton.addEventListener("click", (e) => {
+        numberButtons.forEach((btn) => btn.classList.remove("active"));
+        numberButton.classList.add("active");
     });
 });
-
-// 이전 버튼
-prevButton.addEventListener("click", () => {
-    if (currentPage > 1) {
-        currentPage--;
-        updatePagination();
-    }
-});
-
-// 다음 버튼
-nextButton.addEventListener("click", () => {
-    if (currentPage < totalPages) {
-        currentPage++;
-        updatePagination();
-    }
-});
-
-// 초기 상태 세팅
-updatePagination();
 
 // 게시물 좋아요 버튼
 
