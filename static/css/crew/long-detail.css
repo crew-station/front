@@ -1574,28 +1574,34 @@ svg:not(:root) {
     flex-direction: row;
 }
 
-.short-crew-list {
-    align-items: center;
-    gap: 4px;
-    height: 20px;
-    background: #8ec5ff;
-    border-radius: 4px;
-    padding: 0 6px;
+/* 배지 행 */
+.badge-row {
     display: flex;
-    flex-direction: row;
-    width: 6%;
+    align-items: center;
+    gap: 6px;
+  }
+  
+
+.short-crew-list {
+    display:inline-flex; 
+    flex:0 0 auto;             
+    align-items:center;
+    gap:4px;
+    height:20px;
+    padding:0 6px;
+    background: #8ec5ff;
+    border-radius:4px;
 }
 
 .long-crew-list {
-    align-items: center;
-    gap: 4px;
-    height: 20px;
-    background: #647FBC;
-    border-radius: 4px;
-    padding: 0 6px;
-    display: flex;
-    flex-direction: row;
-    width: 6%;
+    display:inline-flex; 
+    flex:0 0 auto;             
+    align-items:center;
+    gap:4px;
+    height:20px;
+    padding:0 6px;
+    background:#647FBC;
+    border-radius:4px;
 }
 
 .long-crew-text, .short-crew-text {
@@ -1609,6 +1615,21 @@ svg:not(:root) {
         line-height: 16px;
     }
 }
+
+/* 나이대 배지 */
+.age-badge {
+    display:inline-flex;
+    flex:0 0 auto;
+    align-items:center;
+    height:20px;
+    padding:0 6px;
+    border-radius:4px;
+    font-weight:600;
+    font-size:12px;
+    line-height:16px;
+    color:#fff;
+    background:#FF8A65;
+  }
 
 
 .post-img-container {
