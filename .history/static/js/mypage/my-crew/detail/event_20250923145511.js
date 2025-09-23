@@ -148,7 +148,7 @@ const crewProfiles = document.querySelectorAll(".crew-profile");
 const navFooter = document.querySelector(".nav-footer");
 
 function member(i) {
-    if (i === 1) {
+    if (i === 0) {
         updateTotal();
         navFooter.style.display = "flex";
     } else {
@@ -156,7 +156,7 @@ function member(i) {
     }
 }
 
-member(1);
+member(0);
 
 // 다이어리 좋아요
 
@@ -165,35 +165,5 @@ const likeButtons = document.querySelectorAll(".card-item-action-btn");
 likeButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
         btn.classList.toggle("active");
-    });
-});
-
-// 요청 거절
-
-const refuses = document.querySelectorAll(".refuse");
-
-refuses.forEach((refuse) => {
-    refuse.addEventListener("click", (e) => {
-        confirm("승인을 거절 하시겠습니까?");
-        if (confirm) {
-            refuse.closest("a").remove();
-        } else {
-            return;
-        }
-    });
-});
-
-// 요청 승인
-
-const applies = document.querySelectorAll(".apply");
-
-applies.forEach((apply) => {
-    apply.addEventListener("click", (e) => {
-        confirm("승인 하시겠습니까?");
-        if (confirm) {
-            refuse.closest("a").remove();
-        } else {
-            return;
-        }
     });
 });

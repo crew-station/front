@@ -432,10 +432,6 @@ input, textarea, select {
     margin-bottom: 24px;
 }
 
-.target {
-    cursor: pointer;
-}
-
 .images-container {
     margin: 56px 0px 60px;
     padding: 0px;
@@ -960,7 +956,7 @@ input, textarea, select {
 }
 
 .prev-next-button.active {
-    margin: 0px 10px 0px 0px;
+    margin: 0px;
     background: none;
     font-size: 14px;
     line-height: 20px;
@@ -1533,29 +1529,6 @@ input, textarea, select {
     font-family: OhouseIcon;
     vertical-align: top;
     content: "\e9ba";
-}
-
-/* 일기 삭제 모달 */
-.diary-remove-modal {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    z-index: 1300;
-    background-color: rgba(33, 38, 41, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    display: none;
-}
-
-.diary-remove-modal::before {
-    content: "";
-    height: 100%;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 /* 댓글 삭제 모달 */
