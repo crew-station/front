@@ -590,17 +590,6 @@ nav {
     display: flex;
 }
 
-.refuse {
-    background-color: #b3b3b3;
-    border-radius: 5px;
-    color: #fff;
-    width: 37px;
-    height: 30px;
-    margin: 25px 0 0 0;
-    margin-left: auto;
-    margin-right: 1px;
-}
-
 .apply {
     background-color: #647FBC;
     border-radius: 5px;
@@ -618,18 +607,18 @@ nav {
     object-fit: cover;
 }
 
-.member-info {
-    margin-left: 7px;
+.memeber-info {
+    margin-left: 18px;
     display: grid;
 }
 
-.member-name {
+.memeber-name {
     margin-top: 2px;
     font-size: 15px;
     font-weight: 500;
 }
 
-.member-c {
+.memeber-c {
     font-size: 12px;
     font-weight: 500;
 }
