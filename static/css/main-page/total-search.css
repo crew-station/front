@@ -1479,7 +1479,7 @@ div.card-collection-item-img:hover div.diary-img-count{
 div.diary-img-count{
     position: absolute;
     font-size: 50px;
-    font-weight: 700;
+    font-weight: 300;
     color: white;
     display: none;
     top: 50%;
@@ -1566,7 +1566,7 @@ div.card-collection-item-img:hover div.diary-img-count{
 div.diary-img-count{
     position: absolute;
     font-size: 50px;
-    font-weight: 700;
+    font-weight: 300;
     color: white;
     display: none;
     top: 50%;
@@ -1665,4 +1665,38 @@ div.crew-count,div.crew-diary{
 div.together-date{
     margin-top: 12px;
     margin-bottom: -12px;
+}
+
+span.crew-top-text,div.together-img-count{
+        position: absolute;
+    top: 18px;
+    left: 12px;
+    z-index: 3;
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, .6);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1.2;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity .2s 
+ease, transform .2s 
+ease;
+    pointer-events: none;
+}
+
+div.crew-img-wrap:hover span.crew-top-text{
+    opacity: 1;
+}
+
+div.together-post-img:hover  div.diary-img-count{
+    display: block;
+}
+
+
+
+div.together-post-img:hover > img{
+    filter: brightness(0.8);
 }
