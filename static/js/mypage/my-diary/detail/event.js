@@ -24,9 +24,9 @@ const modal = document.querySelector(".img-modal");
 const modalImg = document.querySelector(".img-modal img");
 const closeBtn = document.querySelector(".img-close-button");
 
-targets.forEach((target, index) => {
+targets.forEach((target, i) => {
     target.addEventListener("click", () => {
-        const imgSrc = images[index].getAttribute("src");
+        const imgSrc = images[i].getAttribute("src");
         modalImg.setAttribute("src", imgSrc);
         modal.style.display = "flex";
     });
@@ -37,7 +37,7 @@ closeBtn.addEventListener("click", () => {
     modal.style.display = "none";
 });
 
-// 모달 바깥 클릭하면 닫기 (선택)
+// 모달 바깥 클릭하면 닫기
 modal.addEventListener("click", (e) => {
     if (e.target === modal) {
         modal.style.display = "none";
@@ -46,12 +46,13 @@ modal.addEventListener("click", (e) => {
 
 // 신고하기 버튼
 
-const reportBtn = document.querySelector(".report-button");
 const reportModal = document.querySelector(".report-modal");
-const replyReporyBtn = document.querySelector(".reply-report-button");
+const replyReporyBtns = document.querySelectorAll(".detail-report-button");
 
-replyReporyBtn.addEventListener("click", (e) => {
-    reportModal.classList.add("active");
+replyReporyBtns.forEach((replyReporyBtn) => {
+    replyReporyBtn.addEventListener("click", (e) => {
+        reportModal.classList.add("active");
+    });
 });
 
 // 신고하기 창 끄기
@@ -123,7 +124,7 @@ input.addEventListener("input", (e) => {
     }
 });
 
-// 댓글 입력 버튼 클릭 시 댓글 추가
+// 댓글 입력 버튼 클릭 시 입력 비활성화
 
 enterButton.addEventListener("click", (e) => {
     input.value = "";
@@ -131,16 +132,163 @@ enterButton.addEventListener("click", (e) => {
     enterButton.disabled = true;
 });
 
-// 페이지 클릭
+// 댓글 수정
 
-const numberButtons = document.querySelectorAll(".number-button");
+document
+    .querySelectorAll(".modify-reply-button")
+    .forEach((modifyReplyButton) => {
+        modifyReplyButton.addEventListener("click", () => {
+            const replyContent = modifyReplyButton.closest(".reply-content");
+            const replyFlexBox = replyContent.querySelector(
+                "div[style='display: flex;']"
+            );
+            const replyTextDiv = replyFlexBox.querySelector(
+                ".reply-content-text"
+            );
+            const originalText = replyTextDiv.textContent;
 
-numberButtons.forEach((numberButton) => {
-    numberButton.addEventListener("click", (e) => {
-        numberButtons.forEach((btn) => btn.classList.remove("active"));
-        numberButton.classList.add("active");
+            const input = document.createElement("input");
+
+            input.type = "text";
+            input.className = "reply-edit-input";
+            input.value = originalText;
+
+            // 저장 버튼 만들기
+            const saveButton = document.createElement("button");
+            saveButton.textContent = "저장";
+            saveButton.className = "save-reply-button";
+
+            // 기존 텍스트 제거하고 input, 버튼 만들기
+            replyFlexBox.innerHTML = "";
+            replyFlexBox.appendChild(input);
+            replyFlexBox.appendChild(saveButton);
+
+            // 다시 텍스트로
+            saveButton.addEventListener("click", () => {
+                const newText = input.value;
+
+                // 새로운 텍스트 div 생성
+                const newTextDiv = document.createElement("div");
+                newTextDiv.className = "reply-content-text";
+                newTextDiv.textContent = newText;
+
+                // input과 버튼 제거하고 텍스트 복원
+                replyFlexBox.innerHTML = "";
+                replyFlexBox.appendChild(newTextDiv);
+            });
+        });
+    });
+
+// 댓글 삭제
+
+const replyRemoveButtons = document.querySelectorAll(".remove-reply-button");
+const removeModal = document.querySelector(".remove-modal");
+const removeNoButton = removeModal.querySelector(".remove-no");
+const removeOkButton = removeModal.querySelector(".remove-ok");
+
+let targetReply = null; // 삭제 대상 reply-item 저장용
+
+replyRemoveButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        removeModal.style.display = "block";
+        targetReply = btn.closest(".reply-item"); // 삭제할 대상 저장
     });
 });
+
+// 취소 버튼 클릭 시 모달 닫기
+removeNoButton.addEventListener("click", () => {
+    removeModal.style.display = "none";
+    targetReply = null;
+});
+
+// 확인 버튼 클릭 시 reply-item 삭제 후 모달 닫기
+removeOkButton.addEventListener("click", () => {
+    if (targetReply) {
+        targetReply.remove();
+        targetReply = null;
+    }
+    removeModal.style.display = "none";
+});
+
+// 일기 삭제
+
+const diaryRemoveButton = document.querySelector(".remove-button");
+const diaryRemoveModal = document.querySelector(".diary-remove-modal");
+const NoButton = diaryRemoveModal.querySelector(".remove-no");
+const OkButton = diaryRemoveModal.querySelector(".remove-ok");
+
+let targetPost = null; // 삭제 대상 reply-item 저장용
+
+diaryRemoveButton.addEventListener("click", (e) => {
+    diaryRemoveModal.style.display = "block";
+    targetReply = btn.closest(".reply-item"); // 삭제할 대상 저장
+});
+
+// 취소 버튼 클릭 시 모달 닫기
+NoButton.addEventListener("click", () => {
+    diaryRemoveModal.style.display = "none";
+    targetReply = null;
+});
+
+// 페이지 클릭
+const numberButtons = document.querySelectorAll(".number-button");
+const prevButton = document.querySelector(".prev-button");
+const nextButton = document.querySelector(".next-button");
+
+let currentPage = 1;
+const totalPages = numberButtons.length;
+
+// 페이지 표시 갱신 함수
+function updatePagination() {
+    numberButtons.forEach((btn, index) => {
+        btn.classList.toggle("active", index + 1 === currentPage);
+    });
+
+    // prev 버튼 처리
+    if (currentPage === 1) {
+        prevButton.classList.remove("active");
+        prevButton.disabled = true;
+    } else {
+        prevButton.classList.add("active");
+        prevButton.disabled = false;
+    }
+
+    // next 버튼 처리
+    if (currentPage === totalPages) {
+        nextButton.disabled = true;
+        nextButton.classList.remove("active");
+    } else {
+        nextButton.disabled = false;
+        nextButton.classList.add("active");
+    }
+}
+
+// 숫자 버튼 클릭 이벤트
+numberButtons.forEach((numberButton, index) => {
+    numberButton.addEventListener("click", () => {
+        currentPage = index + 1;
+        updatePagination();
+    });
+});
+
+// 이전 버튼
+prevButton.addEventListener("click", () => {
+    if (currentPage > 1) {
+        currentPage--;
+        updatePagination();
+    }
+});
+
+// 다음 버튼
+nextButton.addEventListener("click", () => {
+    if (currentPage < totalPages) {
+        currentPage++;
+        updatePagination();
+    }
+});
+
+// 초기 상태 세팅
+updatePagination();
 
 // 게시물 좋아요 버튼
 

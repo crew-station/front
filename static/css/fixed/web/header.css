@@ -495,7 +495,7 @@ p.header-name:hover{
     color: #647FBC;
 }
 div.sticky-container.sticky-sub-container.active{
-    display: block;
+    display: contents;
 }
 
 /* 서브 */
@@ -608,3 +608,16 @@ a.profile-btn-item{
     outline: none;
 }
 
+div.alarm-count{    
+    /* display: none; */
+    color: white;
+    position: absolute;
+    right: 3px;
+    top: 1px;
+    text-align: center;
+    background-color: rgb(255, 119, 119);
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    border-radius: 50%;
+}

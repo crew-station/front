@@ -15,7 +15,7 @@ document.querySelector("body").addEventListener("click", (e) => {
     if (popup.classList.contains("active")) {
         popup.classList.remove("active");
     }
-    if (profilePopup.classList.contains("active")) {
+    if (profilePopup?.classList.contains("active")) {
         profilePopup.classList.remove("active");
     }
     if (e.target.closest("button.post-reg-btn") === postRegBtn) {

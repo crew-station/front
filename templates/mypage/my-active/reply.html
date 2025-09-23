@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crew Station</title>
-    <link rel="shortcut icon" href="../../../static/images/crew-station-favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../../static/css/font.css">
-    <link rel="stylesheet" href="../../../static/css/mypage/my-diary/list.css">
+    <link rel="shortcut icon" href="/static/images/crew-station-favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/css/font.css">
+    <link rel="stylesheet" href="/static/css/mypage/my-active/reply.css">
 </head>
 <body>
      <div class="all">
@@ -54,20 +54,11 @@
         <main class="main">
             <div class="header">
                 <div class="title">
-                    <p class="title-p">나의 다이어리</p>
-                    <div class="share-button">
-                        <div class="drop-down">
-                            <button class="share-button-style">
-                                <span class="share-icon">
-                                </span>
-                                <span class="share-text">공유하기</span>
-                            </button>
-                        </div>
-                    </div>
+                    <p class="title-p">나의 댓글</p>
                 </div>
                 <div class="profile-wrap">
                     <a href="">
-                        <img class="profile-img" src="../../../static/images/crew-station-icon-profile.png">
+                        <img class="profile-img" src="/static/images/crew-station-icon-profile.png">
                         <span class="profile-name">CREW_STATION</span>
                     </a>
                 </div>
@@ -91,28 +82,50 @@
                     </div>
                 </div>
             </div>
-            <div class="sticky-container">
-                <div style="position: relative;">
-                    <div class="nav-footer">
-                        <div class="update">
-                            <span class="total">
-                                <span class="check-number">0 </span>
-                                / 
-                                <span class="total-number"> 5</span>
-                            </span>
-                            <div class="button-wrap">
-                                <button class="update-button">
-                                    편집
-                                </button>
-                                <div class="update-div">
-                                    <button class="remove" disabled>삭제</button>
-                                    <button class="cancle">취소</button>
+            <section class="main-section">
+                <section class="inquiry-container">
+                    <div class="inquiry-wrap">
+                        <img src="/static/images/diary-list-ex2.jpg" alt="">
+                        <article class="inquiry">
+                            <h1 class="inquiry-content">
+                                <div class="inquiry-title-text">어디어디 갔다왔어요~~</div>
+                            </h1>
+                            <div class="inquiry-content-text">어디 갔다왔는데 너무 좋았어요~!~!!
+                                <br>
+                                ㅂㅈㄷㄱ쇼ㅕㅑㅐㅔㅁㄴㅇㄹ호ㅓㅏㅣㅋㅌㅊ퓨ㅜㅡㅂㅁㅋㅌㄵㄷㅇㅊㅍㄺㅅㅎㅂㄴㅁㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅋㅌㅊㅋㅇㅇㅁㄴㅇㅁㄴㅇㄴㄹㄴㅇㄹ</div>
+                            <div class="reply-content active">
+                                <div class="answer">
+                                    <div class="reply-icon"></div>
+                                    <div class="answer-container">댓글
+1111
+                                    </div>
                                 </div>
+                                <span class="writer">2분전</span>
                             </div>
-                        </div>
+                        </article>
                     </div>
-                </div>
-            </div>
+                    <div class="inquiry-wrap">
+                        <img src="/static/images/diary-list-ex2.jpg" alt="">
+                        <article class="inquiry">
+                            <h1 class="inquiry-content">
+                                <div class="inquiry-title-text">어디어디 갔다왔어요~~</div>
+                            </h1>
+                            <div class="inquiry-content-text">어디 갔다왔는데 너무 좋았어요~!~!!
+                                <br>
+                                ㅂㅈㄷㄱ쇼ㅕㅑㅐㅔㅁㄴㅇㄹ호ㅓㅏㅣㅋㅌㅊ퓨ㅜㅡㅂㅁㅋㅌㄵㄷㅇㅊㅍㄺㅅㅎㅂㄴㅁㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅋㅌㅊㅋㅇㅇㅁㄴㅇㅁㄴㅇㄴㄹㄴㅇㄹ</div>
+                            <div class="reply-content active">
+                                <div class="answer">
+                                    <div class="reply-icon"></div>
+                                    <div class="answer-container">댓글
+1111
+                                    </div>
+                                </div>
+                                <span class="writer">2분전</span>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </section>
         </main>
     </div>
     <div class="toast hide" style="display: none;">
@@ -121,5 +134,5 @@
         </div>
     </div>
 </body>
-<script src="../../../static/js/mypage/my-diary/list/event.js"></script>
+<script src="/static/js/mypage/my-active/reply/event.js"></script>
 </html>

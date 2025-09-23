@@ -16,24 +16,15 @@ ol,ul {
     min-height: 1px;
 }
 
-@media (min-width: 375px) {
-.product-detail-overview {
-    margin-right: auto;
-    margin-left: auto;
-    width: calc(100% - 30px);
-    max-width: 100%;
-    box-sizing: border-box;
-    min-height: 1px;
-}
-}
-
-.product-detail-overview.row {
+.product-detail-overview-row {
     display: flex;
     margin-top: 0;
     flex-wrap: wrap;
     box-sizing: border-box;
-    margin-right: -5px;
-    margin-left: -5px;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;  
+    align-items: flex-start;
 }
 
 .cover-image-wrap {
@@ -41,66 +32,60 @@ ol,ul {
     width: 100%;
     min-height: 1px;
     box-sizing: border-box;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
     flex: 0 0 100%;
     max-width: 100%;
+    justify-content: center; 
+    align-items: center;    
   }
 
-  @media (min-width: 768px) {
-    .cover-image-wrap {
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
-  }
-
-  @media (min-width: 992px) {
-    .cover-image-wrap {
-      flex: 0 0 58.3333%;
-      max-width: 58.3333%;
-    }
-  }
-
-  .cover-image-container {
-    position: relative;
+.cover-image-container {
+    width: 100%;
+    max-width: 800px;   
+    margin: 0 auto;     
+    text-align: center; 
 }
 
 .carousel-wrap {
-    margin: 0 -15px;
-    position: relative;
-    overflow: hidden;   
-
+  position: relative;
+  overflow: hidden;   
+  display: flex;
+  justify-content: center;
+  width: 100%; 
 }
 
 .carousel-list-wrap {
-    width: 480px;   
-    position: relative;
+  width: 100%;            
+  max-width: 100%;        
+  margin: 0;              
 }
 
 .carousel-list {
     display: flex;
-    flex-wrap: nowrap;     
+    flex-wrap: nowrap;    
     align-items: stretch;
     min-height: 100%;
     transition: transform 0.5s ease;
 }
 
 .carousel-list-entry {
-    position: relative;
-    flex: 0 0 100%;          
-    width: 100%;
-    padding-bottom: 100%;   
-    background-color: #ededed;
-    box-sizing: border-box;
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  background-color: #fff;  
+  padding-bottom: 0;       
+  display: flex;           
+  justify-content: center; 
+  align-items: center;
 }
 
 .carousel-list-entry-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  display: block;
+  max-width: 100%;   
+  height: auto;      
+  object-fit: contain;
+  margin: 0 auto;    
 }
 
 .product-limit-timer-pc {
@@ -412,7 +397,6 @@ ol,ul {
     display: flex;
     font-size: 14px;
     line-height: 21px;
-    align-items: flex-start;
 }
 
 .product-shipping-container.span {
@@ -456,6 +440,7 @@ ol,ul {
 
 .product-seller-info-wrapper {
     display: flex;
+    margin-right: auto;
     -webkit-box-align: center;
     align-items: center;
     transition: opacity 0.1s;
@@ -513,7 +498,7 @@ ol,ul {
 }
 
 .product-selling-navigation-content {
-    max-width: 1136px;
+    max-width: 1256px;
     margin: 0 auto;
 }
 
@@ -670,15 +655,7 @@ ol,ul {
 }
 
 .product-selling-description {
-  padding-bottom: 500px; 
-}
-
-.product-selling-section::after {
-    content: "";
-    display: block;
-    height: 10px;
-    margin: 15px -15px 0;
-    background-color: #ededed;
+  padding-bottom: 100px; 
 }
 
 .product-selling-section-header {
@@ -823,6 +800,10 @@ button {
       background: rgba(0,0,0,0.5);
     }
 
+    .modal.active {
+    display: flex;
+    }
+
     .modal-content {
       background: #fff;
       width: 400px;
@@ -906,9 +887,25 @@ button {
   color: #333;
 }
 
-.product-detail-container,
-.product-detail-container * {
-  caret-color: transparent; 
+.product-detail-container {
+  max-width: 1256px;  
+  margin: 0 auto;     
+  padding: 0 20px;    
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .product-detail-container {
+    max-width: 100%;
+    padding: 0 12px;   
+  }
+}
+
+@media (min-width: 768px) {
+  .product-detail-container {
+    max-width: 1256px;
+    padding: 0 20px;  
+  }
 }
 
   /* 검색 버튼 */
@@ -981,8 +978,313 @@ button {
   line-height: 1.5;
 }
 
+/* 토스트 */
 
+.toast {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 470px;
+    overflow: visible;
+    opacity: 0;
+    padding-bottom: 10px;
+    flex-direction: column;
+    transition: opacity 0.7s;
+}
 
+.toast-wrap {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-radius: 4px;
+    background-color: rgb(47, 52, 56);
+    color: rgb(206, 206, 206);
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.toast-text {
+    flex: 1 0 0px;
+    min-width: 0px;
+    margin: 0px;
+    text-align: center;
+    white-space: pre-line;
+}
+
+.toast.show {
+    opacity: 1;
+    transition: opacity 0.7s;
+}
+
+.toast.hide {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* 신고하기 */
+
+.gift-shop-post-report-btn-wrapper {
+  margin-left: auto;  
+  display: flex;      
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.gift-shop-post-report-btn {
+  font-size: 13px;          
+  font-weight: 500;         
+  color: #666;              
+  background: none;         
+  padding: 4px 10px;        
+  cursor: pointer;          
+  transition: all 0.2s ease;
+}
+
+.gift-shop-post-report-btn:hover {
+  color: #333;              
+  border-color: #aaa;       
+  background-color: #f9f9f9;
+}
+
+/* 신고하기 모달 */
+
+.report-modal {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 1300;
+    background-color: rgba(33, 38, 41, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.report-modal.active {
+    display: flex;
+}
+
+/* 모달 기본 */
+.modal-container {
+  max-height: 78%;
+  margin: 0;
+  vertical-align: middle;
+  border-radius: 8px;
+  display: inline-flex;
+  flex-direction: column;
+  color: rgb(47, 52, 56);
+  background-color: #fff;
+  max-width: 400px;
+  width: 90%;      
+  box-sizing: border-box;
+}
+
+/* 모바일 대응 */
+@media (max-width: 480px) {
+  .modal-container {
+    width: 95%;      
+    max-width: none;  
+    border-radius: 6px;
+  }
+
+  .modal-title {
+    font-size: 18px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .modal-body {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 12px;
+  }
+
+  .report-button-send {
+    font-size: 14px;
+    height: 45px;
+  }
+}
+
+.modal-header {
+    padding: 16px 16px 10px;
+    line-height: 0;
+}
+
+.modal-title {
+    font-size: 20px;
+    line-height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 700;
+    text-align: center;
+    width: calc(100% - 68px);
+    margin-left: 24px;
+    margin-right: 10px;
+    white-space: pre-line;
+}
+
+.close-button {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background: none;
+    font: inherit;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+}
+
+.close-button-span {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    color: rgb(47, 52, 56);
+}
+
+.close-button-span::before {
+    font-family: OhouseIcon;
+    vertical-align: top;
+    content: "\e9ba";
+}
+
+.modal-body {
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    word-break: break-all;
+    overflow-y: auto;
+}
+
+.report-content-container {
+    display: block;
+}
+
+.report-content {
+    padding: 17px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.report-content:hover {
+    background-color: #F7F9FA;
+}
+
+.content-label {
+    display: inline-block;
+}
+
+.radio-button.active {
+    display: inline-block;
+    position: relative;
+    width: 21px;
+    height: 21px;
+    border: 1px solid #647FBC;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #647FBC;
+    transition: border-color 0.1s, background-color 0.1s;
+    vertical-align: middle;
+}
+
+.radio-button {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgb(194, 200, 204);
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+    transition: border-color 0.1s, background-color 0.1s;
+    vertical-align: middle;
+}
+
+.radio-button.active::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    transform: scale(1);
+    transition: transform 0.4s cubic-bezier(0.5, 2, 0.5, 0.5);
+    background-color: rgb(255, 255, 255);
+}
+
+.radio-button::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.5, 2, 0.5, 0.5);
+    background-color: rgb(255, 255, 255);
+}
+
+.radio {
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+
+.content {
+    font-size: 16px;
+    line-height: 20px;
+    vertical-align: middle;
+    margin-left: 6px;
+    color: rgb(47, 52, 56);
+}
+
+.modal-button {
+    padding: 9px 16px;
+    line-height: 0;
+}
+
+.modal-button-wrap {
+    padding-top: 1px;
+    padding-bottom: 7px;
+}
+
+.report-button-send {
+    margin: 0px;
+    border: none;
+    background: none #647FBC;
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 4px;
+    padding: 0px 16px;
+    font-weight: 700;
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+.report-button-send:hover {
+    background-color: #566da5;
+}
 
 
 

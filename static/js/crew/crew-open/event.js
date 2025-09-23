@@ -1,97 +1,118 @@
-// 이메일 입력 줄 추가/삭제
-const getRows = () => document.querySelectorAll(".invite-email-input");
-const refreshMinus = () => {
-    const many = getRows().length > 1;
-    document
-        .querySelectorAll(".invite-email-input .minus-btn")
-        .forEach((btn) => (btn.disabled = !many));
-};
-document.addEventListener("click", (e) => {
-    const plus = e.target.closest(".plus-btn");
-    const minus = e.target.closest(".minus-btn");
-    if (!plus && !minus) return;
-
-    const row = e.target.closest(".invite-email-input");
-    if (!row) return;
-    const list = row.parentElement;
-
-    if (plus) {
-        const clone = row.cloneNode(true);
-        const input = clone.querySelector("input");
-        if (input) input.value = "";
-
-        // 복제된 줄의 - 버튼은 일단 켜두기(disabled 제거)
-        const cMinus = clone.querySelector(".minus-btn");
-        if (cMinus) cMinus.disabled = false;
-        row.after(clone);
-        refreshMinus();
-    }
-
-    if (minus) {
-        const rows = getRows();
-        if (rows.length > 1) {
-            row.remove();
-            refreshMinus();
-        }
-    }
-});
-refreshMinus();
-
 // 제목 글자 수 카운트
-const titleInput = document.querySelector(".input-title");
-const titleCount = document.querySelector(".text-max-count");
 
-if (titleInput && titleCount) {
-    const updateCount = (e) => {
-        titleCount.textContent = `${titleInput.value.length} / 80`;
-    };
-    titleInput.addEventListener("input", updateCount);
-    updateCount();
-}
+(() => {
+    const titleInput = document.getElementById("crewTitle");
+    const titleCount = document.getElementById("titleCount");
+    if (!titleInput || !titleCount) return;
 
-// 본문 입력
+    const max = titleInput.maxLength > 0 ? titleInput.maxLength : 20;
+    const update = () =>
+        (titleCount.textContent = `${titleInput.value.length} / ${max}`);
+    titleInput.addEventListener("input", update);
+    update();
+})();
 
-const content = document.querySelector(".input-content");
-if (content) {
-    const placeholder = "내용을 입력하세요.";
-    content.setAttribute("contenteditable", "true");
+// 본문 글자 수 카운트 (textarea)
+(() => {
+    const contentIpt = document.getElementById("postContent");
+    const contentCount = document.getElementById("contentCount");
+    if (!contentIpt || !contentCount) return;
 
-    if (content.innerText.trim() === placeholder || !content.innerText.trim()) {
-        content.classList.add("placeholder");
-        content.innerText = placeholder;
-        content.computedStyleMap.color = "#cccccc";
-    }
+    const max = contentIpt.maxLength > 0 ? contentIpt.maxLength : 100;
+    const update = () =>
+        (contentCount.textContent = `${contentIpt.value.length} / ${max}`);
+    contentIpt.addEventListener("input", update);
+    update();
+})();
 
-    content.addEventListener("focus", (e) => {
-        if (content.innerText.trim() === placeholder) {
-            content.innerText = "";
-            content.computedStyleMap.color = "#292929";
-        }
-    });
-
-    content.addEventListener("blur", (e) => {
-        if (!content.innerText.trim()) {
-            content.innerText = placeholder;
-            content.computedStyleMap.color = "#cccccc";
-        }
-    });
-
-    content.addEventListener("input", (e) => {
-        const empty = !content.textContent.trim();
-        content.style.color = empty ? "#cccccc" : "#292929";
+// 만들기 버튼
+const completeBtn = document.querySelector(".complete-btn");
+if (completeBtn) {
+    completeBtn.addEventListener("click", () => {
+        console.log("만들기 클릭");
     });
 }
 
 // 사진 첨부 버튼 클릭 이벤트
+(() => {
+    const trigger = document.querySelector(".cover-img-border");
+    if (!trigger) return;
 
-const crewImgBtn = document.querySelector(".cover-img-border");
-crewImgBtn.addEventListener("click", (e) => {
-    console.log(1111);
-});
+    const file = document.createElement("input");
+    file.type = "file";
+    file.accept = "image/*";
+    file.hidden = true;
+    document.body.appendChild(file);
 
-// 크루 개설하기 완료 버튼 클릭 이벤트
+    let currentURL = null;
 
-const createBtn = document.querySelector(".new-crew");
-createBtn.addEventListener("click", (e) => {
-    console.log(2222);
-});
+    trigger.addEventListener("click", () => file.click());
+
+    file.addEventListener("change", () => {
+        const f = file.files?.[0];
+        if (!f) return;
+
+        if (currentURL) {
+            URL.revokeObjectURL(currentURL);
+            currentURL = null;
+        }
+        currentURL = URL.createObjectURL(f);
+
+        trigger.style.backgroundImage = `url("${currentURL}")`;
+        trigger.style.backgroundSize = "cover";
+        trigger.style.backgroundPosition = "center";
+
+        const guide = trigger.querySelector(".img-btn-wrapper");
+        if (guide) guide.style.display = "none";
+    });
+
+    window.addEventListener("beforeunload", () => {
+        if (currentURL) URL.revokeObjectURL(currentURL);
+    });
+})();
+
+// 상단 태그 입력(칩 생성)
+(() => {
+    const form = document.querySelector(".input-tag-container");
+    if (!form) return;
+
+    const input = form.querySelector(".input-tag-wrap");
+    const btn = form.querySelector(".input-tag-btn");
+    let list = form.parentElement.querySelector(".tag-list");
+
+    if (!list) {
+        list = document.createElement("div");
+        list.className = "tag-list";
+        form.parentElement.appendChild(list);
+    }
+
+    const addChip = () => {
+        const v = (input.value || "").trim();
+        if (!v) return;
+        const chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "tag-chip";
+        chip.textContent = v;
+
+        chip.addEventListener("click", (e) => chip.remove());
+
+        list.appendChild(chip);
+        input.value = "";
+    };
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        addChip();
+    });
+    btn?.addEventListener("click", (e) => {
+        e.preventDefault();
+        addChip();
+    });
+
+    input?.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.isComposing) {
+            e.preventDefault();
+            addChip();
+        }
+    });
+})();

@@ -24,24 +24,6 @@ inputTags.forEach((inputTag) => {
     });
 });
 
-// 성별 체크
-const genderBtn = document.querySelectorAll("button.gender");
-const genderInput = document.querySelector(
-    "input[type=hidden][name=memberGender]"
-);
-
-genderBtn.forEach((gender) => {
-    gender.addEventListener("click", (e) => {
-        genderInput.value = gender.dataset.gender;
-        gender.classList.add("active");
-        if (gender.dataset.gender === "male") {
-            genderBtn[1].classList.remove("active");
-        } else {
-            genderBtn[0].classList.remove("active");
-        }
-    });
-});
-
 // 휴대전화 인증 체크 부분
 const inputPhone = document.querySelector("input.phone");
 const codeSendBtn = document.querySelector("button.phone-certification");
@@ -77,7 +59,8 @@ inputPhone.addEventListener("input", (e) => {
 codeSendBtn.addEventListener("click", (e) => {
     if (!codeSendCheck) return;
     console.log("안막혀");
-
+    clearInterval(timer);
+    time = 5 * 60;
     codeSendCheck = false;
     codeInputWrap.style.display = "block";
     timer = setInterval(updateTimer, 1000);
@@ -152,4 +135,25 @@ passwordCheckInput.addEventListener("blur", (e) => {
         passwordCheckError.style.display = "none";
         // errorTags[1].firstElementChild.textContent = "필수 입력 항목입니다.";
     }
+});
+
+// 성별 선택
+const genderRadioes = document.querySelectorAll(".gender-radio");
+
+genderRadioes.forEach((radio) => {
+    radio.addEventListener("change", (e) => {
+        console.log("라디오 변화");
+
+        document.querySelectorAll(".gender-label").forEach((label) => {
+            label.classList.remove("active");
+        });
+
+        const parentLabel = e.target.closest(".gender-label");
+        if (parentLabel) {
+            parentLabel.classList.add("active");
+        }
+
+        error = document.querySelector("div.error-text-gender");
+        error.style.display = "none";
+    });
 });

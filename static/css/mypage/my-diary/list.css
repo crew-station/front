@@ -199,7 +199,7 @@ a {
 
 .share-text {
     vertical-align: middle;
-    margin-left: 6px;
+    margin: 0 6px;
 }
 
 .profile-wrap {
@@ -629,4 +629,13 @@ nav {
 .toast.hide {
     opacity: 0;
     transition: opacity 0.5s;
+}
+
+/* 결과 존재x */
+
+.user-project-feed__empty {
+    margin: 50px auto;
+    text-align: center;
+    font-size: 15px;
+    color: #757575;
 }

@@ -1,3 +1,13 @@
+input, textarea, button, select {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
+  input:focus, textarea:focus, button:focus, select:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+
 .page {
     height: 100%;
 }
@@ -102,9 +112,10 @@ html {
     height: 45px;
     box-sizing: border-box;
     margin: 0px 5px;
-    background: rgb(255, 255, 255);
-    border: 1px solid rgb(53, 197, 240);
-    border-radius: 4px;
+    background: transparent !important;
+    border: none !important; 
+    padding: 0 !important;
+    border-radius: 0 !important; 
 }
 
 .new-crew-open {
@@ -113,7 +124,7 @@ html {
     margin: 0px;
     padding: 11px 5px 12px;
     border: none;
-    background-color: transparent;
+    background-color: #647FBC;
     text-align: center;
     white-space: nowrap;
     font-style: inherit;
@@ -128,9 +139,10 @@ html {
     font-size: 15px;
     line-height: 20px;
     font-weight: bold;
-    color: rgb(53, 197, 240);
+    color: #fff;
     transition: opacity 0.1s;
     flex: 1 0 0px;
+    border-radius:6px !important; 
 }
 
 button {
@@ -368,7 +380,9 @@ button:disabled {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
-    border: 2px solid rgb(255, 119, 119);
+    border-radius: 5px;
+    border: none !important;
+    overflow: hidden;
 }
 
 .cover-img-border {
@@ -388,7 +402,8 @@ button:disabled {
     text-align: center;
     font: inherit;
     background-color: rgb(247, 248, 250);
-    border: none;
+    border: none !important;
+    border-radius: 5px !important;
 }
 
 .cover-img-message {
@@ -429,7 +444,7 @@ button:disabled {
 }
 
 .post-title-container .input-title {
-    border-bottom: 1px solid rgb(255, 119, 119);
+    border-bottom: none;
 }
 
 input[type=text] {
@@ -447,7 +462,7 @@ input[type=text] {
     width: 100%;
     box-sizing: border-box;
     margin: 0px;
-    padding: 15px 50px 15px 0px;
+    padding: 8px 56px 8px 0 !important;
     border-top: none;
     border-right: none;
     border-left: none;
@@ -458,7 +473,7 @@ input[type=text] {
     font-stretch: inherit;
     font-family: inherit;
     font-optical-sizing: inherit;
-    font-size-adjust: inherit;
+    font-size: clamp(20px, 2.6vw, 28px);
     font-kerning: inherit;
     font-feature-settings: inherit;
     font-variation-settings: inherit;
@@ -525,7 +540,8 @@ input {
     flex-direction: column;
     width: 100%;
     box-sizing: border-box;
-    
+    position:relative; 
+    margin:24px 0;
 }
 
 @media (min-width: 768px) {
@@ -565,3 +581,212 @@ p {
     display: block;
     color: rgb(204, 204, 204);
 }
+
+
+/*  상단 경로(태그) 입력 */
+.tag-container {
+    width: 1136px;
+    max-width: 100%;
+    margin: 20px auto 0;
+    padding: 0 30px;
+    margin-bottom: 24px;
+    }
+
+    .input-tag {
+    margin: 30px 0 0;
+    }
+
+    .input-tag-container {
+    margin-top: 15px;
+    }
+    
+.input-tag-wrapper {
+position: relative;
+display: flex;
+gap: 8px;
+margin: 0 6%;
+}
+
+.input-tag-wrap {
+flex: 1 0 0;
+height: 40px;
+line-height: 40px;
+padding: 0 15px;
+font-size: 15px;
+border: 1px solid #dbdbdb;
+border-radius: 4px;
+background: #fff;
+color: #424242;
+transition: border-color .2s, box-shadow .2s, background-color .2s;
+}
+
+.input-tag-btn {
+padding: 9px 10px;
+width: 120px;
+border: 1px solid #647FBC;
+border-radius: 4px;
+background: #647FBC;
+color: #fff;
+font-weight: 700;
+font-size: 15px;
+line-height: 20px;
+}
+
+/* 나라 검색 */
+#countryDropdown:empty {
+    display: none !important;
+}
+    
+.write-content-select-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 4px 0;
+    z-index: 999;
+}
+
+#countryDropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 999;
+}
+    
+.write-content-select-dropdown li {
+    padding: 6px 12px;
+    font-size: 13px;
+    line-height: 18px;
+    cursor: pointer;
+}
+
+#countryDropdown li {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+    /* 입력된 태그 칩 */
+    .tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 6%;
+    margin-top: 8px;
+    }
+.tag-chip {
+    padding: 4px 8px;
+    border: 1px solid #dbdbdb;
+    border-radius: 999px;
+    background: #fff;
+}
+
+
+#postContent {
+    width: 100%;
+    padding:14px 16px 34px; 
+    border: 1px solid #dbdbdb;
+    border-radius: 4px;
+    color: #292929;
+    font-size: 15px;
+    line-height: 1.6;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+
+.post-title-container .text-max-count {
+    position:absolute;
+    right:0;
+    bottom:auto;   
+    top: 8px;              
+    transform: translateY(-60%);
+    font-size:13px;
+    color:#98a0a6;
+    line-height:1;
+    margin: 16px 0 6px;
+}
+
+#contentCount{
+    position:absolute;
+    right:12px;
+    bottom:10px;
+    font-size:13px;
+    color:#98a0a6;
+    line-height:1;
+  }
+
+  #postContent::placeholder,
+.input-title::placeholder{
+  color:#9aa0a6;
+  letter-spacing:0;     
+  word-spacing:0;
+  white-space:normal;
+}
+
+.crew-station {
+    margin: 5%;
+  }
+  .crew-station .icon {
+    width: 74px;
+    height: 30px;
+  }
+
+
+/* 호버 상단 텍스트 */
+.hover-top-text{
+    position: absolute;
+    top: 12px; 
+    right: 12px;
+    z-index: 2; 
+    padding: 6px 10px;
+    border-radius: 8px;
+    background: rgba(0,0,0,.6);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity .2s ease, transform .2s ease;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+
+  .hover-thumb::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    opacity: 0;
+    transition: opacity .3s ease;
+    z-index: 1;
+  }
+
+  .hover-thumb:hover::before {
+    opacity: 1;               /* 어둡게 */
+  }
+  .hover-thumb { position: relative; display: block; overflow: hidden; }
+
+  .hover-thumb:hover .hover-top-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .crew-item-card:hover .crew-short-description{ opacity:1; }
+    

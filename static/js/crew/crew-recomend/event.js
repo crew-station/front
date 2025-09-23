@@ -1,11 +1,14 @@
-// 서브 카테고리 클릭 시 active 클래스 추가
-const items = document.querySelectorAll(".header-category");
+// 카테고리 버튼 클릭 시 토글 이벤트
+const categoryBtn = document.querySelectorAll(".category-button");
 
-items.forEach((item) => {
-    item.addEventListener("click", (e) => {
-        e.preventDefault();
+categoryBtn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        console.log(111111);
 
-        items.forEach((e) => e.classList.remove("active"));
-        item.classList.add("active");
+        categoryBtn.forEach((button) => {
+            button.classList.remove("active");
+        });
+
+        btn.classList.add("active");
     });
 });

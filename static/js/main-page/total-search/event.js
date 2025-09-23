@@ -10,7 +10,7 @@ const displayBtn = (displayTag, noneTag) => {
 };
 crewRightBtn.addEventListener("click", (e) => {
     crewList.style.transition = `transform 0.5s`;
-    crewList.style.transform = "translate(-1156px)";
+    crewList.style.transform = "translate(-750px)";
     displayBtn(crewLeftBtn, crewRightBtn);
     // crewList.style.transition = `transform 0s`;
 });
@@ -49,7 +49,7 @@ let pos = -2;
 
 setInterval(() => {
     pos += 1; // 1씩 증가
-    if (pos > 90) {
+    if (pos > 97) {
         pos = -2;
         markers.forEach((marker) => {
             marker.style.transition = `left 0s linear`;
