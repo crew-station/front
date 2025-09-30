@@ -142,16 +142,19 @@ a {
 }
 
 .header-wrapper {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     color: #2F3438;
 }
 
 .header-title {
     font-size: 20px;
-    line-height: 28px;
+    line-height: 20px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
+    margin: 8px 0;   
+    font-weight: 600;
+    margin-bottom: 6px;
 }
 
 .date {
@@ -248,7 +251,7 @@ a {
     margin-bottom: 20px;
 }
 
-.address {
+.seller-info-category {
     display: flex;
     font-size: 15px;
     line-height: 24px;
@@ -259,10 +262,23 @@ a {
     margin-bottom: 20px;
 }
 
-.address-span {
+.seller-info {
     display: inherit;
     min-width: 68px;
     color: #828C94;
+}
+
+.buyer-info {
+    display: inherit;
+    min-width: 68px;
+    color: #828C94;
+}
+
+.buyer-info-category {
+    display: flex;
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 6px;
 }
 
 .product-wrapper {
@@ -273,8 +289,8 @@ a {
 
 .product-wrapper > img {
     flex-shrink: 0;
-    width: 54px;
-    height: 54px;
+    width: 100px;
+    height: 100px;
     border-radius: 4px;
     margin-right: 10px;
 }
@@ -285,6 +301,7 @@ a {
 }
 
 .info-title {
+    margin-top: 6px;
     font-weight: 500;
     color: #2F3438;
 }
@@ -353,3 +370,82 @@ a {
     background-color: #5e36ff;
     color: #fff;
 }
+
+.manner-icon {
+    width: 15px;
+    height: 15px;
+    vertical-align: -2px;
+}
+
+.status-btn {
+    display: none; 
+}
+
+.status-btn.active {
+    display: inline-block; 
+}
+
+.info-container {
+    margin-top: 15px;
+}
+
+.badge-list-container {
+    display: block;
+    width: fit-content;  
+    background: #647FBC;
+    color: #fff;
+    padding: 2px 6px;  
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: 'Pretendard', sans-serif;
+    line-height: 20px;
+    white-space: nowrap; 
+    margin-top: 4px;
+  }
+
+  .badge-list-container.amount {
+    display: block;
+    width: fit-content;  
+    background: #fff;
+    border: 1px solid #dcdee0;
+    color: #929294;
+    padding: 0px 2px;  
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: 'Pretendard', sans-serif;
+    line-height: 20px;
+    white-space: nowrap; 
+    margin-top: 4px;
+  }
+
+  .info-amount {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    color: #333;
+
+  }
+
+.badge-list-container.amount,
+.info-amount {
+    display: inline-flex; 
+    align-items: center;  
+}
+
+.badge-list-container.amount {
+    margin-right: 4px;
+}
+
+.info-price {
+    margin-top: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    color:#333;
+}
+
+.divider {
+    border: none;                 
+    border-top: 1px solid #e0e0e0; 
+    margin: 16px 0;               
+  }
+
